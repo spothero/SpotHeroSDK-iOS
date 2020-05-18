@@ -47,13 +47,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-<<<<<<< HEAD
                BlueprintIdentifier = "SpotHeroAPITests"
                BuildableName = "SpotHeroAPITests"
-               BlueprintName = "SpotHeroAPITests" =======
-               BlueprintIdentifier = "SpotHeroSDKTests"
-               BuildableName = "SpotHeroSDKTests"
-               BlueprintName = "SpotHeroSDKTests">>>>>>> master
+               BlueprintName = "SpotHeroAPITests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
