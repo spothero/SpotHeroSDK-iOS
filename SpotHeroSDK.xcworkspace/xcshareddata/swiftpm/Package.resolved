@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "UtilityBelt",
+        "repositoryURL": "https://github.com/spothero/UtilityBelt-iOS",
+        "state": {
+          "branch": null,
+          "revision": "d045783f0382a0e76f751811bc95c31e1e0c6110",
+          "version": "0.5.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
