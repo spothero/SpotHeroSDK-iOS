@@ -1,5 +1,5 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
-struct SpotHeroSDK {
+struct SpotHeroAPI {
     var text = "Hello, World!"
 }

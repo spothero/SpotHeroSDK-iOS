@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SpotHeroSDK"
-               BuildableName = "SpotHeroSDK"
-               BlueprintName = "SpotHeroSDK"
+               BlueprintIdentifier = "SpotHeroAPI"
+               BuildableName = "SpotHeroAPI"
+               BlueprintName = "SpotHeroAPI"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SpotHeroSDKTests"
-               BuildableName = "SpotHeroSDKTests"
-               BlueprintName = "SpotHeroSDKTests"
+               BlueprintIdentifier = "SpotHeroAPITests"
+               BuildableName = "SpotHeroAPITests"
+               BlueprintName = "SpotHeroAPITests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
@@ -75,10 +75,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "SpotHeroSDK"
-            BuildableName = "SpotHeroSDK"
-            BlueprintName = "SpotHeroSDK"
-            ReferencedContainer = "container:">
+            BlueprintIdentifier = "34E5ABC724620DD90070A80B"
+            BuildableName = "RunScriptHelper"
+            BlueprintName = "RunScriptHelper"
+            ReferencedContainer = "container:RunScriptHelper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

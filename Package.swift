@@ -5,19 +5,30 @@ import PackageDescription
 
 let package = Package(
     name: "SpotHeroSDK",
-    products: [
-        .library(name: "SpotHeroSDK", targets: ["SpotHeroSDK"]),
+    platforms: [
+        .iOS(.v10),         // supports UtilityBelt
+        .macOS(.v10_12),    // supports UtilityBelt
+        .tvOS(.v10),        // supports UtilityBelt
+        .watchOS(.v3),      // supports UtilityBelt
     ],
-    dependencies: [],
+    products: [
+        .library(name: "SpotHeroAPI", targets: ["SpotHeroAPINext"]),
+    ],
+    dependencies: [
+        .package(name: "UtilityBelt", url: "https://github.com/spothero/UtilityBelt-iOS", from: "0.5.3"),
+    ],
     targets: [
         .target(
-            name: "SpotHeroSDK",
-            dependencies: []
+            name: "SpotHeroAPINext",
+            dependencies: [
+                .product(name: "UtilityBeltNetworking", package: "UtilityBelt"),
+            ],
+            path: "Sources/SpotHeroAPI"
         ),
         .testTarget(
-            name: "SpotHeroSDKTests",
+            name: "SpotHeroAPITests",
             dependencies: [
-                .target(name: "SpotHeroSDK"),
+                .target(name: "SpotHeroAPINext"),
             ]
         ),
     ]
