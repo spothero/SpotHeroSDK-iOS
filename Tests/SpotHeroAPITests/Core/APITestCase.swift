@@ -1,10 +1,16 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
 import Sham
+@testable import SpotHeroAPINext
 import XCTest
 
 class APITestCase: XCTestCase {
     static var timeout: TimeInterval = 5
+    static var baseURL: String = "https://mobile.staging.spothero.com"
+    
+    static func newAPIClient() -> SpotHeroAPIClient {
+        return SpotHeroAPIClient(baseURL: Self.baseURL)
+    }
 }
 
 class LiveTestCase: APITestCase {}

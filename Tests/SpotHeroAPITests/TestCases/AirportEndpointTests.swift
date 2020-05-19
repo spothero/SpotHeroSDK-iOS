@@ -10,13 +10,11 @@ private protocol AirportEndpointTests: APITestCase {
 extension AirportEndpointTests {
     /// Attempts to fetch all airports, expecting success.
     func getAirports(file: StaticString = #file, line: UInt = #line) {
-        self.stub(.get(AirportsEndpoint.Routes.airports.fullPath), with: .apiMockFile("Airports/get_airports.json"))
-        
-        let client = SpotHeroAPIClient()
+        let client = Self.newAPIClient()
         
         let expectation = self.expectation(description: "Fetch airports.")
         
-        client.airports.get { result -> Void in
+        client.airports.get.request { result -> Void in
             switch result {
             case let .success(airports):
                 XCTAssertGreaterThan(airports.count, 0, file: file, line: line)
@@ -47,6 +45,17 @@ final class AirportEndpointLiveTests: LiveTestCase, AirportEndpointTests {
 
 final class AirportEndpointMockTests: MockTestCase, AirportEndpointTests {
     func testGetAirportsSucceeds() {
+        self.stub(AirportsGetRequest.self, with: .apiMockFile("Airports/get_airports.json"))
+        
         self.getAirports()
+    }
+}
+
+import Sham
+
+public extension XCTestCase {
+    func stub<T: RequestDefining>(_ route: T.Type, with response: StubResponse) {
+        let request = StubRequest(method: T.method, url: T.path)
+        MockService.shared.stub(request, with: response)
     }
 }

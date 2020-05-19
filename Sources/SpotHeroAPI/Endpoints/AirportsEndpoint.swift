@@ -5,17 +5,11 @@ import UtilityBeltNetworking
 
 /// Represents the SpotHero API Airports endpoint.
 public final class AirportsEndpoint: Endpoint {
-    enum Routes: String, MonolithRoute {
-        case airports
-    }
+    public let get: AirportsGetRequest
     
-    /// Get a list of available partner airports.
-    /// - Parameter completion: A completion block for processing the result of the request.
-    /// - Returns: The task performing this action, or nil if a failure occurs before the request hits the network.
-    @discardableResult
-    public func get(completion: @escaping RequestCompletion<[PartnerAirport]>) -> URLSessionTask? {
-        return self.client.request(Routes.airports, method: .get) { result in
-            completion(result)
-        }
+    override init(client: InternalNetworkClient) {
+        self.get = AirportsGetRequest(client: client)
+        
+        super.init(client: client)
     }
 }

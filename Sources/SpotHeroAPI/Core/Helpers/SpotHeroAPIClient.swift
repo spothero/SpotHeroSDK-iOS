@@ -18,7 +18,7 @@ public final class SpotHeroAPIClient {
     // MARK: Methods
     
     /// Creates a new instance of `SpotHeroAPIClient`.
-    public init(baseURL: String = "https://mobile.staging.spothero.com") {
+    public init(baseURL: String) {
         self.networkClient = InternalNetworkClient(baseURL: baseURL)
         
         self.airports = AirportsEndpoint(client: self.networkClient)

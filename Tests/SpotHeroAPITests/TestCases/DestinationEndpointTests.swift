@@ -10,9 +10,7 @@ private protocol DestinationEndpointTests: APITestCase {
 extension DestinationEndpointTests {
     /// Attempts to fetch a single destination, expecting success.
     func getDestination(id destinationID: Int) {
-//        self.stub(.get(AirportsEndpoint.Routes.airports), with: .apiMockFile("Airports/get_airports.json"))
-        
-        let client = SpotHeroAPIClient()
+        let client = Self.newAPIClient()
         
         let expectation = self.expectation(description: "Destination retrieved successfully")
         
