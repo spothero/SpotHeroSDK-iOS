@@ -13,9 +13,9 @@ class APITestCase: XCTestCase {
     }
 }
 
-class LiveTestCase: APITestCase {}
+class LiveAPITestCase: APITestCase {}
 
-class MockTestCase: APITestCase {
+class MockAPITestCase: APITestCase {
     // Before all tests
     override class func setUp() {
         super.setUp()
