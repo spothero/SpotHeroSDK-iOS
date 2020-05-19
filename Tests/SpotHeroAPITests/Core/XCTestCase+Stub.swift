@@ -5,8 +5,11 @@ import Sham
 import XCTest
 
 public extension XCTestCase {
-    func stub<T: RequestDefining>(_ route: T.Type, with response: StubResponse) {
-        let request = StubRequest(method: T.method, url: T.path)
-        MockService.shared.stub(request, with: response)
+    /// Convenience method for stubbing new requests within an XCTestCase.
+    /// - Parameter request: The request definition to stub.
+    /// - Parameter response: The response to return.
+    func stub<T: RequestDefining>(_ request: T.Type, with response: StubResponse) {
+        let stubRequest = StubRequest(method: T.method, url: T.path)
+        MockService.shared.stub(stubRequest, with: response)
     }
 }

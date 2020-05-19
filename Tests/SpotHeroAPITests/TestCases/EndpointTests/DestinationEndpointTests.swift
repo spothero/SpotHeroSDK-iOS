@@ -43,7 +43,7 @@ extension DestinationEndpointTests {
     }
 }
 
-final class DestinationEndpointLiveTests: LiveTestCase, DestinationEndpointTests {
+final class DestinationEndpointLiveTests: LiveAPITestCase, DestinationEndpointTests {
     private static let validTransientDestinationID = 1
     private static let validAirportDestinationID = 583 // ORD
     
@@ -52,7 +52,7 @@ final class DestinationEndpointLiveTests: LiveTestCase, DestinationEndpointTests
     }
 }
 
-final class DestinationEndpointMockTests: MockTestCase, DestinationEndpointTests {
+final class DestinationEndpointMockTests: MockAPITestCase, DestinationEndpointTests {
     private static let validTransientDestinationID = 1
     private static let validAirportDestinationID = 583 // ORD
     

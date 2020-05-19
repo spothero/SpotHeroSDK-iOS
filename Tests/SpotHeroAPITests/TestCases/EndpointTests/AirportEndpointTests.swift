@@ -37,13 +37,13 @@ extension AirportEndpointTests {
     }
 }
 
-final class AirportEndpointLiveTests: LiveTestCase, AirportEndpointTests {
+final class AirportEndpointLiveTests: LiveAPITestCase, AirportEndpointTests {
     func testGetAirportsSucceeds() {
         self.getAirports()
     }
 }
 
-final class AirportEndpointMockTests: MockTestCase, AirportEndpointTests {
+final class AirportEndpointMockTests: MockAPITestCase, AirportEndpointTests {
     func testGetAirportsSucceeds() {
         self.stub(AirportsGetRequest.self, with: .apiMockFile("Airports/get_airports.json"))
         

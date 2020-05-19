@@ -3,7 +3,7 @@
 @testable import SpotHeroAPINext
 import XCTest
 
-final class APIResponseTests: APITestCase {
+final class APIResponseTests: XCTestCase {
     private struct SimpleData: Decodable {
         let name: String
         let count: Int
