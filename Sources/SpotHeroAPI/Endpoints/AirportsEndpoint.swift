@@ -13,7 +13,7 @@ public final class AirportsEndpoint: Endpoint {
     /// - Parameter completion: A completion block for processing the result of the request.
     /// - Returns: The task performing this action, or nil if a failure occurs before the request hits the network.
     @discardableResult
-    public func get(completion: @escaping RequestCompletion<[Airport]>) -> URLSessionTask? {
+    public func get(completion: @escaping RequestCompletion<[PartnerAirport]>) -> URLSessionTask? {
         return self.client.request(Routes.airports, method: .get) { result in
             completion(result)
         }

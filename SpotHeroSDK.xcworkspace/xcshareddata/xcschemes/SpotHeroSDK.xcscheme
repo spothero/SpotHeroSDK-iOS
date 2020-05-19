@@ -53,6 +53,17 @@
                BlueprintName = "SpotHeroAPITests"
                ReferencedContainer = "container:">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "APITestCase">
+               </Test>
+               <Test
+                  Identifier = "LiveTestCase">
+               </Test>
+               <Test
+                  Identifier = "MockTestCase">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

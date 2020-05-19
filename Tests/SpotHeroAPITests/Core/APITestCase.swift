@@ -4,10 +4,15 @@ import Sham
 import XCTest
 
 class APITestCase: XCTestCase {
-    static let timeout: TimeInterval = 5
-    
+    static var timeout: TimeInterval = 5
+}
+
+class LiveTestCase: APITestCase {}
+
+class MockTestCase: APITestCase {
     // Before all tests
     override class func setUp() {
+        super.setUp()
         // Register the Sham MockService to start intercepting requests.
         MockService.shared.register()
         

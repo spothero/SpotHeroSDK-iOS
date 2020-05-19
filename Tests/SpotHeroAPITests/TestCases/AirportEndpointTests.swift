@@ -3,30 +3,50 @@
 @testable import SpotHeroAPINext
 import XCTest
 
-final class AirportEndpointTests: APITestCase {
-    func testGetAirportsSucceeds() {
-        self.stub(.get(AirportsEndpoint.Routes.airports), with: .apiMockFile("Airports/get_airports.json"))
+private protocol AirportEndpointTests: APITestCase {
+    func testGetAirportsSucceeds()
+}
+
+extension AirportEndpointTests {
+    /// Attempts to fetch all airports, expecting success.
+    func getAirports(file: StaticString = #file, line: UInt = #line) {
+        self.stub(.get(AirportsEndpoint.Routes.airports.fullPath), with: .apiMockFile("Airports/get_airports.json"))
         
         let client = SpotHeroAPIClient()
         
         let expectation = self.expectation(description: "Fetch airports.")
         
-        client.airports.get { result in
+        client.airports.get { result -> Void in
             switch result {
             case let .success(airports):
-                XCTAssertGreaterThan(airports.count, 0)
+                XCTAssertGreaterThan(airports.count, 0, file: file, line: line)
                 
                 for airport in airports {
-                    let timeZoneIdentifier = airport.timeZoneIdentifier
-                    XCTAssertNotNil(TimeZone(identifier: timeZoneIdentifier), "Could not convert \(timeZoneIdentifier) to a TimeZone.")
+                    do {
+                        _ = try TimeZone.safelyUnwrapped(fromIdentifier: airport.timeZoneIdentifier)
+                    } catch {
+                        XCTFail(error.localizedDescription, file: file, line: line)
+                    }
                 }
             case let .failure(error):
-                XCTFail("Error fetching airports. \(error.localizedDescription)")
+                XCTFail("Error fetching airports. \(error.localizedDescription)", file: file, line: line)
             }
             
             expectation.fulfill()
         }
         
         self.waitForExpectations(timeout: Self.timeout)
+    }
+}
+
+final class AirportEndpointLiveTests: LiveTestCase, AirportEndpointTests {
+    func testGetAirportsSucceeds() {
+        self.getAirports()
+    }
+}
+
+final class AirportEndpointMockTests: MockTestCase, AirportEndpointTests {
+    func testGetAirportsSucceeds() {
+        self.getAirports()
     }
 }

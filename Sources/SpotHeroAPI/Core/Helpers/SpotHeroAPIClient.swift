@@ -11,6 +11,7 @@ public final class SpotHeroAPIClient {
     
     /// Represents the SpotHero API Airports endpoint.
     public let airports: AirportsEndpoint
+    public let destinations: DestinationsEndpoint
     
     // MARK: Methods
     
@@ -19,5 +20,6 @@ public final class SpotHeroAPIClient {
         self.networkClient = InternalNetworkClient(baseURL: baseURL)
         
         self.airports = AirportsEndpoint(client: self.networkClient)
+        self.destinations = DestinationsEndpoint(client: self.networkClient)
     }
 }
