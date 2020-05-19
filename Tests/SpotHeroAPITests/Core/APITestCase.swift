@@ -17,6 +17,8 @@ class APITestCase: XCTestCase {
     
     // Before each test
     override func setUp() {
+        super.setUp()
+        
         // Before each test, ensure that the MockService has been cleared of all stubbed requests.
         MockService.shared.clearData()
     }
