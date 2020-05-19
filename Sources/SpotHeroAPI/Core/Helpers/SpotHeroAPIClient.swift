@@ -9,6 +9,8 @@ public final class SpotHeroAPIClient {
     
     let networkClient: InternalNetworkClient
     
+    // WIP: Endpoint definitions will be added here
+    
     // MARK: Methods
     
     /// Creates a new instance of `SpotHeroAPIClient`.
