@@ -11,18 +11,12 @@ protocol RequestDefining {
     var client: InternalNetworkClient { get }
     
     init(client: InternalNetworkClient)
-}
-
-protocol GetRequestDefining: RequestDefining {
+    
     @discardableResult
     func request(completion: @escaping RequestCompletion<Model>) -> URLSessionTask?
 }
 
-extension GetRequestDefining {
-    static var method: HTTPMethod {
-        return .get
-    }
-    
+extension RequestDefining {
     @discardableResult
     func request(completion: @escaping RequestCompletion<Model>) -> URLSessionTask? {
         return self.client.request(Self.self, completion: completion)

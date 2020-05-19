@@ -50,12 +50,3 @@ final class AirportEndpointMockTests: MockTestCase, AirportEndpointTests {
         self.getAirports()
     }
 }
-
-import Sham
-
-public extension XCTestCase {
-    func stub<T: RequestDefining>(_ route: T.Type, with response: StubResponse) {
-        let request = StubRequest(method: T.method, url: T.path)
-        MockService.shared.stub(request, with: response)
-    }
-}

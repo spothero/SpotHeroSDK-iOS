@@ -2,7 +2,7 @@
 
 import UtilityBeltNetworking
 
-public struct AirportsGetRequest: GetRequestDefining {
+public struct AirportsGetRequest: RequestDefining {
     public typealias Model = [PartnerAirport]
     
     public static let method: HTTPMethod = .get
