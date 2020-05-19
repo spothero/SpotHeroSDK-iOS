@@ -5,7 +5,7 @@ import XCTest
 
 final class AirportEndpointTests: APITestCase {
     func testGetAirportsSucceeds() {
-        self.stub(.get(AirportsEndpoint.Routes.airports), with: .relativeFile("../Resources/MockFiles/get_airports.json"))
+        self.stub(.get(AirportsEndpoint.Routes.airports), with: .apiMockFile("Airports/get_airports.json"))
         
         let client = SpotHeroAPIClient()
         
