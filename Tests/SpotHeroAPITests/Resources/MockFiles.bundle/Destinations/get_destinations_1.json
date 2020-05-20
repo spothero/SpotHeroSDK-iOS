@@ -1,0 +1,46 @@
+{
+  "meta": {},
+  "data": {
+    "categories": [
+      9
+    ],
+    "city": "Chicago",
+    "description": "<p><strong>Wrigley Field Parking with SpotHero</strong></p><p>You can find and book parking around Wrigley Field using SpotHero. SpotHero partners with lots and garages - along with local residents and businesses - to make parking at Wrigley easy.</p><p><em>How Parking at Wrigley with SpotHero Works:&nbsp;</em></p><ol><li>Select the game you're going to, or choose specific times for when you need parking</li><li>Browse our inventory of options, and make your choice based on factors like garage vs lot, distance to the stadium, in-and-out <span>privlages</span>, valet vs self-park, and price.</li><li>Book your parking spot. This will reserve and process payment for your parking; secured and <span>guranteed&nbsp;</span>by SpotHero.</li><li>Access your \"Parking Pass\" and follow the redemption instructions. We will email you your Parking Pass, or you can view it in our mobile app.&nbsp;</li></ol><p>Parking at Wrigley Field is great. There are a lot of secure, safe, and inexpensive options here, and you can even <em>find spots with us in the driveways of Wrigleyville residents, and in hidden spots like under the El</em>.</p><p>Find the spot that works for you, and enjoy the game.</p><p>Easy.</p><p><strong>About SpotHero</strong></p><p>SpotHero is an on-demand parking reservation company that runs a&nbsp;<a href=\"http://spothero.com/san-francisco/san-francisco-parking/spothero.com\" target=\"_blank\">website&nbsp;</a>and&nbsp;<a href=\"http://spothero.com/our-app\" target=\"_blank\">app</a>. &nbsp;Learn more&nbsp;<a href=\"http://spothero.com/about\" target=\"_blank\">about SpotHero</a>&nbsp;or&nbsp;<a href=\"http://spothero.com/how-it-works\" target=\"_blank\">how SpotHero works</a>. You can also read&nbsp;<a href=\"http://spothero.com/reviews\">SpotHero reviews</a>&nbsp;and&nbsp;<a href=\"http://spothero.com/faq\" target=\"_blank\">frequently asked questions</a>&nbsp;before giving it a try.</p><p><strong>Wrigely Field Parking Resources</strong></p><p>This&nbsp;<a href=\"http://stadiumparkingguides.com/wrigley-field-parking/\">Parking near Wrigley Field Guide</a>&nbsp;from StadiumParkingGuides.com gives a great overview of the official Cubs parking options, nearby lots and garages, and tips for finding street parking.</p><p>The Cubs also operate a few lots near Wrigley, as well as a shuttle to a remote lot. Learn more about <a href=\"http://chicago.cubs.mlb.com/chc/ballpark/transportation/\" target=\"_blank\">these options from the Cubs' website</a>.&nbsp;</p>",
+    "generic_destination": false,
+    "id": 1,
+    "latitude": 41.947599152,
+    "longitude": -87.6547243857,
+    "monthly_enabled": true,
+    "monthly_destination_info_title": "",
+    "destination_info_title": "",
+    "places_place_ids": [
+      "ChIJId-a5bLTD4gRRtbdduE-6hw",
+      "ChIJ40QGjUzSD4gRkqFJ3TB5JQE",
+      "ChIJ_____6vTD4gRzYRuRZsBAy8",
+      "ChIJRaXbGLPTD4gRlxMpu6nKQeM",
+      "ChIJHZQBdbPTD4gRXV3KqQ3rX7I",
+      null,
+      "ChIJId-a5bLTD4gRUkQO01DJTzA"
+    ],
+    "relative_url": "wrigley-field-parking",
+    "short_description": "",
+    "spothero_city": 1,
+    "state": "IL",
+    "street_address": "1060 West Addison Street",
+    "timezone": "America/Chicago",
+    "title": "Wrigley Field",
+    "zipcode": "60613",
+    "venue_content": "",
+    "venue_content_enabled": false,
+    "kml_map_layer_id": null,
+    "kml_map_layer_url": null,
+    "kml_map_layer_enabled": false,
+    "override_ideal_zoom": false,
+    "mobile_zoom_level": null,
+    "desktop_zoom_level": null,
+    "monthly_mobile_zoom_level": null,
+    "monthly_desktop_zoom_level": null,
+    "airport": null
+  },
+  "notifications": []
+}
