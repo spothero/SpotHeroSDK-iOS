@@ -49,9 +49,11 @@ class InternalNetworkClient {
             decoder: decoder
         ) { (response: DataResponse<APIResponse<T>, Error>) in
             switch response.result {
-            case let .success(data):
-                completion?(.success(data.data))
+            case let .success(apiResponse):
+                // The apiResponse.data is NOT a Data type, it is our response object
+                completion?(.success(apiResponse.data))
             case let .failure(error):
+                // If failure, pass the error
                 completion?(.failure(error))
             }
         }
