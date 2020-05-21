@@ -29,7 +29,7 @@ class InternalNetworkClient {
     ///   - parameters: The dictionary of parameters to send in the query string or HTTP body.
     ///   - headers: The HTTP headers to be with the request.
     ///   - encoding: The parameter encoding method. If nil, uses default for HTTP method.
-    ///   - decoder: The decoder to use for parsing the JSON. Uses the SpotHeroAPI decoer by default.
+    ///   - decoder: The decoder to use for parsing the JSON. Uses the SpotHeroAPI decoder by default.
     ///   - completion: The completion block to call when the request is completed.
     /// - Returns: Returns a `URLSessionTask`, which allows for cancellation and retries.
     @discardableResult
