@@ -7,6 +7,10 @@ import XCTest
 class APITestCase: XCTestCase {
     static var timeout: TimeInterval = 5
     static var baseURL: String = "https://mobile.staging.spothero.com"
+    
+    static func newAPIClient() -> SpotHeroAPIClient {
+        return SpotHeroAPIClient(baseURL: Self.baseURL)
+    }
 }
 
 class LiveAPITestCase: APITestCase {}
