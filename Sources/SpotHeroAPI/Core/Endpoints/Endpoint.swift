@@ -2,9 +2,9 @@
 
 /// Represents a SpotHero API endpoint.
 public class Endpoint {
-    var client: InternalNetworkClient
+    var client: NetworkClient
     
-    init(client: InternalNetworkClient) {
+    init(client: NetworkClient) {
         self.client = client
     }
 }

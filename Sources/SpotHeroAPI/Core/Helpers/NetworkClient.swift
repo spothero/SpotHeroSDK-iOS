@@ -6,7 +6,7 @@ import UtilityBeltNetworking
 /// Represents the completion block for a SpotHero API request.
 public typealias RequestCompletion<T: Decodable> = (Result<T, Error>) -> Void
 
-class InternalNetworkClient {
+class NetworkClient {
     // MARK: Properties
     
     private let baseURL: URLConvertible
