@@ -7,7 +7,7 @@ import UtilityBeltNetworking
 public final class SpotHeroAPIClient {
     // MARK: Properties
     
-    let networkClient: InternalNetworkClient
+    let networkClient: NetworkClient
     
     /// Represents the `/airports` endpoint.
     public let airports: AirportsEndpoint
@@ -19,7 +19,7 @@ public final class SpotHeroAPIClient {
     
     /// Creates a new instance of `SpotHeroAPIClient`.
     public init(baseURL: String) {
-        self.networkClient = InternalNetworkClient(baseURL: baseURL)
+        self.networkClient = NetworkClient(baseURL: baseURL)
         
         self.airports = AirportsEndpoint(client: self.networkClient)
         self.destinations = DestinationsEndpoint(client: self.networkClient)
