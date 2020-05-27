@@ -8,9 +8,9 @@ public struct AirportsGetRequest: RequestDefining {
     public static let method: HTTPMethod = .get
     public static let path: URLConvertible = "/api/v1/airports"
     
-    let client: InternalNetworkClient
+    let client: NetworkClient
     
-    init(client: InternalNetworkClient) {
+    init(client: NetworkClient) {
         self.client = client
     }
 }

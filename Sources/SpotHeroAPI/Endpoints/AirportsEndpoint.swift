@@ -7,7 +7,7 @@ import UtilityBeltNetworking
 public final class AirportsEndpoint: Endpoint {
     public let get: AirportsGetRequest
     
-    override init(client: InternalNetworkClient) {
+    override init(client: NetworkClient) {
         self.get = AirportsGetRequest(client: client)
         
         super.init(client: client)

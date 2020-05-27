@@ -8,9 +8,9 @@ protocol RequestDefining {
     
     static var method: HTTPMethod { get }
     static var path: URLConvertible { get }
-    var client: InternalNetworkClient { get }
+    var client: NetworkClient { get }
     
-    init(client: InternalNetworkClient)
+    init(client: NetworkClient)
     
     @discardableResult
     func request(completion: @escaping RequestCompletion<Model>) -> URLSessionTask?
