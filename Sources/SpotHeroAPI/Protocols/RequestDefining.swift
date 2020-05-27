@@ -11,14 +11,4 @@ protocol RequestDefining {
     var client: NetworkClient { get }
     
     init(client: NetworkClient)
-    
-    @discardableResult
-    func request(completion: @escaping RequestCompletion<Model>) -> URLSessionTask?
-}
-
-extension RequestDefining {
-    @discardableResult
-    func request(completion: @escaping RequestCompletion<Model>) -> URLSessionTask? {
-        return self.client.request(Self.self, completion: completion)
-    }
 }

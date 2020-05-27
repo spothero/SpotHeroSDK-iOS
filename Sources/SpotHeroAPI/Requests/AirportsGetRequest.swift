@@ -1,5 +1,6 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
+import Foundation
 import UtilityBeltNetworking
 
 public struct AirportsGetRequest: RequestDefining {
@@ -12,5 +13,10 @@ public struct AirportsGetRequest: RequestDefining {
     
     init(client: NetworkClient) {
         self.client = client
+    }
+    
+    @discardableResult
+    func callAsFunction(completion: @escaping RequestCompletion<Model>) -> URLSessionTask? {
+        return self.client.request(Self.self, completion: completion)
     }
 }
