@@ -33,13 +33,13 @@ class NetworkClient {
     ///   - completion: The completion block to call when the request is completed.
     /// - Returns: Returns a `URLSessionTask`, which allows for cancellation and retries.
     @discardableResult
-    func request<T>(_ url: URLConvertible,
-                    method: HTTPMethod,
-                    parameters: [String: Any]? = nil,
-                    headers: HTTPHeaderDictionaryConvertible? = nil,
-                    encoding: ParameterEncoding? = nil,
-                    decoder: JSONDecoder = .spotHeroAPI,
-                    completion: RequestCompletion<T>? = nil) -> URLSessionTask? where T: Decodable {
+    func request<T: Decodable>(url: URLConvertible,
+                               method: HTTPMethod,
+                               parameters: [String: Any]? = nil,
+                               headers: HTTPHeaderDictionaryConvertible? = nil,
+                               encoding: ParameterEncoding? = nil,
+                               decoder: JSONDecoder = .spotHeroAPI,
+                               completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
         return self.httpClient.request(
             url,
             method: method,
@@ -60,21 +60,38 @@ class NetworkClient {
     }
     
     @discardableResult
-    func request<T: RequestDefining>(_ request: T.Type,
-                                     parameters: [String: Any]? = nil,
-                                     headers: HTTPHeaderDictionaryConvertible? = nil,
-                                     encoding: ParameterEncoding? = nil,
-                                     decoder: JSONDecoder = .spotHeroAPI,
-                                     completion: RequestCompletion<T.Model>? = nil) -> URLSessionTask? {
+    func request<T: RequestDefining & SimpleRouteDefining>(_ request: T.Type,
+                                                           parameters: [String: Any]? = nil,
+                                                           headers: HTTPHeaderDictionaryConvertible? = nil,
+                                                           encoding: ParameterEncoding? = nil,
+                                                           decoder: JSONDecoder = .spotHeroAPI,
+                                                           completion: RequestCompletion<T.ResponseModel>? = nil) -> URLSessionTask? {
+        return self.request(route: T.route,
+                            method: T.method,
+                            parameters: parameters,
+                            headers: headers,
+                            encoding: encoding,
+                            decoder: decoder,
+                            completion: completion)
+    }
+    
+    @discardableResult
+    func request<T: Decodable>(route: URLConvertible,
+                               method: HTTPMethod,
+                               parameters: [String: Any]? = nil,
+                               headers: HTTPHeaderDictionaryConvertible? = nil,
+                               encoding: ParameterEncoding? = nil,
+                               decoder: JSONDecoder = .spotHeroAPI,
+                               completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
         // Prepend the base URL to the monolith route path
-        let url: URLConvertible = "\(self.baseURL)/\(T.path)"
+        let url: URLConvertible = "\(self.baseURL)/\(route)"
             // and strip any double-slashes we find that aren't proceeded by a colon (indicating a scheme)
             .replacingOccurrences(of: #"(?<!:)/{2}"#, with: "/", options: [.regularExpression])
             // trim any trailing slash on the end of the URL
             .trimmingCharacters(in: CharacterSet(charactersIn: "/"))
         
-        return self.request(url,
-                            method: T.method,
+        return self.request(url: url,
+                            method: method,
                             parameters: parameters,
                             headers: headers,
                             encoding: encoding,

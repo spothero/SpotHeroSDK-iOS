@@ -59,7 +59,7 @@ final class DestinationEndpointMockTests: MockAPITestCase, DestinationEndpointTe
     func testGetDestinationSucceeds() {
         let destinationID = Self.validTransientDestinationID
         
-        self.stub(.get(DestinationsEndpoint.Routes.destination(destinationID).fullPath),
+        self.stub(.get(DestinationsGetByIDRequest.route(destinationID)),
                   with: .apiMockFile("Destinations/get_destinations_\(destinationID).json"))
         
         self.getDestination(id: destinationID)

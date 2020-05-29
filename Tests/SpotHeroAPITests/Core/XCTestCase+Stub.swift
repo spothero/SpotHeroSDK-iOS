@@ -8,8 +8,8 @@ public extension XCTestCase {
     /// Convenience method for stubbing new requests within an XCTestCase.
     /// - Parameter request: The request definition to stub.
     /// - Parameter response: The response to return.
-    func stub<T: RequestDefining>(_ request: T.Type, with response: StubResponse) {
-        let stubRequest = StubRequest(method: T.method, url: T.path)
+    func stub<T: RequestDefining & SimpleRouteDefining>(_ request: T.Type, with response: StubResponse) {
+        let stubRequest = StubRequest(method: T.method, url: T.route)
         MockService.shared.stub(stubRequest, with: response)
     }
 }

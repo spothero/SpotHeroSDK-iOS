@@ -3,11 +3,11 @@
 import Foundation
 import UtilityBeltNetworking
 
-public struct AirportsGetRequest: RequestDefining {
-    public typealias Model = [PartnerAirport]
+public struct AirportsGetRequest: RequestDefining, SimpleRouteDefining {
+    public typealias ResponseModel = [PartnerAirport]
     
     public static let method: HTTPMethod = .get
-    public static let path: URLConvertible = "/api/v1/airports"
+    public static let route = "/api/v1/airports"
     
     let client: NetworkClient
     
@@ -16,7 +16,7 @@ public struct AirportsGetRequest: RequestDefining {
     }
     
     @discardableResult
-    func callAsFunction(completion: @escaping RequestCompletion<Model>) -> URLSessionTask? {
+    func callAsFunction(completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
         return self.client.request(Self.self, completion: completion)
     }
 }
