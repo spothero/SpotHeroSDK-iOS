@@ -8,17 +8,8 @@ protocol RequestDefining {
     
     static var method: HTTPMethod { get }
     static var path: URLConvertible { get }
-    var client: InternalNetworkClient { get }
     
-    init(client: InternalNetworkClient)
+    var client: NetworkClient { get }
     
-    @discardableResult
-    func request(completion: @escaping RequestCompletion<Model>) -> URLSessionTask?
-}
-
-extension RequestDefining {
-    @discardableResult
-    func request(completion: @escaping RequestCompletion<Model>) -> URLSessionTask? {
-        return self.client.request(Self.self, completion: completion)
-    }
+    init(client: NetworkClient)
 }

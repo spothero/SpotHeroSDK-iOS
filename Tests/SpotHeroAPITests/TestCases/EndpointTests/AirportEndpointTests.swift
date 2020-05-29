@@ -14,7 +14,7 @@ extension AirportEndpointTests {
         
         let expectation = self.expectation(description: "Fetch airports.")
         
-        client.airports.get.request { result -> Void in
+        client.airports.get { result -> Void in
             switch result {
             case let .success(airports):
                 XCTAssertGreaterThan(airports.count, 0, file: file, line: line)
