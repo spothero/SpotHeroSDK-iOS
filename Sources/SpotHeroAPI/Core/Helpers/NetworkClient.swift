@@ -58,4 +58,27 @@ class NetworkClient {
             }
         }
     }
+    
+    @discardableResult
+    func request<T: RequestDefining>(_ request: T.Type,
+                                     parameters: [String: Any]? = nil,
+                                     headers: HTTPHeaderDictionaryConvertible? = nil,
+                                     encoding: ParameterEncoding? = nil,
+                                     decoder: JSONDecoder = .spotHeroAPI,
+                                     completion: RequestCompletion<T.Model>? = nil) -> URLSessionTask? {
+        // Prepend the base URL to the monolith route path
+        let url: URLConvertible = "\(self.baseURL)/\(T.path)"
+            // and strip any double-slashes we find that aren't proceeded by a colon (indicating a scheme)
+            .replacingOccurrences(of: #"(?<!:)/{2}"#, with: "/", options: [.regularExpression])
+            // trim any trailing slash on the end of the URL
+            .trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        
+        return self.request(url,
+                            method: T.method,
+                            parameters: parameters,
+                            headers: headers,
+                            encoding: encoding,
+                            decoder: decoder,
+                            completion: completion)
+    }
 }

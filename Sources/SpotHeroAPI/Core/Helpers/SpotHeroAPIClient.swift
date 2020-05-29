@@ -9,12 +9,15 @@ public final class SpotHeroAPIClient {
     
     let networkClient: NetworkClient
     
-    // WIP: Endpoint definitions will be added here
+    /// Represents the `/airports` endpoint.
+    public let airports: AirportsEndpoint
     
     // MARK: Methods
     
     /// Creates a new instance of `SpotHeroAPIClient`.
     public init(baseURL: String) {
         self.networkClient = NetworkClient(baseURL: baseURL)
+        
+        self.airports = AirportsEndpoint(client: self.networkClient)
     }
 }
