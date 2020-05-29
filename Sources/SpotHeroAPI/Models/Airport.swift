@@ -20,8 +20,7 @@ public final class Airport: Codable {
     
     // MARK: Methods
     
-    public init(iataCode: String,
-                name: String) {
+    public init(iataCode: String, name: String) {
         self.iataCode = iataCode
         self.name = name
     }
