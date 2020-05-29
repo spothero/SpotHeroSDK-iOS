@@ -60,14 +60,14 @@ class NetworkClient {
     }
     
     @discardableResult
-    func request<T: RequestDefining & SimpleRouteDefining>(_ request: T.Type,
-                                                           parameters: [String: Any]? = nil,
-                                                           headers: HTTPHeaderDictionaryConvertible? = nil,
-                                                           encoding: ParameterEncoding? = nil,
-                                                           decoder: JSONDecoder = .spotHeroAPI,
-                                                           completion: RequestCompletion<T.ResponseModel>? = nil) -> URLSessionTask? {
-        return self.request(route: T.route,
-                            method: T.method,
+    func request<T: RequestDefining>(_ request: T,
+                                     parameters: [String: Any]? = nil,
+                                     headers: HTTPHeaderDictionaryConvertible? = nil,
+                                     encoding: ParameterEncoding? = nil,
+                                     decoder: JSONDecoder = .spotHeroAPI,
+                                     completion: RequestCompletion<T.ResponseModel>? = nil) -> URLSessionTask? {
+        return self.request(route: request.route,
+                            method: request.method,
                             parameters: parameters,
                             headers: headers,
                             encoding: encoding,

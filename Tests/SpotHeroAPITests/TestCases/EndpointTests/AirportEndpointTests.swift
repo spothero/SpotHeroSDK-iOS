@@ -10,9 +10,8 @@ private protocol AirportEndpointTests: APITestCase {
 extension AirportEndpointTests {
     /// Attempts to fetch all airports, expecting success.
     func getAirports(file: StaticString = #file, line: UInt = #line) {
-        let client = Self.newAPIClient()
-        
         let expectation = self.expectation(description: "Fetch airports.")
+        let client = Self.newAPIClient()
         
         client.airports.get { result -> Void in
             switch result {
@@ -45,7 +44,7 @@ final class AirportEndpointLiveTests: LiveAPITestCase, AirportEndpointTests {
 
 final class AirportEndpointMockTests: MockAPITestCase, AirportEndpointTests {
     func testGetAirportsSucceeds() {
-        self.stub(AirportsGetRequest.self, with: .apiMockFile("Airports/get_airports.json"))
+        self.stub(AirportsGetRequest(), with: .apiMockFile("Airports/get_airports.json"))
         
         self.getAirports()
     }

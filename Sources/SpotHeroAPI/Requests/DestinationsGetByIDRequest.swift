@@ -15,16 +15,18 @@ public struct DestinationsGetByIDRequest: RequestDefining {
         case places_place_ids
     }
     
-    public static let method: HTTPMethod = .get
-    
     let client: NetworkClient
+    let method: HTTPMethod = .get
     
-    init(client: NetworkClient) {
-        self.client = client
+    var route: String {
+        return "/api/v1/destinations/\(self.destinationID)"
     }
     
-    public static func route(_ destinationID: Int) -> URLConvertible {
-        return "/api/v1/destinations/\(destinationID)"
+    private let destinationID: Int
+    
+    init(client: NetworkClient, destinationID: Int) {
+        self.client = client
+        self.destinationID = destinationID
     }
     
     /// Fetches the detailed information about a single destination using its identifier.
@@ -34,7 +36,7 @@ public struct DestinationsGetByIDRequest: RequestDefining {
     ///   - completion: A Result block containing either a destination or an error
     /// - Returns: The URLSessionTask created by the request, or nil if the request failed before hitting the network.
     @discardableResult
-    public func callAsFunction(id destinationID: Int, completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
+    public func request(completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
         let includes = [
             IncludeKey.airport.rawValue,
             IncludeKey.places_place_ids.rawValue,
@@ -42,8 +44,7 @@ public struct DestinationsGetByIDRequest: RequestDefining {
         
         let parameters = [ParameterKey.include.rawValue: includes]
         
-        return self.client.request(route: Self.route(destinationID),
-                                   method: Self.method,
+        return self.client.request(self,
                                    parameters: parameters,
                                    completion: completion)
     }

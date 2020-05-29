@@ -14,7 +14,7 @@ extension DestinationEndpointTests {
         
         let expectation = self.expectation(description: "Destination retrieved successfully")
         
-        client.destinations.get(id: destinationID) { result in
+        client.destinations.get(id: destinationID).request { result in
             expectation.fulfill()
             
             switch result {
@@ -59,8 +59,9 @@ final class DestinationEndpointMockTests: MockAPITestCase, DestinationEndpointTe
     func testGetDestinationSucceeds() {
         let destinationID = Self.validTransientDestinationID
         
-        self.stub(.get(DestinationsGetByIDRequest.route(destinationID)),
-                  with: .apiMockFile("Destinations/get_destinations_\(destinationID).json"))
+        // TODO: Temporarily commented out
+//        self.stub(.get(DestinationsGetByIDRequest.route(destinationID)),
+//                  with: .apiMockFile("Destinations/get_destinations_\(destinationID).json"))
         
         self.getDestination(id: destinationID)
     }

@@ -3,11 +3,8 @@
 import Foundation
 
 public final class DestinationsEndpoint: Endpoint {
-    public let get: DestinationsGetByIDRequest
-    
-    override init(client: NetworkClient) {
-        self.get = DestinationsGetByIDRequest(client: client)
-        
-        super.init(client: client)
+    @discardableResult
+    public func get(id destinationID: Int) -> DestinationsGetByIDRequest {
+        return DestinationsGetByIDRequest(client: self.client, destinationID: destinationID)
     }
 }
