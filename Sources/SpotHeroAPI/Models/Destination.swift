@@ -25,7 +25,7 @@ public final class Destination: NSObject, Decodable {
     /// The zip code where this destination is located
     public let zipCode: String
     
-    /// The name of the time zone where this destination is located
+    /// The identifier of the time zone where this destination is located
     public let timeZone: TimeZone
     
     /// The latitude where this destination is located
@@ -40,7 +40,7 @@ public final class Destination: NSObject, Decodable {
     /// Any Google Places identifiers associated with this destination
     public let placeIDs: [String]?
     
-    /// Aiport Information associated with this destination or nill if not an airport
+    /// Aiport Information associated with this destination or nil if not an airport
     public let airport: Airport?
     
     /// Any category associated with this destination

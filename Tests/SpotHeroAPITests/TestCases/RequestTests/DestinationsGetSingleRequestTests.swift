@@ -3,11 +3,11 @@
 @testable import SpotHeroAPINext
 import XCTest
 
-private protocol DestinationEndpointTests: APITestCase {
+private protocol DestinationsGetSingleRequestTests: APITestCase {
     func testGetDestinationSucceeds()
 }
 
-extension DestinationEndpointTests {
+extension DestinationsGetSingleRequestTests {
     /// Attempts to fetch a single destination, expecting success.
     func getDestination(id destinationID: Int) {
         let request = DestinationsGetSingleRequest(client: Self.newNetworkClient())
@@ -42,7 +42,7 @@ extension DestinationEndpointTests {
     }
 }
 
-final class DestinationEndpointLiveTests: LiveAPITestCase, DestinationEndpointTests {
+final class DestinationsGetSingleRequestLiveTests: LiveAPITestCase, DestinationsGetSingleRequestTests {
     private static let validTransientDestinationID = 1
     private static let validAirportDestinationID = 583 // ORD
     
@@ -51,7 +51,7 @@ final class DestinationEndpointLiveTests: LiveAPITestCase, DestinationEndpointTe
     }
 }
 
-final class DestinationEndpointMockTests: MockAPITestCase, DestinationEndpointTests {
+final class DestinationsGetSingleRequestMockTests: MockAPITestCase, DestinationsGetSingleRequestTests {
     private static let validTransientDestinationID = 1
     private static let validAirportDestinationID = 583 // ORD
     

@@ -3,18 +3,17 @@
 @testable import SpotHeroAPINext
 import XCTest
 
-private protocol AirportEndpointTests: APITestCase {
+private protocol AirportsGetRequestTests: APITestCase {
     func testGetAirportsSucceeds()
 }
 
-extension AirportEndpointTests {
+extension AirportsGetRequestTests {
     /// Attempts to fetch all airports, expecting success.
     func getAirports(file: StaticString = #file, line: UInt = #line) {
-        let client = Self.newAPIClient()
-        
+        let request = AirportsGetRequest(client: Self.newNetworkClient())
         let expectation = self.expectation(description: "Fetch airports.")
         
-        client.airports.get { result -> Void in
+        request { result -> Void in
             switch result {
             case let .success(airports):
                 XCTAssertGreaterThan(airports.count, 0, file: file, line: line)
@@ -37,13 +36,13 @@ extension AirportEndpointTests {
     }
 }
 
-final class AirportEndpointLiveTests: LiveAPITestCase, AirportEndpointTests {
+final class AirportsGetRequestLiveTests: LiveAPITestCase, AirportsGetRequestTests {
     func testGetAirportsSucceeds() {
         self.getAirports()
     }
 }
 
-final class AirportEndpointMockTests: MockAPITestCase, AirportEndpointTests {
+final class AirportsGetRequestMockTests: MockAPITestCase, AirportsGetRequestTests {
     func testGetAirportsSucceeds() {
         self.stub(AirportsGetRequest.self, with: .apiMockFile("Airports/get_airports.json"))
         
