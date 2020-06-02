@@ -11,6 +11,10 @@ class APITestCase: XCTestCase {
     static func newAPIClient() -> SpotHeroAPIClient {
         return SpotHeroAPIClient(baseURL: Self.baseURL)
     }
+    
+    static func newNetworkClient() -> NetworkClient {
+        return NetworkClient(baseURL: Self.baseURL)
+    }
 }
 
 class LiveAPITestCase: APITestCase {}
