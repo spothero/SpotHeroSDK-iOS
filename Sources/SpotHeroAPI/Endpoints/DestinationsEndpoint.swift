@@ -3,10 +3,10 @@
 import Foundation
 
 public final class DestinationsEndpoint: Endpoint {
-    public let getByID: DestinationsGetByIDRequest
+    public let getSingle: DestinationsGetSingleRequest
     
     override init(client: NetworkClient) {
-        self.getByID = DestinationsGetByIDRequest(client: client)
+        self.getSingle = DestinationsGetSingleRequest(client: client)
         
         super.init(client: client)
     }

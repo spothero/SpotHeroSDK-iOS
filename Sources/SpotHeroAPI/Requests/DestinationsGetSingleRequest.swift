@@ -3,7 +3,7 @@
 import Foundation
 import UtilityBeltNetworking
 
-public struct DestinationsGetByIDRequest: RequestDefining {
+public struct DestinationsGetSingleRequest: RequestDefining {
     public typealias ResponseModel = Destination
     
     private enum ParameterKey: String {
@@ -31,7 +31,7 @@ public struct DestinationsGetByIDRequest: RequestDefining {
     ///   - completion: A Result block containing either a destination or an error
     /// - Returns: The URLSessionTask created by the request, or nil if the request failed before hitting the network.
     @discardableResult
-    public func callAsFunction(_ destinationID: Int, completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
+    public func callAsFunction(withID destinationID: Int, completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
         let includes = [
             IncludeKey.airport.rawValue,
             IncludeKey.places_place_ids.rawValue,
@@ -47,7 +47,7 @@ public struct DestinationsGetByIDRequest: RequestDefining {
     
     /// A callable type used for conformance to the `RequestDefining` protocol.
     public struct Route {
-        /// Composes a route used to fetch a single `Destination` resource.
+        /// Composes a route used to fetch a single `Destination` resource by its ID.
         /// - Parameter destinationID: The ID of the `Destination` to fetch.
         /// - Returns: A `URLConvertible` object the represents the path of the URL without the domain.
         public func callAsFunction(_ destinationID: Int) -> URLConvertible {

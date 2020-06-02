@@ -10,11 +10,10 @@ private protocol DestinationEndpointTests: APITestCase {
 extension DestinationEndpointTests {
     /// Attempts to fetch a single destination, expecting success.
     func getDestination(id destinationID: Int) {
-        let client = Self.newAPIClient()
-        
+        let request = DestinationsGetSingleRequest(client: Self.newNetworkClient())
         let expectation = self.expectation(description: "Destination retrieved successfully")
         
-        client.destinations.getByID(destinationID) { result in
+        request(withID: destinationID) { result in
             expectation.fulfill()
             
             switch result {
@@ -59,7 +58,7 @@ final class DestinationEndpointMockTests: MockAPITestCase, DestinationEndpointTe
     func testGetDestinationSucceeds() {
         let destinationID = Self.validTransientDestinationID
         
-        self.stub(.get(DestinationsGetByIDRequest.route(destinationID)),
+        self.stub(.get(DestinationsGetSingleRequest.route(destinationID)),
                   with: .apiMockFile("Destinations/get_destinations_\(destinationID).json"))
         
         self.getDestination(id: destinationID)
