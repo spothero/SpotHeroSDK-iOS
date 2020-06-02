@@ -31,7 +31,7 @@ public struct DestinationsGetByIDRequest: RequestDefining {
     ///   - completion: A Result block containing either a destination or an error
     /// - Returns: The URLSessionTask created by the request, or nil if the request failed before hitting the network.
     @discardableResult
-    public func callAsFunction(id destinationID: Int, completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
+    public func callAsFunction(_ destinationID: Int, completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
         let includes = [
             IncludeKey.airport.rawValue,
             IncludeKey.places_place_ids.rawValue,

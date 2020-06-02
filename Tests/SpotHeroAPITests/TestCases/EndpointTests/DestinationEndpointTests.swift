@@ -14,7 +14,7 @@ extension DestinationEndpointTests {
         
         let expectation = self.expectation(description: "Destination retrieved successfully")
         
-        client.destinations.get(id: destinationID) { result in
+        client.destinations.getByID(destinationID) { result in
             expectation.fulfill()
             
             switch result {
