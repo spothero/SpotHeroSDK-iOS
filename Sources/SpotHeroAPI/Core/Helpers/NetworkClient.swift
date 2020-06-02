@@ -24,7 +24,7 @@ class NetworkClient {
     
     /// Creates and sends a request, fetching raw data from an endpoint.
     /// - Parameters:
-    ///   - route: The URL for the request. Accepts a URL or a String.
+    ///   - route: The full URL for the request. Accepts a URL or a String.
     ///   - method: The HTTP method for the request.
     ///   - parameters: The dictionary of parameters to send in the query string or HTTP body.
     ///   - headers: The HTTP headers to be with the request.
@@ -59,22 +59,16 @@ class NetworkClient {
         }
     }
     
-    @discardableResult
-    func request<T: RequestDefining & SimpleRouteDefining>(_ request: T.Type,
-                                                           parameters: [String: Any]? = nil,
-                                                           headers: HTTPHeaderDictionaryConvertible? = nil,
-                                                           encoding: ParameterEncoding? = nil,
-                                                           decoder: JSONDecoder = .spotHeroAPI,
-                                                           completion: RequestCompletion<T.ResponseModel>? = nil) -> URLSessionTask? {
-        return self.request(route: T.route,
-                            method: T.method,
-                            parameters: parameters,
-                            headers: headers,
-                            encoding: encoding,
-                            decoder: decoder,
-                            completion: completion)
-    }
-    
+    /// Creates and sends a request, fetching raw data from an endpoint.
+    /// - Parameters:
+    ///   - route: The URL path for the request. Prepends the `baseURL` of this `NetworkClient` instance. Accepts a URL or a String.
+    ///   - method: The HTTP method for the request.
+    ///   - parameters: The dictionary of parameters to send in the query string or HTTP body.
+    ///   - headers: The HTTP headers to be with the request.
+    ///   - encoding: The parameter encoding method. If nil, uses default for HTTP method.
+    ///   - decoder: The decoder to use for parsing the JSON. Uses the SpotHeroAPI decoder by default.
+    ///   - completion: The completion block to call when the request is completed.
+    /// - Returns: Returns a `URLSessionTask`, which allows for cancellation and retries.
     @discardableResult
     func request<T: Decodable>(route: URLConvertible,
                                method: HTTPMethod,
@@ -92,6 +86,42 @@ class NetworkClient {
         
         return self.request(url: url,
                             method: method,
+                            parameters: parameters,
+                            headers: headers,
+                            encoding: encoding,
+                            decoder: decoder,
+                            completion: completion)
+    }
+}
+
+// MARK: - Convenience Methods
+
+extension NetworkClient {
+    @discardableResult
+    func request<T: RequestDefining>(_ request: T.Type,
+                                     parameters: [String: Any]? = nil,
+                                     headers: HTTPHeaderDictionaryConvertible? = nil,
+                                     encoding: ParameterEncoding? = nil,
+                                     decoder: JSONDecoder = .spotHeroAPI,
+                                     completion: RequestCompletion<T.ResponseModel>? = nil) -> URLSessionTask? where T.Route == String {
+        return self.request(route: T.route,
+                            method: T.method,
+                            parameters: parameters,
+                            headers: headers,
+                            encoding: encoding,
+                            decoder: decoder,
+                            completion: completion)
+    }
+    
+    @discardableResult
+    func request<T: RequestDefining>(_ request: T.Type,
+                                     parameters: [String: Any]? = nil,
+                                     headers: HTTPHeaderDictionaryConvertible? = nil,
+                                     encoding: ParameterEncoding? = nil,
+                                     decoder: JSONDecoder = .spotHeroAPI,
+                                     completion: RequestCompletion<T.ResponseModel>? = nil) -> URLSessionTask? where T.Route == URLConvertible {
+        return self.request(route: T.route,
+                            method: T.method,
                             parameters: parameters,
                             headers: headers,
                             encoding: encoding,

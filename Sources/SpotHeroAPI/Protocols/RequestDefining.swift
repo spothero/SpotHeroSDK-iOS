@@ -5,14 +5,12 @@ import UtilityBeltNetworking
 
 protocol RequestDefining {
     associatedtype ResponseModel: Decodable
+    associatedtype Route
     
     static var method: HTTPMethod { get }
+    static var route: Route { get }
+    
     var client: NetworkClient { get }
     
     init(client: NetworkClient)
-}
-
-protocol SimpleRouteDefining {
-    associatedtype Route: URLConvertible
-    static var route: Route { get }
 }

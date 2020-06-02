@@ -3,7 +3,7 @@
 import Foundation
 import UtilityBeltNetworking
 
-public struct AirportsGetRequest: RequestDefining, SimpleRouteDefining {
+public struct AirportsGetRequest: RequestDefining {
     public typealias ResponseModel = [PartnerAirport]
     
     public static let method: HTTPMethod = .get

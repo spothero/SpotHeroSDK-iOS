@@ -16,15 +16,12 @@ public struct DestinationsGetByIDRequest: RequestDefining {
     }
     
     public static let method: HTTPMethod = .get
+    public static let route = Route()
     
     let client: NetworkClient
     
     init(client: NetworkClient) {
         self.client = client
-    }
-    
-    public static func route(_ destinationID: Int) -> URLConvertible {
-        return "/api/v1/destinations/\(destinationID)"
     }
     
     /// Fetches the detailed information about a single destination using its identifier.
@@ -46,5 +43,15 @@ public struct DestinationsGetByIDRequest: RequestDefining {
                                    method: Self.method,
                                    parameters: parameters,
                                    completion: completion)
+    }
+    
+    /// A callable type used for conformance to the `RequestDefining` protocol.
+    public struct Route {
+        /// Composes a route used to fetch a single `Destination` resource.
+        /// - Parameter destinationID: The ID of the `Destination` to fetch.
+        /// - Returns: A `URLConvertible` object the represents the path of the URL without the domain.
+        public func callAsFunction(_ destinationID: Int) -> URLConvertible {
+            return "/api/v1/destinations/\(destinationID)"
+        }
     }
 }
