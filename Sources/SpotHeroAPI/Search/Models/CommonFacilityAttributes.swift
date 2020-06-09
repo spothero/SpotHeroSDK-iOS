@@ -13,7 +13,7 @@ public struct CommonFacilityAttributes: Codable {
         case hoursOfOperation = "hours_of_operation"
         case images
         case products = "product_types"
-        case ratings
+        case rating = "ratings"
         case restrictions
         case requirements
         case supportedFeeTypes = "supported_fee_types"
@@ -50,12 +50,12 @@ public struct CommonFacilityAttributes: Codable {
     public let products: [FacilityProduct]
     
     /// Description of the average customer rating of a facility on a scale of 0 to 5.
-    public let ratings: FacilityRating
+    public let rating: FacilityRating
     
     /// Restrictions to parking at the facility.
     public let restrictions: [String]
     
-    /// End-user requirements for reserving a given facility.
+    /// End-user requirements for reserving a spot at the given facility.
     public let requirements: FacilityRequirements
     
     // WIP: Missing Docs

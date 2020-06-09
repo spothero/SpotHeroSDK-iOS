@@ -9,11 +9,11 @@ public struct HoursOfOperationPeriod: Codable {
     }
     
     /// The day of week for this period.
-    let dayOfWeek: DayOfWeek
+    public let dayOfWeek: DayOfWeek
     
     /// Start time in seconds since midnight (inclusive).
-    let startTimeSeconds: Int
+    public let startTimeSeconds: Int
     
     /// End time in seconds since midnight (exclusive).
-    let endTimeSeconds: Int
+    public let endTimeSeconds: Int
 }

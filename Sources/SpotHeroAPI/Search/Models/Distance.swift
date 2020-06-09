@@ -3,7 +3,7 @@
 /// A model representing distance between two coordinates in various formats.
 public struct Distance: Codable {
     private enum CodingKeys: String, CodingKey {
-        case linearMeters = "linear_maters"
+        case linearMeters = "linear_meters"
         case walkingMeters = "walking_meters"
     }
     
