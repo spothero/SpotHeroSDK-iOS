@@ -8,10 +8,10 @@ public struct Distance: Codable {
     }
     
     /// The linear distance in meters between the facility and search origin.
-    public let linearMeters: Double
+    public let linearMeters: Double?
     
     /// The walking distance in meters between the facility and search origin.
     /// This field is only populated for facilities nearest to the search origin.
-    /// For more distant facilities, it will be set to 0.
-    public let walkingMeters: Double
+    /// For more distant facilities, it will be set to null.
+    public let walkingMeters: Double?
 }

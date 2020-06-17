@@ -38,7 +38,7 @@ public struct CommonFacilityAttributes: Codable {
     public let navigationTip: String
     
     /// Minimum ceiling clearance in inches.
-    public let clearanceInches: Int
+    public let clearanceInches: Int?
     
     /// Represents when a facility is open for business.
     public let hoursOfOperation: HoursOfOperation
