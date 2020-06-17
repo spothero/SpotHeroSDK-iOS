@@ -8,6 +8,6 @@ public struct Image: Codable {
     /// URL from which image can be loaded.
     public let url: String
     
-    /// Caption to be optionally displayed along with image.
+    /// Caption associated with the image.
     public let caption: String
 }
