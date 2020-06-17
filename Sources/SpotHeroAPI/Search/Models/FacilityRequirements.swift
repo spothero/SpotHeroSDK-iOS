@@ -3,9 +3,9 @@
 /// End-user requirements for reserving a given facility.
 public struct FacilityRequirements: Codable {
     private enum CodingKeys: String, CodingKey {
-        case printout
         case licensePlate = "license_plate"
         case phoneNumber = "phone_number"
+        case printout
     }
     
     /// Whether a printout is required at the facility.

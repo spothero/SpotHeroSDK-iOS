@@ -2,8 +2,8 @@
 
 // WIP: Missing Docs
 public enum AddressType: String, Codable {
+    case defaultVehicleEntrance = "default-vehicle-entrance"
     case physical
     case search
     case walkingDistance = "walking-distance"
-    case defaultVehicleEntrance = "default-vehicle-entrance"
 }

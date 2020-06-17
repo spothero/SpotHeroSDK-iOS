@@ -3,8 +3,8 @@
 /// Represents when a facility is open for business.
 public struct HoursOfOperation: Codable {
     private enum CodingKeys: String, CodingKey {
-        case periods
         case alwaysOpen = "always_open"
+        case periods
     }
     
     /// List of operating periods for the facility.

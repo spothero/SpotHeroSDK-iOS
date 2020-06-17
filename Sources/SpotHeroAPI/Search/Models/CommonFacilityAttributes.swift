@@ -3,20 +3,20 @@
 /// Represents common facility information applicable in all contexts.
 public struct CommonFacilityAttributes: Codable {
     private enum CodingKeys: String, CodingKey {
-        case id
-        case title
         case addresses
+        case clearanceInches = "clearance_inches"
         case description
         case facilityType = "facility_type"
-        case navigationTip = "navigation_tip"
-        case clearanceInches = "clearance_inches"
         case hoursOfOperation = "hours_of_operation"
+        case id
         case images
+        case navigationTip = "navigation_tip"
         case products = "product_types"
         case rating = "ratings"
         case restrictions
         case requirements
         case supportedFeeTypes = "supported_fee_types"
+        case title
     }
     
     /// Unique ID of the facility.
