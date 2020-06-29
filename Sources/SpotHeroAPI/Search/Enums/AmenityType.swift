@@ -2,8 +2,6 @@
 
 /// A value which uniquely distinguishes a type of amenity at a parking spot.
 public enum AmenityType: String, Codable {
-    /// The facility is wheelchair accessible.
-    case accessible
     /// The facility has staff on-site for assistance and questions.
     case attendant
     /// The facility has a roof over the vehicles.
@@ -24,4 +22,6 @@ public enum AmenityType: String, Codable {
     case shuttle
     /// A valet will park the users vehicle at this facility.
     case valet
+    /// The facility is wheelchair accessible.
+    case wheelchairAccessible = "accessible"
 }
