@@ -20,7 +20,7 @@ public enum AmenityType: String, Codable {
     case selfPark = "self_park"
     /// The facility has a shuttle available to nearby destinations, like an airport.
     case shuttle
-    /// A valet will park the users vehicle at this facility.
+    /// A valet will park the user's vehicle at this facility.
     case valet
     /// The facility is wheelchair accessible.
     case wheelchairAccessible = "accessible"
