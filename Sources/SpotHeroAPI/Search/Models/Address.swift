@@ -44,6 +44,6 @@ public struct Address: Codable {
     /// See [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
     public let timeZone: String
     
-    // WIP: Missing Docs
+    /// An array of types defining the purpose of the address/entrance at the facility.
     public let types: [AddressType]
 }

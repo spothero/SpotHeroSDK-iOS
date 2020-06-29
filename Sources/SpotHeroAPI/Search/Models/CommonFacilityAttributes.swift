@@ -58,6 +58,6 @@ public struct CommonFacilityAttributes: Codable {
     /// End-user requirements for reserving a spot at the given facility.
     public let requirements: FacilityRequirements
     
-    // WIP: Missing Docs
+    /// An array defining the supported fee types at the facility.
     public let supportedFeeTypes: [FacilityFee]
 }
