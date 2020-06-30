@@ -2,7 +2,7 @@
 
 /// Information concerning the redemption process for customers who park at a facility.
 public struct Redemption: Codable {
-    // WIP: Missing Docs
+    /// Defines the type of parking available at a garage.
     public let type: RedemptionType
     
     /// Collection of redemption instructions for customers who park at a facility.

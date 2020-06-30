@@ -4,8 +4,8 @@
 public struct HoursOfOperationPeriod: Codable {
     private enum CodingKeys: String, CodingKey {
         case dayOfWeek = "day_of_week"
-        case startTimeSeconds = "start_time_secs"
         case endTimeSeconds = "end_time_secs"
+        case startTimeSeconds = "start_time_secs"
     }
     
     /// The day of week for this period.

@@ -3,7 +3,8 @@
 /// Represents the rating of a facility.
 public struct FacilityRating: Codable {
     /// Average rating from 0 to 5.
-    public let rating: Double
+    /// `nil` implies that the rating has not yet been calculated.
+    public let rating: Double?
     
     /// Number of ratings.
     public let count: Int

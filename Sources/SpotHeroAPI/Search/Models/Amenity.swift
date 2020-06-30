@@ -4,7 +4,7 @@
 public struct Amenity: Codable {
     private enum CodingKeys: String, CodingKey {
         case description
-        case type = "amenity"
+        case type
     }
     
     /// Long-form description of the amenity type.

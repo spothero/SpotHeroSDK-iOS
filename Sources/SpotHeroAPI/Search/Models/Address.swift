@@ -3,27 +3,23 @@
 /// Represents an address.
 public struct Address: Codable {
     private enum CodingKeys: String, CodingKey {
-        case id
-        case streetAddress1 = "street_address_1"
-        case streetAddress2 = "street_address_2"
         case city
-        case state
-        case postalCode = "zipcode"
         case country
+        case id
         case latitude
         case longitude
-        case timeZone = "timezone"
+        case postalCode = "postal_code"
+        case state
+        case streetAddress = "street_address"
+        case timeZone = "time_zone"
         case types
     }
     
     /// Unique ID of the address.
     public let id: String
     
-    /// First line of street address.
-    public let streetAddress1: String
-    
-    /// Second line of street address.
-    public let streetAddress2: String
+    /// Street address.
+    public let streetAddress: String
     
     /// Name of city.
     public let city: String
@@ -43,9 +39,11 @@ public struct Address: Codable {
     /// Longitude in decimal degrees in [-180, 180].
     public let longitude: Double
     
-    // WIP: Missing Docs
+    /// The full time zone name from the tz database.
+    ///
+    /// See [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
     public let timeZone: String
     
-    // WIP: Missing Docs
+    /// An array of types defining the purpose of the address/entrance at the facility.
     public let types: [AddressType]
 }

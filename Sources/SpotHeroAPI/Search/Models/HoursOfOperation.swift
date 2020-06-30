@@ -3,18 +3,14 @@
 /// Represents when a facility is open for business.
 public struct HoursOfOperation: Codable {
     private enum CodingKeys: String, CodingKey {
-        case periods
-        case text
         case alwaysOpen = "always_open"
+        case periods
     }
     
     /// List of operating periods for the facility.
     public let periods: [HoursOfOperationPeriod]
     
-    /// Human-readable summarization of a facility's hours of operation.
-    public let text: String
-    
-    /// Whether facility is always open (i.e., never closes); if true, overrides
-    /// all other attributes, in which case all other attributes will be defined as null.
+    /// Whether facility is always open (i.e., never closes).
+    /// If true, the list of periods will be empty.
     public let alwaysOpen: Bool
 }
