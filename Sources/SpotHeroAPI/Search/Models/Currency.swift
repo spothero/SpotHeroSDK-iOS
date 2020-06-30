@@ -4,7 +4,7 @@
 public struct Currency: Codable {
     private enum CodingKeys: String, CodingKey {
         case value
-        case currencyCode = "currency"
+        case currencyCode = "currency_code"
     }
     
     /// Quantity of currency in expressed in irreducible monetary units (e.g., cents for USD).

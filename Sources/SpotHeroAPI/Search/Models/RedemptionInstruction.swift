@@ -8,6 +8,6 @@ public struct RedemptionInstruction: Codable {
     /// Representation of a displayable image.
     public let illustration: Image
     
-    /// Body of the redemption instructions.
+    /// Body of the redemption instructions. This field may contain HTML content.
     public let text: String
 }

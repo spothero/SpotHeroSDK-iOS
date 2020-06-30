@@ -5,7 +5,7 @@ import Foundation
 /// Monthly-specific metadata pertaining to a rate for the rental of a parking spot.
 public struct MonthlyRate: Codable {
     private enum CodingKeys: String, CodingKey {
-        case amenities = "amenities_rate"
+        case amenities
         case title
         case postPurchaseInstructions = "post_purchase_instructions"
         case startDateRestrictions = "start_date_restrictions"

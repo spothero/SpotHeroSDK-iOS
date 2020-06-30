@@ -10,10 +10,6 @@ public struct MonthlyFacilityAttributes: Codable {
         case contact
     }
     
-    /// All monthly parking amenities offered at the facility.
-    /// This is the superset all possible amenities offered for monthly parking.
-    public let amenitiesSuperset: [Amenity]
-    
     // WIP: Missing Docs
     public let redemption: Redemption
     
@@ -22,7 +18,4 @@ public struct MonthlyFacilityAttributes: Codable {
     
     // WIP: Needs Better Docs
     public let lowestPrice: Currency
-    
-    /// Monthly contact information for the facility.
-    public let contact: ContactInformation
 }

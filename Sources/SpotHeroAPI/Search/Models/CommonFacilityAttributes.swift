@@ -12,7 +12,7 @@ public struct CommonFacilityAttributes: Codable {
         case images
         case navigationTip = "navigation_tip"
         case products = "product_types"
-        case rating = "ratings"
+        case rating
         case restrictions
         case requirements
         case supportedFeeTypes = "supported_fee_types"
@@ -28,13 +28,13 @@ public struct CommonFacilityAttributes: Codable {
     /// Addresses of the facility.
     public let addresses: [Address]
     
-    /// Additional facility details.
+    /// Additional facility details. This field may contain HTML content.
     public let description: String
     
     /// The facility type designation.
     public let facilityType: FacilityType
     
-    /// Custom instructions for end-user to aid in locating facility.
+    /// Custom instructions for end-user to aid in locating facility. This field may contain HTML content.
     public let navigationTip: String
     
     /// Minimum ceiling clearance in inches.
@@ -52,7 +52,7 @@ public struct CommonFacilityAttributes: Codable {
     /// Description of the average customer rating of a facility on a scale of 0 to 5.
     public let rating: FacilityRating
     
-    /// Restrictions to parking at the facility.
+    /// Restrictions to parking at the facility. This field may contain HTML content.
     public let restrictions: [String]
     
     /// End-user requirements for reserving a spot at the given facility.
