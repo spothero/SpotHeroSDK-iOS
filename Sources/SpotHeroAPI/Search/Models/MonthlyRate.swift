@@ -6,17 +6,21 @@ import Foundation
 public struct MonthlyRate: Codable {
     private enum CodingKeys: String, CodingKey {
         case amenities
-        case title
+        case contract
+        case inOutPrivileges = "in_out"
         case postPurchaseInstructions = "post_purchase_instructions"
-        case startDateRestrictions = "start_date_restrictions"
+        case redemption
         case reservationType = "reservation_type"
         case reservationDates = "reservation_dates"
-        case inOutPrivileges = "in_out"
-        case contract
+        case startDateRestrictions = "start_date_restrictions"
+        case title
     }
     
     /// Monthly parking amenities offered for this rate at the facility.
     public let amenities: [Amenity]
+    
+    // WIP: Missing Docs
+    public let redemption: Redemption
     
     /// Human-readable description of the rate.
     public let title: String
