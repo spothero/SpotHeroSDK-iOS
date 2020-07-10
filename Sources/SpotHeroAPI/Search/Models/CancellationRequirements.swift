@@ -3,8 +3,8 @@
 /// Represents the cancellation requirements of a reservation.
 public struct CancellationRequirements: Codable {
     private enum CodingKeys: String, CodingKey {
-        case noticeRequired = "required"
-        case noticeDays = "period"
+        case noticeRequired = "notice_required"
+        case noticeDays = "notice_days"
     }
     
     /// Whether advance notice is required.

@@ -7,7 +7,7 @@ public struct MonthlyRate: Codable {
     private enum CodingKeys: String, CodingKey {
         case amenities
         case contract
-        case inOutPrivileges = "in_out"
+        case inOutPrivileges = "in_out_privileges"
         case postPurchaseInstructions = "post_purchase_instructions"
         case redemption
         case reservationType = "reservation_type"

@@ -6,7 +6,7 @@ public struct MonthlyContractDetails: Codable {
         case required
         case durationMonths = "duration_months"
         case transactionFee = "transaction_fee"
-        case cancellationRequirements = "cancellation"
+        case cancellationRequirements = "cancellation_requirements"
     }
     
     /// Determines whether a contract is required for the monthly rental.
