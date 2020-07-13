@@ -15,6 +15,6 @@ public enum FacilityFee: String, Codable {
     case blanketTax = "blanket_tax"
     /// A fee applied to reservations for large vehicles.
     case oversizeFee = "oversize_fee"
-    /// A fee applied on every reservation.
-    case reservationFee = "reservation_fee"
+    /// A fee applied to all reservations at a given facility.
+    case facilityFee = "facility_fee"
 }

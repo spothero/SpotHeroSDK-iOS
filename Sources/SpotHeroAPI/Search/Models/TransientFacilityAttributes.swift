@@ -6,5 +6,5 @@ public struct TransientFacilityAttributes: Codable {
     public let amenities: [AmenityType]
     
     /// Information concerning the redemption process for customers who park at a facility.
-    public let redemption: Redemption
+    public let redemption: Redemption<[RedemptionInstruction]>
 }
