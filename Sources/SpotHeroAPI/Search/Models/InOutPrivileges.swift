@@ -19,7 +19,7 @@ public struct InOutPrivileges: Codable {
     /// Whether or not the parker is allowed to leave and come back during the stay.
     public let allowed: Bool
     
-    /// WIP: Needs Better Docs
+    /// The fee charged for each exit and entry. If there is no fee, the value will be 0.
     public let fee: Currency
     
     /// How many times the renter can leave during the stay within the given limit unit. Null indicates that there is no limit.

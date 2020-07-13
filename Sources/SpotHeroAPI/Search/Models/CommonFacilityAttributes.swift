@@ -11,7 +11,7 @@ public struct CommonFacilityAttributes: Codable {
         case id
         case images
         case navigationTip = "navigation_tip"
-        case products = "product_types"
+        case parkingTypes = "parking_types"
         case rating
         case restrictions
         case requirements
@@ -46,8 +46,8 @@ public struct CommonFacilityAttributes: Codable {
     /// Images of the facility.
     public let images: [Image]
     
-    /// Products offered at this facility.
-    public let products: [FacilityProduct]
+    /// Parking types offered at this facility.
+    public let parkingTypes: [FacilityParkingType]
     
     /// Description of the average customer rating of a facility on a scale of 0 to 5.
     public let rating: FacilityRating

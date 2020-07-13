@@ -8,6 +8,6 @@ public enum MonthlyStartDateRestriction: String, Codable {
     /// Billing may start on the 1st or 15th of the month.
     case firstOrFifteenth = "1st_or_15th"
     
-    /// There are no restrictions on when billing can start.
+    /// There is no restriction on when billing can start.
     case none
 }

@@ -7,9 +7,11 @@ public struct MonthlyFacilityAttributes: Codable {
         case lowestPrice = "lowest_price"
     }
     
-    // WIP: Needs Better Docs
+    /// The highest available monthly rental price at the facility.
+    /// If there are no available rates, the value will be 0.
     public let highestPrice: Currency
     
-    // WIP: Needs Better Docs
+    /// The lowest available monthly rental price at the facility.
+    /// If there are no available rates, the value will be 0.
     public let lowestPrice: Currency
 }
