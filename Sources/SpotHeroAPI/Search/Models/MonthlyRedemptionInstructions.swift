@@ -1,7 +1,6 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
-import Foundation
-
+/// Information concerning the redemption process for customers who park at a facility.
 public struct MonthlyRedemptionInstructions: Codable {
     private enum CodingKeys: String, CodingKey {
         case shortTerm = "short_term"

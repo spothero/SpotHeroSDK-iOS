@@ -19,7 +19,7 @@ public struct MonthlyRate: Codable {
     /// Monthly parking amenities offered for this rate at the facility.
     public let amenities: [Amenity]
     
-    // WIP: Missing Docs
+    /// Information concerning the redemption process for customers who park at a facility.
     public let redemption: Redemption<MonthlyRedemptionInstructions>
     
     /// Human-readable description of the rate.
