@@ -15,7 +15,7 @@ public struct MonthlyContractDetails: Codable {
     /// The total duration of the contract in months.
     public let durationMonths: Int
     
-    /// WIP: Needs Better Docs
+    /// The fee incurred when terminating the contract. If there is no fee, the value will be 0.
     public let terminationFee: Currency
     
     /// The cancellation requirements.
