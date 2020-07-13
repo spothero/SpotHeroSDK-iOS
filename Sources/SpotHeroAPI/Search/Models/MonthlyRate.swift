@@ -12,7 +12,7 @@ public struct MonthlyRate: Codable {
         case redemption
         case reservationType = "reservation_type"
         case reservationDates = "reservation_dates"
-        case startDateRestrictions = "start_date_restrictions"
+        case startDateRestriction = "start_date_restriction"
         case title
     }
     
@@ -28,8 +28,8 @@ public struct MonthlyRate: Codable {
     /// Additional information to follow up with before parking at the facility.
     public let postPurchaseInstructions: String
     
-    /// The day of the month that billing will start.
-    public let startDateRestrictions: MonthlyStartDateRestriction
+    /// Restriction on the start date of the monthly reservation.
+    public let startDateRestriction: MonthlyStartDateRestriction
     
     /// The category for what kind of monthly reservation this rate applies to.
     public let reservationType: MonthlyReservationType

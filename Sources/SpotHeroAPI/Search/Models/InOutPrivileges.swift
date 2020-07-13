@@ -22,8 +22,8 @@ public struct InOutPrivileges: Codable {
     /// WIP: Needs Better Docs
     public let fee: Currency
     
-    /// How many times the renter can leave during the stay within the given limit unit. This is -1 when there is no limit.
-    public let limit: Int
+    /// How many times the renter can leave during the stay within the given limit unit. Null indicates that there is no limit.
+    public let limit: Int?
     
     // WIP: Needs Better Docs
     /// The unit that determines the rate limit for leaving during the stay.

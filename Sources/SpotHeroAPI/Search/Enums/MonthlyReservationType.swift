@@ -5,12 +5,14 @@ public enum MonthlyReservationType: String, Codable {
     /// Parking is available 24/7.
     case twentyFourSeven = "247"
     
+    // WIP: Requested hours from BE.
     /// Parking is only available during the day.
     case daytimeOnly = "daytime_only"
     
-    /// Parking is available during the day on weekdays and 24/8 on weekends.
+    /// Parking is available during the day on weekdays and 24/7 on weekends.
     case daytimeAndTwentyFourSevenWeekend = "daytime_and_247_weekend"
     
+    // WIP: Requested hours from BE.
     /// Parking is only available overnight.
     case nightsOnly = "nights_only"
     

@@ -5,7 +5,7 @@ public struct MonthlyContractDetails: Codable {
     private enum CodingKeys: String, CodingKey {
         case required
         case durationMonths = "duration_months"
-        case transactionFee = "transaction_fee"
+        case terminationFee = "termination_fee"
         case cancellationRequirements = "cancellation_requirements"
     }
     
@@ -16,7 +16,7 @@ public struct MonthlyContractDetails: Codable {
     public let durationMonths: Int
     
     /// WIP: Needs Better Docs
-    public let transactionFee: Currency
+    public let terminationFee: Currency
     
     /// The cancellation requirements.
     public let cancellationRequirements: CancellationRequirements

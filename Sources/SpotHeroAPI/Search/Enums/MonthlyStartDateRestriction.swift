@@ -1,6 +1,6 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
-/// This shows what day of the month that billing will start.
+/// Represents a restriction on the start date of the monthly reservation.
 public enum MonthlyStartDateRestriction: String, Codable {
     /// Billing can only start on the 1st of the month.
     case firstOnly = "1st_only"
