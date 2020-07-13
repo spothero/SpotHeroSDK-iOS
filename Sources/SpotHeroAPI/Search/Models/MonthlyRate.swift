@@ -20,7 +20,7 @@ public struct MonthlyRate: Codable {
     public let amenities: [Amenity]
     
     // WIP: Missing Docs
-    public let redemption: Redemption
+    public let redemption: Redemption<MonthlyRedemptionInstructions>
     
     /// Human-readable description of the rate.
     public let title: String
@@ -28,7 +28,7 @@ public struct MonthlyRate: Codable {
     /// Additional information to follow up with before parking at the facility.
     public let postPurchaseInstructions: String
     
-    /// This shows what day of the month that billing will start.
+    /// The day of the month that billing will start.
     public let startDateRestrictions: MonthlyStartDateRestriction
     
     /// The category for what kind of monthly reservation this rate applies to.

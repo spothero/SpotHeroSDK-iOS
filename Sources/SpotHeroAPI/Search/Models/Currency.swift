@@ -7,7 +7,7 @@ public struct Currency: Codable {
         case currencyCode = "currency_code"
     }
     
-    /// Quantity of currency in expressed in irreducible monetary units (e.g., cents for USD).
+    /// Quantity of currency expressed in irreducible monetary units (e.g., cents for USD).
     public let value: Int
     
     /// The currency in which all monetary values are expressed, given as an ISO 4217 currency code.
