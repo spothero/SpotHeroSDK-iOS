@@ -25,9 +25,9 @@ public struct QuoteOrder: Codable {
     /// Unique identifier of the rate for which the price applies.
     public let rateID: String
     
-    // WIP: Missing Docs
+    /// The list of items that compose the order.
     public let items: [QuoteLineItem]
     
-    // WIP: Missing Docs
+    /// The total price of the reservation.
     public let totalPrice: Currency
 }

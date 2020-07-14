@@ -18,9 +18,16 @@ public struct Quote: Codable {
     /// Bottom-line items, including order subtotal, discounts, and payments.
     public let items: [QuoteLineItem]
     
-    // WIP: Missing Docs
+    /// Final price paid by the end-user.
     public let totalPrice: Currency
     
-    // WIP: Missing Docs
+    /// The price SpotHero suggests displaying to users prior to them selecting a quote to purchase.
+    ///
+    /// `advertised_price` will not necessarily match `total_price`.
+    /// `total_price` includes the base reservation rate in addition to any taxes and fees to be collected upon purchase.
+    /// In contrast, the `advertised_price` is designed by SpotHero to maximize user conversion, and may omit some taxes and fees.
+    /// SpotHero suggests using `advertised_price` when a user is comparison shopping among multiple rates.
+    /// `advertised_price` should never be displayed to a user at checkout.
+    /// Please use `total_price` and show all `items` in the `order` to your users.
     public let advertisedPrice: Currency
 }
