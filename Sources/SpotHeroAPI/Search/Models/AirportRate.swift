@@ -8,10 +8,12 @@ public struct AirportRate: Codable {
         case comparisons
     }
     
-    // WIP: Missing Docs
+    /// Lowest daily rate for the facility.
+    /// This can be used to display to the user for unavailable spots and/or for advertising purposes.
     public let lowestDailyRate: Currency
     
-    /// Optional metadata to highlight specific spots.
+    /// Metadata used for highlighting spots when showcasing recommended results.
+    /// (eg. "Most Popular", "Highest Rated", etc.)
     public let tag: Tag?
     
     /// Attributes that can be displayed to the user to encourage them to book at a given airport facility.

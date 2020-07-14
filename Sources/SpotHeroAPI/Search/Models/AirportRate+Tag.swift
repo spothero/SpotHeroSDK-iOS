@@ -1,7 +1,8 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
 public extension AirportRate {
-    /// Metadata that highlights specific spots.
+    /// Metadata used for highlighting spots when showcasing recommended results.
+    /// (eg. "Most Popular", "Highest Rated", etc.)
     struct Tag: Codable {
         private enum CodingKeys: String, CodingKey {
             case text

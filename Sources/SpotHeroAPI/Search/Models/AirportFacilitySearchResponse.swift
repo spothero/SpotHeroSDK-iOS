@@ -1,10 +1,10 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
-// WIP: Missing Docs
-public struct AirportFacilitySearchResult: Codable {
+/// The response returned when fetching an airport facility.
+public struct AirportFacilitySearchResponse: Codable {
     /// Details about the airport destination associated with the search.
     public let airport: Airport
     
-    // WIP: Missing Docs
+    /// The fetched facility result.
     public let result: AirportFacilityResult
 }

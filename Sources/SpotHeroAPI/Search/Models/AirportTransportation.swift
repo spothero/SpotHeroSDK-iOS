@@ -16,19 +16,19 @@ public struct AirportTransportation: Codable {
         case curbsideValet = "curbside_valet"
         
         /// Free shuttle transportation on demand.
-        case onDemand = "on_demand"
+        case onDemandShuttle = "on_demand_shuttle"
         
         /// There is nearby access to public transportation.
         case publicTransit = "public_transit"
         
         /// A free shuttle runs on a scheduled frequency.
-        case scheduled
+        case scheduledShuttle = "scheduled_shuttle"
         
         /// Taxi and/or rideshare options are available.
         case taxi
     }
     
-    /// Enum defining the type of airport transportation provided at the facility.
+    /// Defines the type of airport transportation provided at the facility.
     public let type: TransportationType
     
     /// The phone number for shuttle support.

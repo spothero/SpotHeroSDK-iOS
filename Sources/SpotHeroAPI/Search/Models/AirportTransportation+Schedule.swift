@@ -9,13 +9,13 @@ public extension AirportTransportation {
             case duration
         }
         
-        /// The shortest wait time in minutes for the shuttle.
+        /// The shortest wait time in minutes for the shuttle, if available.
         public let fastFrequency: Int?
         
-        /// The longest wait time in minutes for the shuttle.
+        /// The longest wait time in minutes for the shuttle, if available.
         public let slowFrequency: Int?
         
-        /// The time in minutes it takes the shuttle to travel between the facility and airport.
+        /// The time in minutes it takes the shuttle to travel between the facility and airport, if available.
         public let duration: Int?
     }
 }

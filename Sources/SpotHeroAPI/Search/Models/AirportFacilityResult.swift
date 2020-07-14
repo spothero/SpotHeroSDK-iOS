@@ -1,6 +1,6 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
-// WIP: Missing Docs
+/// Represents an availability search result containing airport facility and rate information.
 public struct AirportFacilityResult: Codable {
     /// Distance calculations between the facility and the search origin.
     public let distance: Distance?

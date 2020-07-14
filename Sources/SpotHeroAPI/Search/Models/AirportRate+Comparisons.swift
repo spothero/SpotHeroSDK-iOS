@@ -8,6 +8,7 @@ public extension AirportRate {
         }
         
         /// The percentage amount cheaper relative to nearby airport facilities.
-        public let airportPercentLowerPrice: Int
+        /// Null if the facility is not significantly cheaper than nearby facilities.
+        public let airportPercentLowerPrice: Int?
     }
 }
