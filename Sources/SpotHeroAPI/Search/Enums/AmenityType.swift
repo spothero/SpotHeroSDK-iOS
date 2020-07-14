@@ -23,5 +23,5 @@ public enum AmenityType: String, Codable {
     /// A valet will park the user's vehicle at this facility.
     case valet
     /// The facility is wheelchair accessible.
-    case wheelchairAccessible = "accessible"
+    case wheelchairAccessible = "wheelchair_accessible"
 }

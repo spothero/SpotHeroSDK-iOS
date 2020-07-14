@@ -1,7 +1,7 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
 /// Represents an availability search result containing transient facility and rate information.
-public struct TransientSearchResult: Codable {
+public struct TransientFacilityResult: Codable {
     /// Distance calculations between the facility and the search origin.
     public let distance: Distance?
     

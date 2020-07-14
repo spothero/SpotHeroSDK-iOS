@@ -18,9 +18,10 @@ public struct Quote: Codable {
     /// Bottom-line items, including order subtotal, discounts, and payments.
     public let items: [QuoteLineItem]
     
-    // WIP: Missing Docs
+    /// Final price paid by the end-user.
     public let totalPrice: Currency
     
-    // WIP: Missing Docs
+    /// WIP: Missing Docs (waiting on Product)
+    /// The price to display to users prior to reaching checkout.
     public let advertisedPrice: Currency
 }

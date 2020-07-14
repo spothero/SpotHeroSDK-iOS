@@ -9,7 +9,7 @@ public struct QuoteLineItem: Codable {
         case fullDescription
     }
     
-    // WIP: Missing Docs
+    /// The price of the line item.
     public let price: Currency
     
     /// Origin, purpose, or explanation for the line item.
