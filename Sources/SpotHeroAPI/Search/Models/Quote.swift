@@ -21,8 +21,7 @@ public struct Quote: Codable {
     /// Final price paid by the end-user.
     public let totalPrice: Currency
     
+    /// WIP: Missing Docs (waiting on Product)
     /// The price to display to users prior to reaching checkout.
-    /// May omit taxes and fees to help users make informed decisions around the base rate when comparison shopping.
-    /// This price should NOT be displayed on checkout; instead, use `totalPrice` and show all `items` in the `order` to your users.
     public let advertisedPrice: Currency
 }
