@@ -27,6 +27,9 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
 }
 
 extension SearchGetMonthlyFacilitiesRequest {
+    /// Represents the query parameters used for fetching monthly facilities.
+    ///
+    /// - See [searchMonthlyParking](https://s3.amazonaws.com/spothe.ro/craig-v2-api.html#operation/searchMonthlyParking).
     struct Parameters: Encodable, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case latitude = "lat"
