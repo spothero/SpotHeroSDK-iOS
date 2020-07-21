@@ -39,12 +39,3 @@ public struct MonthlyRate: Codable {
     /// Description of the contract requirements of the reservation.
     public let contract: MonthlyContractDetails
 }
-
-/// Information concerning possible start dates for the reservation and any start date restrictions.
-public struct StartDateOptions: Codable {
-    /// Restriction on the start date of the monthly reservation.
-    public let restriction: MonthlyStartDateRestriction
-    
-    /// Date options for the first month.
-    public let choices: [MonthlyReservationDates]
-}
