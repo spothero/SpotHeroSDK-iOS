@@ -27,7 +27,7 @@ public struct MonthlyRate: Codable {
     /// Additional information to follow up with before parking at the facility.
     public let postPurchaseInstructions: String
     
-    /// WIP: MISSING DOCS
+    /// Information concerning possible start dates for the reservation and any start date restrictions.
     public let startDateOptions: StartDateOptions
     
     /// The category for what kind of monthly reservation this rate applies to.
@@ -40,7 +40,7 @@ public struct MonthlyRate: Codable {
     public let contract: MonthlyContractDetails
 }
 
-/// WIP: MISSING DOCS
+/// Information concerning possible start dates for the reservation and any start date restrictions.
 public struct StartDateOptions: Codable {
     /// Restriction on the start date of the monthly reservation.
     public let restriction: MonthlyStartDateRestriction
