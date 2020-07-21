@@ -11,15 +11,14 @@ public struct MonthlyRate: Codable {
         case postPurchaseInstructions = "post_purchase_instructions"
         case redemption
         case reservationType = "reservation_type"
-        case reservationDates = "reservation_dates"
-        case startDateRestriction = "start_date_restriction"
+        case startDateOptions = "start_date_options"
         case title
     }
     
     /// Monthly parking amenities offered for this rate at the facility.
     public let amenities: [Amenity]
     
-    /// Information concerning the redemption process for customers who park at a facility.
+    /// Information concerning the redemption process for customers who park at a monthly facility.
     public let redemption: Redemption<MonthlyRedemptionInstructions>
     
     /// Human-readable description of the rate.
@@ -28,14 +27,11 @@ public struct MonthlyRate: Codable {
     /// Additional information to follow up with before parking at the facility.
     public let postPurchaseInstructions: String
     
-    /// Restriction on the start date of the monthly reservation.
-    public let startDateRestriction: MonthlyStartDateRestriction
+    /// Information concerning possible start dates for the reservation and any start date restrictions.
+    public let startDateOptions: StartDateOptions
     
     /// The category for what kind of monthly reservation this rate applies to.
     public let reservationType: MonthlyReservationType
-    
-    /// Date options for the first month.
-    public let reservationDates: [MonthlyReservationDates]
     
     /// Describes the exit and re-entry privileges.
     public let inOutPrivileges: InOutPrivileges
