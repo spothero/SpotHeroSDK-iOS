@@ -5,15 +5,19 @@ import Sham
 import XCTest
 
 class APITestCase: XCTestCase {
-    static var timeout: TimeInterval = 5
-    static var baseURL: String = "https://mobile.staging.spothero.com"
-    
-    static func newAPIClient() -> SpotHeroAPIClient {
-        return SpotHeroAPIClient(baseURL: Self.baseURL)
+    enum ServiceURL: String {
+        case monolith = "https://mobile.staging.spothero.com"
+        case craig = "http://craig-mobile.sandbox.spothero.com"
     }
     
-    static func newNetworkClient() -> NetworkClient {
-        return NetworkClient(baseURL: Self.baseURL)
+    static var timeout: TimeInterval = 5
+    
+    static func newAPIClient(for service: ServiceURL) -> SpotHeroAPIClient {
+        return SpotHeroAPIClient(baseURL: service.rawValue)
+    }
+    
+    static func newNetworkClient(for service: ServiceURL) -> NetworkClient {
+        return NetworkClient(baseURL: service.rawValue)
     }
 }
 

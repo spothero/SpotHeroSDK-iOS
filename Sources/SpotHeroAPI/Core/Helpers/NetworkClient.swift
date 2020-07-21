@@ -22,20 +22,19 @@ class NetworkClient {
         #endif
     }
     
-    /// Creates and sends a request, fetching raw data from an endpoint.
-    /// - Parameters:
-    ///   - route: The full URL for the request. Accepts a URL or a String.
-    ///   - method: The HTTP method for the request.
-    ///   - parameters: The dictionary of parameters to send in the query string or HTTP body.
-    ///   - headers: The HTTP headers to be with the request.
-    ///   - encoding: The parameter encoding method. If nil, uses default for HTTP method.
-    ///   - decoder: The decoder to use for parsing the JSON. Uses the SpotHeroAPI decoder by default.
-    ///   - completion: The completion block to call when the request is completed.
-    /// - Returns: Returns a `URLSessionTask`, which allows for cancellation and retries.
+    /// Creates and sends a request which fetches raw data from an endpoint.
+    /// Returns a `URLSessionTask`, which allows for cancellation and retries.
+    /// - Parameter url: The URL for the request. Accepts a URL or a String.
+    /// - Parameter method: The HTTP method for the request. Defaults to `GET`.
+    /// - Parameter parameters: The parameters to be converted into a String-keyed dictionary to send in the query string or HTTP body.
+    /// - Parameter headers: The HTTP headers to send with the request.
+    /// - Parameter encoding: The parameter encoding method. If nil, uses the default encoding for the provided HTTP method.
+    /// - Parameter completion: The completion block to call when the request is completed.
+    /// - Returns: The `URLSessionTask` for the request.
     @discardableResult
     func request<T: Decodable>(url: URLConvertible,
                                method: HTTPMethod,
-                               parameters: [String: Any]? = nil,
+                               parameters: ParameterDictionaryConvertible? = nil,
                                headers: HTTPHeaderDictionaryConvertible? = nil,
                                encoding: ParameterEncoding? = nil,
                                decoder: JSONDecoder = .spotHeroAPI,
@@ -59,20 +58,20 @@ class NetworkClient {
         }
     }
     
-    /// Creates and sends a request, fetching raw data from an endpoint.
-    /// - Parameters:
-    ///   - route: The URL path for the request. Prepends the `baseURL` of this `NetworkClient` instance. Accepts a URL or a String.
-    ///   - method: The HTTP method for the request.
-    ///   - parameters: The dictionary of parameters to send in the query string or HTTP body.
-    ///   - headers: The HTTP headers to be with the request.
-    ///   - encoding: The parameter encoding method. If nil, uses default for HTTP method.
-    ///   - decoder: The decoder to use for parsing the JSON. Uses the SpotHeroAPI decoder by default.
-    ///   - completion: The completion block to call when the request is completed.
-    /// - Returns: Returns a `URLSessionTask`, which allows for cancellation and retries.
+    /// Creates and sends a request which fetches raw data from an endpoint and decodes it.
+    /// Returns a `URLSessionTask`, which allows for cancellation and retries.
+    /// - Parameter url: The URL for the request. Accepts a URL or a String.
+    /// - Parameter method: The HTTP method for the request. Defaults to `GET`.
+    /// - Parameter parameters: The parameters to be converted into a String-keyed dictionary to send in the query string or HTTP body.
+    /// - Parameter headers: The HTTP headers to send with the request.
+    /// - Parameter encoding: The parameter encoding method. If nil, uses the default encoding for the provided HTTP method.
+    /// - Parameter decoder: The `JSONDecoder` to use when decoding the response data.
+    /// - Parameter completion: The completion block to call when the request is completed.
+    /// - Returns: The `URLSessionTask` for the request.
     @discardableResult
     func request<T: Decodable>(route: URLConvertible,
                                method: HTTPMethod,
-                               parameters: [String: Any]? = nil,
+                               parameters: ParameterDictionaryConvertible? = nil,
                                headers: HTTPHeaderDictionaryConvertible? = nil,
                                encoding: ParameterEncoding? = nil,
                                decoder: JSONDecoder = .spotHeroAPI,
@@ -99,7 +98,7 @@ class NetworkClient {
 extension NetworkClient {
     @discardableResult
     func request<T: RequestDefining>(_ request: T.Type,
-                                     parameters: [String: Any]? = nil,
+                                     parameters: ParameterDictionaryConvertible? = nil,
                                      headers: HTTPHeaderDictionaryConvertible? = nil,
                                      encoding: ParameterEncoding? = nil,
                                      decoder: JSONDecoder = .spotHeroAPI,
@@ -115,7 +114,7 @@ extension NetworkClient {
     
     @discardableResult
     func request<T: RequestDefining>(_ request: T.Type,
-                                     parameters: [String: Any]? = nil,
+                                     parameters: ParameterDictionaryConvertible? = nil,
                                      headers: HTTPHeaderDictionaryConvertible? = nil,
                                      encoding: ParameterEncoding? = nil,
                                      decoder: JSONDecoder = .spotHeroAPI,

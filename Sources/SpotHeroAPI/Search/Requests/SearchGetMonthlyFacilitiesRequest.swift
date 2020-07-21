@@ -6,14 +6,6 @@ import UtilityBeltNetworking
 public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
     public typealias ResponseModel = MonthlyFacilitiesSearchResponse
     
-    private enum ParameterKeys: String {
-        case latitude = "lat"
-        case longitude = "lon"
-        case startDate = "starts"
-        case maxDistanceMeters = "max_distance_meters"
-        case pageSize = "page_size"
-    }
-    
     static let method: HTTPMethod = .get
     static let route = "/v2/search/monthly"
     
@@ -24,17 +16,55 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
     }
     
     @discardableResult
-    func callAsFunction(latitude: Double, longitude: Double, completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
-        let parameters: [String: Any] = [
-            ParameterKeys.latitude.rawValue: latitude,
-            ParameterKeys.longitude.rawValue: longitude,
-            ParameterKeys.startDate.rawValue =,
-        ]
-        
+    func callAsFunction(parameters: Parameters,
+                        completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
         return self.client.request(
             Self.self,
             parameters: parameters,
             completion: completion
         )
+    }
+}
+
+extension SearchGetMonthlyFacilitiesRequest {
+    struct Parameters: Encodable, ParameterDictionaryConvertible {
+        private enum CodingKeys: String, CodingKey {
+            case latitude = "lat"
+            case longitude = "lon"
+            case startDate = "starts"
+            case maxDistanceMeters = "max_distance_meters"
+            case pageSize = "page_size"
+        }
+        
+        /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
+        let latitude: Double
+        
+        /// Longitude in decimal degrees of origin from where the search will be performed. Longitude must be in [-180, 180].
+        let longitude: Double
+        
+        // WIP: Might need correcting
+        /// Start date from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DD.
+        /// If this parameter is not provided, results will be generated from the date at which the request was received.
+        let startDate: Date?
+        
+        /// Maximum distance in meters from the origin from which facility results will be generated.
+        /// The default is 1609.34 meters (1 mile). The limit is 160934 meters (100 miles).
+        let maxDistanceMeters: Int?
+        
+        /// The number of results to include in a single page.
+        /// The default is nil (no limit). Must be >= 1, if provided.
+        let pageSize: Int?
+        
+        init(latitude: Double,
+             longitude: Double,
+             startDate: Date? = nil,
+             maxDistanceMeters: Int? = nil,
+             pageSize: Int? = nil) {
+            self.latitude = latitude
+            self.longitude = longitude
+            self.startDate = startDate
+            self.maxDistanceMeters = maxDistanceMeters
+            self.pageSize = pageSize
+        }
     }
 }
