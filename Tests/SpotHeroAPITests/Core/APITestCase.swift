@@ -7,10 +7,10 @@ import XCTest
 class APITestCase: XCTestCase {
     enum ServiceURL: String {
         case monolith = "https://mobile.staging.spothero.com"
-        case craig = "http://craig-mobile.sandbox.spothero.com"
+        case craig = "https://api.sandbox.spothero.com"
     }
     
-    static var timeout: TimeInterval = 5
+    static var timeout: TimeInterval = 15
     
     static func newAPIClient(for service: ServiceURL) -> SpotHeroAPIClient {
         return SpotHeroAPIClient(baseURL: service.rawValue)

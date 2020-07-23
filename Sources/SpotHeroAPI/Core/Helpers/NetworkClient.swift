@@ -22,42 +22,6 @@ class NetworkClient {
         #endif
     }
     
-    /// Creates and sends a request which fetches raw data from an endpoint.
-    /// Returns a `URLSessionTask`, which allows for cancellation and retries.
-    /// - Parameter url: The URL for the request. Accepts a URL or a String.
-    /// - Parameter method: The HTTP method for the request. Defaults to `GET`.
-    /// - Parameter parameters: The parameters to be converted into a String-keyed dictionary to send in the query string or HTTP body.
-    /// - Parameter headers: The HTTP headers to send with the request.
-    /// - Parameter encoding: The parameter encoding method. If nil, uses the default encoding for the provided HTTP method.
-    /// - Parameter completion: The completion block to call when the request is completed.
-    /// - Returns: The `URLSessionTask` for the request.
-    @discardableResult
-    func request<T: Decodable>(url: URLConvertible,
-                               method: HTTPMethod,
-                               parameters: ParameterDictionaryConvertible? = nil,
-                               headers: HTTPHeaderDictionaryConvertible? = nil,
-                               encoding: ParameterEncoding? = nil,
-                               decoder: JSONDecoder = .spotHeroAPI,
-                               completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
-        return self.httpClient.request(
-            url,
-            method: method,
-            parameters: parameters,
-            headers: headers,
-            encoding: encoding,
-            decoder: decoder
-        ) { (response: DataResponse<APIResponse<T>, Error>) in
-            switch response.result {
-            case let .success(apiResponse):
-                // The apiResponse.data is NOT a Data type, it is our response object
-                completion?(.success(apiResponse.data))
-            case let .failure(error):
-                // If failure, pass the error
-                completion?(.failure(error))
-            }
-        }
-    }
-    
     /// Creates and sends a request which fetches raw data from an endpoint and decodes it.
     /// Returns a `URLSessionTask`, which allows for cancellation and retries.
     /// - Parameter url: The URL for the request. Accepts a URL or a String.
@@ -69,13 +33,48 @@ class NetworkClient {
     /// - Parameter completion: The completion block to call when the request is completed.
     /// - Returns: The `URLSessionTask` for the request.
     @discardableResult
-    func request<T: Decodable>(route: URLConvertible,
-                               method: HTTPMethod,
-                               parameters: ParameterDictionaryConvertible? = nil,
-                               headers: HTTPHeaderDictionaryConvertible? = nil,
-                               encoding: ParameterEncoding? = nil,
-                               decoder: JSONDecoder = .spotHeroAPI,
-                               completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
+    private func request<T: Decodable>(url: URLConvertible,
+                                       method: HTTPMethod,
+                                       parameters: ParameterDictionaryConvertible? = nil,
+                                       headers: HTTPHeaderDictionaryConvertible? = nil,
+                                       encoding: ParameterEncoding? = nil,
+                                       decoder: JSONDecoder = .spotHeroAPI,
+                                       completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
+        return self.httpClient.request(
+            url,
+            method: method,
+            parameters: parameters,
+            headers: headers,
+            encoding: encoding,
+            decoder: decoder
+        ) { (response: DataResponse<T, Error>) in
+            switch response.result {
+            case let .success(output):
+                completion?(.success(output))
+            case let .failure(error):
+                completion?(.failure(error))
+            }
+        }
+    }
+    
+    /// Creates and sends a request which fetches raw data from an endpoint and decodes it.
+    /// Returns a `URLSessionTask`, which allows for cancellation and retries.
+    /// - Parameter route: The URL path for the request. Accepts a URL or a String.
+    /// - Parameter method: The HTTP method for the request. Defaults to `GET`.
+    /// - Parameter parameters: The parameters to be converted into a String-keyed dictionary to send in the query string or HTTP body.
+    /// - Parameter headers: The HTTP headers to send with the request.
+    /// - Parameter encoding: The parameter encoding method. If nil, uses the default encoding for the provided HTTP method.
+    /// - Parameter decoder: The `JSONDecoder` to use when decoding the response data.
+    /// - Parameter completion: The completion block to call when the request is completed.
+    /// - Returns: The `URLSessionTask` for the request.
+    @discardableResult
+    private func request<T: Decodable>(route: URLConvertible,
+                                       method: HTTPMethod,
+                                       parameters: ParameterDictionaryConvertible? = nil,
+                                       headers: HTTPHeaderDictionaryConvertible? = nil,
+                                       encoding: ParameterEncoding? = nil,
+                                       decoder: JSONDecoder = .spotHeroAPI,
+                                       completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
         // Prepend the base URL to the monolith route path
         let url: URLConvertible = "\(self.baseURL)/\(route)"
             // and strip any double-slashes we find that aren't proceeded by a colon (indicating a scheme)
