@@ -2,9 +2,6 @@
 
 /// Attributes that apply to the facility for the airport parking type.
 public struct AirportFacilityAttributes: Codable {
-    /// Airport parking amenities offered at the facility.
-    public let amenities: [AmenityType]
-    
     /// Logo(s) for the business operating the facility.
     public let logos: [Image]
     
