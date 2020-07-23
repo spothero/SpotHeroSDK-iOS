@@ -20,6 +20,24 @@ public extension MonthlyRate {
         public let terminationFee: Currency
         
         /// The cancellation requirements.
-        public let cancellationRequirements: ContractCancellationRequirements
+        public let cancellationRequirements: CancellationRequirements
+    }
+}
+
+// MARK: - Structs
+
+public extension MonthlyRate.ContractDetails {
+    /// Represents the cancellation requirements of a reservation.
+    struct CancellationRequirements: Codable {
+        private enum CodingKeys: String, CodingKey {
+            case noticeRequired = "notice_required"
+            case noticeDays = "notice_days"
+        }
+        
+        /// Whether advance notice is required.
+        public let noticeRequired: Bool
+        
+        /// Number of days of advance notice required.
+        public let noticeDays: Int
     }
 }
