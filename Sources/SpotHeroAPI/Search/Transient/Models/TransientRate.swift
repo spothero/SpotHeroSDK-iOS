@@ -10,6 +10,6 @@ public struct TransientRate: Codable {
     /// Transient parking amenities offered at the facility.
     public let amenities: [Amenity]
     
-    /// Defines the type of parking available at a garage.
+    /// Defines the garage's reservation redemption type.
     public let redemptionType: RedemptionType
 }

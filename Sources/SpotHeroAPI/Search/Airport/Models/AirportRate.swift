@@ -6,6 +6,7 @@ public struct AirportRate: Codable {
         case amenities
         case lowestDailyRate = "lowest_daily_rate"
         case tag
+        case redemptionType = "redemption_type"
         case comparisons
     }
     
@@ -15,6 +16,9 @@ public struct AirportRate: Codable {
     /// Lowest daily rate for the facility.
     /// This can be used to display to the user for unavailable spots and/or for advertising purposes.
     public let lowestDailyRate: Currency
+    
+    /// Defines the garage's reservation redemption type.
+    public let redemptionType: RedemptionType
     
     /// Metadata used for highlighting spots when showcasing recommended results.
     /// (eg. "Most Popular", "Highest Rated", etc.)
