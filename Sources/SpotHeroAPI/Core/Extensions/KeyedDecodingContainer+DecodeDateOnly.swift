@@ -3,6 +3,11 @@
 import Foundation
 
 extension KeyedDecodingContainer {
+    /// Decodes a `Date` object from an ISO-8601 date string in the format `yyyy-MM-dd`.
+    /// - Parameter key: The key that the decoded value is associated with.
+    /// - Throws: A `DecodingError.dataCorruptedError` if the format is incorrect.
+    ///           This is the same error that would be thrown if the standard `decode` function was used.
+    /// - Returns: A `Date` object localized to the current device locale.
     func decodeDateOnly(forKey key: KeyedDecodingContainer<K>.Key) throws -> Date {
         let dateFormat = "yyyy-MM-dd"
         
