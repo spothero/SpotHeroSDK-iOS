@@ -4,13 +4,18 @@ import Foundation
 
 /// Represents a pair of start/end dates.
 public struct MonthlyReservationDates: Codable {
-    /// Represents the instant at which a reservation starts.
-    /// Localized in the time zone of the facility.
-    /// Formatted as an ISO-8601 (RFC 3339) datetime.
+    /// The date that a reservation starts.
+    /// Formatted as an ISO-8601 (RFC 3339) datetime in the 'yyyy-MM-dd' format.
     public let starts: Date
     
-    /// Represents the instant at which a reservation ends.
-    /// Localized in the time zone of the facility.
-    /// Formatted as an ISO-8601 (RFC 3339) datetime.
+    /// The date that a reservation ends.
+    /// Formatted as an ISO-8601 (RFC 3339) datetime in the 'yyyy-MM-dd' format.
     public let ends: Date
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.starts = try container.decodeDateOnly(forKey: .starts)
+        self.ends = try container.decodeDateOnly(forKey: .ends)
+    }
 }
