@@ -63,8 +63,8 @@
           },
           "images": [
             {
-              "id": "9141",
-              "url": "https://res.cloudinary.com/spothero/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto/v1444670661/h1nmcidksjcezf4v2lbq.jpg",
+              "id": "9142",
+              "url": "https://res.cloudinary.com/spothero/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto/v1444670671/aid6h3pzbu3erqbw3yu7.jpg",
               "alt_text": "111 West Jackson Boulevard Parking"
             },
             {
@@ -78,8 +78,8 @@
               "alt_text": "111 West Jackson Boulevard Parking"
             },
             {
-              "id": "9142",
-              "url": "https://res.cloudinary.com/spothero/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto/v1444670671/aid6h3pzbu3erqbw3yu7.jpg",
+              "id": "9141",
+              "url": "https://res.cloudinary.com/spothero/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto/v1444670661/h1nmcidksjcezf4v2lbq.jpg",
               "alt_text": "111 West Jackson Boulevard Parking"
             }
           ],
@@ -119,46 +119,44 @@
       "rates": [
         {
           "monthly": {
+            "redemption_type": "self",
             "amenities": [
               {
                 "type": "self_park",
                 "description": "Users may park their own vehicles at this facility."
               }
             ],
-            "redemption": {
-              "type": "self",
-              "instructions": {
-                "short_term": [
-                  {
-                    "id": "3782",
-                    "illustration": {
-                      "id": "",
-                      "url": "",
-                      "alt_text": ""
-                    },
-                    "text": "<p>Please complete the attached application.</p>"
+            "redemption_instructions": {
+              "short_term": [
+                {
+                  "id": "3782",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
                   },
-                  {
-                    "id": "8440",
-                    "illustration": {
-                      "id": "",
-                      "url": "",
-                      "alt_text": ""
-                    },
-                    "text": "The valet will hand you a ticket and will park your car. You must have this ticket in order to exit."
+                  "text": "<p>Please complete the attached application.</p>"
+                },
+                {
+                  "id": "8440",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
                   },
-                  {
-                    "id": "8441",
-                    "illustration": {
-                      "id": "",
-                      "url": "",
-                      "alt_text": ""
-                    },
-                    "text": "When you're ready to go, show the valet your ticket and your car will be retrieved."
-                  }
-                ],
-                "long_term": []
-              }
+                  "text": "The valet will hand you a ticket and will park your car. You must have this ticket in order to exit."
+                },
+                {
+                  "id": "8441",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "When you're ready to go, show the valet your ticket and your car will be retrieved."
+                }
+              ],
+              "long_term": []
             },
             "title": "Monthly",
             "post_purchase_instructions": "",
@@ -167,8 +165,8 @@
               "restriction": "none",
               "choices": [
                 {
-                  "starts": "2020-07-23",
-                  "ends": "2020-08-22"
+                  "starts": "2020-07-25",
+                  "ends": "2020-08-24"
                 }
               ]
             },
@@ -197,8 +195,8 @@
             "order": [
               {
                 "facility_id": "769",
-                "starts": "2020-07-23T00:00:00-05:00",
-                "ends": "2020-08-22T23:59:59.999999999-05:00",
+                "starts": "2020-07-25T00:00:00-05:00",
+                "ends": "2020-08-24T23:59:59-05:00",
                 "rate_id": "47298",
                 "items": [
                   {
@@ -246,18 +244,16 @@
         },
         {
           "monthly": {
+            "redemption_type": "self",
             "amenities": [
               {
                 "type": "self_park",
                 "description": "Users may park their own vehicles at this facility."
               }
             ],
-            "redemption": {
-              "type": "self",
-              "instructions": {
-                "short_term": [],
-                "long_term": []
-              }
+            "redemption_instructions": {
+              "short_term": [],
+              "long_term": []
             },
             "title": "Legacy Intro",
             "post_purchase_instructions": "",
@@ -266,8 +262,8 @@
               "restriction": "none",
               "choices": [
                 {
-                  "starts": "2020-07-23",
-                  "ends": "2020-08-22"
+                  "starts": "2020-07-25",
+                  "ends": "2020-08-24"
                 }
               ]
             },
@@ -296,8 +292,8 @@
             "order": [
               {
                 "facility_id": "769",
-                "starts": "2020-07-23T00:00:00-05:00",
-                "ends": "2020-08-22T23:59:59.999999999-05:00",
+                "starts": "2020-07-25T00:00:00-05:00",
+                "ends": "2020-08-24T23:59:59-05:00",
                 "rate_id": "47377",
                 "items": [
                   {
@@ -345,18 +341,16 @@
         },
         {
           "monthly": {
+            "redemption_type": "self",
             "amenities": [
               {
                 "type": "self_park",
                 "description": "Users may park their own vehicles at this facility."
               }
             ],
-            "redemption": {
-              "type": "self",
-              "instructions": {
-                "short_term": [],
-                "long_term": []
-              }
+            "redemption_instructions": {
+              "short_term": [],
+              "long_term": []
             },
             "title": "Monthly",
             "post_purchase_instructions": "",
@@ -365,8 +359,8 @@
               "restriction": "none",
               "choices": [
                 {
-                  "starts": "2020-07-23",
-                  "ends": "2020-08-22"
+                  "starts": "2020-07-25",
+                  "ends": "2020-08-24"
                 }
               ]
             },
@@ -395,8 +389,8 @@
             "order": [
               {
                 "facility_id": "769",
-                "starts": "2020-07-23T00:00:00-05:00",
-                "ends": "2020-08-22T23:59:59.999999999-05:00",
+                "starts": "2020-07-25T00:00:00-05:00",
+                "ends": "2020-08-24T23:59:59-05:00",
                 "rate_id": "47307",
                 "items": [
                   {
@@ -445,5 +439,5 @@
       ]
     }
   ],
-  "@next": "https://api.sandbox.spothero.com/v2/search/monthly?after=126&;lat=41.8781&lon=-87.6298&page_size=1&starts=2020-07-22T22:15:37Z"
+  "@next": "https://api.sandbox.spothero.com/v2/search/monthly?after=126&;lat=41.8781&lon=-87.6298&page_size=1&starts=2020-07-24T16:50:33Z"
 }

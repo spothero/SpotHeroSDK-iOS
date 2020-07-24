@@ -45,7 +45,6 @@ extension SearchGetMonthlyFacilitiesRequest {
         /// Longitude in decimal degrees of origin from where the search will be performed. Longitude must be in [-180, 180].
         let longitude: Double
         
-        // WIP: Might need correcting
         /// Start date from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DD.
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
         let startDate: Date?

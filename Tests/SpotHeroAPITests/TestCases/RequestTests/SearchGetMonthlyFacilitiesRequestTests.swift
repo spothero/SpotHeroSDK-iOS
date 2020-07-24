@@ -23,6 +23,7 @@ private extension SearchGetMonthlyFacilitiesRequestTests {
             
             switch result {
             case let .success(response):
+                // WIP: Better tests
                 XCTAssertGreaterThan(response.results.count, 0, file: file, line: line)
             case let .failure(error):
                 XCTFail("Error fetching facilities! \(error.localizedDescription)", file: file, line: line)
@@ -35,29 +36,27 @@ private extension SearchGetMonthlyFacilitiesRequestTests {
 
 // swiftlint:disable:next type_name
 final class SearchGetMonthlyFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
-    private static let latitude: Double = 41.8781 // Chicago Latitude
-    private static let longitude: Double = -87.6298 // Chicago Longitude
-    private static let startDate = Date() // Today
-    
     func testGetMonthlyFacilitiesSucceeds() {
-        self.getMonthlyFacilities(latitude: Self.latitude,
-                                  longitude: Self.longitude,
-                                  startDate: Self.startDate)
+        self.getMonthlyFacilities(latitude: TestData.latitude,
+                                  longitude: TestData.longitude,
+                                  startDate: TestData.startDate)
     }
 }
 
 // swiftlint:disable:next type_name
 final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
-    private static let latitude: Double = 41.8781 // Chicago Latitude
-    private static let longitude: Double = -87.6298 // Chicago Longitude
-    private static let startDate = Date() // Today
-    
     func testGetMonthlyFacilitiesSucceeds() {
         self.stub(SearchGetMonthlyFacilitiesRequest.self,
-                  with: .apiMockFile("CRAIG/Search/get_monthly_facilities.json"))
+                  with: .apiMockFile("CRAIG/Search/get_monthly_facilities?page_size=1.json"))
         
-        self.getMonthlyFacilities(latitude: Self.latitude,
-                                  longitude: Self.longitude,
-                                  startDate: Self.startDate)
+        self.getMonthlyFacilities(latitude: TestData.latitude,
+                                  longitude: TestData.longitude,
+                                  startDate: TestData.startDate)
     }
+}
+
+private struct TestData {
+    static let latitude: Double = 41.8781 // Chicago Latitude
+    static let longitude: Double = -87.6298 // Chicago Longitude
+    static let startDate = Date() // Today
 }

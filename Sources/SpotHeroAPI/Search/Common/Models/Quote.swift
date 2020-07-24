@@ -13,10 +13,10 @@ public struct Quote: Codable {
     }
     
     /// Order line items, including reservation rate and applicable fees.
-    public let order: QuoteOrder
+    public let order: [Order]
     
     /// Bottom-line items, including order subtotal, discounts, and payments.
-    public let items: [QuoteLineItem]
+    public let items: [LineItem]
     
     /// Final price paid by the end-user.
     public let totalPrice: Currency
