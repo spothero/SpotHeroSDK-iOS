@@ -2,6 +2,14 @@
 
 /// Transient-specific metadata pertaining to a rate for the rental of a parking spot.
 public struct TransientRate: Codable {
+    private enum CodingKeys: String, CodingKey {
+        case amenities
+        case redemptionType = "redemption_type"
+    }
+    
     /// Transient parking amenities offered at the facility.
     public let amenities: [Amenity]
+    
+    /// Defines the garage's reservation redemption type.
+    public let redemptionType: RedemptionType
 }

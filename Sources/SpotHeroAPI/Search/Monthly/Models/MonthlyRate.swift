@@ -9,7 +9,8 @@ public struct MonthlyRate: Codable {
         case contract
         case inOutPrivileges = "in_out_privileges"
         case postPurchaseInstructions = "post_purchase_instructions"
-        case redemption
+        case redemptionInstructions = "redemption_instructions"
+        case redemptionType = "redemption_type"
         case reservationType = "reservation_type"
         case startDateOptions = "start_date_options"
         case title
@@ -18,8 +19,11 @@ public struct MonthlyRate: Codable {
     /// Monthly parking amenities offered for this rate at the facility.
     public let amenities: [Amenity]
     
-    /// Information concerning the redemption process for customers who park at a monthly facility.
-    public let redemption: Redemption<MonthlyRedemptionInstructions>
+    /// Information concerning the redemption process for customers who park at a facility.
+    public let redemptionInstructions: MonthlyRedemptionInstructions
+    
+    /// Defines the garage's reservation redemption type.
+    public let redemptionType: RedemptionType
     
     /// Human-readable description of the rate.
     public let title: String
