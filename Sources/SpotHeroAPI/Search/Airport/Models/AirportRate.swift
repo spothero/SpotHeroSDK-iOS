@@ -4,10 +4,10 @@
 public struct AirportRate: Codable {
     private enum CodingKeys: String, CodingKey {
         case amenities
-        case lowestDailyRate = "lowest_daily_rate"
-        case tag
-        case redemptionType = "redemption_type"
         case comparisons
+        case lowestDailyRate = "lowest_daily_rate"
+        case redemptionType = "redemption_type"
+        case tag
     }
     
     /// Airport parking amenities offered at the facility.
