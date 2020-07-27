@@ -17,7 +17,7 @@ public struct AirportRate: Codable {
     /// This can be used to display to the user for unavailable spots and/or for advertising purposes.
     public let lowestDailyRate: Currency
     
-    /// Defines the type of parking available at a garage.
+    /// Defines the garage's reservation redemption type.
     public let redemptionType: RedemptionType
     
     /// Metadata used for highlighting spots when showcasing recommended results.

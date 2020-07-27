@@ -22,7 +22,7 @@ public struct MonthlyRate: Codable {
     /// Information concerning the redemption process for customers who park at a facility.
     public let redemptionInstructions: MonthlyRedemptionInstructions
     
-    /// Defines the type of parking available at a garage.
+    /// Defines the garage's reservation redemption type.
     public let redemptionType: RedemptionType
     
     /// Human-readable description of the rate.
