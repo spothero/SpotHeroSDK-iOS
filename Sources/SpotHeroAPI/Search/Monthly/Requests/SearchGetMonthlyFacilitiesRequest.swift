@@ -26,6 +26,8 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
     }
 }
 
+// MARK: - Parameters
+
 extension SearchGetMonthlyFacilitiesRequest {
     /// Represents the query parameters used for fetching monthly facilities.
     ///
