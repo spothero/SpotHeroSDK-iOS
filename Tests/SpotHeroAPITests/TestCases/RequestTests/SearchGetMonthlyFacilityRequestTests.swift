@@ -8,7 +8,7 @@ private protocol SearchGetMonthlyFacilityRequestTests: APITestCase {
 }
 
 private extension SearchGetMonthlyFacilityRequestTests {
-    /// Attempts to fetch a list of monthly facility, expecting success
+    /// Attempts to fetch a monthly facility, expecting success
     func getMonthlyFacility(withID facilityID: Int,
                             parameters: SearchGetMonthlyFacilityRequest.Parameters? = nil,
                             file: StaticString = #file,
