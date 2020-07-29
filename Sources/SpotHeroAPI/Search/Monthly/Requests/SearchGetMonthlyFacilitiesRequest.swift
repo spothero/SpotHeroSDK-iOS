@@ -19,8 +19,8 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
     }
     
     @discardableResult
-    func callAsFunction(parameters: Parameters,
-                        completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
+    public func callAsFunction(parameters: Parameters,
+                               completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
         return self.client.request(
             Self.self,
             parameters: parameters,
@@ -31,7 +31,7 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
 
 // MARK: - Parameters
 
-extension SearchGetMonthlyFacilitiesRequest {
+public extension SearchGetMonthlyFacilitiesRequest {
     /// Represents the query parameters used for fetching monthly facilities.
     struct Parameters: Encodable {
         private enum CodingKeys: String, CodingKey {
@@ -43,28 +43,28 @@ extension SearchGetMonthlyFacilitiesRequest {
         }
         
         /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
-        let latitude: Double
+        private let latitude: Double
         
         /// Longitude in decimal degrees of origin from where the search will be performed. Longitude must be in [-180, 180].
-        let longitude: Double
+        private let longitude: Double
         
         /// Start date from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DD.
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
-        let startDate: Date?
+        private let startDate: Date?
         
         /// Maximum distance in meters from the origin from which facility results will be generated.
         /// The default is 1609.34 meters (1 mile). The limit is 160934 meters (100 miles).
-        let maxDistanceMeters: Int?
+        private let maxDistanceMeters: Int?
         
         /// The number of results to include in a single page.
         /// The default is nil (no limit). Must be >= 1, if provided.
-        let pageSize: Int?
+        private let pageSize: Int?
         
-        init(latitude: Double,
-             longitude: Double,
-             startDate: Date? = nil,
-             maxDistanceMeters: Int? = nil,
-             pageSize: Int? = nil) {
+        public init(latitude: Double,
+                    longitude: Double,
+                    startDate: Date? = nil,
+                    maxDistanceMeters: Int? = nil,
+                    pageSize: Int? = nil) {
             self.latitude = latitude
             self.longitude = longitude
             self.startDate = startDate
@@ -75,7 +75,7 @@ extension SearchGetMonthlyFacilitiesRequest {
 }
 
 extension SearchGetMonthlyFacilitiesRequest.Parameters: ParameterDictionaryConvertible {
-    func asParameterDictionary() -> [String: Any]? {
+    public func asParameterDictionary() -> [String: Any]? {
         var parameters: [String: Any] = [:]
         parameters[Self.CodingKeys.latitude.rawValue] = self.latitude
         parameters[Self.CodingKeys.longitude.rawValue] = self.longitude
