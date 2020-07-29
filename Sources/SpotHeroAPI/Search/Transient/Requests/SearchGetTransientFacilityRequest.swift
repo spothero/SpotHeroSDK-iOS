@@ -19,9 +19,9 @@ public struct SearchGetTransientFacilityRequest: RequestDefining {
     }
     
     @discardableResult
-    func callAsFunction(withID facilityID: Int,
-                        parameters: Parameters? = nil,
-                        completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
+    public func callAsFunction(withID facilityID: Int,
+                               parameters: Parameters? = nil,
+                               completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
         return self.client.request(
             route: "\(Self.route)/\(facilityID)",
             method: Self.method,
@@ -33,7 +33,7 @@ public struct SearchGetTransientFacilityRequest: RequestDefining {
 
 // MARK: - Parameters
 
-extension SearchGetTransientFacilityRequest {
+public extension SearchGetTransientFacilityRequest {
     /// Represents the query parameters used for fetching transient facilities.
     struct Parameters: Encodable {
         private enum CodingKeys: String, CodingKey {
@@ -45,20 +45,20 @@ extension SearchGetTransientFacilityRequest {
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
         /// If a time zone is not specified, the time will be localized to each generated facility's location.
         /// If this parameter is not provided, results will be generated from the time at which the request was received.
-        let startDate: Date?
+        private let startDate: Date?
         
         /// End datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
         /// If a time zone is not specified, the time will be localized to each generated facility's location.
         /// If this parameter is not provided, results will be generated for 3 hours after the start time.
-        let endDate: Date?
+        private let endDate: Date?
         
         /// Boolean that denotes whether or not the pricing calculated for this vehicle
         /// will incorporate pricing for an oversize vehicle, if applicable.
-        let isOversize: Bool?
+        private let isOversize: Bool?
         
-        init(startDate: Date? = nil,
-             endDate: Date? = nil,
-             isOversize: Bool? = nil) {
+        public init(startDate: Date? = nil,
+                    endDate: Date? = nil,
+                    isOversize: Bool? = nil) {
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
@@ -67,7 +67,7 @@ extension SearchGetTransientFacilityRequest {
 }
 
 extension SearchGetTransientFacilityRequest.Parameters: ParameterDictionaryConvertible {
-    func asParameterDictionary() -> [String: Any]? {
+    public func asParameterDictionary() -> [String: Any]? {
         var parameters: [String: Any] = [:]
         
         if let startDate = self.startDate {
