@@ -5,7 +5,7 @@ import UtilityBeltNetworking
 
 /// Represents a request for fetching transient facilities.
 ///
-/// - See [searchTransientParking](https://s3.amazonaws.com/spothe.ro/craig-v2-api.html#operation/searchTransientParking).
+/// - See [searchTransientFacilityParking](https://s3.amazonaws.com/spothe.ro/craig-v2-api.html#operation/searchTransientFacilityParking).
 public struct SearchGetTransientFacilityRequest: RequestDefining {
     public typealias ResponseModel = TransientFacilitySearchResponse
     
