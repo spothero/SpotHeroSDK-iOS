@@ -3,7 +3,7 @@
 import Foundation
 import UtilityBeltNetworking
 
-/// Represents a request for fetching monthly facility.
+/// Represents a request for fetching a monthly facility.
 ///
 /// - See [searchMonthlyFacilityParking](https://s3.amazonaws.com/spothe.ro/craig-v2-api.html#operation/searchMonthlyFacilityParking).
 public struct SearchGetMonthlyFacilityRequest: RequestDefining {
