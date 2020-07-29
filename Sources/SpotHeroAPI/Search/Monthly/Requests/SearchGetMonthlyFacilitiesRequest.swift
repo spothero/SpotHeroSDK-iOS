@@ -43,22 +43,22 @@ public extension SearchGetMonthlyFacilitiesRequest {
         }
         
         /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
-        public let latitude: Double
+        private let latitude: Double
         
         /// Longitude in decimal degrees of origin from where the search will be performed. Longitude must be in [-180, 180].
-        public let longitude: Double
+        private let longitude: Double
         
         /// Start date from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DD.
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
-        public let startDate: Date?
+        private let startDate: Date?
         
         /// Maximum distance in meters from the origin from which facility results will be generated.
         /// The default is 1609.34 meters (1 mile). The limit is 160934 meters (100 miles).
-        public let maxDistanceMeters: Int?
+        private let maxDistanceMeters: Int?
         
         /// The number of results to include in a single page.
         /// The default is nil (no limit). Must be >= 1, if provided.
-        public let pageSize: Int?
+        private let pageSize: Int?
         
         public init(latitude: Double,
                     longitude: Double,

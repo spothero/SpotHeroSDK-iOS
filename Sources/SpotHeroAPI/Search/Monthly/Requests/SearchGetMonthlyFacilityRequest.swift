@@ -42,7 +42,7 @@ public extension SearchGetMonthlyFacilityRequest {
         
         /// Start date from which results will be generated. The supported format is YYYY-MM-DD.
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
-        public let startDate: Date?
+        private let startDate: Date?
         
         public init(startDate: Date? = nil) {
             self.startDate = startDate
