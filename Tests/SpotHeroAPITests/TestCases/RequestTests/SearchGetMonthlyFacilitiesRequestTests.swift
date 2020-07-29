@@ -19,8 +19,6 @@ private extension SearchGetMonthlyFacilitiesRequestTests {
                                                                       pageSize: 1)
         
         request(parameters: parameters) { result in
-            expectation.fulfill()
-            
             switch result {
             case let .success(response):
                 // WIP: Better tests
@@ -28,6 +26,8 @@ private extension SearchGetMonthlyFacilitiesRequestTests {
             case let .failure(error):
                 XCTFail("Error fetching facilities! \(error.localizedDescription)", file: file, line: line)
             }
+            
+            expectation.fulfill()
         }
         
         self.waitForExpectations(timeout: Self.timeout)
@@ -47,7 +47,7 @@ final class SearchGetMonthlyFacilitiesRequestLiveTests: LiveAPITestCase, SearchG
 final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
     func testGetMonthlyFacilitiesSucceeds() {
         self.stub(SearchGetMonthlyFacilitiesRequest.self,
-                  with: .apiMockFile("CRAIG/Search/get_monthly_facilities.json"))
+                  with: .apeiMockFile("CRAIG/Search/get_monthly_facilities.json"))
         
         self.getMonthlyFacilities(latitude: TestData.latitude,
                                   longitude: TestData.longitude,
