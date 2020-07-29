@@ -34,7 +34,7 @@ public struct SearchGetMonthlyFacilityRequest: RequestDefining {
 // MARK: - Parameters
 
 public extension SearchGetMonthlyFacilityRequest {
-    /// Represents the query parameters used for fetching monthly facility.
+    /// Represents the query parameters used for fetching a monthly facility.
     struct Parameters: Encodable {
         private enum CodingKeys: String, CodingKey {
             case startDate = "starts"
