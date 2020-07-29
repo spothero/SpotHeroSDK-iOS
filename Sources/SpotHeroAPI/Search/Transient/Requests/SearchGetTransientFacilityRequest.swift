@@ -3,9 +3,9 @@
 import Foundation
 import UtilityBeltNetworking
 
-/// Represents a request for fetching transient facilities.
+/// Represents a request for fetching a transient facility.
 ///
-/// - See [searchTransientFacilityParking](https://s3.amazonaws.com/spothe.ro/craig-v2-api.html#operation/searchTransientFacilityParking).
+/// - See [searchTransientFacilityParking](https://api.spothero.com/v2/docs/#operation/searchTransientFacilityParking).
 public struct SearchGetTransientFacilityRequest: RequestDefining {
     public typealias ResponseModel = TransientFacilitySearchResponse
     
@@ -34,7 +34,7 @@ public struct SearchGetTransientFacilityRequest: RequestDefining {
 // MARK: - Parameters
 
 public extension SearchGetTransientFacilityRequest {
-    /// Represents the query parameters used for fetching transient facilities.
+    /// Represents the query parameters used for fetching a transient facility.
     struct Parameters: Encodable {
         private enum CodingKeys: String, CodingKey {
             case endDate = "ends"

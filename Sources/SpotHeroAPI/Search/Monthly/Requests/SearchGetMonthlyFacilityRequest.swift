@@ -5,7 +5,7 @@ import UtilityBeltNetworking
 
 /// Represents a request for fetching a monthly facility.
 ///
-/// - See [searchMonthlyFacilityParking](https://s3.amazonaws.com/spothe.ro/craig-v2-api.html#operation/searchMonthlyFacilityParking).
+/// - See [searchMonthlyFacilityParking](https://api.spothero.com/v2/docs/#operation/searchMonthlyFacilityParking).
 public struct SearchGetMonthlyFacilityRequest: RequestDefining {
     public typealias ResponseModel = MonthlyFacilitySearchResponse
     
