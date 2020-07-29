@@ -11,7 +11,7 @@ public enum FacilityType: String, Codable {
     /// A spot located under tracks for the Chicago El train system.
     case underEl = "under_el"
     /// A facility that offers valet services.
-    case valet
+    case valet = "valet_stand"
     /// A facility that does not have a facility type configured.
     case unknown
 }
