@@ -68,13 +68,13 @@ class NetworkClient {
     /// - Parameter completion: The completion block to call when the request is completed.
     /// - Returns: The `URLSessionTask` for the request.
     @discardableResult
-    private func request<T: Decodable>(route: URLConvertible,
-                                       method: HTTPMethod,
-                                       parameters: ParameterDictionaryConvertible? = nil,
-                                       headers: HTTPHeaderDictionaryConvertible? = nil,
-                                       encoding: ParameterEncoding? = nil,
-                                       decoder: JSONDecoder = .spotHeroAPI,
-                                       completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
+    func request<T: Decodable>(route: URLConvertible,
+                               method: HTTPMethod,
+                               parameters: ParameterDictionaryConvertible? = nil,
+                               headers: HTTPHeaderDictionaryConvertible? = nil,
+                               encoding: ParameterEncoding? = nil,
+                               decoder: JSONDecoder = .spotHeroAPI,
+                               completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
         // Prepend the base URL to the monolith route path
         let url: URLConvertible = "\(self.baseURL)/\(route)"
             // and strip any double-slashes we find that aren't proceeded by a colon (indicating a scheme)
