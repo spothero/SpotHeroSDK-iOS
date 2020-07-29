@@ -9,15 +9,11 @@ private protocol SearchGetMonthlyFacilitiesRequestTests: APITestCase {
 
 private extension SearchGetMonthlyFacilitiesRequestTests {
     /// Attempts to fetch a list of monthly facilities, expecting success
-    func getMonthlyFacilities(latitude: Double, longitude: Double, startDate: Date, file: StaticString = #file, line: UInt = #line) {
+    func getMonthlyFacilities(parameters: SearchGetMonthlyFacilitiesRequest.Parameters,
+                              file: StaticString = #file,
+                              line: UInt = #line) {
         let request = SearchGetMonthlyFacilitiesRequest(client: Self.newNetworkClient(for: .craig))
         let expectation = self.expectation(description: "Fetched monthly facilities.")
-        
-        let parameters = SearchGetMonthlyFacilitiesRequest.Parameters(latitude: latitude,
-                                                                      longitude: longitude,
-                                                                      startDate: startDate,
-                                                                      pageSize: 1)
-        
         request(parameters: parameters) { result in
             switch result {
             case let .success(response):
@@ -37,9 +33,9 @@ private extension SearchGetMonthlyFacilitiesRequestTests {
 // swiftlint:disable:next type_name
 final class SearchGetMonthlyFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
     func testGetMonthlyFacilitiesSucceeds() {
-        self.getMonthlyFacilities(latitude: TestData.latitude,
-                                  longitude: TestData.longitude,
-                                  startDate: TestData.startDate)
+        self.getMonthlyFacilities(parameters: .init(latitude: TestData.latitude,
+                                                    longitude: TestData.longitude,
+                                                    startDate: TestData.startDate))
     }
 }
 
@@ -49,9 +45,9 @@ final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchG
         self.stub(SearchGetMonthlyFacilitiesRequest.self,
                   with: .apiMockFile("CRAIG/Search/get_monthly_facilities.json"))
         
-        self.getMonthlyFacilities(latitude: TestData.latitude,
-                                  longitude: TestData.longitude,
-                                  startDate: TestData.startDate)
+        self.getMonthlyFacilities(parameters: .init(latitude: TestData.latitude,
+                                                    longitude: TestData.longitude,
+                                                    startDate: TestData.startDate))
     }
 }
 
