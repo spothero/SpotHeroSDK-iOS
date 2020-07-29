@@ -712,7 +712,7 @@
             "average": 0,
             "count": 0
           },
-          "restrictions": null,
+          "restrictions": [],
           "requirements": {
             "printout": false,
             "license_plate": false,

@@ -58,7 +58,13 @@
                   Identifier = "APITestCase">
                </Test>
                <Test
+                  Identifier = "LiveAPITestCase">
+               </Test>
+               <Test
                   Identifier = "LiveTestCase">
+               </Test>
+               <Test
+                  Identifier = "MockAPITestCase">
                </Test>
                <Test
                   Identifier = "MockTestCase">
