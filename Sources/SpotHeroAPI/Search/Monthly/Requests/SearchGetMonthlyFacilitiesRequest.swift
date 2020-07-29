@@ -3,6 +3,9 @@
 import Foundation
 import UtilityBeltNetworking
 
+/// Represents a request for fetching monthly facilities.
+///
+/// - See [searchMonthlyParking](https://s3.amazonaws.com/spothe.ro/craig-v2-api.html#operation/searchMonthlyParking).
 public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
     public typealias ResponseModel = MonthlyFacilitiesSearchResponse
     
@@ -30,8 +33,6 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
 
 extension SearchGetMonthlyFacilitiesRequest {
     /// Represents the query parameters used for fetching monthly facilities.
-    ///
-    /// - See [searchMonthlyParking](https://s3.amazonaws.com/spothe.ro/craig-v2-api.html#operation/searchMonthlyParking).
     struct Parameters: Encodable {
         private enum CodingKeys: String, CodingKey {
             case latitude = "lat"
