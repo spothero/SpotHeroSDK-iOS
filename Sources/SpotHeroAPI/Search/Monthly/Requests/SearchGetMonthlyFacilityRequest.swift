@@ -19,9 +19,9 @@ public struct SearchGetMonthlyFacilityRequest: RequestDefining {
     }
     
     @discardableResult
-    func callAsFunction(withID facilityID: Int,
-                        parameters: Parameters? = nil,
-                        completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
+    public func callAsFunction(withID facilityID: Int,
+                               parameters: Parameters? = nil,
+                               completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
         return self.client.request(
             route: "\(Self.route)/\(facilityID)",
             method: Self.method,
@@ -33,7 +33,7 @@ public struct SearchGetMonthlyFacilityRequest: RequestDefining {
 
 // MARK: - Parameters
 
-extension SearchGetMonthlyFacilityRequest {
+public extension SearchGetMonthlyFacilityRequest {
     /// Represents the query parameters used for fetching monthly facility.
     struct Parameters: Encodable {
         private enum CodingKeys: String, CodingKey {
@@ -42,16 +42,16 @@ extension SearchGetMonthlyFacilityRequest {
         
         /// Start date from which results will be generated. The supported format is YYYY-MM-DD.
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
-        let startDate: Date?
+        public let startDate: Date?
         
-        init(startDate: Date? = nil) {
+        public init(startDate: Date? = nil) {
             self.startDate = startDate
         }
     }
 }
 
 extension SearchGetMonthlyFacilityRequest.Parameters: ParameterDictionaryConvertible {
-    func asParameterDictionary() -> [String: Any]? {
+    public func asParameterDictionary() -> [String: Any]? {
         var parameters: [String: Any] = [:]
         
         if let startDate = self.startDate {
