@@ -12,7 +12,7 @@ let package = Package(
         .watchOS(.v3),      // supports UtilityBelt
     ],
     products: [
-        .library(name: "SpotHeroAPI", targets: ["SpotHeroAPINext"]),
+        .library(name: "SpotHeroAPINext", targets: ["SpotHeroAPINext"]),
     ],
     dependencies: [
         .package(name: "UtilityBelt", url: "https://github.com/spothero/UtilityBelt-iOS", from: "0.5.6"),
