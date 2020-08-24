@@ -19,8 +19,8 @@ protocol SearchTracking: Encodable {
 }
 
 public struct SearchTrackingParameters: SearchTracking {
-    var actionID: String?
-    var analyticsID: String?
-    var searchID: String?
-    var sessionID: String?
+    public var actionID: String?
+    public var analyticsID: String?
+    public var searchID: String?
+    public var sessionID: String?
 }
