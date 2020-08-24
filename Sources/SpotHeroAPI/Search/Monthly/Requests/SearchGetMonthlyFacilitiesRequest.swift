@@ -60,16 +60,27 @@ public extension SearchGetMonthlyFacilitiesRequest {
         /// The default is nil (no limit). Must be >= 1, if provided.
         private let pageSize: Int?
         
+        var actionID: String?
+        var analyticsID: String?
+        var searchID: String?
+        var sessionID: String?
+        
         public init(latitude: Double,
                     longitude: Double,
                     startDate: Date? = nil,
                     maxDistanceMeters: Int? = nil,
-                    pageSize: Int? = nil) {
+                    pageSize: Int? = nil,
+                    searchTracking: SearchTrackingParameters? = nil) {
             self.latitude = latitude
             self.longitude = longitude
             self.startDate = startDate
             self.maxDistanceMeters = maxDistanceMeters
             self.pageSize = pageSize
+            
+            self.actionID = searchTracking?.actionID
+            self.analyticsID = searchTracking?.analyticsID
+            self.searchID = searchTracking?.searchID
+            self.sessionID = searchTracking?.sessionID
         }
     }
 }

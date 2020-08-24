@@ -33,7 +33,7 @@ public struct SearchGetAirportFacilitiesRequest: RequestDefining {
 
 public extension SearchGetAirportFacilitiesRequest {
     /// Represents the query parameters used for fetching airport facilities.
-    struct Parameters: Encodable {
+    struct Parameters: SearchTracking, Encodable {
         private enum CodingKeys: String, CodingKey {
             case airportCode = "airport"
             case endDate = "ends"
@@ -58,14 +58,25 @@ public extension SearchGetAirportFacilitiesRequest {
         /// The default is nil (no limit). Must be >= 1, if provided.
         private let pageSize: Int?
         
-        init(airportCode: String,
-             startDate: Date? = nil,
-             endDate: Date? = nil,
-             pageSize: Int? = nil) {
+        var actionID: String?
+        var analyticsID: String?
+        var searchID: String?
+        var sessionID: String?
+        
+        public init(airportCode: String,
+                    startDate: Date? = nil,
+                    endDate: Date? = nil,
+                    pageSize: Int? = nil,
+                    searchTracking: SearchTrackingParameters? = nil) {
             self.airportCode = airportCode
             self.startDate = startDate
             self.endDate = endDate
             self.pageSize = pageSize
+            
+            self.actionID = searchTracking?.actionID
+            self.analyticsID = searchTracking?.analyticsID
+            self.searchID = searchTracking?.searchID
+            self.sessionID = searchTracking?.sessionID
         }
     }
 }
