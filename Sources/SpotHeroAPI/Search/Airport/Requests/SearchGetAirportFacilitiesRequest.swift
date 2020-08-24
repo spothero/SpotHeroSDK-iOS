@@ -33,7 +33,7 @@ public struct SearchGetAirportFacilitiesRequest: RequestDefining {
 
 public extension SearchGetAirportFacilitiesRequest {
     /// Represents the query parameters used for fetching airport facilities.
-    struct Parameters: Encodable {
+    struct Parameters: Encodable, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case airportCode = "airport"
             case endDate = "ends"
@@ -67,26 +67,5 @@ public extension SearchGetAirportFacilitiesRequest {
             self.endDate = endDate
             self.pageSize = pageSize
         }
-    }
-}
-
-extension SearchGetAirportFacilitiesRequest.Parameters: ParameterDictionaryConvertible {
-    public func asParameterDictionary() -> [String: Any]? {
-        var parameters: [String: Any] = [:]
-        parameters[Self.CodingKeys.airportCode.rawValue] = self.airportCode
-        
-        if let startDate = self.startDate {
-            parameters[Self.CodingKeys.startDate.rawValue] = ISO8601DateFormatter().string(from: startDate)
-        }
-        
-        if let endDate = self.endDate {
-            parameters[Self.CodingKeys.endDate.rawValue] = ISO8601DateFormatter().string(from: endDate)
-        }
-        
-        if let pageSize = self.pageSize {
-            parameters[Self.CodingKeys.pageSize.rawValue] = pageSize
-        }
-        
-        return parameters
     }
 }

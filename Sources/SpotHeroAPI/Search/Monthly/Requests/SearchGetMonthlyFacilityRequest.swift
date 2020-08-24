@@ -35,7 +35,7 @@ public struct SearchGetMonthlyFacilityRequest: RequestDefining {
 
 public extension SearchGetMonthlyFacilityRequest {
     /// Represents the query parameters used for fetching a monthly facility.
-    struct Parameters: Encodable {
+    struct Parameters: Encodable, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case startDate = "starts"
         }
@@ -47,17 +47,5 @@ public extension SearchGetMonthlyFacilityRequest {
         public init(startDate: Date? = nil) {
             self.startDate = startDate
         }
-    }
-}
-
-extension SearchGetMonthlyFacilityRequest.Parameters: ParameterDictionaryConvertible {
-    public func asParameterDictionary() -> [String: Any]? {
-        var parameters: [String: Any] = [:]
-        
-        if let startDate = self.startDate {
-            parameters[Self.CodingKeys.startDate.rawValue] = ISO8601DateFormatter().string(from: startDate)
-        }
-        
-        return parameters
     }
 }
