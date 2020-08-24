@@ -74,6 +74,7 @@ extension SearchGetAirportFacilitiesRequest.Parameters: ParameterDictionaryConve
     public func asParameterDictionary() -> [String: Any]? {
         var parameters: [String: Any] = [:]
         parameters[Self.CodingKeys.airportCode.rawValue] = self.airportCode
+        parameters[Self.CodingKeys.pageSize.rawValue] = self.pageSize
         
         if let startDate = self.startDate {
             parameters[Self.CodingKeys.startDate.rawValue] = ISO8601DateFormatter().string(from: startDate)
@@ -81,10 +82,6 @@ extension SearchGetAirportFacilitiesRequest.Parameters: ParameterDictionaryConve
         
         if let endDate = self.endDate {
             parameters[Self.CodingKeys.endDate.rawValue] = ISO8601DateFormatter().string(from: endDate)
-        }
-        
-        if let pageSize = self.pageSize {
-            parameters[Self.CodingKeys.pageSize.rawValue] = pageSize
         }
         
         return parameters

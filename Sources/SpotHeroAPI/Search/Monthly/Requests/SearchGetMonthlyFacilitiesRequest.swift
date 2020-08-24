@@ -79,17 +79,11 @@ extension SearchGetMonthlyFacilitiesRequest.Parameters: ParameterDictionaryConve
         var parameters: [String: Any] = [:]
         parameters[Self.CodingKeys.latitude.rawValue] = self.latitude
         parameters[Self.CodingKeys.longitude.rawValue] = self.longitude
+        parameters[Self.CodingKeys.maxDistanceMeters.rawValue] = self.maxDistanceMeters
+        parameters[Self.CodingKeys.pageSize.rawValue] = self.pageSize
         
         if let startDate = self.startDate {
             parameters[Self.CodingKeys.startDate.rawValue] = ISO8601DateFormatter().string(from: startDate)
-        }
-        
-        if let maxDistanceMeters = self.maxDistanceMeters {
-            parameters[Self.CodingKeys.maxDistanceMeters.rawValue] = maxDistanceMeters
-        }
-        
-        if let pageSize = self.pageSize {
-            parameters[Self.CodingKeys.pageSize.rawValue] = pageSize
         }
         
         return parameters

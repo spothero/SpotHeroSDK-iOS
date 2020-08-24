@@ -95,6 +95,9 @@ extension SearchGetTransientFacilitiesRequest.Parameters: ParameterDictionaryCon
         var parameters: [String: Any] = [:]
         parameters[Self.CodingKeys.latitude.rawValue] = self.latitude
         parameters[Self.CodingKeys.longitude.rawValue] = self.longitude
+        parameters[Self.CodingKeys.isOversize.rawValue] = self.isOversize
+        parameters[Self.CodingKeys.maxDistanceMeters.rawValue] = self.maxDistanceMeters
+        parameters[Self.CodingKeys.pageSize.rawValue] = self.pageSize
         
         if let startDate = self.startDate {
             parameters[Self.CodingKeys.startDate.rawValue] = ISO8601DateFormatter().string(from: startDate)
@@ -102,18 +105,6 @@ extension SearchGetTransientFacilitiesRequest.Parameters: ParameterDictionaryCon
         
         if let endDate = self.endDate {
             parameters[Self.CodingKeys.endDate.rawValue] = ISO8601DateFormatter().string(from: endDate)
-        }
-        
-        if let isOversize = self.isOversize {
-            parameters[Self.CodingKeys.isOversize.rawValue] = isOversize
-        }
-        
-        if let maxDistanceMeters = self.maxDistanceMeters {
-            parameters[Self.CodingKeys.maxDistanceMeters.rawValue] = maxDistanceMeters
-        }
-        
-        if let pageSize = self.pageSize {
-            parameters[Self.CodingKeys.pageSize.rawValue] = pageSize
         }
         
         return parameters

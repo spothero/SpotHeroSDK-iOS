@@ -69,6 +69,7 @@ public extension SearchGetTransientFacilityRequest {
 extension SearchGetTransientFacilityRequest.Parameters: ParameterDictionaryConvertible {
     public func asParameterDictionary() -> [String: Any]? {
         var parameters: [String: Any] = [:]
+        parameters[Self.CodingKeys.isOversize.rawValue] = self.isOversize
         
         if let startDate = self.startDate {
             parameters[Self.CodingKeys.startDate.rawValue] = ISO8601DateFormatter().string(from: startDate)
@@ -76,10 +77,6 @@ extension SearchGetTransientFacilityRequest.Parameters: ParameterDictionaryConve
         
         if let endDate = self.endDate {
             parameters[Self.CodingKeys.endDate.rawValue] = ISO8601DateFormatter().string(from: endDate)
-        }
-        
-        if let isOversize = self.isOversize {
-            parameters[Self.CodingKeys.isOversize.rawValue] = isOversize
         }
         
         return parameters
