@@ -13,6 +13,9 @@ let package = Package(
     ],
     products: [
         .library(name: "SpotHeroAPINext", targets: ["SpotHeroAPINext"]),
+        // Dynamic Libraries
+        // These libraries are required due to the Xcode 11.3+ static linking bug: https://bugs.swift.org/browse/SR-12303
+        .library(name: "SpotHeroAPINextDynamic", type: .dynamic, targets: ["SpotHeroAPINext"]),
     ],
     dependencies: [
         .package(name: "UtilityBelt", url: "https://github.com/spothero/UtilityBelt-iOS", from: "0.5.6"),
