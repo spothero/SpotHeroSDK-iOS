@@ -7,14 +7,16 @@ import UtilityBeltNetworking
 public final class SpotHeroAPIClient {
     // MARK: Properties
     
-    let networkClient: NetworkClient
-    
-    // WIP: Endpoint definitions will be added here
+    /// Represents the `/search` endpoint.
+    public let search: SearchEndpoint
     
     // MARK: Methods
     
     /// Creates a new instance of `SpotHeroAPIClient`.
     public init(baseURL: String) {
-        self.networkClient = NetworkClient(baseURL: baseURL)
+        let networkClient = NetworkClient(baseURL: baseURL)
+        
+        /// V2 Endpoints
+        self.search = SearchEndpoint(client: networkClient)
     }
 }

@@ -40,8 +40,9 @@ final class SearchGetMonthlyFacilityRequestLiveTests: LiveAPITestCase, SearchGet
 
 final class SearchGetMonthlyFacilityRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilityRequestTests {
     func testGetMonthlyFacilitySucceeds() {
-        self.stub(.get("\(SearchGetMonthlyFacilitiesRequest.route)/\(TestData.facilityID)"),
-                  with: .apiMockFile("CRAIG/Search/get_monthly_facilities_\(TestData.facilityID).json"))
+        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
+        self.stub(.get("mobile\(SearchGetMonthlyFacilitiesRequest.route)/\(TestData.facilityID)"),
+                  with: .apiMockFile("v2/Search/get_monthly_facilities_\(TestData.facilityID).json"))
         
         self.getMonthlyFacility(withID: TestData.facilityID)
     }

@@ -44,7 +44,7 @@ final class SearchGetTransientFacilitiesRequestLiveTests: LiveAPITestCase, Searc
 final class SearchGetTransientFacilitiesRequestMockTests: MockAPITestCase, SearchGetTransientFacilitiesRequestTests {
     func testGetTransientFacilitiesSucceeds() {
         self.stub(SearchGetTransientFacilitiesRequest.self,
-                  with: .apiMockFile("CRAIG/Search/get_transient_facilities.json"))
+                  with: .apiMockFile("v2/Search/get_transient_facilities.json"))
         
         self.getTransientFacilities(parameters: .init(latitude: TestData.latitude,
                                                       longitude: TestData.longitude,
