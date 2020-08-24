@@ -18,6 +18,7 @@ protocol SearchTracking: Encodable {
     var sessionID: String? { get }
 }
 
+/// A convenience struct for passing around Search Tracking parameters.
 public struct SearchTrackingParameters: SearchTracking {
     public var actionID: String?
     public var analyticsID: String?
