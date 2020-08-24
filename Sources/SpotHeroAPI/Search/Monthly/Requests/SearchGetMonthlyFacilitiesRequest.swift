@@ -33,13 +33,18 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
 
 public extension SearchGetMonthlyFacilitiesRequest {
     /// Represents the query parameters used for fetching monthly facilities.
-    struct Parameters: Encodable, ParameterDictionaryConvertible {
+    struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case latitude = "lat"
             case longitude = "lon"
             case startDate = "starts"
             case maxDistanceMeters = "max_distance_meters"
             case pageSize = "page_size"
+            
+            case actionID = "action_id"
+            case analyticsID = "analytics_id"
+            case searchID = "search_id"
+            case sessionID = "session_id"
         }
         
         /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
@@ -60,16 +65,27 @@ public extension SearchGetMonthlyFacilitiesRequest {
         /// The default is nil (no limit). Must be >= 1, if provided.
         private let pageSize: Int?
         
+        let actionID: String?
+        let analyticsID: String?
+        let searchID: String?
+        let sessionID: String?
+        
         public init(latitude: Double,
                     longitude: Double,
                     startDate: Date? = nil,
                     maxDistanceMeters: Int? = nil,
-                    pageSize: Int? = nil) {
+                    pageSize: Int? = nil,
+                    searchTracking: SearchTrackingParameters? = nil) {
             self.latitude = latitude
             self.longitude = longitude
             self.startDate = startDate
             self.maxDistanceMeters = maxDistanceMeters
             self.pageSize = pageSize
+            
+            self.actionID = searchTracking?.actionID
+            self.analyticsID = searchTracking?.analyticsID
+            self.searchID = searchTracking?.searchID
+            self.sessionID = searchTracking?.sessionID
         }
     }
 }

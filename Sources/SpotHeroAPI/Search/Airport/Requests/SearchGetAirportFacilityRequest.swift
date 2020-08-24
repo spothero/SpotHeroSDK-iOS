@@ -35,10 +35,15 @@ public struct SearchGetAirportFacilityRequest: RequestDefining {
 
 public extension SearchGetAirportFacilityRequest {
     /// Represents the query parameters used for fetching a airport facility.
-    struct Parameters: Encodable, ParameterDictionaryConvertible {
+    struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case endDate = "ends"
             case startDate = "starts"
+            
+            case actionID = "action_id"
+            case analyticsID = "analytics_id"
+            case searchID = "search_id"
+            case sessionID = "session_id"
         }
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
@@ -51,9 +56,21 @@ public extension SearchGetAirportFacilityRequest {
         /// If this parameter is not provided, results will be generated for 3 hours after the start time.
         private let endDate: Date?
         
-        public init(startDate: Date? = nil, endDate: Date? = nil) {
+        let actionID: String?
+        let analyticsID: String?
+        let searchID: String?
+        let sessionID: String?
+        
+        public init(startDate: Date? = nil,
+                    endDate: Date? = nil,
+                    searchTracking: SearchTrackingParameters? = nil) {
             self.startDate = startDate
             self.endDate = endDate
+            
+            self.actionID = searchTracking?.actionID
+            self.analyticsID = searchTracking?.analyticsID
+            self.searchID = searchTracking?.searchID
+            self.sessionID = searchTracking?.sessionID
         }
     }
 }

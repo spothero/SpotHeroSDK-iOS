@@ -35,17 +35,33 @@ public struct SearchGetMonthlyFacilityRequest: RequestDefining {
 
 public extension SearchGetMonthlyFacilityRequest {
     /// Represents the query parameters used for fetching a monthly facility.
-    struct Parameters: Encodable, ParameterDictionaryConvertible {
+    struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case startDate = "starts"
+            
+            case actionID = "action_id"
+            case analyticsID = "analytics_id"
+            case searchID = "search_id"
+            case sessionID = "session_id"
         }
         
         /// Start date from which results will be generated. The supported format is YYYY-MM-DD.
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
         private let startDate: Date?
         
-        public init(startDate: Date? = nil) {
+        let actionID: String?
+        let analyticsID: String?
+        let searchID: String?
+        let sessionID: String?
+        
+        public init(startDate: Date? = nil,
+                    searchTracking: SearchTrackingParameters? = nil) {
             self.startDate = startDate
+            
+            self.actionID = searchTracking?.actionID
+            self.analyticsID = searchTracking?.analyticsID
+            self.searchID = searchTracking?.searchID
+            self.sessionID = searchTracking?.sessionID
         }
     }
 }

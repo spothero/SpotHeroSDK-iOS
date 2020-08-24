@@ -35,11 +35,16 @@ public struct SearchGetTransientFacilityRequest: RequestDefining {
 
 public extension SearchGetTransientFacilityRequest {
     /// Represents the query parameters used for fetching a transient facility.
-    struct Parameters: Encodable, ParameterDictionaryConvertible {
+    struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case endDate = "ends"
             case isOversize = "oversize"
             case startDate = "starts"
+            
+            case actionID = "action_id"
+            case analyticsID = "analytics_id"
+            case searchID = "search_id"
+            case sessionID = "session_id"
         }
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
@@ -56,12 +61,23 @@ public extension SearchGetTransientFacilityRequest {
         /// will incorporate pricing for an oversize vehicle, if applicable.
         private let isOversize: Bool?
         
+        let actionID: String?
+        let analyticsID: String?
+        let searchID: String?
+        let sessionID: String?
+        
         public init(startDate: Date? = nil,
                     endDate: Date? = nil,
-                    isOversize: Bool? = nil) {
+                    isOversize: Bool? = nil,
+                    searchTracking: SearchTrackingParameters? = nil) {
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
+            
+            self.actionID = searchTracking?.actionID
+            self.analyticsID = searchTracking?.analyticsID
+            self.searchID = searchTracking?.searchID
+            self.sessionID = searchTracking?.sessionID
         }
     }
 }
