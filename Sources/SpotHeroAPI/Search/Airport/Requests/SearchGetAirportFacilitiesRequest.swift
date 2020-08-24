@@ -39,6 +39,11 @@ public extension SearchGetAirportFacilitiesRequest {
             case endDate = "ends"
             case startDate = "starts"
             case pageSize = "page_size"
+            
+            case actionID = "action_id"
+            case analyticsID = "analytics_id"
+            case searchID = "search_id"
+            case sessionID = "session_id"
         }
         
         /// IATA airport code used as the origin position.

@@ -40,6 +40,11 @@ public extension SearchGetTransientFacilityRequest {
             case endDate = "ends"
             case isOversize = "oversize"
             case startDate = "starts"
+            
+            case actionID = "action_id"
+            case analyticsID = "analytics_id"
+            case searchID = "search_id"
+            case sessionID = "session_id"
         }
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.

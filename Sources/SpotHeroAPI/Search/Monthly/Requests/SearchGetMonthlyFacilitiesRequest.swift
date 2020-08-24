@@ -40,6 +40,11 @@ public extension SearchGetMonthlyFacilitiesRequest {
             case startDate = "starts"
             case maxDistanceMeters = "max_distance_meters"
             case pageSize = "page_size"
+            
+            case actionID = "action_id"
+            case analyticsID = "analytics_id"
+            case searchID = "search_id"
+            case sessionID = "session_id"
         }
         
         /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].

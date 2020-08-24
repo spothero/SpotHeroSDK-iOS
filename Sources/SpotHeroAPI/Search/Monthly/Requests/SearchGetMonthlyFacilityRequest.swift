@@ -38,6 +38,11 @@ public extension SearchGetMonthlyFacilityRequest {
     struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case startDate = "starts"
+            
+            case actionID = "action_id"
+            case analyticsID = "analytics_id"
+            case searchID = "search_id"
+            case sessionID = "session_id"
         }
         
         /// Start date from which results will be generated. The supported format is YYYY-MM-DD.
