@@ -33,7 +33,7 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
 
 public extension SearchGetMonthlyFacilitiesRequest {
     /// Represents the query parameters used for fetching monthly facilities.
-    struct Parameters: Encodable {
+    struct Parameters: SearchTracking, Encodable {
         private enum CodingKeys: String, CodingKey {
             case latitude = "lat"
             case longitude = "lon"
