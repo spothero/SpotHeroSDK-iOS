@@ -72,10 +72,10 @@ public extension SearchGetTransientFacilitiesRequest {
         /// The default is nil (no limit). Must be >= 1, if provided.
         private let pageSize: Int?
         
-        var actionID: String?
-        var analyticsID: String?
-        var searchID: String?
-        var sessionID: String?
+        let actionID: String?
+        let analyticsID: String?
+        let searchID: String?
+        let sessionID: String?
         
         public init(latitude: Double,
                     longitude: Double,

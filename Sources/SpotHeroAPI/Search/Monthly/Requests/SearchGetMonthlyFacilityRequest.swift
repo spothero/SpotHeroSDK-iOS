@@ -44,10 +44,10 @@ public extension SearchGetMonthlyFacilityRequest {
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
         private let startDate: Date?
         
-        var actionID: String?
-        var analyticsID: String?
-        var searchID: String?
-        var sessionID: String?
+        let actionID: String?
+        let analyticsID: String?
+        let searchID: String?
+        let sessionID: String?
         
         public init(startDate: Date? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {

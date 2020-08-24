@@ -56,10 +56,10 @@ public extension SearchGetTransientFacilityRequest {
         /// will incorporate pricing for an oversize vehicle, if applicable.
         private let isOversize: Bool?
         
-        var actionID: String?
-        var analyticsID: String?
-        var searchID: String?
-        var sessionID: String?
+        let actionID: String?
+        let analyticsID: String?
+        let searchID: String?
+        let sessionID: String?
         
         public init(startDate: Date? = nil,
                     endDate: Date? = nil,
