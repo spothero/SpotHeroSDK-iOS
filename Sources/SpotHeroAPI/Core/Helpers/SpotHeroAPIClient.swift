@@ -35,16 +35,14 @@ public final class SpotHeroAPIClient {
     
     // MARK: Properties
     
-    /// Represents the `/search` endpoint.
-    public let search: SearchEndpoint
+    let networkClient: NetworkClient
+    
+    // WIP: Endpoint definitions will be added here
     
     // MARK: Methods
     
     /// Creates a new instance of `SpotHeroAPIClient`.
     public init(environment: Environment) {
-        let networkClient = NetworkClient(baseURL: environment.baseURL)
-        
-        /// V2 Endpoints
-        self.search = SearchEndpoint(client: networkClient)
+        self.networkClient = NetworkClient(baseURL: environment.baseURL)
     }
 }
