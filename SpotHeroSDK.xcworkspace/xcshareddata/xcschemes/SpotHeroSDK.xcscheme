@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SpotHeroAPI"
-               BuildableName = "SpotHeroAPI"
-               BlueprintName = "SpotHeroAPI"
+               BlueprintIdentifier = "SpotHeroAPINext"
+               BuildableName = "SpotHeroAPINext"
+               BlueprintName = "SpotHeroAPINext"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>

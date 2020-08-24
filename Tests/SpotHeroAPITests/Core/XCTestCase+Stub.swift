@@ -10,7 +10,9 @@ public extension XCTestCase {
     /// - Parameter request: The request definition to stub.
     /// - Parameter response: The response to return.
     func stub<T: RequestDefining>(_ request: T.Type, with response: StubResponse) where T.Route == String {
-        let stubRequest = StubRequest(method: T.method, url: T.route)
+        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
+        let url = "mobile\(T.route)"
+        let stubRequest = StubRequest(method: T.method, url: url)
         MockService.shared.stub(stubRequest, with: response)
     }
     
@@ -18,7 +20,9 @@ public extension XCTestCase {
     /// - Parameter request: The request definition to stub.
     /// - Parameter response: The response to return.
     func stub<T: RequestDefining>(_ request: T.Type, with response: StubResponse) where T.Route == URLConvertible {
-        let stubRequest = StubRequest(method: T.method, url: T.route)
+        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
+        let url = "mobile\(T.route)"
+        let stubRequest = StubRequest(method: T.method, url: url)
         MockService.shared.stub(stubRequest, with: response)
     }
 }
