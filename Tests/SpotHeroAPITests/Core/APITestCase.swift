@@ -7,7 +7,7 @@ import XCTest
 class APITestCase: XCTestCase {
     enum ServiceURL: String {
         case monolith = "https://mobile.staging.spothero.com"
-        case craig = "https://api.sandbox.spothero.com"
+        case craig = "https://api.staging.spothero.com/mobile"
     }
     
     static var timeout: TimeInterval = 15
@@ -27,6 +27,7 @@ class MockAPITestCase: APITestCase {
     // Before all tests
     override class func setUp() {
         super.setUp()
+        
         // Register the Sham MockService to start intercepting requests.
         MockService.shared.register()
         
@@ -40,5 +41,13 @@ class MockAPITestCase: APITestCase {
         
         // Before each test, ensure that the MockService has been cleared of all stubbed requests.
         MockService.shared.clearData()
+    }
+    
+    // After all tests
+    override class func tearDown() {
+        super.tearDown()
+        
+        // Unregister the Sham MockService to stop intercepting requests.
+        MockService.shared.unregister()
     }
 }
