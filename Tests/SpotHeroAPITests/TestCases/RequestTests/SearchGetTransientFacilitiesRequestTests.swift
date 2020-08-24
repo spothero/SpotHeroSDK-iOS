@@ -36,8 +36,7 @@ final class SearchGetTransientFacilitiesRequestLiveTests: LiveAPITestCase, Searc
     func testGetTransientFacilitiesSucceeds() {
         self.getTransientFacilities(parameters: .init(latitude: TestData.latitude,
                                                       longitude: TestData.longitude,
-                                                      startDate: TestData.startDate,
-                                                      pageSize: 5))
+                                                      startDate: TestData.startDate))
     }
 }
 
