@@ -35,7 +35,7 @@ public struct SearchGetTransientFacilityRequest: RequestDefining {
 
 public extension SearchGetTransientFacilityRequest {
     /// Represents the query parameters used for fetching a transient facility.
-    struct Parameters: Encodable {
+    struct Parameters: Encodable, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case endDate = "ends"
             case isOversize = "oversize"
@@ -63,22 +63,5 @@ public extension SearchGetTransientFacilityRequest {
             self.endDate = endDate
             self.isOversize = isOversize
         }
-    }
-}
-
-extension SearchGetTransientFacilityRequest.Parameters: ParameterDictionaryConvertible {
-    public func asParameterDictionary() -> [String: Any]? {
-        var parameters: [String: Any] = [:]
-        parameters[Self.CodingKeys.isOversize.rawValue] = self.isOversize
-        
-        if let startDate = self.startDate {
-            parameters[Self.CodingKeys.startDate.rawValue] = ISO8601DateFormatter().string(from: startDate)
-        }
-        
-        if let endDate = self.endDate {
-            parameters[Self.CodingKeys.endDate.rawValue] = ISO8601DateFormatter().string(from: endDate)
-        }
-        
-        return parameters
     }
 }

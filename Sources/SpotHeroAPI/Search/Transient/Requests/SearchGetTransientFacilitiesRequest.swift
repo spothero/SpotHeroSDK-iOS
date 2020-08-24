@@ -33,7 +33,7 @@ public struct SearchGetTransientFacilitiesRequest: RequestDefining {
 
 public extension SearchGetTransientFacilitiesRequest {
     /// Represents the query parameters used for fetching transient facilities.
-    struct Parameters: Encodable {
+    struct Parameters: Encodable, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case endDate = "ends"
             case latitude = "lat"
@@ -87,26 +87,5 @@ public extension SearchGetTransientFacilitiesRequest {
             self.maxDistanceMeters = maxDistanceMeters
             self.pageSize = pageSize
         }
-    }
-}
-
-extension SearchGetTransientFacilitiesRequest.Parameters: ParameterDictionaryConvertible {
-    public func asParameterDictionary() -> [String: Any]? {
-        var parameters: [String: Any] = [:]
-        parameters[Self.CodingKeys.latitude.rawValue] = self.latitude
-        parameters[Self.CodingKeys.longitude.rawValue] = self.longitude
-        parameters[Self.CodingKeys.isOversize.rawValue] = self.isOversize
-        parameters[Self.CodingKeys.maxDistanceMeters.rawValue] = self.maxDistanceMeters
-        parameters[Self.CodingKeys.pageSize.rawValue] = self.pageSize
-        
-        if let startDate = self.startDate {
-            parameters[Self.CodingKeys.startDate.rawValue] = ISO8601DateFormatter().string(from: startDate)
-        }
-        
-        if let endDate = self.endDate {
-            parameters[Self.CodingKeys.endDate.rawValue] = ISO8601DateFormatter().string(from: endDate)
-        }
-        
-        return parameters
     }
 }

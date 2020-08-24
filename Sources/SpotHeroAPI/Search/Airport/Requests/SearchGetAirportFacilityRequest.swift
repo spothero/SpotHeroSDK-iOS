@@ -35,7 +35,7 @@ public struct SearchGetAirportFacilityRequest: RequestDefining {
 
 public extension SearchGetAirportFacilityRequest {
     /// Represents the query parameters used for fetching a airport facility.
-    struct Parameters: Encodable {
+    struct Parameters: Encodable, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case endDate = "ends"
             case startDate = "starts"
@@ -55,21 +55,5 @@ public extension SearchGetAirportFacilityRequest {
             self.startDate = startDate
             self.endDate = endDate
         }
-    }
-}
-
-extension SearchGetAirportFacilityRequest.Parameters: ParameterDictionaryConvertible {
-    public func asParameterDictionary() -> [String: Any]? {
-        var parameters: [String: Any] = [:]
-        
-        if let startDate = self.startDate {
-            parameters[Self.CodingKeys.startDate.rawValue] = ISO8601DateFormatter().string(from: startDate)
-        }
-        
-        if let endDate = self.endDate {
-            parameters[Self.CodingKeys.endDate.rawValue] = ISO8601DateFormatter().string(from: endDate)
-        }
-        
-        return parameters
     }
 }
