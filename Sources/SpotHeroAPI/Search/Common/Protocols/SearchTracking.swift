@@ -24,4 +24,11 @@ public struct SearchTrackingParameters: SearchTracking {
     public var analyticsID: String?
     public var searchID: String?
     public var sessionID: String?
+    
+    public init(actionID: String?, analyticsID: String?, searchID: String?, sessionID: String?) {
+        self.actionID = actionID
+        self.analyticsID = analyticsID
+        self.searchID = searchID
+        self.sessionID = sessionID
+    }
 }
