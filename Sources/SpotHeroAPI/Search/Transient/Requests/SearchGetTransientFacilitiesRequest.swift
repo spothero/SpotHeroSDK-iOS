@@ -36,12 +36,14 @@ public extension SearchGetTransientFacilitiesRequest {
     struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case endDate = "ends"
+            case isOversize = "oversize"
             case latitude = "lat"
             case longitude = "lon"
-            case isOversize = "oversize"
-            case startDate = "starts"
             case maxDistanceMeters = "max_distance_meters"
+            case originLatitude = "origin_lat"
+            case originLongitude = "origin_lon"
             case pageSize = "page_size"
+            case startDate = "starts"
             
             case actionID = "action_id"
             case analyticsID = "analytics_id"
@@ -54,6 +56,18 @@ public extension SearchGetTransientFacilitiesRequest {
         
         /// Longitude in decimal degrees of origin from where the search will be performed. Longitude must be in [-180, 180].
         private let longitude: Double
+        
+        /// Latitude in decimal degrees of origin from where each result's distance will be calculated.
+        /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
+        /// Must be specified with `originLongitude` parameter, if applicable. If `originLatitude` and `originLongitude` are not populated,
+        /// result distances are calculated from the required `latitude` and `longitude` parameters. Origin latitude must be in [-90, 90].
+        private let originLatitude: Double?
+        
+        /// Longitude in decimal degrees of origin from where each result's distance will be calculated.
+        /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
+        /// Must be specified with `originLatitude` parameter, if applicable. If `originLatitude` and `originLongitude` are not populated,
+        /// result distances are calculated from the required `latitude` and `longitude` parameters. Origin longitude must be in [-180, 180].
+        private let originLongitude: Double?
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
         /// If a time zone is not specified, the time will be localized to each generated facility's location.
@@ -84,6 +98,8 @@ public extension SearchGetTransientFacilitiesRequest {
         
         public init(latitude: Double,
                     longitude: Double,
+                    originLatitude: Double? = nil,
+                    originLongitude: Double? = nil,
                     startDate: Date? = nil,
                     endDate: Date? = nil,
                     isOversize: Bool? = nil,
@@ -92,6 +108,8 @@ public extension SearchGetTransientFacilitiesRequest {
                     searchTracking: SearchTrackingParameters? = nil) {
             self.latitude = latitude
             self.longitude = longitude
+            self.originLatitude = originLatitude
+            self.originLongitude = originLongitude
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize

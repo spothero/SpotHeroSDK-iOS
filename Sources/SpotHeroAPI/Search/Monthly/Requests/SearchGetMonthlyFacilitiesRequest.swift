@@ -37,9 +37,9 @@ public extension SearchGetMonthlyFacilitiesRequest {
         private enum CodingKeys: String, CodingKey {
             case latitude = "lat"
             case longitude = "lon"
-            case startDate = "starts"
             case maxDistanceMeters = "max_distance_meters"
             case pageSize = "page_size"
+            case startDate = "starts"
             
             case actionID = "action_id"
             case analyticsID = "analytics_id"
