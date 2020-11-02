@@ -37,8 +37,8 @@ public extension SearchGetAirportFacilitiesRequest {
         private enum CodingKeys: String, CodingKey {
             case airportCode = "airport"
             case endDate = "ends"
-            case startDate = "starts"
             case pageSize = "page_size"
+            case startDate = "starts"
             
             case actionID = "action_id"
             case analyticsID = "analytics_id"
