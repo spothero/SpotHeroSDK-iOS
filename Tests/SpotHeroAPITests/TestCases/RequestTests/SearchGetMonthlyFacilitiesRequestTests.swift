@@ -4,7 +4,7 @@
 import XCTest
 
 private protocol SearchGetMonthlyFacilitiesRequestTests: APITestCase {
-    func testGetMonthlyFacilitiesSucceeds()
+    func testGetMonthlyFacilitiesSucceeds() throws
 }
 
 private extension SearchGetMonthlyFacilitiesRequestTests {
@@ -32,7 +32,9 @@ private extension SearchGetMonthlyFacilitiesRequestTests {
 
 // swiftlint:disable:next type_name
 final class SearchGetMonthlyFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
-    func testGetMonthlyFacilitiesSucceeds() {
+    func testGetMonthlyFacilitiesSucceeds() throws {
+        throw XCTSkip("Skipping for now until monthly is updated on the staging environment.")
+        
         self.getMonthlyFacilities(parameters: .init(latitude: TestData.latitude,
                                                     longitude: TestData.longitude,
                                                     startDate: TestData.startDate))
@@ -41,7 +43,7 @@ final class SearchGetMonthlyFacilitiesRequestLiveTests: LiveAPITestCase, SearchG
 
 // swiftlint:disable:next type_name
 final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
-    func testGetMonthlyFacilitiesSucceeds() {
+    func testGetMonthlyFacilitiesSucceeds() throws {
         self.stub(SearchGetMonthlyFacilitiesRequest.self,
                   with: .apiMockFile("v2/Search/get_monthly_facilities.json"))
         
