@@ -4,7 +4,7 @@
 public struct FacilityRating: Codable {
     /// Average rating from 0 to 5.
     /// `nil` implies that the rating has not yet been calculated.
-    public let rating: Double?
+    public let average: Double?
     
     /// Number of ratings.
     public let count: Int

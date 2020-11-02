@@ -8,7 +8,7 @@ protocol SearchTracking: Encodable {
     var actionID: String? { get }
 
     /// An identifier that represents a user across various analytics services. (eg. Segment, MixPanel, Optimizely, etc.)
-    var analyticsID: String? { get }
+    var fingerprint: String? { get }
 
     /// An identifier that represents each distinct search a user performs for parking.
     /// If a user changes the search text, timeframe, amenities, parking type, or any other value, a new search ID should be issued.
@@ -21,7 +21,14 @@ protocol SearchTracking: Encodable {
 /// A convenience struct for passing around Search Tracking parameters.
 public struct SearchTrackingParameters: SearchTracking {
     public var actionID: String?
-    public var analyticsID: String?
+    public var fingerprint: String?
     public var searchID: String?
     public var sessionID: String?
+    
+    public init(actionID: String?, fingerprint: String?, searchID: String?, sessionID: String?) {
+        self.actionID = actionID
+        self.fingerprint = fingerprint
+        self.searchID = searchID
+        self.sessionID = sessionID
+    }
 }

@@ -42,7 +42,7 @@ public extension SearchGetMonthlyFacilitiesRequest {
             case startDate = "starts"
             
             case actionID = "action_id"
-            case analyticsID = "analytics_id"
+            case fingerprint
             case searchID = "search_id"
             case sessionID = "session_id"
         }
@@ -66,7 +66,7 @@ public extension SearchGetMonthlyFacilitiesRequest {
         private let pageSize: Int?
         
         let actionID: String?
-        let analyticsID: String?
+        let fingerprint: String?
         let searchID: String?
         let sessionID: String?
         
@@ -83,7 +83,7 @@ public extension SearchGetMonthlyFacilitiesRequest {
             self.pageSize = pageSize
             
             self.actionID = searchTracking?.actionID
-            self.analyticsID = searchTracking?.analyticsID
+            self.fingerprint = searchTracking?.fingerprint
             self.searchID = searchTracking?.searchID
             self.sessionID = searchTracking?.sessionID
         }
