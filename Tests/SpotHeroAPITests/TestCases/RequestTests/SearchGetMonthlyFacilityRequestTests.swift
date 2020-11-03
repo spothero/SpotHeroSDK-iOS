@@ -4,7 +4,7 @@
 import XCTest
 
 private protocol SearchGetMonthlyFacilityRequestTests: APITestCase {
-    func testGetMonthlyFacilitySucceeds()
+    func testGetMonthlyFacilitySucceeds() throws
 }
 
 private extension SearchGetMonthlyFacilityRequestTests {
@@ -33,13 +33,15 @@ private extension SearchGetMonthlyFacilityRequestTests {
 }
 
 final class SearchGetMonthlyFacilityRequestLiveTests: LiveAPITestCase, SearchGetMonthlyFacilityRequestTests {
-    func testGetMonthlyFacilitySucceeds() {
+    func testGetMonthlyFacilitySucceeds() throws {
+        throw XCTSkip("Skipping for now until monthly is updated on the staging environment.")
+        
         self.getMonthlyFacility(withID: TestData.facilityID)
     }
 }
 
 final class SearchGetMonthlyFacilityRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilityRequestTests {
-    func testGetMonthlyFacilitySucceeds() {
+    func testGetMonthlyFacilitySucceeds() throws {
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         self.stub(.get("mobile\(SearchGetMonthlyFacilitiesRequest.route)/\(TestData.facilityID)"),
                   with: .apiMockFile("v2/Search/get_monthly_facilities_\(TestData.facilityID).json"))
