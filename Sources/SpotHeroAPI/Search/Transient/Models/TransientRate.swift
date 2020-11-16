@@ -4,11 +4,16 @@
 public struct TransientRate: Codable {
     private enum CodingKeys: String, CodingKey {
         case amenities
+        case earlyBird = "early_bird"
         case redemptionType = "redemption_type"
     }
     
     /// Transient parking amenities offered at the facility.
     public let amenities: [Amenity]
+    
+    /// Stores rate data specific to the early bird rate, if applicable.
+    /// If the returned rate does not represent an early bird rate, this object will be `nil`.
+    public let earlyBird: EarlyBird?
     
     /// Defines the garage's reservation redemption type.
     public let redemptionType: RedemptionType
