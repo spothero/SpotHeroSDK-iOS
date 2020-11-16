@@ -71,10 +71,10 @@ public extension SearchGetTransientFacilitiesRequest {
         /// result distances are calculated from the required `latitude` and `longitude` parameters. Origin longitude must be in [-180, 180].
         private let originLongitude: Double?
         
-        /// This represents the work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
+        /// The work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
         private let workLatitude: Double?
         
-        /// This represents the work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
+        /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
         private let workLongitude: Double?
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
