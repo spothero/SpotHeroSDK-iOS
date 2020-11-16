@@ -44,6 +44,8 @@ public extension SearchGetTransientFacilitiesRequest {
             case originLongitude = "origin_lon"
             case pageSize = "page_size"
             case startDate = "starts"
+            case workLatitude = "work_lat"
+            case workLongitude = "work_lon"
             
             case actionID = "action_id"
             case fingerprint
@@ -68,6 +70,12 @@ public extension SearchGetTransientFacilitiesRequest {
         /// Must be specified with `originLatitude` parameter, if applicable. If `originLatitude` and `originLongitude` are not populated,
         /// result distances are calculated from the required `latitude` and `longitude` parameters. Origin longitude must be in [-180, 180].
         private let originLongitude: Double?
+        
+        /// The work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
+        private let workLatitude: Double?
+        
+        /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
+        private let workLongitude: Double?
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
         /// If a time zone is not specified, the time will be localized to each generated facility's location.
@@ -100,6 +108,8 @@ public extension SearchGetTransientFacilitiesRequest {
                     longitude: Double,
                     originLatitude: Double? = nil,
                     originLongitude: Double? = nil,
+                    workLatitude: Double? = nil,
+                    workLongitude: Double? = nil,
                     startDate: Date? = nil,
                     endDate: Date? = nil,
                     isOversize: Bool? = nil,
@@ -110,6 +120,8 @@ public extension SearchGetTransientFacilitiesRequest {
             self.longitude = longitude
             self.originLatitude = originLatitude
             self.originLongitude = originLongitude
+            self.workLatitude = workLatitude
+            self.workLongitude = workLongitude
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
