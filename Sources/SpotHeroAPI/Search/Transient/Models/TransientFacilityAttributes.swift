@@ -14,7 +14,7 @@ public struct TransientFacilityAttributes: Codable {
     
     /// Stores rate data specific to the early bird rate, if applicable.
     /// If the returned rate does not represent an early bird rate, this object will be `nil`.
-    public let earlyBird: EarlyBird
+    public let earlyBird: EarlyBird?
     
     /// Indicates whether a commuter benefits cards is eligible to be used at this facility for the work location supplied on the request.
     public let isCommutedCardEligible: Bool
