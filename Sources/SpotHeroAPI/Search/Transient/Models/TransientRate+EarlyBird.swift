@@ -2,7 +2,7 @@
 
 import Foundation
 
-public extension TransientFacilityAttributes {
+public extension TransientRate {
     /// Contains all fields relevant to a facility’s cancellation policy.
     struct EarlyBird: Codable {
         private enum CodingKeys: String, CodingKey {
@@ -18,7 +18,7 @@ public extension TransientFacilityAttributes {
     }
 }
 
-public extension TransientFacilityAttributes.EarlyBird {
+public extension TransientRate.EarlyBird {
     /// Store the enter start/end times for the early bird rate.
     struct EnterPeriod: Codable {
         /// The enter start time for the early bird rate in the format XX:XX AM/PM with leading 0’s removed.
