@@ -22,9 +22,9 @@ public extension TransientFacilityAttributes.EarlyBird {
     /// Store the enter start/end times for the early bird rate.
     struct EnterPeriod: Codable {
         /// The enter start time for the early bird rate in the format XX:XX AM/PM with leading 0’s removed.
-        public let starts: Date
+        public let starts: String
         
         /// The enter end time for the early bird rate in the format XX:XX AM/PM with leading 0’s removed.
-        public let ends: Date
+        public let ends: String
     }
 }
