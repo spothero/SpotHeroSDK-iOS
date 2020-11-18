@@ -4,6 +4,7 @@
 public struct CommonFacilityAttributes: Codable {
     private enum CodingKeys: String, CodingKey {
         case addresses
+        case cancellation
         case clearanceInches = "clearance_inches"
         case description
         case facilityType = "facility_type"
@@ -60,4 +61,7 @@ public struct CommonFacilityAttributes: Codable {
     
     /// An array defining the supported fee types at the facility.
     public let supportedFeeTypes: [FacilityFee]
+    
+    /// Contains all fields relevant to a facility’s cancellation policy.
+    public let cancellation: Cancellation
 }
