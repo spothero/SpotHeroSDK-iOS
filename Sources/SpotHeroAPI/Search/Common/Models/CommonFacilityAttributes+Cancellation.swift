@@ -1,6 +1,6 @@
 // Copyright © 2020 SpotHero, Inc. All rights reserved.
 
-public extension TransientFacilityAttributes {
+public extension CommonFacilityAttributes {
     /// Contains all fields relevant to a facility’s cancellation policy.
     struct Cancellation: Codable {
         private enum CodingKeys: String, CodingKey {
