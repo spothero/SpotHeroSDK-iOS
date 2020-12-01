@@ -40,6 +40,8 @@ public extension SearchGetTransientFacilityRequest {
             case endDate = "ends"
             case isOversize = "oversize"
             case startDate = "starts"
+            case workLatitude = "work_lat"
+            case workLongitude = "work_lon"
             
             case actionID = "action_id"
             case fingerprint
@@ -61,6 +63,12 @@ public extension SearchGetTransientFacilityRequest {
         /// will incorporate pricing for an oversize vehicle, if applicable.
         private let isOversize: Bool?
         
+        /// The work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
+        private let workLatitude: Double?
+        
+        /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
+        private let workLongitude: Double?
+        
         let actionID: String?
         let fingerprint: String?
         let searchID: String?
@@ -69,10 +77,14 @@ public extension SearchGetTransientFacilityRequest {
         public init(startDate: Date? = nil,
                     endDate: Date? = nil,
                     isOversize: Bool? = nil,
+                    workLatitude: Double? = nil,
+                    workLongitude: Double? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
+            self.workLatitude = workLatitude
+            self.workLongitude = workLongitude
             
             self.actionID = searchTracking?.actionID
             self.fingerprint = searchTracking?.fingerprint
