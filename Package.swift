@@ -1,5 +1,5 @@
 // swift-tools-version:5.2
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 import PackageDescription
 
@@ -18,7 +18,7 @@ let package = Package(
         .library(name: "SpotHeroAPINextDynamic", type: .dynamic, targets: ["SpotHeroAPINext"]),
     ],
     dependencies: [
-        .package(name: "UtilityBelt", url: "https://github.com/spothero/UtilityBelt-iOS", from: "0.5.11"),
+        .package(name: "UtilityBelt", url: "https://github.com/spothero/UtilityBelt-iOS", .upToNextMinor(from: "0.5.15")),
     ],
     targets: [
         .target(
