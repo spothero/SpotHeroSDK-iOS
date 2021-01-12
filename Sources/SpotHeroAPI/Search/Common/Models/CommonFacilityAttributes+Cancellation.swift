@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 public extension CommonFacilityAttributes {
     /// Contains all fields relevant to a facility’s cancellation policy.

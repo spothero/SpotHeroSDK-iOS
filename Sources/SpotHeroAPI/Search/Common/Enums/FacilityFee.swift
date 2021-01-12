@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// Defines the supported fee types at the facility.
 /// The difference between a fee and a tax is when they are applied:

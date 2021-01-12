@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 public extension AirportRate {
     /// Attributes that can be displayed to the user to encourage them to book at a given airport facility.

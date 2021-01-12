@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// A value which uniquely distinguishes a type of amenity at a parking spot.
 public enum AmenityType: String, Codable {

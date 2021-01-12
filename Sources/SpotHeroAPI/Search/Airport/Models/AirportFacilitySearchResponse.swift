@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// The response returned when fetching an airport facility.
 public struct AirportFacilitySearchResponse: Codable {
