@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// Represents an availability search result containing monthly facility and rate information.
 public struct MonthlyFacilityResult: Codable {

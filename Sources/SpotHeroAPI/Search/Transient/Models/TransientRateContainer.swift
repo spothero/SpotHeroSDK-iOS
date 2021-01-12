@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// Represents an available rate at a given parking facility.
 public struct TransientRateContainer: Codable {

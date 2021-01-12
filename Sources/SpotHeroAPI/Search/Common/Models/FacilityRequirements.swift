@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// End-user requirements for reserving a given facility.
 public struct FacilityRequirements: Codable {

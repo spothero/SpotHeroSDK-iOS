@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 public extension MonthlyRate {
     /// Information concerning possible start dates for the reservation and any start date restrictions.

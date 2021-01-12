@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
 import XCTest
@@ -50,7 +50,7 @@ final class SearchGetTransientFacilityRequestMockTests: MockAPITestCase, SearchG
     }
 }
 
-private struct TestData {
+private enum TestData {
     static let facilityID = 2175
     static let startDate = Date() // Today
 }

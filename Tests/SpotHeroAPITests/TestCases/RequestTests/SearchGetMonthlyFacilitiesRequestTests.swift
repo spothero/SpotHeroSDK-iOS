@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
 import XCTest
@@ -53,7 +53,7 @@ final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchG
     }
 }
 
-private struct TestData {
+private enum TestData {
     static let latitude: Double = 41.8781 // Chicago Latitude
     static let longitude: Double = -87.6298 // Chicago Longitude
     static let startDate = Date() // Today

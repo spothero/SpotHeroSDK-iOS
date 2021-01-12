@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// Information concerning the redemption process for customers who park at a monthly facility.
 public struct MonthlyRedemptionInstructions: Codable {

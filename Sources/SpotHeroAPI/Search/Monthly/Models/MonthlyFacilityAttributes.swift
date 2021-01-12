@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// Represents facility information only applicable within the monthly context.
 public struct MonthlyFacilityAttributes: Codable {

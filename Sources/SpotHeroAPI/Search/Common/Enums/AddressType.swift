@@ -1,4 +1,4 @@
-// Copyright © 2020 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// Defines the purpose of the address/entrance at the facility.
 public enum AddressType: String, Codable {
