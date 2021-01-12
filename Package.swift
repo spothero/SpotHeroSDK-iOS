@@ -32,6 +32,7 @@ let package = Package(
             name: "SpotHeroAPITests",
             dependencies: [
                 .product(name: "Sham", package: "UtilityBelt"),
+                .product(name: "Sham_XCTestSupport", package: "UtilityBelt"),
                 .target(name: "SpotHeroAPINext"),
             ]
         ),

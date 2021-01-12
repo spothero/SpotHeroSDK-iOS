@@ -1,5 +1,6 @@
 // Copyright © 2021 SpotHero, Inc. All rights reserved.
 
+import Sham_XCTestSupport
 @testable import SpotHeroAPINext
 import XCTest
 
