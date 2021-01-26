@@ -45,7 +45,7 @@ final class SearchGetMonthlyFacilitiesRequestLiveTests: LiveAPITestCase, SearchG
 final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
     func testGetMonthlyFacilitiesSucceeds() throws {
         self.stub(SearchGetMonthlyFacilitiesRequest.self,
-                  with: .apiMockFile("v2/Search/get_monthly_facilities.json"))
+                  with: .apiMockFile("get_monthly_facilities"))
         
         self.getMonthlyFacilities(parameters: .init(latitude: TestData.latitude,
                                                     longitude: TestData.longitude,

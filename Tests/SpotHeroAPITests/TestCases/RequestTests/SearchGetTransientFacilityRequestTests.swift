@@ -44,7 +44,7 @@ final class SearchGetTransientFacilityRequestMockTests: MockAPITestCase, SearchG
     func testGetTransientFacilitiesSucceeds() {
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         self.stub(.get("mobile\(SearchGetTransientFacilityRequest.route)/\(TestData.facilityID)"),
-                  with: .apiMockFile("v2/Search/get_transient_facilities_\(TestData.facilityID).json"))
+                  with: .apiMockFile("get_transient_facilities_\(TestData.facilityID)"))
         
         self.getTransientFacility(withID: TestData.facilityID)
     }
