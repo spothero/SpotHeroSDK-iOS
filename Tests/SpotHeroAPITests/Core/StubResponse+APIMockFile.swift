@@ -12,7 +12,7 @@ extension StubResponse {
     static func apiMockFile(_ file: String,
                             statusCode: HTTPStatusCode = .ok,
                             headers: [String: String] = [:]) -> StubResponse {
-        return .relativeFile("../Resources/MockFiles.bundle/\(file)",
+        return .relativeFile("../Resources/MockFiles/\(file)",
                              statusCode: statusCode,
                              headers: headers)
     }
