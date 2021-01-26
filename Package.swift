@@ -35,7 +35,10 @@ let package = Package(
                 .product(name: "Sham_XCTestSupport", package: "UtilityBelt"),
                 .target(name: "SpotHeroAPINext"),
             ],
-            resources: [.process("Resources")]
+            resources: [
+                .process("Resources"),
+                .process("SearchMockFiles.bundle"),
+            ]
         ),
     ]
 )
