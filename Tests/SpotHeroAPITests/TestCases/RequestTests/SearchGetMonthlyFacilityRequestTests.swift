@@ -45,7 +45,7 @@ final class SearchGetMonthlyFacilityRequestMockTests: MockAPITestCase, SearchGet
     func testGetMonthlyFacilitySucceeds() throws {
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         self.stub(.get("mobile\(SearchGetMonthlyFacilitiesRequest.route)/\(TestData.facilityID)"),
-                  with: .apiMockFile("v2/Search/get_monthly_facilities_\(TestData.facilityID).json"))
+                  with: .apiMockFile("get_monthly_facilities_\(TestData.facilityID)"))
         
         self.getMonthlyFacility(withID: TestData.facilityID)
     }

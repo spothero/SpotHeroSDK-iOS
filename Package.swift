@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.3
 // Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 import PackageDescription
@@ -34,7 +34,8 @@ let package = Package(
                 .product(name: "Sham", package: "UtilityBelt"),
                 .product(name: "Sham_XCTestSupport", package: "UtilityBelt"),
                 .target(name: "SpotHeroAPINext"),
-            ]
+            ],
+            resources: [.process("Resources")]
         ),
     ]
 )
