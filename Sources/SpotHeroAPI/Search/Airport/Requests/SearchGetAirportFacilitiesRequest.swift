@@ -35,7 +35,7 @@ public extension SearchGetAirportFacilitiesRequest {
     /// Represents the query parameters used for fetching airport facilities.
     struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
-            case airportCode = "airport"
+            case iataCode = "iata"
             case endDate = "ends"
             case pageSize = "page_size"
             case startDate = "starts"
@@ -47,7 +47,7 @@ public extension SearchGetAirportFacilitiesRequest {
         }
         
         /// IATA airport code used as the origin position.
-        private let airportCode: String
+        private let iataCode: String
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
         /// If a time zone is not specified, the time will be localized to each generated facility's location.
@@ -68,12 +68,12 @@ public extension SearchGetAirportFacilitiesRequest {
         let searchID: String?
         let sessionID: String?
         
-        public init(airportCode: String,
+        public init(iataCode: String,
                     startDate: Date? = nil,
                     endDate: Date? = nil,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
-            self.airportCode = airportCode
+            self.iataCode = iataCode
             self.startDate = startDate
             self.endDate = endDate
             self.pageSize = pageSize
