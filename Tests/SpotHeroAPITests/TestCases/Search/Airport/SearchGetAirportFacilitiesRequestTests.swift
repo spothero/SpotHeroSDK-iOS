@@ -30,3 +30,27 @@ private extension SearchGetAirportFacilitiesRequestTests {
         self.waitForExpectations(timeout: Self.timeout)
     }
 }
+
+// swiftlint:disable:next type_name
+final class SearchGetAirportFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetAirportFacilitiesRequestTests {
+    func testGetAirportFacilitiesSucceeds() {
+        self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
+                                                    startDate: TestData.startDate))
+    }
+}
+
+// swiftlint:disable:next type_name
+final class SearchGetAirportFacilitiesRequestMockTests: MockAPITestCase, SearchGetAirportFacilitiesRequestTests {
+    func testGetAirportFacilitiesSucceeds() {
+        self.stub(SearchGetAirportFacilitiesRequest.self,
+                  with: .apiMockFile("get_Airport_facilities"))
+        
+        self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
+                                                    startDate: TestData.startDate))
+    }
+}
+
+private enum TestData {
+    static let iataCode = "ORD" // Chicago O'Hare
+    static let startDate = Date() // Today
+}

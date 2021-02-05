@@ -4,7 +4,7 @@
 import XCTest
 
 private protocol SearchGetAirportFacilityRequestTests: APITestCase {
-    func testGetAirportFacilitiesSucceeds()
+    func testGetAirportFacilitiesSucceeds() throws
 }
 
 private extension SearchGetAirportFacilityRequestTests {
@@ -30,4 +30,25 @@ private extension SearchGetAirportFacilityRequestTests {
         
         self.waitForExpectations(timeout: Self.timeout)
     }
+}
+
+final class SearchGetAirportFacilityRequestLiveTests: LiveAPITestCase, SearchGetAirportFacilityRequestTests {
+    func testGetAirportFacilitiesSucceeds() throws {
+        self.getAirportFacility(withID: TestData.facilityID)
+    }
+}
+
+final class SearchGetAirportFacilityRequestMockTests: MockAPITestCase, SearchGetAirportFacilityRequestTests {
+    func testGetAirportFacilitiesSucceeds() throws {
+        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
+        self.stub(.get("mobile\(SearchGetAirportFacilityRequest.route)/\(TestData.facilityID)"),
+                  with: .apiMockFile("get_Airport_facilities_\(TestData.facilityID)"))
+        
+        self.getAirportFacility(withID: TestData.facilityID)
+    }
+}
+
+private enum TestData {
+    static let facilityID = 2175
+    static let startDate = Date() // Today
 }
