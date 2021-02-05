@@ -1,5 +1,9 @@
 {
   "result": {
+    "availability": {
+      "available": true,
+      "unavailable_reasons": []
+    },
     "distance": null,
     "facility": {
       "common": {
@@ -38,6 +42,11 @@
             "postal_code": "60605"
           }
         ],
+        "cancellation": {
+          "allowed_by_customer": true,
+          "allowed_by_spothero_customer_service": true,
+          "minutes": 0
+        },
         "description": "",
         "facility_type": "garage",
         "navigation_tip": "Enter this location at 318 S Federal St. This garage is operated by InterPark. It is located on the west side of S Federal St. between W Jackson Blvd. and W Van Buren St. You may also enter this location at its other entrance, 64 W Van Buren St.",
@@ -82,8 +91,8 @@
           "transient"
         ],
         "rating": {
-          "average": 4.602529960053262,
-          "count": 6008
+          "average": 4.797872340425532,
+          "count": 94
         },
         "restrictions": [
           "Height restriction: 82 inches"
@@ -93,35 +102,51 @@
           "license_plate": false,
           "phone_number": false
         },
-        "supported_fee_types": [
-          "blanket_fee",
-          "facility_fee"
-        ],
-        "@availability": "https://api.sandbox.spothero.com/v2/search/transient/2175"
+        "supported_fee_types": [],
+        "@availability": "https://api.staging.spothero.com/mobile/v2/search/transient/2175"
       },
       "transient": {
         "redemption_instructions": {
           "drive_up": [
             {
-              "id": "39859",
+              "id": "34745",
               "illustration": {
-                "id": "1",
-                "url": "https://res.cloudinary.com/spothero/image/upload/v1408636831/jxvqbxtqj6tvdvdv0ytj.png",
-                "alt_text": "Valet Pass Check"
+                "id": "48",
+                "url": "https://res.cloudinary.com/spothero/image/upload/v1466114851/ggmmuyefup3xu8f6g13z.png",
+                "alt_text": "Parkonect Icon"
               },
-              "text": "<p>When you're ready to go, show the valet your ticket and your car will be retrieved. cherries</p>"
+              "text": "<p>Scan your QR Code at the black, circular Parkonect reader. Look for the green sign stating \"Pre-paid Online Parker Use Only.\" Hold the QR code about 2 inches away from the reader and the gate will open.</p>"
             },
             {
-              "id": "39853",
+              "id": "34747",
               "illustration": {
-                "id": "1",
-                "url": "https://res.cloudinary.com/spothero/image/upload/v1408636831/jxvqbxtqj6tvdvdv0ytj.png",
-                "alt_text": "Valet Pass Check"
+                "id": "7",
+                "url": "https://res.cloudinary.com/spothero/image/upload/v1408636122/b2omz3upgcpjn44cyhjb.png",
+                "alt_text": "Park Where"
               },
-              "text": "<p>When you're ready to go, show the valet your ticket and your car will be retrieved. apples</p>"
+              "text": "<p>You may park anywhere that doesn't say \"Reserved\".</p>"
+            },
+            {
+              "id": "34746",
+              "illustration": {
+                "id": "48",
+                "url": "https://res.cloudinary.com/spothero/image/upload/v1466114851/ggmmuyefup3xu8f6g13z.png",
+                "alt_text": "Parkonect Icon"
+              },
+              "text": "<p>When exiting, scan your QR Code at the black, circular Parkonect reader. Look for the green sign stating \"Pre-paid Online Parker Use Only.\" Hold the QR code about 2 inches away from the reader.</p>"
+            },
+            {
+              "id": "34748",
+              "illustration": {
+                "id": "5",
+                "url": "https://res.cloudinary.com/spothero/image/upload/v1408636305/yaemlosarlqngsj63tch.png",
+                "alt_text": "See Ya (Gate)"
+              },
+              "text": "<p>The gate will open and you're free to go!</p>"
             }
           ]
-        }
+        },
+        "is_commuter_card_eligible": false
       }
     },
     "rates": [
@@ -130,60 +155,58 @@
           "redemption_type": "self",
           "amenities": [
             {
-              "type": "covered",
-              "description": "The facility has a roof over the vehicles."
-            },
-            {
-              "type": "ev",
-              "description": "The facility has EV charging capabilities."
-            },
-            {
-              "type": "attendant",
-              "description": "The facility has staff on-site for assistance and questions."
-            },
-            {
-              "type": "paved",
-              "description": "The surface of the facility is solid, such as asphalt or concrete."
-            },
-            {
               "type": "self_park",
+              "display_name": "Self Park",
               "description": "Users may park their own vehicles at this facility."
             },
             {
+              "type": "covered",
+              "display_name": "Garage - Covered",
+              "description": "The facility has a roof over the vehicles."
+            },
+            {
+              "type": "paved",
+              "display_name": "Lot - Uncovered",
+              "description": "The surface of the facility is solid, such as asphalt or concrete."
+            },
+            {
               "type": "touchless",
+              "display_name": "Touchless",
               "description": "Entering/exiting the facility does not require touching shared surfaces."
+            },
+            {
+              "type": "attendant",
+              "display_name": "On-Site Staff",
+              "description": "The facility has staff on-site for assistance and questions."
+            },
+            {
+              "type": "ev",
+              "display_name": "EV Charging",
+              "description": "The facility has EV charging capabilities."
             }
-          ]
+          ],
+          "early_bird": null
         },
         "quote": {
           "order": [
             {
               "facility_id": "2175",
-              "starts": "2020-07-29T15:00:26-05:00",
-              "ends": "2020-07-29T18:00:26-05:00",
+              "starts": "2021-02-04T22:52:02-06:00",
+              "ends": "2021-02-05T01:52:02-06:00",
               "rate_id": "2088",
               "items": [
                 {
                   "price": {
-                    "value": 1575,
+                    "value": 1500,
                     "currency_code": "USD"
                   },
                   "type": "rental",
                   "short_description": "Subtotal",
                   "full_description": ""
-                },
-                {
-                  "price": {
-                    "value": 50,
-                    "currency_code": "USD"
-                  },
-                  "type": "blanket_fee",
-                  "short_description": "Service Fee",
-                  "full_description": "The service fee helps us cover the costs of running our platform and providing services related to your Reservation. For more information, visit our FAQs."
                 }
               ],
               "total_price": {
-                "value": 1625,
+                "value": 1500,
                 "currency_code": "USD"
               },
               "meta": {}
@@ -192,34 +215,25 @@
           "items": [
             {
               "price": {
-                "value": 1575,
+                "value": 1500,
                 "currency_code": "USD"
               },
               "type": "rental",
               "short_description": "Subtotal",
               "full_description": ""
-            },
-            {
-              "price": {
-                "value": 50,
-                "currency_code": "USD"
-              },
-              "type": "blanket_fee",
-              "short_description": "Service Fee",
-              "full_description": "The service fee helps us cover the costs of running our platform and providing services related to your Reservation. For more information, visit our FAQs."
             }
           ],
           "total_price": {
-            "value": 1625,
+            "value": 1500,
             "currency_code": "USD"
           },
           "advertised_price": {
-            "value": 1575,
+            "value": 1500,
             "currency_code": "USD"
           },
           "meta": {
             "quote_mac": "2088",
-            "quote_valid_until": "2020-07-29T18:00:26-05:00",
+            "quote_valid_until": "2021-02-05T01:52:02-06:00",
             "partner_id": ""
           }
         }

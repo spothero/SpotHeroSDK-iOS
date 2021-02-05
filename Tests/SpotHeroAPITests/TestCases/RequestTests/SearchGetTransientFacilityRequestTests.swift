@@ -4,7 +4,7 @@
 import XCTest
 
 private protocol SearchGetTransientFacilityRequestTests: APITestCase {
-    func testGetTransientFacilitiesSucceeds()
+    func testGetTransientFacilitiesSucceeds() throws
 }
 
 private extension SearchGetTransientFacilityRequestTests {
@@ -34,14 +34,14 @@ private extension SearchGetTransientFacilityRequestTests {
 
 // swiftlint:disable:next type_name
 final class SearchGetTransientFacilityRequestLiveTests: LiveAPITestCase, SearchGetTransientFacilityRequestTests {
-    func testGetTransientFacilitiesSucceeds() {
+    func testGetTransientFacilitiesSucceeds() throws {
         self.getTransientFacility(withID: TestData.facilityID)
     }
 }
 
 // swiftlint:disable:next type_name
 final class SearchGetTransientFacilityRequestMockTests: MockAPITestCase, SearchGetTransientFacilityRequestTests {
-    func testGetTransientFacilitiesSucceeds() {
+    func testGetTransientFacilitiesSucceeds() throws {
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         self.stub(.get("mobile\(SearchGetTransientFacilityRequest.route)/\(TestData.facilityID)"),
                   with: .apiMockFile("get_transient_facilities_\(TestData.facilityID)"))
