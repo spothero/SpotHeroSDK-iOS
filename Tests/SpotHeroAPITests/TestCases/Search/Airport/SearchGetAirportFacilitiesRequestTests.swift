@@ -43,7 +43,7 @@ final class SearchGetAirportFacilitiesRequestLiveTests: LiveAPITestCase, SearchG
 final class SearchGetAirportFacilitiesRequestMockTests: MockAPITestCase, SearchGetAirportFacilitiesRequestTests {
     func testGetAirportFacilitiesSucceeds() {
         self.stub(SearchGetAirportFacilitiesRequest.self,
-                  with: .apiMockFile("get_Airport_facilities"))
+                  with: .apiMockFile("get_airport_facilities"))
         
         self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
                                                     startDate: TestData.startDate))

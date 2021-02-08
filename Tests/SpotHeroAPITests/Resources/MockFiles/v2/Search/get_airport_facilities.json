@@ -1,0 +1,218 @@
+{
+  "airport": {
+    "code": "ORD",
+    "full_name": "Chicago - O'hare",
+    "short_name": "O'Hare Airport",
+    "latitude": 41.979809563099998,
+    "longitude": -87.881541973500006
+  },
+  "results": [{
+    "rates": [{
+      "airport": {
+        "comparisons": null,
+        "amenities": [{
+            "type": "self_park",
+            "description": "Users may park their own vehicles at this facility.",
+            "display_name": "Self Park"
+          },
+          {
+            "type": "paved",
+            "description": "The surface of the facility is solid, such as asphalt or concrete.",
+            "display_name": "Lot - Uncovered"
+          },
+          {
+            "type": "shuttle",
+            "description": "The facility has a shuttle available to nearby destinations, like an airport.",
+            "display_name": "Airport Shuttle"
+          }
+        ],
+        "lowest_daily_rate": {
+          "value": 2600,
+          "currency_code": "CURRENCY_USD"
+        },
+        "redemption_type": "self",
+        "tag": null
+      },
+      "quote": {
+        "meta": {
+          "quote_valid_until": "2021-02-08T17:20:38-06:00",
+          "partner_id": "",
+          "quote_mac": "4786"
+        },
+        "order": [{
+          "starts": "2021-02-08T14:20:38-06:00",
+          "items": [{
+            "full_description": "",
+            "price": {
+              "value": 2600,
+              "currency_code": "USD"
+            },
+            "type": "rental",
+            "short_description": "Subtotal"
+          }],
+          "ends": "2021-02-08T17:20:38-06:00",
+          "facility_id": "271",
+          "total_price": {
+            "value": 2600,
+            "currency_code": "USD"
+          },
+          "meta": {
+
+          },
+          "rate_id": "4786"
+        }],
+        "items": [{
+          "full_description": "",
+          "price": {
+            "value": 2600,
+            "currency_code": "USD"
+          },
+          "type": "rental",
+          "short_description": "Subtotal"
+        }],
+        "total_price": {
+          "value": 2600,
+          "currency_code": "USD"
+        },
+        "advertised_price": {
+          "value": 2600,
+          "currency_code": "USD"
+        }
+      }
+    }],
+    "distance": {
+      "linear_meters": 1628.1651470769204
+    },
+    "facility": {
+      "airport": {
+        "redemption_instructions": {
+          "arrival": [{
+              "id": "36394",
+              "illustration": {
+                "id": "6",
+                "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/v1408636215\/egujzas3s3lavcix5mit.png",
+                "alt_text": "Scan QR"
+              },
+              "text": "Scan your QR Code at the box with the red flashing lights. Hold the QR code about 2 inches away from the reader and the gate will open."
+            },
+            {
+              "id": "36395",
+              "illustration": {
+                "id": "7",
+                "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/v1408636122\/b2omz3upgcpjn44cyhjb.png",
+                "alt_text": "Park Where"
+              },
+              "text": "You may park anywhere that doesn't say \"Reserved\"."
+            },
+            {
+              "id": "36396",
+              "illustration": {
+                "id": "6",
+                "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/v1408636215\/egujzas3s3lavcix5mit.png",
+                "alt_text": "Scan QR"
+              },
+              "text": "When exiting, scan your QR Code again at the box with the red flashing lights."
+            },
+            {
+              "id": "36397",
+              "illustration": {
+                "id": "5",
+                "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/v1408636305\/yaemlosarlqngsj63tch.png",
+                "alt_text": "See Ya (Gate)"
+              },
+              "text": "The gate will open and you're free to go!"
+            }
+          ],
+          "departure": [
+
+          ]
+        },
+        "logo": {
+          "id": "20883",
+          "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/w_601,h_339,x_300,y_169,q_50,c_fill,g_xy_center,f_auto\/v1533052901\/achkeywjrcm0kbrt209v.jpg",
+          "alt_text": "5300 N River Road Parking"
+        },
+        "transportation": {
+          "contact_phone_number": "+1 312-456-7890",
+          "schedule": {
+            "duration": 15,
+            "slow_frequency": 10,
+            "fast_frequency": 5
+          },
+          "type": "scheduled_shuttle",
+          "images": [{
+            "id": "20883",
+            "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/w_601,h_339,x_300,y_169,q_50,c_fill,g_xy_center,f_auto\/v1533052901\/achkeywjrcm0kbrt209v.jpg",
+            "alt_text": "5300 N River Road Parking"
+          }],
+          "hours_of_operation": {
+            "periods": [
+
+            ],
+            "always_open": true
+          }
+        }
+      },
+      "common": {
+        "id": "271",
+        "description": "<p>The Intercontinental Garage is open 24 hours. There is a shuttle that runs every 15 minutes to Ohare<\/p>",
+        "facility_type": "lot",
+        "addresses": [{
+          "time_zone": "America\/Chicago",
+          "city": "Rosemont",
+          "longitude": -87.863022400000006,
+          "id": "212",
+          "country": "US",
+          "street_address": "5300 N River Road",
+          "types": [
+            "physical",
+            "search",
+            "walking_distance",
+            "default_vehicle_entrance"
+          ],
+          "latitude": 41.974824300000002,
+          "postal_code": "60018",
+          "state": "IL"
+        }],
+        "cancellation": {
+          "minutes": 0,
+          "allowed_by_customer": true,
+          "allowed_by_spothero_customer_service": true
+        },
+        "rating": {
+          "average": 0,
+          "count": 0
+        },
+        "parking_types": [
+          "transient",
+          "airport"
+        ],
+        "restrictions": [
+
+        ],
+        "supported_fee_types": [
+
+        ],
+        "navigation_tip": "",
+        "@availability": "https:\/\/api.staging.spothero.com\/mobile\/v2\/search\/transient\/271",
+        "title": "Ohare Airport Parking",
+        "images": [
+
+        ],
+        "requirements": {
+          "license_plate": true,
+          "printout": true,
+          "phone_number": false
+        },
+        "clearance_inches": null,
+        "hours_of_operation": {
+          "periods": [
+
+          ],
+          "always_open": true
+        }
+      }
+    }
+  }],
+  "@next": ""
+}

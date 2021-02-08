@@ -42,13 +42,13 @@ final class SearchGetAirportFacilityRequestMockTests: MockAPITestCase, SearchGet
     func testGetAirportFacilitiesSucceeds() throws {
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         self.stub(.get("mobile\(SearchGetAirportFacilityRequest.route)/\(TestData.facilityID)"),
-                  with: .apiMockFile("get_Airport_facilities_\(TestData.facilityID)"))
+                  with: .apiMockFile("get_airport_facilities_\(TestData.facilityID)"))
         
         self.getAirportFacility(withID: TestData.facilityID)
     }
 }
 
 private enum TestData {
-    static let facilityID = 2175
+    static let facilityID = 271
     static let startDate = Date() // Today
 }
