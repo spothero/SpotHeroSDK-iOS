@@ -11,5 +11,5 @@ public struct Currency: Codable {
     public let value: Int
     
     /// The currency in which all monetary values are expressed, given as an ISO 4217 currency code.
-    public let currencyCode: CurrencyCode
+    public let currencyCode: String
 }

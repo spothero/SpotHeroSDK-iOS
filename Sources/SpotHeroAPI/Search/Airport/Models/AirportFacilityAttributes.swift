@@ -3,13 +3,13 @@
 /// Attributes that apply to the facility for the airport parking type.
 public struct AirportFacilityAttributes: Codable {
     private enum CodingKeys: String, CodingKey {
-        case logos
+        case logo
         case redemptionInstructions = "redemption_instructions"
         case transportation
     }
     
-    /// Logo(s) for the business operating the facility.
-    public let logos: [Image]
+    /// Logo for the business operating the facility.
+    public let logo: Image
     
     /// Information concerning the redemption process for customers who park at a facility.
     public let redemptionInstructions: AirportRedemptionInstructions

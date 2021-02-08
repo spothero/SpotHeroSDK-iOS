@@ -8,7 +8,6 @@ public struct Airport: Codable {
         case shortName = "short_name"
         case latitude
         case longitude
-        case urlPath = "url_path"
     }
     
     /// The IATA code of the airport.
@@ -25,7 +24,4 @@ public struct Airport: Codable {
     
     /// Longitude in decimal degrees in [-180, 180].
     public let longitude: Double
-    
-    /// The URL path for the SpotHero airport landing page.
-    public let urlPath: String
 }
