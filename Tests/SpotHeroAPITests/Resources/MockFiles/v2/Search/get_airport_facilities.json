@@ -28,7 +28,7 @@
         ],
         "lowest_daily_rate": {
           "value": 2600,
-          "currency_code": "CURRENCY_USD"
+          "currency_code": "USD"
         },
         "redemption_type": "self",
         "tag": null
