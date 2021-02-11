@@ -10,8 +10,12 @@ public enum AmenityType: String, Codable {
     case electricVehicle = "ev"
     /// The facility is heated during cold weather.
     case heated
+    /// The facility is immediately available for parking after a monthly reservation is created.
+    case immediateParking = "immediate_parking"
     /// Users may enter and exit the facility more than one time.
     case inOut = "in_out"
+    /// The facility does not require a signed, long-term contract for monthly parking.
+    case noContract = "no_contract"
     /// The user can open the gate with a button on their app.
     case oneTap = "one_tap"
     /// The surface of the facility is solid, such as asphalt or concrete.
