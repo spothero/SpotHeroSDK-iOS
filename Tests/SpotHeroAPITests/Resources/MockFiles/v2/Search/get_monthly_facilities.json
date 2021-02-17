@@ -1,110 +1,483 @@
 {
   "results": [{
       "rates": [{
-        "monthly": {
-          "in_out_privileges": {
-            "allowed": true,
-            "fee": {
-              "value": 0,
-              "currency_code": "USD"
+          "monthly": {
+            "in_out_privileges": {
+              "allowed": true,
+              "fee": {
+                "value": 0,
+                "currency_code": "USD"
+              },
+              "description": "Unlimited In\/Out privileges."
             },
-            "description": "Unlimited In\/Out privileges."
-          },
-          "reservation_type": "247",
-          "redemption_instructions": {
-            "long_term": [
+            "reservation_type": "247",
+            "redemption_instructions": {
+              "long_term": [
 
-            ],
-            "short_term": [{
-                "id": "1885",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
+              ],
+              "short_term": [{
+                  "id": "3782",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Please complete the attached application.<\/p>"
                 },
-                "text": "<p>Complete the attached application.&nbsp;<\/p>"
-              },
-              {
-                "id": "1886",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
+                {
+                  "id": "8440",
+                  "illustration": {
+                    "id": "qxzzfxbzzpv9uttohajw",
+                    "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/v1408636496\/qxzzfxbzzpv9uttohajw.png",
+                    "alt_text": ""
+                  },
+                  "text": "The valet will hand you a ticket and will park your car. You must have this ticket in order to exit."
                 },
-                "text": "<p>Email the completed application to adekunle.aminu@abm.com as soon as possible.<\/p>"
-              },
-              {
-                "id": "1887",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
-                },
-                "text": "<p>Until you receive your key fob, you may began parking immediately by displaying a copy of your SpotHero confirmation on your dashboard.&nbsp;<\/p>"
-              },
-              {
-                "id": "5344",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
-                },
-                "text": "<p>Your card will be charged automatically each month until you cancel. If you would like to cancel this recurring charge, please email support@spothero.com<\/p>"
-              }
-            ]
-          },
-          "title": "24\/7 Parking",
-          "start_date_options": {
-            "choices": [{
-              "ends": "2020-09-24",
-              "starts": "2020-08-25"
-            }],
-            "restriction": "none"
-          },
-          "redemption_type": "self",
-          "amenities": [{
+                {
+                  "id": "8441",
+                  "illustration": {
+                    "id": "jxvqbxtqj6tvdvdv0ytj",
+                    "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/v1408636831\/jxvqbxtqj6tvdvdv0ytj.png",
+                    "alt_text": ""
+                  },
+                  "text": "When you're ready to go, show the valet your ticket and your car will be retrieved."
+                }
+              ]
+            },
+            "title": "Monthly",
+            "start_date_options": {
+              "choices": [{
+                "ends": "2021-03-10",
+                "starts": "2021-02-11"
+              }],
+              "restriction": "none"
+            },
+            "redemption_type": "self",
+            "amenities": [{
               "type": "self_park",
-              "description": "Users may park their own vehicles at this facility."
+              "description": "Users may park their own vehicles at this facility.",
+              "display_name": "Self Park"
+            }],
+            "contract": {
+              "duration_months": 12,
+              "required": true,
+              "termination_fee": {
+                "value": 2500,
+                "currency_code": "USD"
+              },
+              "cancellation_requirements": {
+                "notice_days": 30,
+                "notice_required": false
+              }
             },
-            {
-              "type": "shuttle",
-              "description": "The facility has a shuttle available to nearby destinations, like an airport."
+            "post_purchase_instructions": ""
+          },
+          "quote": {
+            "meta": {
+              "quote_valid_until": "0001-01-01T00:00:00Z",
+              "partner_id": "",
+              "quote_mac": ""
             },
-            {
-              "type": "ev",
-              "description": "The facility has EV charging capabilities."
-            },
-            {
-              "type": "wheelchair_accessible",
-              "description": "The facility is wheelchair accessible."
-            },
-            {
-              "type": "attendant",
-              "description": "The facility has staff on-site for assistance and questions."
-            }
-          ],
-          "contract": {
-            "duration_months": 12,
-            "required": false,
-            "termination_fee": {
-              "value": 0,
+            "order": [{
+              "starts": "2021-02-11T00:00:00-06:00",
+              "items": [{
+                "full_description": "",
+                "price": {
+                  "value": 45000,
+                  "currency_code": "USD"
+                },
+                "type": "rental",
+                "short_description": "Subtotal"
+              }],
+              "ends": "2021-03-10T23:59:59-06:00",
+              "facility_id": "769",
+              "total_price": {
+                "value": 45000,
+                "currency_code": "USD"
+              },
+              "meta": {
+
+              },
+              "rate_id": "47298"
+            }],
+            "items": [{
+              "full_description": "",
+              "price": {
+                "value": 45000,
+                "currency_code": "USD"
+              },
+              "type": "rental",
+              "short_description": "Subtotal"
+            }],
+            "total_price": {
+              "value": 45000,
               "currency_code": "USD"
             },
-            "cancellation_requirements": {
-              "notice_days": 30,
-              "notice_required": false
+            "advertised_price": {
+              "value": 45000,
+              "currency_code": "USD"
             }
-          },
-          "post_purchase_instructions": ""
+          }
         },
-        "quote": {
-          "meta": {
-            "quote_valid_until": "0001-01-01T00:00:00Z",
-            "partner_id": "",
-            "quote_mac": ""
+        {
+          "monthly": {
+            "in_out_privileges": {
+              "allowed": true,
+              "fee": {
+                "value": 0,
+                "currency_code": "USD"
+              },
+              "description": "Unlimited In\/Out privileges."
+            },
+            "reservation_type": "247",
+            "redemption_instructions": {
+              "long_term": [
+
+              ],
+              "short_term": [
+
+              ]
+            },
+            "title": "Legacy Intro",
+            "start_date_options": {
+              "choices": [{
+                "ends": "2021-03-10",
+                "starts": "2021-02-11"
+              }],
+              "restriction": "none"
+            },
+            "redemption_type": "self",
+            "amenities": [{
+              "type": "self_park",
+              "description": "Users may park their own vehicles at this facility.",
+              "display_name": "Self Park"
+            }],
+            "contract": {
+              "duration_months": 12,
+              "required": true,
+              "termination_fee": {
+                "value": 0,
+                "currency_code": "USD"
+              },
+              "cancellation_requirements": {
+                "notice_days": 30,
+                "notice_required": false
+              }
+            },
+            "post_purchase_instructions": ""
           },
-          "order": [{
-            "starts": "2020-08-25T00:00:00-05:00",
+          "quote": {
+            "meta": {
+              "quote_valid_until": "0001-01-01T00:00:00Z",
+              "partner_id": "",
+              "quote_mac": ""
+            },
+            "order": [{
+              "starts": "2021-02-11T00:00:00-06:00",
+              "items": [{
+                "full_description": "",
+                "price": {
+                  "value": 10000,
+                  "currency_code": "USD"
+                },
+                "type": "rental",
+                "short_description": "Subtotal"
+              }],
+              "ends": "2021-03-10T23:59:59-06:00",
+              "facility_id": "769",
+              "total_price": {
+                "value": 10000,
+                "currency_code": "USD"
+              },
+              "meta": {
+
+              },
+              "rate_id": "47377"
+            }],
+            "items": [{
+              "full_description": "",
+              "price": {
+                "value": 10000,
+                "currency_code": "USD"
+              },
+              "type": "rental",
+              "short_description": "Subtotal"
+            }],
+            "total_price": {
+              "value": 10000,
+              "currency_code": "USD"
+            },
+            "advertised_price": {
+              "value": 10000,
+              "currency_code": "USD"
+            }
+          }
+        },
+        {
+          "monthly": {
+            "in_out_privileges": {
+              "allowed": true,
+              "fee": {
+                "value": 0,
+                "currency_code": "USD"
+              },
+              "description": "Unlimited In\/Out privileges."
+            },
+            "reservation_type": "247",
+            "redemption_instructions": {
+              "long_term": [
+
+              ],
+              "short_term": [
+
+              ]
+            },
+            "title": "Monthly",
+            "start_date_options": {
+              "choices": [{
+                "ends": "2021-03-10",
+                "starts": "2021-02-11"
+              }],
+              "restriction": "none"
+            },
+            "redemption_type": "self",
+            "amenities": [{
+              "type": "self_park",
+              "description": "Users may park their own vehicles at this facility.",
+              "display_name": "Self Park"
+            }],
+            "contract": {
+              "duration_months": 12,
+              "required": true,
+              "termination_fee": {
+                "value": 2500,
+                "currency_code": "USD"
+              },
+              "cancellation_requirements": {
+                "notice_days": 30,
+                "notice_required": false
+              }
+            },
+            "post_purchase_instructions": ""
+          },
+          "quote": {
+            "meta": {
+              "quote_valid_until": "0001-01-01T00:00:00Z",
+              "partner_id": "",
+              "quote_mac": ""
+            },
+            "order": [{
+              "starts": "2021-02-11T00:00:00-06:00",
+              "items": [{
+                "full_description": "",
+                "price": {
+                  "value": 10000,
+                  "currency_code": "USD"
+                },
+                "type": "rental",
+                "short_description": "Subtotal"
+              }],
+              "ends": "2021-03-10T23:59:59-06:00",
+              "facility_id": "769",
+              "total_price": {
+                "value": 10000,
+                "currency_code": "USD"
+              },
+              "meta": {
+
+              },
+              "rate_id": "47307"
+            }],
+            "items": [{
+              "full_description": "",
+              "price": {
+                "value": 10000,
+                "currency_code": "USD"
+              },
+              "type": "rental",
+              "short_description": "Subtotal"
+            }],
+            "total_price": {
+              "value": 10000,
+              "currency_code": "USD"
+            },
+            "advertised_price": {
+              "value": 10000,
+              "currency_code": "USD"
+            }
+          }
+        },
+        {
+          "monthly": {
+            "in_out_privileges": {
+              "allowed": true,
+              "fee": {
+                "value": 0,
+                "currency_code": "USD"
+              },
+              "description": "Unlimited In\/Out privileges."
+            },
+            "reservation_type": "247",
+            "redemption_instructions": {
+              "long_term": [
+
+              ],
+              "short_term": [{
+                  "id": "1885",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Complete the attached application.&nbsp;<\/p>"
+                },
+                {
+                  "id": "8453",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Complete the attached application.&nbsp;<\/p>"
+                },
+                {
+                  "id": "8456",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Email the completed application to adekunle.aminu@abm.com as soon as possible.<\/p>"
+                },
+                {
+                  "id": "1886",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Email the completed application to adekunle.aminu@abm.com as soon as possible.<\/p>"
+                },
+                {
+                  "id": "1887",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Until you receive your key fob, you may began parking immediately by displaying a copy of your SpotHero confirmation on your dashboard.&nbsp;<\/p>"
+                },
+                {
+                  "id": "8462",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Until you receive your key fob, you may began parking immediately by displaying a copy of your SpotHero confirmation on your dashboard.&nbsp;<\/p>"
+                },
+                {
+                  "id": "5344",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Your card will be charged automatically each month until you cancel. If you would like to cancel this recurring charge, please email support@spothero.com<\/p>"
+                },
+                {
+                  "id": "8464",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Your card will be charged automatically each month until you cancel. If you would like to cancel this recurring charge, please email support@spothero.com<\/p>"
+                }
+              ]
+            },
+            "title": "24\/7 Parking",
+            "start_date_options": {
+              "choices": [{
+                "ends": "2021-03-10",
+                "starts": "2021-02-11"
+              }],
+              "restriction": "none"
+            },
+            "redemption_type": "self",
+            "amenities": [{
+                "type": "self_park",
+                "description": "Users may park their own vehicles at this facility.",
+                "display_name": "Self Park"
+              },
+              {
+                "type": "covered",
+                "description": "The facility has a roof over the vehicles.",
+                "display_name": "Garage - Covered"
+              },
+              {
+                "type": "paved",
+                "description": "The surface of the facility is solid, such as asphalt or concrete.",
+                "display_name": "Lot - Uncovered"
+              },
+              {
+                "type": "immediate_parking",
+                "description": "The facility is immediately available for parking after a monthly reservation is created.",
+                "display_name": "Immediate Parking"
+              },
+              {
+                "type": "attendant",
+                "description": "The facility has staff on-site for assistance and questions.",
+                "display_name": "On-Site Staff"
+              },
+              {
+                "type": "wheelchair_accessible",
+                "description": "The facility is wheelchair accessible.",
+                "display_name": "Wheelchair Accessible"
+              }
+            ],
+            "contract": {
+              "duration_months": 12,
+              "required": true,
+              "termination_fee": {
+                "value": 2500,
+                "currency_code": "USD"
+              },
+              "cancellation_requirements": {
+                "notice_days": 30,
+                "notice_required": false
+              }
+            },
+            "post_purchase_instructions": ""
+          },
+          "quote": {
+            "meta": {
+              "quote_valid_until": "0001-01-01T00:00:00Z",
+              "partner_id": "",
+              "quote_mac": ""
+            },
+            "order": [{
+              "starts": "2021-02-11T00:00:00-06:00",
+              "items": [{
+                "full_description": "",
+                "price": {
+                  "value": 42500,
+                  "currency_code": "USD"
+                },
+                "type": "rental",
+                "short_description": "Subtotal"
+              }],
+              "ends": "2021-03-10T23:59:59-06:00",
+              "facility_id": "769",
+              "total_price": {
+                "value": 42500,
+                "currency_code": "USD"
+              },
+              "meta": {
+
+              },
+              "rate_id": "2191"
+            }],
             "items": [{
               "full_description": "",
               "price": {
@@ -114,130 +487,57 @@
               "type": "rental",
               "short_description": "Subtotal"
             }],
-            "ends": "2020-09-24T23:59:59-05:00",
-            "facility_id": "769",
             "total_price": {
               "value": 42500,
               "currency_code": "USD"
             },
-            "meta": {
-
-            },
-            "rate_id": "2191"
-          }],
-          "items": [{
-            "full_description": "",
-            "price": {
+            "advertised_price": {
               "value": 42500,
               "currency_code": "USD"
-            },
-            "type": "rental",
-            "short_description": "Subtotal"
-          }],
-          "total_price": {
-            "value": 42500,
-            "currency_code": "USD"
-          },
-          "advertised_price": {
-            "value": 42500,
-            "currency_code": "USD"
+            }
           }
         }
-      }],
+      ],
       "distance": {
-        "linear_meters": 128
+        "linear_meters": 126
       },
       "facility": {
         "monthly": {
           "lowest_price": {
-            "value": 42500,
+            "value": 10000,
             "currency_code": "USD"
           },
           "highest_price": {
-            "value": 42500,
+            "value": 45000,
             "currency_code": "USD"
           }
         },
         "common": {
           "id": "769",
-          "description": "",
+          "description": "<div style=\"display: none;\">&nbsp;<\/div><p>&nbsp;<\/p>",
           "facility_type": "garage",
           "addresses": [{
-              "time_zone": "America\/Chicago",
-              "city": "Chicago",
-              "longitude": -87.630779599999983,
-              "id": "5302",
-              "country": "US",
-              "street_address": "316 South Clark Street",
-              "types": [
-                "default_vehicle_entrance"
-              ],
-              "latitude": 41.877925699999999,
-              "postal_code": "60605",
-              "state": "IL"
-            },
-            {
-              "time_zone": "America\/Chicago",
-              "city": "Chicago",
-              "longitude": -87.631147253999998,
-              "id": "694",
-              "country": "US",
-              "street_address": "111 West Jackson Boulevard",
-              "types": [
-                "physical",
-                "search",
-                "walking_distance"
-              ],
-              "latitude": 41.877530417999999,
-              "postal_code": "60604",
-              "state": "IL"
-            }
-          ],
-          "rating": {
-            "average": 4,
-            "count": 2
+            "time_zone": "America\/Chicago",
+            "city": "Chicago",
+            "longitude": -87.631276,
+            "id": "694",
+            "country": "US",
+            "street_address": "111 West Jackson Boulevard",
+            "types": [
+              "physical",
+              "search",
+              "walking_distance",
+              "default_vehicle_entrance"
+            ],
+            "latitude": 41.877817999999998,
+            "postal_code": "60604",
+            "state": "IL"
+          }],
+          "cancellation": {
+            "minutes": 0,
+            "allowed_by_customer": true,
+            "allowed_by_spothero_customer_service": true
           },
-          "restrictions": [
-            "Height restriction: 68 inches",
-            "If you purchase evening parking, you MUST enter between 5:00-7:00pm. There will not be an attendant present after 7:00pm."
-          ],
-          "parking_types": [
-            "transient",
-            "monthly"
-          ],
-          "supported_fee_types": [
-
-          ],
-          "@availability": "https:\/\/api.staging.spothero.com\/mobile\/v2\/search\/transient\/769",
-          "navigation_tip": "Enter this location at 316 S Clark St. This is the Chicago Board of Trade garage operated by ABM. It is located on the west\/right-hand side of Clark St. (a one-way street) between W Jackson Blvd. and W Van Buren St.",
-          "title": "111 W Jackson Blvd. - Garage",
-          "images": [{
-              "id": "9139",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1444670651\/uxbuqktqm3gazoxsojpn.jpg",
-              "alt_text": "111 West Jackson Boulevard Parking"
-            },
-            {
-              "id": "9143",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1444670682\/krdfhidancrbftwfcm9i.jpg",
-              "alt_text": "111 West Jackson Boulevard Parking"
-            },
-            {
-              "id": "9142",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1444670671\/aid6h3pzbu3erqbw3yu7.jpg",
-              "alt_text": "111 West Jackson Boulevard Parking"
-            },
-            {
-              "id": "9141",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1444670661\/h1nmcidksjcezf4v2lbq.jpg",
-              "alt_text": "111 West Jackson Boulevard Parking"
-            }
-          ],
-          "requirements": {
-            "license_plate": true,
-            "printout": false,
-            "phone_number": false
-          },
-          "clearance_inches": 68,
           "hours_of_operation": {
             "periods": [{
                 "day_of_week": "monday",
@@ -266,107 +566,194 @@
               }
             ],
             "always_open": false
-          }
+          },
+          "parking_types": [
+            "transient",
+            "monthly"
+          ],
+          "rating": {
+            "average": 4.0999999999999996,
+            "count": 10
+          },
+          "restrictions": [
+            "Height restriction: 68 inches",
+            "If you purchase evening parking, you MUST enter between 5:00-7:00pm. There will not be an attendant present after 7:00pm."
+          ],
+          "navigation_tip": "Enter this location at 316 S Clark St. This is the Chicago Board of Trade garage operated by ABM. It is located on the west\/right-hand side of Clark St. (a one-way street) between W Jackson Blvd. and W Van Buren St.",
+          "supported_fee_types": [
+
+          ],
+          "title": "Test Spot 2 - Garage",
+          "@availability": "https:\/\/api.staging.spothero.com\/v2\/search\/transient\/769",
+          "slug": "111-w-jackson-blvd",
+          "images": [{
+              "id": "9143",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/c_scale,fl_relative,g_south_east,l_logos:spothero,o_27,w_0.25,x_0.05,y_0.05\/v1444670682\/krdfhidancrbftwfcm9i.jpg",
+              "alt_text": "111 West Jackson Boulevard Parking"
+            },
+            {
+              "id": "9139",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/c_scale,fl_relative,g_south_east,l_logos:spothero,o_27,w_0.25,x_0.05,y_0.05\/v1444670651\/uxbuqktqm3gazoxsojpn.jpg",
+              "alt_text": "111 West Jackson Boulevard Parking"
+            },
+            {
+              "id": "9142",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/c_scale,fl_relative,g_south_east,l_logos:spothero,o_27,w_0.25,x_0.05,y_0.05\/v1444670671\/aid6h3pzbu3erqbw3yu7.jpg",
+              "alt_text": "111 West Jackson Boulevard Parking"
+            },
+            {
+              "id": "9141",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/c_scale,fl_relative,g_south_east,l_logos:spothero,o_27,w_0.25,x_0.05,y_0.05\/v1444670661\/h1nmcidksjcezf4v2lbq.jpg",
+              "alt_text": "111 West Jackson Boulevard Parking"
+            }
+          ],
+          "requirements": {
+            "license_plate": true,
+            "printout": false,
+            "phone_number": false
+          },
+          "status": "on_sales_allowed",
+          "clearance_inches": 68
         }
       }
     },
     {
       "rates": [{
-        "monthly": {
-          "in_out_privileges": {
-            "allowed": true,
-            "fee": {
-              "value": 0,
-              "currency_code": "USD"
+          "monthly": {
+            "in_out_privileges": {
+              "allowed": true,
+              "fee": {
+                "value": 0,
+                "currency_code": "USD"
+              },
+              "description": "Unlimited In\/Out privileges."
             },
-            "description": "Unlimited In\/Out privileges."
-          },
-          "reservation_type": "247",
-          "redemption_instructions": {
-            "long_term": [
+            "reservation_type": "247",
+            "redemption_instructions": {
+              "long_term": [
 
-            ],
-            "short_term": [{
-                "id": "1864",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
+              ],
+              "short_term": [{
+                  "id": "1864",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Complete the attached application. &nbsp;&nbsp;<\/p>"
                 },
-                "text": "<p>Complete the attached application. &nbsp;&nbsp;<\/p>"
+                {
+                  "id": "1866",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>&nbsp;Bring the completed application to 124 S Wabash St., along with a copy of your SpotHero reservation receipt &amp; the duration in which you plan on parking at this location.<\/p>"
+                },
+                {
+                  "id": "3619",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Your card will be charged automatically each month until you cancel. If you would like to cancel this recurring charge, please email support@spothero.com<\/p>"
+                }
+              ]
+            },
+            "title": "24\/7 Parking",
+            "start_date_options": {
+              "choices": [{
+                  "ends": "2021-02-28",
+                  "starts": "2021-02-01"
+                },
+                {
+                  "ends": "2021-02-28",
+                  "starts": "2021-02-15"
+                }
+              ],
+              "restriction": "1st_or_15th"
+            },
+            "redemption_type": "self",
+            "amenities": [{
+                "type": "self_park",
+                "description": "Users may park their own vehicles at this facility.",
+                "display_name": "Self Park"
               },
               {
-                "id": "1866",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
-                },
-                "text": "<p>&nbsp;Bring the completed application to 124 S Wabash St., along with a copy of your SpotHero reservation receipt &amp; the duration in which you plan on parking at this location.<\/p>"
+                "type": "covered",
+                "description": "The facility has a roof over the vehicles.",
+                "display_name": "Garage - Covered"
               },
               {
-                "id": "3619",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
-                },
-                "text": "<p>Your card will be charged automatically each month until you cancel. If you would like to cancel this recurring charge, please email support@spothero.com<\/p>"
+                "type": "paved",
+                "description": "The surface of the facility is solid, such as asphalt or concrete.",
+                "display_name": "Lot - Uncovered"
+              },
+              {
+                "type": "immediate_parking",
+                "description": "The facility is immediately available for parking after a monthly reservation is created.",
+                "display_name": "Immediate Parking"
+              },
+              {
+                "type": "attendant",
+                "description": "The facility has staff on-site for assistance and questions.",
+                "display_name": "On-Site Staff"
+              },
+              {
+                "type": "no_contract",
+                "description": "The facility does not require a signed, long-term contract for monthly parking.",
+                "display_name": "Month to Month"
+              },
+              {
+                "type": "wheelchair_accessible",
+                "description": "The facility is wheelchair accessible.",
+                "display_name": "Wheelchair Accessible"
               }
-            ]
+            ],
+            "contract": {
+              "duration_months": 12,
+              "required": false,
+              "termination_fee": {
+                "value": 0,
+                "currency_code": "USD"
+              },
+              "cancellation_requirements": {
+                "notice_days": 30,
+                "notice_required": false
+              }
+            },
+            "post_purchase_instructions": ""
           },
-          "title": "24\/7 Parking",
-          "start_date_options": {
-            "choices": [{
-              "ends": "2020-09-24",
-              "starts": "2020-08-25"
+          "quote": {
+            "meta": {
+              "quote_valid_until": "0001-01-01T00:00:00Z",
+              "partner_id": "",
+              "quote_mac": ""
+            },
+            "order": [{
+              "starts": "2021-02-11T00:00:00-06:00",
+              "items": [{
+                "full_description": "",
+                "price": {
+                  "value": 34000,
+                  "currency_code": "USD"
+                },
+                "type": "rental",
+                "short_description": "Subtotal"
+              }],
+              "ends": "2021-03-10T23:59:59-06:00",
+              "facility_id": "311",
+              "total_price": {
+                "value": 34000,
+                "currency_code": "USD"
+              },
+              "meta": {
+
+              },
+              "rate_id": "14552"
             }],
-            "restriction": "none"
-          },
-          "redemption_type": "self",
-          "amenities": [{
-              "type": "self_park",
-              "description": "Users may park their own vehicles at this facility."
-            },
-            {
-              "type": "covered",
-              "description": "The facility has a roof over the vehicles."
-            },
-            {
-              "type": "paved",
-              "description": "The surface of the facility is solid, such as asphalt or concrete."
-            },
-            {
-              "type": "wheelchair_accessible",
-              "description": "The facility is wheelchair accessible."
-            },
-            {
-              "type": "attendant",
-              "description": "The facility has staff on-site for assistance and questions."
-            }
-          ],
-          "contract": {
-            "duration_months": 12,
-            "required": false,
-            "termination_fee": {
-              "value": 0,
-              "currency_code": "USD"
-            },
-            "cancellation_requirements": {
-              "notice_days": 30,
-              "notice_required": false
-            }
-          },
-          "post_purchase_instructions": ""
-        },
-        "quote": {
-          "meta": {
-            "quote_valid_until": "0001-01-01T00:00:00Z",
-            "partner_id": "",
-            "quote_mac": ""
-          },
-          "order": [{
-            "starts": "2020-08-25T00:00:00-05:00",
             "items": [{
               "full_description": "",
               "price": {
@@ -376,43 +763,160 @@
               "type": "rental",
               "short_description": "Subtotal"
             }],
-            "ends": "2020-09-24T23:59:59-05:00",
-            "facility_id": "311",
             "total_price": {
               "value": 34000,
               "currency_code": "USD"
             },
-            "meta": {
-
-            },
-            "rate_id": "14552"
-          }],
-          "items": [{
-            "full_description": "",
-            "price": {
+            "advertised_price": {
               "value": 34000,
               "currency_code": "USD"
+            }
+          }
+        },
+        {
+          "monthly": {
+            "in_out_privileges": {
+              "allowed": true,
+              "fee": {
+                "value": 0,
+                "currency_code": "USD"
+              },
+              "description": "Unlimited In\/Out privileges."
             },
-            "type": "rental",
-            "short_description": "Subtotal"
-          }],
-          "total_price": {
-            "value": 34000,
-            "currency_code": "USD"
+            "reservation_type": "nights_only",
+            "redemption_instructions": {
+              "long_term": [
+
+              ],
+              "short_term": [{
+                  "id": "1625",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Complete the attached application &amp; email to Chris at SP+ parking (cpacyniak@spplus.com).<\/p>"
+                },
+                {
+                  "id": "8060",
+                  "illustration": {
+                    "id": "",
+                    "url": "",
+                    "alt_text": ""
+                  },
+                  "text": "<p>Once you have received your decal, you may start parking immediately.&nbsp;<\/p>"
+                }
+              ]
+            },
+            "title": "Monthly",
+            "start_date_options": {
+              "choices": [{
+                  "ends": "2021-02-28",
+                  "starts": "2021-02-01"
+                },
+                {
+                  "ends": "2021-03-14",
+                  "starts": "2021-02-15"
+                }
+              ],
+              "restriction": "1st_or_15th"
+            },
+            "redemption_type": "self",
+            "amenities": [{
+                "type": "self_park",
+                "description": "Users may park their own vehicles at this facility.",
+                "display_name": "Self Park"
+              },
+              {
+                "type": "covered",
+                "description": "The facility has a roof over the vehicles.",
+                "display_name": "Garage - Covered"
+              },
+              {
+                "type": "paved",
+                "description": "The surface of the facility is solid, such as asphalt or concrete.",
+                "display_name": "Lot - Uncovered"
+              },
+              {
+                "type": "immediate_parking",
+                "description": "The facility is immediately available for parking after a monthly reservation is created.",
+                "display_name": "Immediate Parking"
+              },
+              {
+                "type": "no_contract",
+                "description": "The facility does not require a signed, long-term contract for monthly parking.",
+                "display_name": "Month to Month"
+              }
+            ],
+            "contract": {
+              "duration_months": 12,
+              "required": false,
+              "termination_fee": {
+                "value": 0,
+                "currency_code": "USD"
+              },
+              "cancellation_requirements": {
+                "notice_days": 30,
+                "notice_required": false
+              }
+            },
+            "post_purchase_instructions": ""
           },
-          "advertised_price": {
-            "value": 34000,
-            "currency_code": "USD"
+          "quote": {
+            "meta": {
+              "quote_valid_until": "0001-01-01T00:00:00Z",
+              "partner_id": "",
+              "quote_mac": ""
+            },
+            "order": [{
+              "starts": "2021-02-11T00:00:00-06:00",
+              "items": [{
+                "full_description": "",
+                "price": {
+                  "value": 12300,
+                  "currency_code": "USD"
+                },
+                "type": "rental",
+                "short_description": "Subtotal"
+              }],
+              "ends": "2021-03-10T23:59:59-06:00",
+              "facility_id": "311",
+              "total_price": {
+                "value": 12300,
+                "currency_code": "USD"
+              },
+              "meta": {
+
+              },
+              "rate_id": "46548"
+            }],
+            "items": [{
+              "full_description": "",
+              "price": {
+                "value": 12300,
+                "currency_code": "USD"
+              },
+              "type": "rental",
+              "short_description": "Subtotal"
+            }],
+            "total_price": {
+              "value": 12300,
+              "currency_code": "USD"
+            },
+            "advertised_price": {
+              "value": 12300,
+              "currency_code": "USD"
+            }
           }
         }
-      }],
+      ],
       "distance": {
         "linear_meters": 375
       },
       "facility": {
         "monthly": {
           "lowest_price": {
-            "value": 34000,
+            "value": 12300,
             "currency_code": "USD"
           },
           "highest_price": {
@@ -441,57 +945,67 @@
             "postal_code": "60603",
             "state": "IL"
           }],
-          "rating": {
-            "average": 0,
-            "count": 0
+          "cancellation": {
+            "minutes": 0,
+            "allowed_by_customer": true,
+            "allowed_by_spothero_customer_service": true
           },
-          "restrictions": [
-            " HERO TIP: Parking spaces at this facility are narrow, so smaller or compact vehicles are ideal for this location.",
-            "<b><font color=\"#ff0000\">This garage is for the exclusive use of Palmer House guests and patrons of its tenant businesses. Violators will be towed.<\/font><\/b>",
-            "At high-volume times, the attendant may ask to valet your vehicle.",
-            "Height restriction: 79 inches",
-            "When you pull up the garage will say “Full,” however you will already have a reserved space so you will be fine to enter."
-          ],
+          "hours_of_operation": {
+            "periods": [
+
+            ],
+            "always_open": true
+          },
           "parking_types": [
             "transient",
             "monthly"
           ],
+          "rating": {
+            "average": 4.403349108117947,
+            "count": 19229
+          },
+          "restrictions": [
+            "<b><font color=\"#ff0000\">This garage is for the exclusive use of Palmer House guests and patrons of its tenant businesses. Violators will be towed.<\/font><\/b>",
+            "At high-volume times, the attendant may ask to valet your vehicle.",
+            "HERO TIP: Parking spaces at this facility are narrow, so smaller or compact vehicles are ideal for this location.",
+            "Height restriction: 79 inches",
+            "When you pull up the garage will say “Full,” however you will already have a reserved space so you will be fine to enter."
+          ],
+          "navigation_tip": "Enter this location at 124 S Wabash Ave. This is the Palmer House garage operated by ABM Parking. It is located on the west\/right-hand side of S Wabash Ave St (a one-way street) between E Monroe St and E Adams St. It is just past the Corner Bakery and just before the main entrance of the Palmer House. Please note: The address 124 S. Wabash is for GPS purposes, this address will not be displayed above the garage entrance, look for a black and gold sign stating \"Parking\" in white print.",
           "supported_fee_types": [
 
           ],
-          "@availability": "https:\/\/api.staging.spothero.com\/mobile\/v2\/search\/transient\/311",
-          "navigation_tip": "Enter this location at 124 S Wabash Ave. This is the Palmer House garage operated by ABM Parking. It is located on the west\/right-hand side of S Wabash Ave St (a one-way street) between E Monroe St and E Adams St. It is just past the Corner Bakery and just before the main entrance of the Palmer House. Please note: The address 124 S. Wabash is for GPS purposes, this address will not be displayed above the garage entrance, look for a black and gold sign stating \"Parking\" in white print.",
           "title": "124 S Wabash Ave. - Garage",
+          "@availability": "https:\/\/api.staging.spothero.com\/v2\/search\/transient\/311",
+          "slug": "124-s-wabash",
           "images": [{
               "id": "3453",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4608,h_3072,x_2304,y_1536,q_50,c_fill,g_xy_center,f_auto\/v1412377222\/msvt2qdusildhvgopsl3.jpg",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4608,h_3072,q_50,x_2304,y_1536,c_fill,g_xy_center,f_auto\/v1412377222\/msvt2qdusildhvgopsl3.jpg",
+              "alt_text": "124 S Wabash Ave. Parking"
+            },
+            {
+              "id": "19778",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/image\/upload\/w_1080,h_720,q_50,x_220,y_397,c_fill,g_xy_center,f_auto\/v1590786751\/voaosra9oj4prthr0fyr.jpg",
               "alt_text": "124 S Wabash Ave. Parking"
             },
             {
               "id": "3452",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4608,h_3072,x_2304,y_1536,q_50,c_fill,g_xy_center,f_auto\/v1412377221\/segfvxrse20efqo7g6fr.jpg",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4608,h_3072,q_50,x_2304,y_1536,c_fill,g_xy_center,f_auto\/v1412377221\/segfvxrse20efqo7g6fr.jpg",
               "alt_text": "124 S Wabash Ave. Parking"
             },
             {
               "id": "3454",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4608,h_3072,x_2304,y_1536,q_50,c_fill,g_xy_center,f_auto\/v1412377239\/hcy0eskaspbvz0xmv7rh.jpg",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4608,h_3072,q_50,x_2304,y_1536,c_fill,g_xy_center,f_auto\/v1412377239\/hcy0eskaspbvz0xmv7rh.jpg",
               "alt_text": "124 S Wabash Ave. Parking"
             }
           ],
           "requirements": {
-            "license_plate": false,
+            "license_plate": true,
             "printout": false,
-            "phone_number": false
+            "phone_number": true
           },
-          "clearance_inches": 79,
-          "hours_of_operation": {
-            "periods": [{
-              "day_of_week": "monday",
-              "start_time_secs": 48600,
-              "end_time_secs": 50400
-            }],
-            "always_open": false
-          }
+          "status": "on_sales_allowed",
+          "clearance_inches": 79
         }
       }
     },
@@ -512,25 +1026,34 @@
 
             ],
             "short_term": [{
-                "id": "1644",
+                "id": "5941",
                 "illustration": {
                   "id": "",
                   "url": "",
                   "alt_text": ""
                 },
-                "text": "<p>To begin parking, just display a copy of your printed SpotHero confirmation and put it on your dashboard.&nbsp;<\/p>"
+                "text": "<p>Complete the attached application. Once completed, please bring it to the garage office (located in the basement) when you start parking. Your spot will not be valid for the full month until this is completed.<\/p>"
               },
               {
-                "id": "8302",
+                "id": "5942",
                 "illustration": {
                   "id": "",
                   "url": "",
                   "alt_text": ""
                 },
-                "text": "<p><strong><span style=\"color: #ff0000;\">You MUST display your SpotHero monthly parking pass on your dashboard AT ALL TIMES. Failiure to display your parking pass will result in a ticket or tow. Please call SpotHero customer support with any questions, ph#312-566-7768 <\/span><\/strong><\/p>"
+                "text": "<p>Scan your QR code to enter the garage. Short term parker (1 month): You will use your QR code to enter the garage on your first visit. Afterwards, you will take a ticket at the entrance gate, and upon exit, you will use that same ticket and call out at the exit gate with your rental ID number.<\/p>\n<p>Note: If you purchased your spot on or before 2\/24\/16 you are not eligible to receive a key fob. Please use your rental ID to go in\/out.&nbsp;<\/p>"
               },
               {
-                "id": "5348",
+                "id": "5943",
+                "illustration": {
+                  "id": "",
+                  "url": "",
+                  "alt_text": ""
+                },
+                "text": "<p>Long term parker (2 months or more): You will be issued a key fob. Until you receive your key fob, read out your rental ID # at the exit gate.&nbsp;<\/p>"
+              },
+              {
+                "id": "5944",
                 "illustration": {
                   "id": "",
                   "url": "",
@@ -543,23 +1066,31 @@
           "title": "24\/7 Parking",
           "start_date_options": {
             "choices": [{
-              "ends": "2020-09-24",
-              "starts": "2020-08-25"
+              "ends": "2021-03-10",
+              "starts": "2021-02-11"
             }],
             "restriction": "none"
           },
           "redemption_type": "self",
           "amenities": [{
               "type": "self_park",
-              "description": "Users may park their own vehicles at this facility."
+              "description": "Users may park their own vehicles at this facility.",
+              "display_name": "Self Park"
             },
             {
-              "type": "wheelchair_accessible",
-              "description": "The facility is wheelchair accessible."
+              "type": "covered",
+              "description": "The facility has a roof over the vehicles.",
+              "display_name": "Garage - Covered"
             },
             {
-              "type": "attendant",
-              "description": "The facility has staff on-site for assistance and questions."
+              "type": "paved",
+              "description": "The surface of the facility is solid, such as asphalt or concrete.",
+              "display_name": "Lot - Uncovered"
+            },
+            {
+              "type": "no_contract",
+              "description": "The facility does not require a signed, long-term contract for monthly parking.",
+              "display_name": "Month to Month"
             }
           ],
           "contract": {
@@ -583,151 +1114,152 @@
             "quote_mac": ""
           },
           "order": [{
-            "starts": "2020-08-25T00:00:00-05:00",
+            "starts": "2021-02-11T00:00:00-06:00",
             "items": [{
               "full_description": "",
               "price": {
-                "value": 19000,
+                "value": 30900,
                 "currency_code": "USD"
               },
               "type": "rental",
               "short_description": "Subtotal"
             }],
-            "ends": "2020-09-24T23:59:59-05:00",
-            "facility_id": "977",
+            "ends": "2021-03-10T23:59:59-06:00",
+            "facility_id": "340",
             "total_price": {
-              "value": 19000,
+              "value": 30900,
               "currency_code": "USD"
             },
             "meta": {
 
             },
-            "rate_id": "8476"
+            "rate_id": "4209"
           }],
           "items": [{
             "full_description": "",
             "price": {
-              "value": 19000,
+              "value": 30900,
               "currency_code": "USD"
             },
             "type": "rental",
             "short_description": "Subtotal"
           }],
           "total_price": {
-            "value": 19000,
+            "value": 30900,
             "currency_code": "USD"
           },
           "advertised_price": {
-            "value": 19000,
+            "value": 30900,
             "currency_code": "USD"
           }
         }
       }],
       "distance": {
-        "linear_meters": 546
+        "linear_meters": 409
       },
       "facility": {
         "monthly": {
           "lowest_price": {
-            "value": 19000,
+            "value": 30900,
             "currency_code": "USD"
           },
           "highest_price": {
-            "value": 19000,
+            "value": 30900,
             "currency_code": "USD"
           }
         },
         "common": {
-          "id": "977",
+          "id": "340",
           "description": "",
-          "facility_type": "unknown",
+          "facility_type": "garage",
           "addresses": [{
-              "time_zone": "America\/Chicago",
-              "city": "Chicago",
-              "longitude": -87.632735967636108,
-              "id": "3308",
-              "country": "US",
-              "street_address": "650 S. Financial Place",
-              "types": [
-                "default_vehicle_entrance"
-              ],
-              "latitude": 41.873339702427344,
-              "postal_code": "60605",
-              "state": "IL"
-            },
-            {
-              "time_zone": "America\/Chicago",
-              "city": "Chicago",
-              "longitude": -87.632745446000001,
-              "id": "900",
-              "country": "US",
-              "street_address": "650 South Financial Place",
-              "types": [
-                "physical",
-                "search",
-                "walking_distance",
-                "vehicle_entrance"
-              ],
-              "latitude": 41.873702771700003,
-              "postal_code": "60605",
-              "state": "IL"
-            }
-          ],
-          "rating": {
-            "average": 0,
-            "count": 0
+            "time_zone": "America\/Chicago",
+            "city": "Chicago",
+            "longitude": -87.633322199999995,
+            "id": "276",
+            "country": "US",
+            "street_address": "181 W Monroe",
+            "types": [
+              "physical",
+              "search",
+              "walking_distance",
+              "default_vehicle_entrance"
+            ],
+            "latitude": 41.880680499999997,
+            "postal_code": "60603",
+            "state": "IL"
+          }],
+          "cancellation": {
+            "minutes": 0,
+            "allowed_by_customer": true,
+            "allowed_by_spothero_customer_service": true
           },
-          "restrictions": [
-
-          ],
-          "parking_types": [
-            "transient",
-            "monthly"
-          ],
-          "supported_fee_types": [
-
-          ],
-          "@availability": "https:\/\/api.staging.spothero.com\/mobile\/v2\/search\/transient\/977",
-          "navigation_tip": "Enter this location at 650 S Financial Place. This facility is operated by Buddy's Parking and is located right near the intersection of S Financial and Harrison. ",
-          "title": "650 S Financial Pl. - Lot",
-          "images": [{
-              "id": "14740",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1459283245\/qsiokalq19xqk9zaabng.jpg",
-              "alt_text": "650 South Financial Place Parking"
-            },
-            {
-              "id": "14738",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1459283239\/ifcfxtbkg9afy3h3uas4.jpg",
-              "alt_text": "650 South Financial Place Parking"
-            },
-            {
-              "id": "14739",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1459283239\/kmcvhmgydxi9gdywktix.jpg",
-              "alt_text": "650 South Financial Place Parking"
-            },
-            {
-              "id": "14741",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1459283245\/djy1kmkp7gilfkqgfkel.jpg",
-              "alt_text": "650 South Financial Place Parking"
-            },
-            {
-              "id": "14742",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1459283248\/vawzy5rwo3e2rj5coryk.jpg",
-              "alt_text": "650 South Financial Place Parking"
-            }
-          ],
-          "requirements": {
-            "license_plate": true,
-            "printout": false,
-            "phone_number": false
-          },
-          "clearance_inches": null,
           "hours_of_operation": {
             "periods": [
 
             ],
             "always_open": true
-          }
+          },
+          "parking_types": [
+            "transient",
+            "monthly"
+          ],
+          "rating": {
+            "average": 4.3490874159462054,
+            "count": 15615
+          },
+          "restrictions": [
+            "Height restriction: 82 inches",
+            "If you are retrieving your vehicle outside of these hours, be sure to tell the attendant so you can self park your car.\r\n\r\nMonday-Friday: 6:00 AM - 9:00PM;\r\n\r\n<b>Saturday<\/b>: No Attendant;\r\n\r\nSunday: No Attendant",
+            "Oversize vehicles are not accepted at this location.",
+            "There is no elevator in this garage.",
+            "You may be required to valet park (no additional cost).  Self parking is NOT guaranteed."
+          ],
+          "navigation_tip": "Enter this location at 181 W Monroe St. This is garage is operated by ABM. It is located on the right-hand side of Monroe St. (a one-way street) between S Wells St. and S Lasalle St. The entrance will be directly after the intersection of Monroe and Wells, and just before the Northern Trust building. There is a large black \"Public Parking\" sign.",
+          "supported_fee_types": [
+            "airport_fee"
+          ],
+          "title": "181 W Monroe St. - Valet\/Self Park Garage",
+          "@availability": "https:\/\/api.staging.spothero.com\/v2\/search\/transient\/340",
+          "slug": "181-w-monroe",
+          "images": [{
+              "id": "9486",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/v1446132932\/qwcgqdslgfgadveaeqi4.jpg",
+              "alt_text": "181 W Monroe Parking"
+            },
+            {
+              "id": "9484",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/v1446132918\/o2vcr6llrpgmyi3x10rq.jpg",
+              "alt_text": "181 W Monroe Parking"
+            },
+            {
+              "id": "9483",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/v1446132904\/ufldwjodselhqtw3ifbe.jpg",
+              "alt_text": "181 W Monroe Parking"
+            },
+            {
+              "id": "9485",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/v1446132922\/zfhc0al1who60hj372lo.jpg",
+              "alt_text": "181 W Monroe Parking"
+            },
+            {
+              "id": "9482",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/v1446132903\/c16ipflpfhhvptyv0a0o.jpg",
+              "alt_text": "181 W Monroe Parking"
+            },
+            {
+              "id": "9487",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,q_50,x_2880,y_1920,c_fill,g_xy_center,f_auto\/v1446132938\/rfj2bwqkgyabfgrjbbhv.jpg",
+              "alt_text": "181 W Monroe Parking"
+            }
+          ],
+          "requirements": {
+            "license_plate": true,
+            "printout": false,
+            "phone_number": true
+          },
+          "status": "on_sales_allowed",
+          "clearance_inches": 82
         }
       }
     },
@@ -776,30 +1308,44 @@
               }
             ]
           },
-          "title": "Monday - Friday: 7am - 8pm, Saturday: 8am - 6pm ",
+          "title": "Monday - Friday: 7am - 8pm, Saturday: 8am - 6pm",
           "start_date_options": {
             "choices": [{
-              "ends": "2020-09-24",
-              "starts": "2020-08-25"
+              "ends": "2021-03-10",
+              "starts": "2021-02-11"
             }],
             "restriction": "none"
           },
           "redemption_type": "valet",
           "amenities": [{
               "type": "valet",
-              "description": "A valet will park the users vehicle at this facility."
+              "description": "A valet will park the users vehicle at this facility.",
+              "display_name": "Valet"
             },
             {
               "type": "covered",
-              "description": "The facility has a roof over the vehicles."
+              "description": "The facility has a roof over the vehicles.",
+              "display_name": "Garage - Covered"
             },
             {
               "type": "paved",
-              "description": "The surface of the facility is solid, such as asphalt or concrete."
+              "description": "The surface of the facility is solid, such as asphalt or concrete.",
+              "display_name": "Lot - Uncovered"
+            },
+            {
+              "type": "immediate_parking",
+              "description": "The facility is immediately available for parking after a monthly reservation is created.",
+              "display_name": "Immediate Parking"
             },
             {
               "type": "attendant",
-              "description": "The facility has staff on-site for assistance and questions."
+              "description": "The facility has staff on-site for assistance and questions.",
+              "display_name": "On-Site Staff"
+            },
+            {
+              "type": "no_contract",
+              "description": "The facility does not require a signed, long-term contract for monthly parking.",
+              "display_name": "Month to Month"
             }
           ],
           "contract": {
@@ -823,7 +1369,7 @@
             "quote_mac": ""
           },
           "order": [{
-            "starts": "2020-08-25T00:00:00-05:00",
+            "starts": "2021-02-11T00:00:00-06:00",
             "items": [{
               "full_description": "",
               "price": {
@@ -833,7 +1379,7 @@
               "type": "rental",
               "short_description": "Subtotal"
             }],
-            "ends": "2020-09-24T23:59:59-05:00",
+            "ends": "2021-03-10T23:59:59-06:00",
             "facility_id": "816",
             "total_price": {
               "value": 32500,
@@ -880,7 +1426,7 @@
         "common": {
           "id": "816",
           "description": "",
-          "facility_type": "unknown",
+          "facility_type": "lot",
           "addresses": [{
             "time_zone": "America\/Chicago",
             "city": "Chicago",
@@ -898,45 +1444,11 @@
             "postal_code": "60602",
             "state": "IL"
           }],
-          "rating": {
-            "average": 0,
-            "count": 0
+          "cancellation": {
+            "minutes": 0,
+            "allowed_by_customer": true,
+            "allowed_by_spothero_customer_service": true
           },
-          "restrictions": [
-            "Height restriction: 78 inches"
-          ],
-          "parking_types": [
-            "transient",
-            "monthly"
-          ],
-          "supported_fee_types": [
-
-          ],
-          "@availability": "https:\/\/api.staging.spothero.com\/mobile\/v2\/search\/transient\/816",
-          "navigation_tip": "Enter this location at 111 N Wabash Ave. This valet stand for the Garland Building is operated by Capital Parking. It is located on the east\/left-hand side of N Wabash Ave. (a one-way street) between W Randolph St. and W Washington St. right before the Staples store entrance.",
-          "title": "111 N Wabash Ave. - Valet",
-          "images": [{
-              "id": "3483",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4068,h_3072,x_2034,y_1536,q_50,c_fill,g_xy_center,f_auto\/v1412383079\/feavlfsuvue8gvrl1qrq.jpg",
-              "alt_text": "111 North Wabash Avenue Parking"
-            },
-            {
-              "id": "3484",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4608,h_3072,x_2304,y_1536,q_50,c_fill,g_xy_center,f_auto\/v1412383080\/sohtb3jv9noro33l3krz.jpg",
-              "alt_text": "111 North Wabash Avenue Parking"
-            },
-            {
-              "id": "12335",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_701,h_504,x_350,y_252,q_50,c_fill,g_xy_center,f_auto\/v1455726195\/rbtasav4id7bqmbwsxcv.png",
-              "alt_text": "111 North Wabash Avenue Parking"
-            }
-          ],
-          "requirements": {
-            "license_plate": false,
-            "printout": false,
-            "phone_number": false
-          },
-          "clearance_inches": 78,
           "hours_of_operation": {
             "periods": [{
                 "day_of_week": "monday",
@@ -970,290 +1482,51 @@
               }
             ],
             "always_open": false
-          }
-        }
-      }
-    },
-    {
-      "rates": [{
-        "monthly": {
-          "in_out_privileges": {
-            "allowed": true,
-            "fee": {
-              "value": 0,
-              "currency_code": "USD"
-            },
-            "description": "Unlimited In\/Out privileges."
           },
-          "reservation_type": "daytime_only",
-          "redemption_instructions": {
-            "long_term": [
-
-            ],
-            "short_term": [{
-                "id": "2784",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
-                },
-                "text": "<p>Complete the attached application.<\/p>"
-              },
-              {
-                "id": "1624",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
-                },
-                "text": "<p>Bring the completed application to the valet on duty during the hours of operation. &nbsp;If the valet is not on duty, take it to the second floor office inside of the garage.<\/p>"
-              },
-              {
-                "id": "2785",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
-                },
-                "text": "<p>Please make sure your start date matches the one you booked with SpotHero.<\/p>"
-              },
-              {
-                "id": "2786",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
-                },
-                "text": "<p>SP+ will process your reservation and you may began parking immediately.<\/p>"
-              },
-              {
-                "id": "2787",
-                "illustration": {
-                  "id": "",
-                  "url": "",
-                  "alt_text": ""
-                },
-                "text": "<p>After purchasing with SpotHero, please make sure to complete the attached application in full. &nbsp;SpotHero will accept your reservation for the first month of parking ONLY, so please make sure to set up an account with the operating parking company so you can continue to park. &nbsp;If you wish to park for only one month, please email support@spothero.com<\/p>\n<p>&nbsp;<\/p>"
-              }
-            ]
-          },
-          "title": "Monday - Friday: 6am - 12am, Saturday: 6am - 6pm",
-          "start_date_options": {
-            "choices": [{
-              "ends": "2020-09-24",
-              "starts": "2020-08-25"
-            }],
-            "restriction": "none"
-          },
-          "redemption_type": "valet",
-          "amenities": [{
-              "type": "valet",
-              "description": "A valet will park the users vehicle at this facility."
-            },
-            {
-              "type": "covered",
-              "description": "The facility has a roof over the vehicles."
-            },
-            {
-              "type": "paved",
-              "description": "The surface of the facility is solid, such as asphalt or concrete."
-            },
-            {
-              "type": "wheelchair_accessible",
-              "description": "The facility is wheelchair accessible."
-            },
-            {
-              "type": "attendant",
-              "description": "The facility has staff on-site for assistance and questions."
-            }
-          ],
-          "contract": {
-            "duration_months": 12,
-            "required": false,
-            "termination_fee": {
-              "value": 0,
-              "currency_code": "USD"
-            },
-            "cancellation_requirements": {
-              "notice_days": 30,
-              "notice_required": false
-            }
-          },
-          "post_purchase_instructions": ""
-        },
-        "quote": {
-          "meta": {
-            "quote_valid_until": "0001-01-01T00:00:00Z",
-            "partner_id": "",
-            "quote_mac": ""
-          },
-          "order": [{
-            "starts": "2020-08-25T00:00:00-05:00",
-            "items": [{
-              "full_description": "",
-              "price": {
-                "value": 36000,
-                "currency_code": "USD"
-              },
-              "type": "rental",
-              "short_description": "Subtotal"
-            }],
-            "ends": "2020-09-24T23:59:59-05:00",
-            "facility_id": "381",
-            "total_price": {
-              "value": 36000,
-              "currency_code": "USD"
-            },
-            "meta": {
-
-            },
-            "rate_id": "48457"
-          }],
-          "items": [{
-            "full_description": "",
-            "price": {
-              "value": 36000,
-              "currency_code": "USD"
-            },
-            "type": "rental",
-            "short_description": "Subtotal"
-          }],
-          "total_price": {
-            "value": 36000,
-            "currency_code": "USD"
-          },
-          "advertised_price": {
-            "value": 36000,
-            "currency_code": "USD"
-          }
-        }
-      }],
-      "distance": {
-        "linear_meters": 699
-      },
-      "facility": {
-        "monthly": {
-          "lowest_price": {
-            "value": 36000,
-            "currency_code": "USD"
-          },
-          "highest_price": {
-            "value": 36000,
-            "currency_code": "USD"
-          }
-        },
-        "common": {
-          "id": "381",
-          "description": "",
-          "facility_type": "garage",
-          "addresses": [{
-            "time_zone": "America\/Chicago",
-            "city": "Chicago",
-            "longitude": -87.633723630700004,
-            "id": "316",
-            "country": "US",
-            "street_address": "117 North Wells Street",
-            "types": [
-              "physical",
-              "search",
-              "walking_distance",
-              "default_vehicle_entrance"
-            ],
-            "latitude": 41.883671148399991,
-            "postal_code": "60606",
-            "state": "IL"
-          }],
-          "rating": {
-            "average": 2.5,
-            "count": 2
-          },
-          "restrictions": [
-            "<b><font color=\"#ff0000\"> For weekday reservations (Mon-Fri), this garage will be open until 12am (midnight), but you must park your vehicle before 7:30pm. No vehicle entry is permitted after 7:30pm. Please be sure to retrieve your vehicle before 12am, or you will have to wait until the following morning to access.  <\/font><\/b>",
-            "Height restriction: 74 inches",
-            "If you are parking during peak hours or for a crowded show, there may be an extended wait for the valet.",
-            "Please make sure to enter\/exit the garage within the time frame you selected with SpothHero. Overage fees will apply if you enter early or exit late.",
-            "The pedestrian entrance is located at 120 N. LaSalle St. When you return to your vehicle, the auto pick-up is on level 3.",
-            "This garage can be identified by the '120 N. LaSalle Public Parking' sign. The \"117 N Wells\" address will be posted on the lobby door, NOT above the garage entrance."
-          ],
           "parking_types": [
             "transient",
             "monthly"
           ],
+          "rating": {
+            "average": 4.434869739478958,
+            "count": 1497
+          },
+          "restrictions": [
+            "Height restriction: 78 inches"
+          ],
+          "navigation_tip": "Enter this location at 111 N Wabash Ave. This valet stand for the Garland Building is operated by Capital Parking. It is located on the east\/left-hand side of N Wabash Ave. (a one-way street) between W Randolph St. and W Washington St. right before the Staples store entrance.",
           "supported_fee_types": [
 
           ],
-          "@availability": "https:\/\/api.staging.spothero.com\/mobile\/v2\/search\/transient\/381",
-          "navigation_tip": "Enter this location at 117 N Wells St.. This is a SP+ (formerly Central Parking) facility for the 120 N LaSalle building and can be accessed from the east side of N Wells St. The closest intersection is N Wells St. and W Randolph St. Look for the black and white \"120 N. LaSalle\" sign above the garage entrance. When you return to your vehicle, access this facility through the \"120 N. LaSalle\" building.\r\n\r\n**Please Note: the address 117 N Wells St. is for GPS reference only, this address will be posted on the lobby doors, NOT above the garage entrance**",
-          "title": "120 N LaSalle St. \/ 117 N Wells St. - Valet",
+          "title": "111 N Wabash Ave. - Valet",
+          "@availability": "https:\/\/api.staging.spothero.com\/v2\/search\/transient\/816",
+          "slug": "111-n-wabash-ave",
           "images": [{
-              "id": "9474",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1446132431\/jpoo7vr4p0t7vqv2abhz.jpg",
-              "alt_text": "113 N Wells St Parking"
+              "id": "3483",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4068,h_3072,q_50,x_2034,y_1536,c_fill,g_xy_center,f_auto\/v1412383079\/feavlfsuvue8gvrl1qrq.jpg",
+              "alt_text": "111 North Wabash Avenue Parking"
             },
             {
-              "id": "9471",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1446132409\/aw1fdxigdnktirybuddt.jpg",
-              "alt_text": "113 N Wells St Parking"
+              "id": "3484",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_4608,h_3072,q_50,x_2304,y_1536,c_fill,g_xy_center,f_auto\/v1412383080\/sohtb3jv9noro33l3krz.jpg",
+              "alt_text": "111 North Wabash Avenue Parking"
             },
             {
-              "id": "9472",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1446132411\/f2j8tvm2cvaumfkcfkly.jpg",
-              "alt_text": "113 N Wells St Parking"
-            },
-            {
-              "id": "9473",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1446132429\/zt0mycmqr6pv3mwhlgvv.jpg",
-              "alt_text": "113 N Wells St Parking"
-            },
-            {
-              "id": "9475",
-              "url": "https:\/\/res.cloudinary.com\/spothero\/w_5760,h_3840,x_2880,y_1920,q_50,c_fill,g_xy_center,f_auto\/v1446132446\/tlkklcriyzxv4qnw0uj5.jpg",
-              "alt_text": "113 N Wells St Parking"
+              "id": "12335",
+              "url": "https:\/\/res.cloudinary.com\/spothero\/w_701,h_504,q_50,x_350,y_252,c_fill,g_xy_center,f_auto\/v1455726195\/rbtasav4id7bqmbwsxcv.png",
+              "alt_text": "111 North Wabash Avenue Parking"
             }
           ],
           "requirements": {
             "license_plate": true,
             "printout": false,
-            "phone_number": true
+            "phone_number": false
           },
-          "clearance_inches": 74,
-          "hours_of_operation": {
-            "periods": [{
-                "day_of_week": "monday",
-                "start_time_secs": 21600,
-                "end_time_secs": 86400
-              },
-              {
-                "day_of_week": "tuesday",
-                "start_time_secs": 21600,
-                "end_time_secs": 86400
-              },
-              {
-                "day_of_week": "wednesday",
-                "start_time_secs": 21600,
-                "end_time_secs": 86400
-              },
-              {
-                "day_of_week": "thursday",
-                "start_time_secs": 21600,
-                "end_time_secs": 86400
-              },
-              {
-                "day_of_week": "friday",
-                "start_time_secs": 21600,
-                "end_time_secs": 86400
-              },
-              {
-                "day_of_week": "saturday",
-                "start_time_secs": 21600,
-                "end_time_secs": 64800
-              }
-            ],
-            "always_open": false
-          }
+          "status": "on_sales_allowed",
+          "clearance_inches": 78
         }
       }
     }
   ],
-  "@next": "https:\/\/api.staging.spothero.com\/mobile\/v2\/search\/monthly?after=699&lat=41.8781&lon=-87.6298&page_size=5&starts=2020-08-24T17:06:29Z"
+  "@next": ""
 }
