@@ -38,6 +38,7 @@ public extension SearchGetAirportFacilityRequest {
     struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case endDate = "ends"
+            case isOversize = "oversize"
             case startDate = "starts"
             
             case actionID = "action_id"
@@ -56,6 +57,10 @@ public extension SearchGetAirportFacilityRequest {
         /// If this parameter is not provided, results will be generated for 3 hours after the start time.
         private let endDate: Date?
         
+        /// Boolean that denotes whether or not the pricing calculated for this vehicle
+        /// will incorporate pricing for an oversize vehicle, if applicable.
+        private let isOversize: Bool?
+        
         let actionID: String?
         let fingerprint: String?
         let searchID: String?
@@ -63,9 +68,11 @@ public extension SearchGetAirportFacilityRequest {
         
         public init(startDate: Date? = nil,
                     endDate: Date? = nil,
+                    isOversize: Bool? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.startDate = startDate
             self.endDate = endDate
+            self.isOversize = isOversize
             
             self.actionID = searchTracking?.actionID
             self.fingerprint = searchTracking?.fingerprint
