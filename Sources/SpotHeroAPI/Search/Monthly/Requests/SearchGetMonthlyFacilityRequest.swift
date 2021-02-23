@@ -38,6 +38,8 @@ public extension SearchGetMonthlyFacilityRequest {
     struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case startDate = "starts"
+            case workLatitude = "work_lat"
+            case workLongitude = "work_lon"
             
             case actionID = "action_id"
             case fingerprint
@@ -55,8 +57,12 @@ public extension SearchGetMonthlyFacilityRequest {
         let sessionID: String?
         
         public init(startDate: Date? = nil,
+                    workLatitude: Double? = nil,
+                    workLongitude: Double? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.startDate = startDate
+            self.workLatitude = workLatitude
+            self.workLongitude = workLongitude
             
             self.actionID = searchTracking?.actionID
             self.fingerprint = searchTracking?.fingerprint

@@ -42,6 +42,8 @@ public extension SearchGetMonthlyFacilitiesRequest {
             case originLongitude = "origin_lon"
             case pageSize = "page_size"
             case startDate = "starts"
+            case workLatitude = "work_lat"
+            case workLongitude = "work_lon"
             
             case actionID = "action_id"
             case fingerprint
@@ -88,6 +90,8 @@ public extension SearchGetMonthlyFacilitiesRequest {
                     longitude: Double,
                     originLatitude: Double? = nil,
                     originLongitude: Double? = nil,
+                    workLatitude: Double? = nil,
+                    workLongitude: Double? = nil,
                     startDate: Date? = nil,
                     maxDistanceMeters: Int? = nil,
                     pageSize: Int? = nil,
@@ -96,6 +100,8 @@ public extension SearchGetMonthlyFacilitiesRequest {
             self.longitude = longitude
             self.originLatitude = originLatitude
             self.originLongitude = originLongitude
+            self.workLatitude = workLatitude
+            self.workLongitude = workLongitude
             self.startDate = startDate
             self.maxDistanceMeters = maxDistanceMeters
             self.pageSize = pageSize
