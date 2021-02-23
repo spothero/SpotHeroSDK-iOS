@@ -9,7 +9,7 @@ public struct AirportFacilityAttributes: Codable {
     }
     
     /// Logo for the business operating the facility.
-    public let logo: Image
+    public let logo: Image?
     
     /// Information concerning the redemption process for customers who park at a facility.
     public let redemptionInstructions: AirportRedemptionInstructions
