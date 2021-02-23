@@ -35,8 +35,9 @@ public extension SearchGetAirportFacilitiesRequest {
     /// Represents the query parameters used for fetching airport facilities.
     struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
-            case iataCode = "iata"
             case endDate = "ends"
+            case iataCode = "iata"
+            case isOversize = "oversize"
             case pageSize = "page_size"
             case startDate = "starts"
             
@@ -59,6 +60,10 @@ public extension SearchGetAirportFacilitiesRequest {
         /// If this parameter is not provided, results will be generated for 3 hours after the start time.
         private let endDate: Date?
         
+        /// Boolean that denotes whether or not the pricing calculated for this vehicle
+        /// will incorporate pricing for an oversize vehicle, if applicable.
+        private let isOversize: Bool?
+        
         /// The number of results to include in a single page.
         /// The default is nil (no limit). Must be >= 1, if provided.
         private let pageSize: Int?
@@ -71,11 +76,13 @@ public extension SearchGetAirportFacilitiesRequest {
         public init(iataCode: String,
                     startDate: Date? = nil,
                     endDate: Date? = nil,
+                    isOversize: Bool? = nil,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.iataCode = iataCode
             self.startDate = startDate
             self.endDate = endDate
+            self.isOversize = isOversize
             self.pageSize = pageSize
             
             self.actionID = searchTracking?.actionID
