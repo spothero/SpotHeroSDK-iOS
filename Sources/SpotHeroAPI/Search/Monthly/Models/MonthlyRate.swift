@@ -72,7 +72,7 @@ public struct MonthlyRate: Codable {
     /// HTML markup containing additional information that the user should know about this rate.
     public let description: String
     
-    /// Whether the rate pertains to the oversize vehicles.
+    /// Whether the rate pertains to oversize vehicles.
     public let isOversized: Bool
 }
 
