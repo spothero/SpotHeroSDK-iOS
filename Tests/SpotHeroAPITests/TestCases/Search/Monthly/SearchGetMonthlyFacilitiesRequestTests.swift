@@ -42,6 +42,8 @@ final class SearchGetMonthlyFacilitiesRequestLiveTests: LiveAPITestCase, SearchG
 // swiftlint:disable:next type_name
 final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
     func testGetMonthlyFacilitiesSucceeds() throws {
+        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
+        
         self.stub(SearchGetMonthlyFacilitiesRequest.self,
                   with: .apiMockFile("get_monthly_facilities"))
         

@@ -4,7 +4,7 @@
 import XCTest
 
 private protocol SearchGetAirportFacilitiesRequestTests: APITestCase {
-    func testGetAirportFacilitiesSucceeds()
+    func testGetAirportFacilitiesSucceeds() throws
 }
 
 private extension SearchGetAirportFacilitiesRequestTests {
@@ -33,15 +33,18 @@ private extension SearchGetAirportFacilitiesRequestTests {
 
 // swiftlint:disable:next type_name
 final class SearchGetAirportFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetAirportFacilitiesRequestTests {
-    func testGetAirportFacilitiesSucceeds() {
+    func testGetAirportFacilitiesSucceeds() throws {
         self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
-                                                    startDate: TestData.startDate))
+                                                    startDate: TestData.startDate,
+                                                    pageSize: 2))
     }
 }
 
 // swiftlint:disable:next type_name
 final class SearchGetAirportFacilitiesRequestMockTests: MockAPITestCase, SearchGetAirportFacilitiesRequestTests {
-    func testGetAirportFacilitiesSucceeds() {
+    func testGetAirportFacilitiesSucceeds() throws {
+        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
+        
         self.stub(SearchGetAirportFacilitiesRequest.self,
                   with: .apiMockFile("get_airport_facilities"))
         
