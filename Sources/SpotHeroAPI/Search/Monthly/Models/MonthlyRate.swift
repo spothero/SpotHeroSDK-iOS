@@ -5,14 +5,21 @@ import Foundation
 /// Monthly-specific metadata pertaining to a rate for the rental of a parking spot.
 public struct MonthlyRate: Codable {
     private enum CodingKeys: String, CodingKey {
+        case activationFee = "activation_fee"
         case amenities
         case contract
+        case description
         case inOutPrivileges = "in_out_privileges"
+        case isOversized = "is_oversized"
+        case isRecurrable = "recurrable"
+        case parkingDelayDays = "parking_delay_days"
+        case parkingPass = "parking_pass"
         case postPurchaseInstructions = "post_purchase_instructions"
         case redemptionInstructions = "redemption_instructions"
         case redemptionType = "redemption_type"
         case reservationType = "reservation_type"
         case startDateOptions = "start_date_options"
+        case termsAndConditionsURL = "terms_and_conditions_url"
         case title
     }
     
@@ -24,6 +31,9 @@ public struct MonthlyRate: Codable {
     
     /// Defines the garage's reservation redemption type.
     public let redemptionType: RedemptionType
+    
+    /// The type of parking pass supported at a parking spot.
+    public let parkingPass: ParkingPass
     
     /// Human-readable description of the rate.
     public let title: String
@@ -42,6 +52,43 @@ public struct MonthlyRate: Codable {
     
     /// Description of the contract requirements of the reservation.
     public let contract: ContractDetails
+    
+    /// Number of business days after purchase the renter may begin parking.
+    /// This often corresponds to the time it takes to create a new physical card/device for the renter to freely access the garage.
+    public let parkingDelayDays: Int
+    
+    /// Whether the rate can be recurred each month. A value of false indicates the rate is one-time charge for the specified time period.
+    public let isRecurrable: Bool
+    
+    /// The url containing the terms and conditions specific to the rate and facility.
+    /// This will be an empty string when there is no associated terms and conditions.
+    public let termsAndConditionsURL: String
+    
+    /// The fee charged for activating the monthly reservation.
+    /// This fee is often collected to cover the cost of creating a new physical card/device for the renter to freely access the garage.
+    /// If there is no fee, the value will be 0.
+    public let activationFee: Currency
+    
+    /// HTML markup containing additional information that the user should know about this rate.
+    public let description: String
+    
+    /// Whether the rate pertains to the oversize vehicles.
+    public let isOversized: Bool
+}
+
+public extension MonthlyRate {
+    struct ParkingPass: Codable {
+        private enum CodingKeys: String, CodingKey {
+            case displayName = "display_name"
+            case type
+        }
+        
+        /// The display name for the parking pass to be shown to users.
+        public let displayName: String
+        
+        /// Defines the supported parking pass types
+        public let type: String
+    }
 }
 
 // MARK: - Enums

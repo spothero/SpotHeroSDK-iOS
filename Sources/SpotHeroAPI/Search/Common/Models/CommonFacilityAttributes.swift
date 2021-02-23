@@ -16,6 +16,7 @@ public struct CommonFacilityAttributes: Codable {
         case rating
         case restrictions
         case requirements
+        case slug
         case supportedFeeTypes = "supported_fee_types"
         case title
     }
@@ -25,6 +26,9 @@ public struct CommonFacilityAttributes: Codable {
     
     /// Title of the facility.
     public let title: String
+    
+    /// The facility URL slug.
+    public let slug: String
     
     /// Addresses of the facility.
     public let addresses: [Address]
