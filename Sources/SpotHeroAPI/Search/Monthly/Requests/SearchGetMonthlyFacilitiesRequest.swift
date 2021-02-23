@@ -69,6 +69,12 @@ public extension SearchGetMonthlyFacilitiesRequest {
         /// result distances are calculated from the required `latitude` and `longitude` parameters. Origin longitude must be in [-180, 180].
         private let originLongitude: Double?
         
+        /// The work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
+        private let workLatitude: Double?
+        
+        /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
+        private let workLongitude: Double?
+        
         /// Start date from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DD.
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
         private let startDate: Date?

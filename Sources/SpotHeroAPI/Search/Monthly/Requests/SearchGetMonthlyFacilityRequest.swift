@@ -51,6 +51,12 @@ public extension SearchGetMonthlyFacilityRequest {
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
         private let startDate: Date?
         
+        /// The work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
+        private let workLatitude: Double?
+        
+        /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
+        private let workLongitude: Double?
+        
         let actionID: String?
         let fingerprint: String?
         let searchID: String?
