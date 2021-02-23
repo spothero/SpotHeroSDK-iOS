@@ -35,8 +35,7 @@ private extension SearchGetAirportFacilitiesRequestTests {
 final class SearchGetAirportFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetAirportFacilitiesRequestTests {
     func testGetAirportFacilitiesSucceeds() throws {
         self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
-                                                    startDate: TestData.startDate,
-                                                    pageSize: 2))
+                                                    startDate: TestData.startDate))
     }
 }
 
