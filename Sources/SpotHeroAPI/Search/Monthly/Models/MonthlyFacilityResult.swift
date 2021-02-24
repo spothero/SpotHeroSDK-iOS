@@ -8,6 +8,10 @@ public struct MonthlyFacilityResult: Codable {
     /// Representation of a Facility.
     public let facility: MonthlyFacility
     
+    /// Contains information about misc options available to the user
+    /// at a given parking facility based on search criteria and user information
+    public let options: FacilityOptions
+    
     /// Listing of available rates at a given parking facility.
     public let rates: [MonthlyRateContainer]
 }
