@@ -9,7 +9,7 @@ public struct MonthlyFacilityResult: Codable {
     public let facility: MonthlyFacility
     
     /// Contains information about misc options available to the user
-    /// at a given parking facility based on search criteria and user information
+    /// at a given parking facility based on search criteria and user information.
     public let options: FacilityOptions
     
     /// Listing of available rates at a given parking facility.
