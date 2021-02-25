@@ -5,6 +5,7 @@ public struct HoursOfOperation: Codable {
     private enum CodingKeys: String, CodingKey {
         case alwaysOpen = "always_open"
         case periods
+        case text
     }
     
     /// List of operating periods for the facility.
