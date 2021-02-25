@@ -80,7 +80,7 @@ public struct MonthlyRate: Codable {
     /// Whether the rate pertains to oversize vehicles.
     public let isOversized: Bool
     
-    /// Represents when a customers can enter and exit the facility with their vehicle.
+    /// Represents when a customer can enter and exit the facility with their vehicle.
     public let accessHours: HoursOfOperation
 }
 
