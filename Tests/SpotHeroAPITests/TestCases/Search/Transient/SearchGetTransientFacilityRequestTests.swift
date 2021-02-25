@@ -42,6 +42,8 @@ final class SearchGetTransientFacilityRequestLiveTests: LiveAPITestCase, SearchG
 // swiftlint:disable:next type_name
 final class SearchGetTransientFacilityRequestMockTests: MockAPITestCase, SearchGetTransientFacilityRequestTests {
     func testGetTransientFacilitiesSucceeds() throws {
+        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
+        
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         self.stub(.get("mobile\(SearchGetTransientFacilityRequest.route)/\(TestData.facilityID)"),
                   with: .apiMockFile("get_transient_facilities_\(TestData.facilityID)"))

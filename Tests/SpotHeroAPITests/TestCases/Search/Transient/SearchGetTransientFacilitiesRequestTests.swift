@@ -4,7 +4,7 @@
 import XCTest
 
 private protocol SearchGetTransientFacilitiesRequestTests: APITestCase {
-    func testGetTransientFacilitiesSucceeds()
+    func testGetTransientFacilitiesSucceeds() throws
 }
 
 private extension SearchGetTransientFacilitiesRequestTests {
@@ -33,7 +33,7 @@ private extension SearchGetTransientFacilitiesRequestTests {
 
 // swiftlint:disable:next type_name
 final class SearchGetTransientFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetTransientFacilitiesRequestTests {
-    func testGetTransientFacilitiesSucceeds() {
+    func testGetTransientFacilitiesSucceeds() throws {
         self.getTransientFacilities(parameters: .init(latitude: TestData.latitude,
                                                       longitude: TestData.longitude,
                                                       startDate: TestData.startDate))
@@ -42,7 +42,9 @@ final class SearchGetTransientFacilitiesRequestLiveTests: LiveAPITestCase, Searc
 
 // swiftlint:disable:next type_name
 final class SearchGetTransientFacilitiesRequestMockTests: MockAPITestCase, SearchGetTransientFacilitiesRequestTests {
-    func testGetTransientFacilitiesSucceeds() {
+    func testGetTransientFacilitiesSucceeds() throws {
+        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
+        
         self.stub(SearchGetTransientFacilitiesRequest.self,
                   with: .apiMockFile("get_transient_facilities"))
         

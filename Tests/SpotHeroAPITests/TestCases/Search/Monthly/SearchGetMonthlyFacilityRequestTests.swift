@@ -35,15 +35,13 @@ private extension SearchGetMonthlyFacilityRequestTests {
 
 final class SearchGetMonthlyFacilityRequestLiveTests: LiveAPITestCase, SearchGetMonthlyFacilityRequestTests {
     func testGetMonthlyFacilitySucceeds() throws {
-        throw XCTSkip("Skipping for now until monthly is updated on the staging environment.")
-        
         self.getMonthlyFacility(withID: TestData.facilityID)
     }
 }
 
 final class SearchGetMonthlyFacilityRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilityRequestTests {
     func testGetMonthlyFacilitySucceeds() throws {
-        throw XCTSkip("Skipping for now until monthly is updated on the staging environment.")
+        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
         
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         self.stub(.get("mobile\(SearchGetMonthlyFacilitiesRequest.route)/\(TestData.facilityID)"),
