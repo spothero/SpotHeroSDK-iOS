@@ -5,6 +5,7 @@ import Foundation
 /// Monthly-specific metadata pertaining to a rate for the rental of a parking spot.
 public struct MonthlyRate: Codable {
     private enum CodingKeys: String, CodingKey {
+        case accessHours = "access_hours"
         case activationFee = "activation_fee"
         case amenities
         case contract
@@ -78,6 +79,9 @@ public struct MonthlyRate: Codable {
     
     /// Whether the rate pertains to oversize vehicles.
     public let isOversized: Bool
+    
+    /// Represents when a customer can enter and exit the facility with their vehicle.
+    public let accessHours: HoursOfOperation
 }
 
 // MARK: - Enums
