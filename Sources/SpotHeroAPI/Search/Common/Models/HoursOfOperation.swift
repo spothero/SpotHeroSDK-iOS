@@ -10,6 +10,9 @@ public struct HoursOfOperation: Codable {
     /// List of operating periods for the facility.
     public let periods: [HoursOfOperationPeriod]
     
+    /// Contains a set of messages to be displayed alongside hours of operation.
+    public let text: [String]
+    
     /// Whether facility is always open (i.e., never closes).
     /// If true, the list of periods will be empty.
     public let alwaysOpen: Bool
