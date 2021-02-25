@@ -65,7 +65,7 @@ public struct MonthlyRate: Codable {
     /// This will be an empty string when there is no associated terms and conditions.
     public let termsAndConditionsURL: String
     
-    /// Enum defining the type of additional monthly parking application required. Value is empty if no separate application is required.
+    /// Defines the type of additional monthly parking application required. Value is `nil` if no separate application is required.
     public let separateApplicationType: String?
     
     /// The fee charged for activating the monthly reservation.
