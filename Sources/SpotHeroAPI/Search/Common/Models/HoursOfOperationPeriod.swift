@@ -10,16 +10,16 @@ public struct HoursOfOperationPeriod: Codable {
         case startTime = "start_time"
     }
     
-    /// The first day of week for this period.
+    /// The first day of week for this period, formatted as a three-letter abbreviation for the day.
     public let firstDay: DayOfWeek
     
-    /// The start time for this period.
+    /// The start time for this period, formatted for display.
     public let startTime: String
     
-    /// The end time for this period.
+    /// The end time for this period, formatted for display.
     public let endTime: String
     
-    /// The last day of week for this period.
+    /// The last day of week for this period, formatted as a three-letter abbreviation for the day.
     public let lastDay: DayOfWeek
     
     /// The type of hours that this period represents.
