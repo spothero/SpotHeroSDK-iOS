@@ -18,6 +18,7 @@ public struct MonthlyRate: Codable {
         case redemptionInstructions = "redemption_instructions"
         case redemptionType = "redemption_type"
         case reservationType = "reservation_type"
+        case separateApplicationType = "separate_application_type"
         case startDateOptions = "start_date_options"
         case termsAndConditionsURL = "terms_and_conditions_url"
         case title
@@ -63,6 +64,9 @@ public struct MonthlyRate: Codable {
     /// The url containing the terms and conditions specific to the rate and facility.
     /// This will be an empty string when there is no associated terms and conditions.
     public let termsAndConditionsURL: String
+    
+    /// Defines the type of additional monthly parking application required. Value is `nil` if no separate application is required.
+    public let separateApplicationType: String?
     
     /// The fee charged for activating the monthly reservation.
     /// This fee is often collected to cover the cost of creating a new physical card/device for the renter to freely access the garage.
