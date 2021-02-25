@@ -3,17 +3,43 @@
 /// An operating period for a facility.
 public struct HoursOfOperationPeriod: Codable {
     private enum CodingKeys: String, CodingKey {
-        case dayOfWeek = "day_of_week"
-        case endTimeSeconds = "end_time_secs"
-        case startTimeSeconds = "start_time_secs"
+        case endTime = "end_time"
+        case hoursType = "hours_type"
+        case firstDay = "first_day"
+        case lastDay = "last_day"
+        case startTime = "start_time"
     }
     
-    /// The day of week for this period.
-    public let dayOfWeek: DayOfWeek
+    /// The first day of week for this period, formatted as a three-letter abbreviation for the day.
+    public let firstDay: DayOfWeek
     
-    /// Start time in seconds since midnight (inclusive).
-    public let startTimeSeconds: Int
+    /// The start time for this period, formatted for display.
+    public let startTime: String
     
-    /// End time in seconds since midnight (exclusive).
-    public let endTimeSeconds: Int
+    /// The end time for this period, formatted for display.
+    public let endTime: String
+    
+    /// The last day of week for this period, formatted as a three-letter abbreviation for the day.
+    public let lastDay: DayOfWeek
+    
+    /// The type of hours that this period represents.
+    public let hoursType: HoursType
+}
+
+public extension HoursOfOperationPeriod {
+    /// Represents a day of the week.
+    enum DayOfWeek: String, Codable {
+        case sunday = "Sun"
+        case monday = "Mon"
+        case tuesday = "Tue"
+        case wednesday = "Wed"
+        case thursday = "Thu"
+        case friday = "Fri"
+        case saturday = "Sat"
+    }
+    
+    enum HoursType: String, Codable {
+        case closed
+        case open
+    }
 }
