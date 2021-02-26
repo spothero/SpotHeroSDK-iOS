@@ -12,6 +12,7 @@ public extension MonthlyRate {
         /// The display name for the parking pass to be shown to users.
         public let displayName: String
         
+        // TODO: IOS-2797 - Add link to API documentation showing possible enum values for this property.
         /// Defines the supported parking pass types
         public let type: String
     }

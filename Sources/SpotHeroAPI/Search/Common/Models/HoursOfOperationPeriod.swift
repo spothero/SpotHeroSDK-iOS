@@ -22,6 +22,7 @@ public struct HoursOfOperationPeriod: Codable {
     /// The last day of week for this period, formatted as a three-letter abbreviation for the day.
     public let lastDay: String
     
+    // TODO: IOS-2797 - Add link to API documentation showing possible enum values for this property.
     /// The type of hours that this period represents.
     /// At the time of writing, the possible values are "open" or "closed".
     public let hoursType: String
