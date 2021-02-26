@@ -66,6 +66,7 @@ public struct MonthlyRate: Codable {
     /// This will be an empty string when there is no associated terms and conditions.
     public let termsAndConditionsURL: String
     
+    // TODO: IOS-2797 - Add link to API documentation showing possible enum values for this property.
     /// Defines the type of additional monthly parking application required. Value is `nil` if no separate application is required.
     public let separateApplicationType: String?
     

@@ -11,7 +11,7 @@ public struct HoursOfOperationPeriod: Codable {
     }
     
     /// The first day of week for this period, formatted as a three-letter abbreviation for the day.
-    public let firstDay: DayOfWeek
+    public let firstDay: String
     
     /// The start time for this period, formatted for display.
     public let startTime: String
@@ -20,26 +20,10 @@ public struct HoursOfOperationPeriod: Codable {
     public let endTime: String
     
     /// The last day of week for this period, formatted as a three-letter abbreviation for the day.
-    public let lastDay: DayOfWeek
+    public let lastDay: String
     
+    // TODO: IOS-2797 - Add link to API documentation showing possible enum values for this property.
     /// The type of hours that this period represents.
-    public let hoursType: HoursType
-}
-
-public extension HoursOfOperationPeriod {
-    /// Represents a day of the week.
-    enum DayOfWeek: String, Codable {
-        case sunday = "Sun"
-        case monday = "Mon"
-        case tuesday = "Tue"
-        case wednesday = "Wed"
-        case thursday = "Thu"
-        case friday = "Fri"
-        case saturday = "Sat"
-    }
-    
-    enum HoursType: String, Codable {
-        case closed
-        case open
-    }
+    /// At the time of writing, the possible values are "open" or "closed".
+    public let hoursType: String
 }
