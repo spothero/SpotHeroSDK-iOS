@@ -9,5 +9,5 @@ public struct FacilityOptions: Codable {
     
     /// This indicates whether a commuter benefits cards is eligible to be used
     /// at this facility for the work location supplied on the request.
-    let isCommuterCardEligible: Bool
+    public let isCommuterCardEligible: Bool
 }
