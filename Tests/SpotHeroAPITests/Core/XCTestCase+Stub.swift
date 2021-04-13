@@ -13,7 +13,7 @@ public extension XCTestCase {
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         let url = "mobile\(T.route)"
         let stubRequest = StubRequest(method: T.method, url: url)
-        MockService.shared.stub(stubRequest, with: response)
+        MockService.shared.stubbedDataCollection.stub(stubRequest, with: response)
     }
     
     /// Convenience method for stubbing new requests within an XCTestCase.
@@ -23,6 +23,6 @@ public extension XCTestCase {
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         let url = "mobile\(T.route)"
         let stubRequest = StubRequest(method: T.method, url: url)
-        MockService.shared.stub(stubRequest, with: response)
+        MockService.shared.stubbedDataCollection.stub(stubRequest, with: response)
     }
 }
