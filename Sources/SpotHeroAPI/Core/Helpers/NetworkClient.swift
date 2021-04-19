@@ -16,10 +16,6 @@ class NetworkClient {
     
     init(baseURL: URLConvertible) {
         self.baseURL = baseURL
-        
-        #if DEBUG
-            self.httpClient.isDebugLoggingEnabled = true
-        #endif
     }
     
     /// Creates and sends a request which fetches raw data from an endpoint and decodes it.
