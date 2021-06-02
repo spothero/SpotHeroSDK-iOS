@@ -80,7 +80,7 @@ public extension SearchGetMonthlyFacilitiesRequest {
         private let startDate: Date?
         
         /// Maximum distance in meters from the origin from which facility results will be generated.
-        /// The default is 1609.34 meters (1 mile). The limit is 160934 meters (100 miles).
+        /// The default is 804.672 meters (.5 miles). The value is capped at 8046.72 meters (5 miles).
         private let maxDistanceMeters: Int?
         
         /// The number of results to include in a single page.
