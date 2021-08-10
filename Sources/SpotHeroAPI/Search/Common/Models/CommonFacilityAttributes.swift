@@ -14,6 +14,7 @@ public struct CommonFacilityAttributes: Codable {
         case navigationTip = "navigation_tip"
         case parkingTypes = "parking_types"
         case rating
+        case reservationExtensionEnabled = "reservation_extension_enabled"
         case restrictions
         case requirements
         case slug
@@ -56,6 +57,9 @@ public struct CommonFacilityAttributes: Codable {
     
     /// Description of the average customer rating of a facility on a scale of 0 to 5.
     public let rating: FacilityRating
+    
+    /// Whether a reservation at this facility is able to be extended after initial purchase.
+    public let reservationExtensionEnabled: Bool
     
     /// Restrictions to parking at the facility. This field may contain HTML content.
     public let restrictions: [String]
