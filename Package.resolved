@@ -5,9 +5,9 @@
         "package": "UtilityBelt",
         "repositoryURL": "https://github.com/spothero/UtilityBelt-iOS",
         "state": {
-          "branch": null,
-          "revision": "5f78864ecff898a46004bdfed2401ab6d9e77163",
-          "version": "0.8.0"
+          "branch": "adapt-and-retry",
+          "revision": "67d705141f9166c7fbbd50d71b14d2d7eccbf0f2",
+          "version": null
         }
       }
     ]

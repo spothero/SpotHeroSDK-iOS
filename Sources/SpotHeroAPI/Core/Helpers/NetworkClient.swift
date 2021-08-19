@@ -35,7 +35,7 @@ class NetworkClient {
                                        headers: HTTPHeaderDictionaryConvertible? = nil,
                                        encoding: ParameterEncoding? = nil,
                                        decoder: JSONDecoder = .spotHeroAPI,
-                                       completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
+                                       completion: RequestCompletion<T>? = nil) -> Request? {
         return self.httpClient.request(
             url,
             method: method,
@@ -70,7 +70,7 @@ class NetworkClient {
                                headers: HTTPHeaderDictionaryConvertible? = nil,
                                encoding: ParameterEncoding? = nil,
                                decoder: JSONDecoder = .spotHeroAPI,
-                               completion: RequestCompletion<T>? = nil) -> URLSessionTask? {
+                               completion: RequestCompletion<T>? = nil) -> Request? {
         // Prepend the base URL to the monolith route path
         let url: URLConvertible = "\(self.baseURL)/\(route)"
             // and strip any double-slashes we find that aren't proceeded by a colon (indicating a scheme)
@@ -97,7 +97,7 @@ extension NetworkClient {
                                      headers: HTTPHeaderDictionaryConvertible? = nil,
                                      encoding: ParameterEncoding? = nil,
                                      decoder: JSONDecoder = .spotHeroAPI,
-                                     completion: RequestCompletion<T.ResponseModel>? = nil) -> URLSessionTask? where T.Route == String {
+                                     completion: RequestCompletion<T.ResponseModel>? = nil) -> Request? where T.Route == String {
         return self.request(route: T.route,
                             method: T.method,
                             parameters: parameters,
@@ -113,7 +113,7 @@ extension NetworkClient {
                                      headers: HTTPHeaderDictionaryConvertible? = nil,
                                      encoding: ParameterEncoding? = nil,
                                      decoder: JSONDecoder = .spotHeroAPI,
-                                     completion: RequestCompletion<T.ResponseModel>? = nil) -> URLSessionTask? where T.Route == URLConvertible {
+                                     completion: RequestCompletion<T.ResponseModel>? = nil) -> Request? where T.Route == URLConvertible {
         return self.request(route: T.route,
                             method: T.method,
                             parameters: parameters,

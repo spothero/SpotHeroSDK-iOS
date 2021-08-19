@@ -21,7 +21,7 @@ public struct SearchGetMonthlyFacilityRequest: RequestDefining {
     @discardableResult
     public func callAsFunction(withID facilityID: Int,
                                parameters: Parameters? = nil,
-                               completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
+                               completion: @escaping RequestCompletion<ResponseModel>) -> Request? {
         return self.client.request(
             route: "\(Self.route)/\(facilityID)",
             method: Self.method,
