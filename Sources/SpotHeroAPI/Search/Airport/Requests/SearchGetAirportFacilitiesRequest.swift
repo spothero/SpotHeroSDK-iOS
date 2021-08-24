@@ -20,7 +20,7 @@ public struct SearchGetAirportFacilitiesRequest: RequestDefining {
     
     @discardableResult
     public func callAsFunction(parameters: Parameters,
-                               completion: @escaping RequestCompletion<ResponseModel>) -> URLSessionTask? {
+                               completion: @escaping RequestCompletion<ResponseModel>) -> Request? {
         return self.client.request(
             Self.self,
             parameters: parameters,
