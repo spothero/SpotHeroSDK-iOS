@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SpotHeroSDK",
     platforms: [
-        .iOS(.v10),         // supports UtilityBelt
+        .iOS(.v11),         // supports UtilityBelt
         .macOS(.v10_12),    // supports UtilityBelt
         .tvOS(.v10),        // supports UtilityBelt
         .watchOS(.v3),      // supports UtilityBelt
@@ -18,7 +18,7 @@ let package = Package(
         .library(name: "SpotHeroAPINextDynamic", type: .dynamic, targets: ["SpotHeroAPINext"]),
     ],
     dependencies: [
-        .package(name: "UtilityBelt", url: "https://github.com/spothero/UtilityBelt-iOS", .upToNextMinor(from: "0.11.0")),
+        .package(name: "UtilityBelt", url: "https://github.com/spothero/UtilityBelt-iOS", .upToNextMinor(from: "0.12.0")),
     ],
     targets: [
         .target(
