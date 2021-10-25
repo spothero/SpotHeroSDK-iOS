@@ -1,7 +1,7 @@
 // Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 /// Representation of a displayable image.
-public struct Image: Codable {
+public struct ImageInfo: Codable {
     private enum CodingKeys: String, CodingKey {
         case id
         case url

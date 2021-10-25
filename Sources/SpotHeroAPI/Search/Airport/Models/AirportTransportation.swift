@@ -38,7 +38,7 @@ public struct AirportTransportation: Codable {
     public let schedule: Schedule?
     
     /// Image(s) of facility shuttle.
-    public let images: [Image]
+    public let images: [ImageInfo]
     
     /// Represents when a facility is open for business.
     public let hoursOfOperation: HoursOfOperation

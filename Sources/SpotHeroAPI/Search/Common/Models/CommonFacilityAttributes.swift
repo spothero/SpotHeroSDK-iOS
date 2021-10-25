@@ -50,7 +50,7 @@ public struct CommonFacilityAttributes: Codable {
     public let hoursOfOperation: HoursOfOperation
     
     /// Images of the facility.
-    public let images: [Image]
+    public let images: [ImageInfo]
     
     /// Parking types offered at this facility.
     public let parkingTypes: [FacilityParkingType]
