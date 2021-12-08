@@ -10,12 +10,17 @@ class NetworkClient {
     // MARK: Properties
     
     private let baseURL: URLConvertible
-    private let httpClient: HTTPClient = .shared
+    private let httpClient: HTTPClient
     
     // MARK: Methods
     
-    init(baseURL: URLConvertible) {
+    /// Creates a new instance of `NetworkClient`.
+    /// - Parameters:
+    ///   - baseURL: The base URL for all API requests.
+    ///   - httpClient: An `HTTPClient` through which requests will be routed. Defaults to `.shared`.
+    init(baseURL: URLConvertible, httpClient: HTTPClient = .shared) {
         self.baseURL = baseURL
+        self.httpClient = httpClient
     }
     
     /// Creates and sends a request which fetches raw data from an endpoint and decodes it.
