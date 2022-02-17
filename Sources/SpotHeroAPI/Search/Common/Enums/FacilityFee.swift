@@ -17,4 +17,6 @@ public enum FacilityFee: String, Codable {
     case oversizeFee = "oversize_fee"
     /// A fee applied to all reservations at a given facility.
     case facilityFee = "facility_fee"
+    /// A fee applied to reservations tied to events.
+    case eventFee = "event_fee"
 }
