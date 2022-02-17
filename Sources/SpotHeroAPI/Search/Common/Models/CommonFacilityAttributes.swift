@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Represents common facility information applicable in all contexts.
 public struct CommonFacilityAttributes: Codable {
