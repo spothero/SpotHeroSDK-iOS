@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Represents common facility information applicable in all contexts.
 public struct CommonFacilityAttributes: Codable {
@@ -67,8 +67,9 @@ public struct CommonFacilityAttributes: Codable {
     /// End-user requirements for reserving a spot at the given facility.
     public let requirements: FacilityRequirements
     
-    /// An array defining the supported fee types at the facility.
-    public let supportedFeeTypes: [FacilityFee]
+    /// An array defining the fee types at the facility.
+    /// See `FacilityFee.swift` for a list of supported types.
+    public let supportedFeeTypes: [String]
     
     /// Contains all fields relevant to a facility’s cancellation policy.
     public let cancellation: Cancellation

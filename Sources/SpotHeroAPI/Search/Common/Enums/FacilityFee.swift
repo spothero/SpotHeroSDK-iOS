@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Defines the supported fee types at the facility.
 /// The difference between a fee and a tax is when they are applied:
@@ -17,4 +17,6 @@ public enum FacilityFee: String, Codable {
     case oversizeFee = "oversize_fee"
     /// A fee applied to all reservations at a given facility.
     case facilityFee = "facility_fee"
+    /// A fee applied to reservations tied to events.
+    case eventFee = "event_fee"
 }
