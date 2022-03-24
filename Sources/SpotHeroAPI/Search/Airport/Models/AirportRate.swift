@@ -18,7 +18,8 @@ public struct AirportRate: Codable {
     public let lowestDailyRate: Currency
     
     /// Defines the garage's reservation redemption type.
-    public let redemptionType: RedemptionType
+    /// See `RedemptionType.swift` for a list of supported types.
+    public let redemptionType: String
     
     /// Metadata used for highlighting spots when showcasing recommended results.
     /// (eg. "Most Popular", "Highest Rated", etc.)

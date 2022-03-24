@@ -38,7 +38,8 @@ public struct CommonFacilityAttributes: Codable {
     public let description: String
     
     /// The facility type designation.
-    public let facilityType: FacilityType
+    /// See `FacilityType.swift` for a list of supported types.
+    public let facilityType: String
     
     /// Custom instructions for end-user to aid in locating facility. This field may contain HTML content.
     public let navigationTip: String
@@ -53,7 +54,8 @@ public struct CommonFacilityAttributes: Codable {
     public let images: [ImageInfo]
     
     /// Parking types offered at this facility.
-    public let parkingTypes: [FacilityParkingType]
+    /// See `FacilityParkingType.swift` for a list of supported types.
+    public let parkingTypes: [String]
     
     /// Description of the average customer rating of a facility on a scale of 0 to 5.
     public let rating: FacilityRating

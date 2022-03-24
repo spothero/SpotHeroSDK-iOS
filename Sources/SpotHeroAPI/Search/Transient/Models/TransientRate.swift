@@ -16,5 +16,6 @@ public struct TransientRate: Codable {
     public let earlyBird: EarlyBird?
     
     /// Defines the garage's reservation redemption type.
-    public let redemptionType: RedemptionType
+    /// See `RedemptionType.swift` for a list of supported types. 
+    public let redemptionType: String
 }

@@ -15,5 +15,6 @@ public struct Amenity: Codable {
     public let displayName: String
     
     /// A value which uniquely distinguishes a type of amenity at a parking spot.
-    public let type: AmenityType
+    /// See `AmenityType.swift` for a list of supported types.
+    public let type: String
 }

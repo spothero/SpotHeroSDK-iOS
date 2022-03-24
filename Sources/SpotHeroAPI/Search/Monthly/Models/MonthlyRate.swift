@@ -32,7 +32,8 @@ public struct MonthlyRate: Codable {
     public let redemptionInstructions: MonthlyRedemptionInstructions
     
     /// Defines the garage's reservation redemption type.
-    public let redemptionType: RedemptionType
+    /// See `RedemptionType.swift` for a list of supported types. 
+    public let redemptionType: String
     
     /// The type of parking pass supported at a parking spot.
     public let parkingPass: ParkingPass

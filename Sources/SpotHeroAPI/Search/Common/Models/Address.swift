@@ -45,5 +45,6 @@ public struct Address: Codable {
     public let timeZone: String
     
     /// An array of types defining the purpose of the address/entrance at the facility.
-    public let types: [AddressType]
+    /// See `AddressType.swift` for a list of supported types.
+    public let types: [String]
 }
