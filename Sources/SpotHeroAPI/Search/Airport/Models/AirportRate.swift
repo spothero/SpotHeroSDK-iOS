@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Airport-specific metadata pertaining to a rate for the rental of a parking spot.
 public struct AirportRate: Codable {
