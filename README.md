@@ -3,7 +3,7 @@
 ## Returned Types
 Returned types are string values that are returned from various portions of the SDK.
 
-#### Address Types
+### Address Types
 Defines the purpose of the address/entrance at the facility.
 - `"default_vehicle_entrance"`: The vehicle entrance to be used for navigation and on the parking pass.
 - `"physical"`: The address recognized by the facility owner.
