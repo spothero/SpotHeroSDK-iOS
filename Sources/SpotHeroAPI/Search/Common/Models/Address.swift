@@ -46,5 +46,6 @@ public struct Address: Codable {
     
     /// An array of types defining the purpose of the address/entrance at the facility.
     /// See Address Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#address-types
     public let types: [String]
 }

@@ -19,6 +19,7 @@ public struct AirportRate: Codable {
     
     /// Defines the garage's reservation redemption type.
     /// See Redemption Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#redemption-types
     public let redemptionType: String
     
     /// Metadata used for highlighting spots when showcasing recommended results.

@@ -16,5 +16,6 @@ public struct Amenity: Codable {
     
     /// A value which uniquely distinguishes a type of amenity at a parking spot.
     /// See Amenity Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#amenity-types
     public let type: String
 }
