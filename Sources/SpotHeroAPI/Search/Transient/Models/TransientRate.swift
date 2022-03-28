@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Transient-specific metadata pertaining to a rate for the rental of a parking spot.
 public struct TransientRate: Codable {
@@ -16,5 +16,7 @@ public struct TransientRate: Codable {
     public let earlyBird: EarlyBird?
     
     /// Defines the garage's reservation redemption type.
-    public let redemptionType: RedemptionType
+    /// See Redemption Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#redemption-types
+    public let redemptionType: String
 }

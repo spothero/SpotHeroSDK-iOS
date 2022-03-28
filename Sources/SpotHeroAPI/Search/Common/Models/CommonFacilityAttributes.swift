@@ -38,7 +38,9 @@ public struct CommonFacilityAttributes: Codable {
     public let description: String
     
     /// The facility type designation.
-    public let facilityType: FacilityType
+    /// See Facility Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#facility-types
+    public let facilityType: String
     
     /// Custom instructions for end-user to aid in locating facility. This field may contain HTML content.
     public let navigationTip: String
@@ -53,7 +55,9 @@ public struct CommonFacilityAttributes: Codable {
     public let images: [ImageInfo]
     
     /// Parking types offered at this facility.
-    public let parkingTypes: [FacilityParkingType]
+    /// See Facility Parking Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#facility-parking-types
+    public let parkingTypes: [String]
     
     /// Description of the average customer rating of a facility on a scale of 0 to 5.
     public let rating: FacilityRating
@@ -68,7 +72,8 @@ public struct CommonFacilityAttributes: Codable {
     public let requirements: FacilityRequirements
     
     /// An array defining the fee types at the facility.
-    /// See `FacilityFee.swift` for a list of supported types.
+    /// See Facility Fees in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#facility-fees
     public let supportedFeeTypes: [String]
     
     /// Contains all fields relevant to a facility’s cancellation policy.

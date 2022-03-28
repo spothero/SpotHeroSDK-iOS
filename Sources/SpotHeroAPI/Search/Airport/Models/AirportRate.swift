@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Airport-specific metadata pertaining to a rate for the rental of a parking spot.
 public struct AirportRate: Codable {
@@ -18,7 +18,9 @@ public struct AirportRate: Codable {
     public let lowestDailyRate: Currency
     
     /// Defines the garage's reservation redemption type.
-    public let redemptionType: RedemptionType
+    /// See Redemption Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#redemption-types
+    public let redemptionType: String
     
     /// Metadata used for highlighting spots when showcasing recommended results.
     /// (eg. "Most Popular", "Highest Rated", etc.)

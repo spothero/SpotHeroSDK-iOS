@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Represents an address.
 public struct Address: Codable {
@@ -45,5 +45,7 @@ public struct Address: Codable {
     public let timeZone: String
     
     /// An array of types defining the purpose of the address/entrance at the facility.
-    public let types: [AddressType]
+    /// See Address Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#address-types
+    public let types: [String]
 }

@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Represents a transient parking amenity offered at the facility.
 public struct Amenity: Codable {
@@ -15,5 +15,7 @@ public struct Amenity: Codable {
     public let displayName: String
     
     /// A value which uniquely distinguishes a type of amenity at a parking spot.
-    public let type: AmenityType
+    /// See Amenity Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#amenity-types
+    public let type: String
 }

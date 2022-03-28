@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 import Foundation
 
@@ -32,7 +32,9 @@ public struct MonthlyRate: Codable {
     public let redemptionInstructions: MonthlyRedemptionInstructions
     
     /// Defines the garage's reservation redemption type.
-    public let redemptionType: RedemptionType
+    /// See Redemption Types in the README for a list of supported types.
+    /// https://github.com/spothero/SpotHeroSDK-iOS/#redemption-types
+    public let redemptionType: String
     
     /// The type of parking pass supported at a parking spot.
     public let parkingPass: ParkingPass
