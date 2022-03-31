@@ -3,7 +3,7 @@
 /// Represents an availability search result containing transient facility and rate information.
 public struct TransientFacilityResult: Codable {
     /// Availability of a given parking facility.
-    public let availability: Availability
+    public let availability: Availability?
     
     /// Distance calculations between the facility and the search origin.
     public let distance: Distance?
