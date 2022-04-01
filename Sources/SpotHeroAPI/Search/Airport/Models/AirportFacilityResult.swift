@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Represents an availability search result containing airport facility and rate information.
 public struct AirportFacilityResult: Codable {
