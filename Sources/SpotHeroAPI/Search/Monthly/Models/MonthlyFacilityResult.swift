@@ -1,7 +1,10 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Represents an availability search result containing monthly facility and rate information.
 public struct MonthlyFacilityResult: Codable {
+    /// Availability of a given parking facility.
+    public let availability: Availability
+    
     /// Distance calculations between the facility and the search origin.
     public let distance: Distance?
     
