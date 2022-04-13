@@ -93,7 +93,7 @@ public extension SearchGetTransientFacilitiesRequest {
         
         /// Maximum distance in meters from the origin from which facility results will be generated.
         /// The default is 804.672 meters (.5 miles). The value is capped at 8046.72 meters (5 miles).
-        private let maxDistanceMeters: Int?
+        private let maxDistanceMeters: Double?
         
         /// The number of results to include in a single page.
         /// The default is nil (no limit). Must be >= 1, if provided.
@@ -113,7 +113,7 @@ public extension SearchGetTransientFacilitiesRequest {
                     startDate: Date? = nil,
                     endDate: Date? = nil,
                     isOversize: Bool? = nil,
-                    maxDistanceMeters: Int? = nil,
+                    maxDistanceMeters: Double? = nil,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.latitude = latitude
