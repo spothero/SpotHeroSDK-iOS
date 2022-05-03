@@ -1,7 +1,7 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Representation of a transient facility.
-public struct TransientFacility: Codable {
+public struct TransientFacility: CommonFacility {
     /// Represents common facility information applicable in all contexts.
     public let common: CommonFacilityAttributes
     

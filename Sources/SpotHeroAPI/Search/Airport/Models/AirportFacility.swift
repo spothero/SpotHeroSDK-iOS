@@ -1,7 +1,7 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 /// Representation of an airport facility.
-public struct AirportFacility: Codable {
+public struct AirportFacility: CommonFacility {
     /// Represents common facility information applicable in all contexts.
     public let common: CommonFacilityAttributes
     
