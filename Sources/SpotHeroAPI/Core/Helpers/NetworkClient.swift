@@ -1,7 +1,8 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
+import SpotHeroAPI
 
 /// Represents the completion block for a SpotHero API request.
 public typealias RequestCompletion<T: Decodable> = (Result<T, Error>) -> Void
@@ -11,6 +12,7 @@ class NetworkClient {
     
     private let baseURL: URLConvertible
     private let httpClient: HTTPClient
+    private let buildNumber: Int?
     
     // MARK: Methods
     
@@ -18,9 +20,10 @@ class NetworkClient {
     /// - Parameters:
     ///   - baseURL: The base URL for all API requests.
     ///   - httpClient: An `HTTPClient` through which requests will be routed. Defaults to `.shared`.
-    init(baseURL: URLConvertible, httpClient: HTTPClient = .shared) {
+    init(baseURL: URLConvertible, httpClient: HTTPClient = .shared, buildNumber: Int? = nil) {
         self.baseURL = baseURL
         self.httpClient = httpClient
+        self.buildNumber = buildNumber
     }
     
     /// Creates and sends a request which fetches raw data from an endpoint and decodes it.
@@ -41,11 +44,12 @@ class NetworkClient {
                                        encoding: ParameterEncoding? = nil,
                                        decoder: JSONDecoder = .spotHeroAPI,
                                        completion: RequestCompletion<T>? = nil) -> Request? {
+        
         return self.httpClient.request(
             url,
             method: method,
             parameters: parameters,
-            headers: headers,
+            headers: updatedHeaders(buildNumber: self.buildNumber, headers: headers),
             encoding: encoding,
             decoder: decoder
         ) { (response: DataResponse<T, Error>) in
@@ -126,5 +130,14 @@ extension NetworkClient {
                             encoding: encoding,
                             decoder: decoder,
                             completion: completion)
+    }
+}
+
+extension NetworkClient {
+    private func updatedHeaders(buildNumber: Int? = nil, headers: HTTPHeaderDictionaryConvertible? = nil) -> HTTPHeaderDictionaryConvertible?  {
+        if let buildNumber = self.buildNumber, headers == nil {
+            return [APIHeaders.HTTPHeaderField.userAgent.rawValue: "ios-native-build-\(buildNumber)"]
+        }
+        return nil
     }
 }
