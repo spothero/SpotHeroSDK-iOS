@@ -1,8 +1,8 @@
 // Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 import Foundation
-import UtilityBeltNetworking
 import SpotHeroAPI
+import UtilityBeltNetworking
 
 /// Represents the completion block for a SpotHero API request.
 public typealias RequestCompletion<T: Decodable> = (Result<T, Error>) -> Void
@@ -44,7 +44,6 @@ class NetworkClient {
                                        encoding: ParameterEncoding? = nil,
                                        decoder: JSONDecoder = .spotHeroAPI,
                                        completion: RequestCompletion<T>? = nil) -> Request? {
-        
         return self.httpClient.request(
             url,
             method: method,
