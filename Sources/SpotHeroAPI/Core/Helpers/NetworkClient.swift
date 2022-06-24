@@ -1,7 +1,6 @@
 // Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 import Foundation
-import SpotHeroAPI
 import UtilityBeltNetworking
 
 /// Represents the completion block for a SpotHero API request.
@@ -135,7 +134,7 @@ extension NetworkClient {
 extension NetworkClient {
     private func updatedHeaders(buildNumber: Int? = nil, headers: HTTPHeaderDictionaryConvertible? = nil) -> HTTPHeaderDictionaryConvertible? {
         if let buildNumber = self.buildNumber, headers == nil {
-            return [APIHeaders.HTTPHeaderField.userAgent.rawValue: "ios-native-build-\(buildNumber)"]
+            return ["User-Agent": "ios-native-build-\(buildNumber)"]
         }
         return nil
     }
