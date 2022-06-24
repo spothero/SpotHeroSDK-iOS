@@ -134,7 +134,7 @@ extension NetworkClient {
 }
 
 extension NetworkClient {
-    private func updatedHeaders(buildNumber: Int? = nil, headers: HTTPHeaderDictionaryConvertible? = nil) -> HTTPHeaderDictionaryConvertible?  {
+    private func updatedHeaders(buildNumber: Int? = nil, headers: HTTPHeaderDictionaryConvertible? = nil) -> HTTPHeaderDictionaryConvertible? {
         if let buildNumber = self.buildNumber, headers == nil {
             return [APIHeaders.HTTPHeaderField.userAgent.rawValue: "ios-native-build-\(buildNumber)"]
         }
