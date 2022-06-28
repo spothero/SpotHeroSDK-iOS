@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2022 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -11,6 +11,7 @@ class NetworkClient {
     
     private let baseURL: URLConvertible
     private let httpClient: HTTPClient
+    private let headers: HTTPHeaderDictionaryConvertible?
     
     // MARK: Methods
     
@@ -18,9 +19,10 @@ class NetworkClient {
     /// - Parameters:
     ///   - baseURL: The base URL for all API requests.
     ///   - httpClient: An `HTTPClient` through which requests will be routed. Defaults to `.shared`.
-    init(baseURL: URLConvertible, httpClient: HTTPClient = .shared) {
+    init(baseURL: URLConvertible, httpClient: HTTPClient = .shared, headers: HTTPHeaderDictionaryConvertible? = nil) {
         self.baseURL = baseURL
         self.httpClient = httpClient
+        self.headers = headers
     }
     
     /// Creates and sends a request which fetches raw data from an endpoint and decodes it.
@@ -45,7 +47,7 @@ class NetworkClient {
             url,
             method: method,
             parameters: parameters,
-            headers: headers,
+            headers: updatedHeaders(headers: headers),
             encoding: encoding,
             decoder: decoder
         ) { (response: DataResponse<T, Error>) in
@@ -126,5 +128,22 @@ extension NetworkClient {
                             encoding: encoding,
                             decoder: decoder,
                             completion: completion)
+    }
+}
+
+extension NetworkClient {
+    private func updatedHeaders(headers: HTTPHeaderDictionaryConvertible?) -> [String: String] {
+        var updatedHeaders: [String: String] = [:]
+        
+        if let newHeaders = self.headers?.asHeaderDictionary() {
+            updatedHeaders = newHeaders
+        }
+        
+        if let headersDict = headers?.asHeaderDictionary() {
+            // If we have existing headers that were passed in as a function parameter, then merge it with self.headers passed during class init
+            // If the are conflicting values for the same key then we will use the value from the function parameter
+            updatedHeaders.merge(headersDict) { _, new in new }
+        }
+        return updatedHeaders
     }
 }
