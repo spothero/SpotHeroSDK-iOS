@@ -43,17 +43,11 @@ class NetworkClient {
                                        encoding: ParameterEncoding? = nil,
                                        decoder: JSONDecoder = .spotHeroAPI,
                                        completion: RequestCompletion<T>? = nil) -> Request? {
-        var updatedHeaders = self.headers?.asHeaderDictionary()
-        if let headersDict = headers?.asHeaderDictionary() {
-            // If we have existing headers that were passed in as a function parameter, then merge it with self.headers passed during class init
-            // If the are conflicting values for the same key then we will use the value from the function parameter
-            updatedHeaders?.merge(headersDict) { _, new in new }
-        }
         return self.httpClient.request(
             url,
             method: method,
             parameters: parameters,
-            headers: updatedHeaders,
+            headers: updatedHeaders(headers: headers),
             encoding: encoding,
             decoder: decoder
         ) { (response: DataResponse<T, Error>) in
@@ -134,5 +128,22 @@ extension NetworkClient {
                             encoding: encoding,
                             decoder: decoder,
                             completion: completion)
+    }
+}
+
+extension NetworkClient {
+    private func updatedHeaders(headers: HTTPHeaderDictionaryConvertible?) -> [String : String] {
+        var updatedHeaders: [String : String] = [:]
+        
+        if let newHeaders = self.headers?.asHeaderDictionary() {
+            updatedHeaders = newHeaders
+        }
+        
+        if let headersDict = headers?.asHeaderDictionary() {
+            // If we have existing headers that were passed in as a function parameter, then merge it with self.headers passed during class init
+            // If the are conflicting values for the same key then we will use the value from the function parameter
+            updatedHeaders.merge(headersDict) { _, new in new }
+        }
+        return updatedHeaders
     }
 }
