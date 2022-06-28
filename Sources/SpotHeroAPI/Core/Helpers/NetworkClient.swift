@@ -43,7 +43,6 @@ class NetworkClient {
                                        encoding: ParameterEncoding? = nil,
                                        decoder: JSONDecoder = .spotHeroAPI,
                                        completion: RequestCompletion<T>? = nil) -> Request? {
-        
         var updatedHeaders = self.headers?.asHeaderDictionary()
         if let headersDict = headers?.asHeaderDictionary() {
             // If we have existing headers that were passed in as a function parameter, then merge it with self.headers passed during class init
