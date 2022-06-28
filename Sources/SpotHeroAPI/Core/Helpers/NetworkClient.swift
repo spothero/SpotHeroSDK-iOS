@@ -47,9 +47,9 @@ class NetworkClient {
         var updatedHeaders = self.headers?.asHeaderDictionary()
         if let headersDict = headers?.asHeaderDictionary() {
             // If we have existing headers that were passed in as a function parameter, then merge it with self.headers passed during class init
-            updatedHeaders?.merge(headersDict) { (current, _) in current } 
+            // If the are conflicting values for the same key then we will use the value from the function parameter
+            updatedHeaders?.merge(headersDict) { _, new in new }
         }
-
         return self.httpClient.request(
             url,
             method: method,
