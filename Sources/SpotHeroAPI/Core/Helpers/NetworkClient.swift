@@ -132,8 +132,8 @@ extension NetworkClient {
 }
 
 extension NetworkClient {
-    private func updatedHeaders(headers: HTTPHeaderDictionaryConvertible?) -> [String : String] {
-        var updatedHeaders: [String : String] = [:]
+    private func updatedHeaders(headers: HTTPHeaderDictionaryConvertible?) -> [String: String] {
+        var updatedHeaders: [String: String] = [:]
         
         if let newHeaders = self.headers?.asHeaderDictionary() {
             updatedHeaders = newHeaders
