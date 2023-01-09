@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -47,6 +47,8 @@ public extension SearchGetTransientFacilityRequest {
             case fingerprint
             case searchID = "search_id"
             case sessionID = "session_id"
+
+            case includeWalkingDistance = "include_walking_distance"
         }
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
@@ -68,6 +70,9 @@ public extension SearchGetTransientFacilityRequest {
         
         /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
         private let workLongitude: Double?
+
+        /// A boolean value indicating whether to include the walking distance information in the response or not.
+        private let includeWalkingDistance: Bool
         
         let actionID: String?
         let fingerprint: String?
@@ -79,7 +84,8 @@ public extension SearchGetTransientFacilityRequest {
                     isOversize: Bool? = nil,
                     workLatitude: Double? = nil,
                     workLongitude: Double? = nil,
-                    searchTracking: SearchTrackingParameters? = nil) {
+                    searchTracking: SearchTrackingParameters? = nil,
+                    includeWalkingDistance: Bool = true) {
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
@@ -90,6 +96,7 @@ public extension SearchGetTransientFacilityRequest {
             self.fingerprint = searchTracking?.fingerprint
             self.searchID = searchTracking?.searchID
             self.sessionID = searchTracking?.sessionID
+            self.includeWalkingDistance = includeWalkingDistance
         }
     }
 }

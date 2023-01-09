@@ -1,4 +1,4 @@
-// Copyright © 2022 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -51,6 +51,8 @@ public extension SearchGetTransientFacilitiesRequest {
             case fingerprint
             case searchID = "search_id"
             case sessionID = "session_id"
+
+            case includeWalkingDistance = "include_walking_distance"
         }
         
         /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
@@ -94,6 +96,9 @@ public extension SearchGetTransientFacilitiesRequest {
         /// Maximum distance in meters from the origin from which facility results will be generated.
         /// The default is 804.672 meters (.5 miles). The value is capped at 8046.72 meters (5 miles).
         private let maxDistanceMeters: Double?
+
+        /// A boolean value indicating whether to include the walking distance information in the response or not.
+        private let includeWalkingDistance: Bool
         
         /// The number of results to include in a single page.
         /// The default is nil (no limit). Must be >= 1, if provided.
@@ -114,6 +119,7 @@ public extension SearchGetTransientFacilitiesRequest {
                     endDate: Date? = nil,
                     isOversize: Bool? = nil,
                     maxDistanceMeters: Double? = nil,
+                    includeWalkingDistance: Bool = true,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.latitude = latitude
@@ -126,6 +132,7 @@ public extension SearchGetTransientFacilitiesRequest {
             self.endDate = endDate
             self.isOversize = isOversize
             self.maxDistanceMeters = maxDistanceMeters
+            self.includeWalkingDistance = includeWalkingDistance
             self.pageSize = pageSize
             
             self.actionID = searchTracking?.actionID

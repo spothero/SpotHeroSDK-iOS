@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -40,6 +40,7 @@ public extension SearchGetMonthlyFacilityRequest {
             case startDate = "starts"
             case workLatitude = "work_lat"
             case workLongitude = "work_lon"
+            case includeWalkingDistance = "include_walking_distance"
             
             case actionID = "action_id"
             case fingerprint
@@ -56,6 +57,9 @@ public extension SearchGetMonthlyFacilityRequest {
         
         /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
         private let workLongitude: Double?
+
+        /// A boolean value indicating whether to include the walking distance information in the response or not.
+        private let includeWalkingDistance: Bool
         
         let actionID: String?
         let fingerprint: String?
@@ -65,10 +69,12 @@ public extension SearchGetMonthlyFacilityRequest {
         public init(startDate: Date? = nil,
                     workLatitude: Double? = nil,
                     workLongitude: Double? = nil,
+                    includeWalkingDistance: Bool = true,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.startDate = startDate
             self.workLatitude = workLatitude
             self.workLongitude = workLongitude
+            self.includeWalkingDistance = includeWalkingDistance
             
             self.actionID = searchTracking?.actionID
             self.fingerprint = searchTracking?.fingerprint

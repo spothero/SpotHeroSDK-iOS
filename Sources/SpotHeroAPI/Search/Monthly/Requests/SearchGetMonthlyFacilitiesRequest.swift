@@ -1,4 +1,4 @@
-// Copyright © 2022 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -44,6 +44,7 @@ public extension SearchGetMonthlyFacilitiesRequest {
             case startDate = "starts"
             case workLatitude = "work_lat"
             case workLongitude = "work_lon"
+            case includeWalkingDistance = "include_walking_distance"
             
             case actionID = "action_id"
             case fingerprint
@@ -82,6 +83,9 @@ public extension SearchGetMonthlyFacilitiesRequest {
         /// Maximum distance in meters from the origin from which facility results will be generated.
         /// The default is 804.672 meters (.5 miles). The value is capped at 8046.72 meters (5 miles).
         private let maxDistanceMeters: Double?
+
+        /// A boolean value indicating whether to include the walking distance information in the response or not.
+        private let includeWalkingDistance: Bool
         
         /// The number of results to include in a single page.
         /// The default is nil (no limit). Must be >= 1, if provided.
@@ -100,6 +104,7 @@ public extension SearchGetMonthlyFacilitiesRequest {
                     workLongitude: Double? = nil,
                     startDate: Date? = nil,
                     maxDistanceMeters: Double? = nil,
+                    includeWalkingDistance: Bool = true,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.latitude = latitude
@@ -110,6 +115,7 @@ public extension SearchGetMonthlyFacilitiesRequest {
             self.workLongitude = workLongitude
             self.startDate = startDate
             self.maxDistanceMeters = maxDistanceMeters
+            self.includeWalkingDistance = includeWalkingDistance
             self.pageSize = pageSize
             
             self.actionID = searchTracking?.actionID
