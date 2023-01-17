@@ -38,6 +38,8 @@ public extension SearchGetMonthlyFacilityRequest {
     struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
         private enum CodingKeys: String, CodingKey {
             case startDate = "starts"
+            case originLatitude = "origin_lat"
+            case originLongitude = "origin_lon"
             case workLatitude = "work_lat"
             case workLongitude = "work_lon"
             case includeWalkingDistance = "include_walking_distance"
@@ -51,6 +53,16 @@ public extension SearchGetMonthlyFacilityRequest {
         /// Start date from which results will be generated. The supported format is YYYY-MM-DD.
         /// If this parameter is not provided, results will be generated from the date at which the request was received.
         private let startDate: Date?
+
+        /// Latitude in decimal degrees of origin from where each result's distance will be calculated.
+        /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
+        /// Must be specified with `originLongitude` parameter, if applicable. Origin latitude must be in [-90, 90].
+        private let originLatitude: Double?
+
+        /// Longitude in decimal degrees of origin from where each result's distance will be calculated.
+        /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
+        /// Must be specified with `originLatitude` parameter, if applicable. Origin longitude must be in [-180, 180].
+        private let originLongitude: Double?
         
         /// The work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
         private let workLatitude: Double?
@@ -67,11 +79,15 @@ public extension SearchGetMonthlyFacilityRequest {
         let sessionID: String?
         
         public init(startDate: Date? = nil,
+                    originLatitude: Double? = nil,
+                    originLongitude: Double? = nil,
                     workLatitude: Double? = nil,
                     workLongitude: Double? = nil,
                     includeWalkingDistance: Bool = true,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.startDate = startDate
+            self.originLatitude = originLatitude
+            self.originLongitude = originLongitude
             self.workLatitude = workLatitude
             self.workLongitude = workLongitude
             self.includeWalkingDistance = includeWalkingDistance
