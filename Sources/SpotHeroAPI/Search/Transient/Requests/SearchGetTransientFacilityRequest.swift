@@ -40,6 +40,8 @@ public extension SearchGetTransientFacilityRequest {
             case endDate = "ends"
             case isOversize = "oversize"
             case startDate = "starts"
+            case originLatitude = "origin_lat"
+            case originLongitude = "origin_lon"
             case workLatitude = "work_lat"
             case workLongitude = "work_lon"
             
@@ -64,6 +66,16 @@ public extension SearchGetTransientFacilityRequest {
         /// Boolean that denotes whether or not the pricing calculated for this vehicle
         /// will incorporate pricing for an oversize vehicle, if applicable.
         private let isOversize: Bool?
+
+        /// Latitude in decimal degrees of origin from where each result's distance will be calculated.
+        /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
+        /// Must be specified with `originLongitude` parameter, if applicable. Origin latitude must be in [-90, 90].
+        private let originLatitude: Double?
+
+        /// Longitude in decimal degrees of origin from where each result's distance will be calculated.
+        /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
+        /// Must be specified with `originLatitude` parameter, if applicable. Origin longitude must be in [-180, 180].
+        private let originLongitude: Double?
         
         /// The work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
         private let workLatitude: Double?
@@ -82,6 +94,8 @@ public extension SearchGetTransientFacilityRequest {
         public init(startDate: Date? = nil,
                     endDate: Date? = nil,
                     isOversize: Bool? = nil,
+                    originLatitude: Double? = nil,
+                    originLongitude: Double? = nil,
                     workLatitude: Double? = nil,
                     workLongitude: Double? = nil,
                     searchTracking: SearchTrackingParameters? = nil,
@@ -89,6 +103,8 @@ public extension SearchGetTransientFacilityRequest {
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
+            self.originLatitude = originLatitude
+            self.originLongitude = originLongitude
             self.workLatitude = workLatitude
             self.workLongitude = workLongitude
             
