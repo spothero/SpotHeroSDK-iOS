@@ -6,7 +6,6 @@ import XCTest
 
 class APITestCase: XCTestCase {
     enum ServiceURL: String {
-        case monolith = "https://mobile.staging.spothero.com"
         case craig = "https://api.staging.spothero.com"
     }
     
