@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 import Sham
 @testable import SpotHeroAPINext
@@ -6,7 +6,6 @@ import XCTest
 
 class APITestCase: XCTestCase {
     enum ServiceURL: String {
-        case monolith = "https://mobile.staging.spothero.com"
         case craig = "https://api.staging.spothero.com"
     }
     
