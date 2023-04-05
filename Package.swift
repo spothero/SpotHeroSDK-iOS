@@ -1,5 +1,5 @@
-// swift-tools-version:5.3
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// swift-tools-version:5.6
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 import PackageDescription
 
@@ -13,26 +13,23 @@ let package = Package(
     ],
     products: [
         .library(name: "SpotHeroAPINext", targets: ["SpotHeroAPINext"]),
-        // Dynamic Libraries
-        // These libraries are required due to the Xcode 11.3+ static linking bug: https://bugs.swift.org/browse/SR-12303
-        .library(name: "SpotHeroAPINextDynamic", type: .dynamic, targets: ["SpotHeroAPINext"]),
     ],
     dependencies: [
-        .package(name: "UtilityBelt", url: "https://github.com/spothero/UtilityBelt-iOS", .upToNextMinor(from: "0.14.0")),
+        .package(url: "https://github.com/spothero/UtilityBelt-iOS", .upToNextMinor(from: "0.14.0")),
     ],
     targets: [
         .target(
             name: "SpotHeroAPINext",
             dependencies: [
-                .product(name: "UtilityBeltNetworking", package: "UtilityBelt"),
+                .product(name: "UtilityBeltNetworking", package: "UtilityBelt-iOS"),
             ],
             path: "Sources/SpotHeroAPI"
         ),
         .testTarget(
             name: "SpotHeroAPITests",
             dependencies: [
-                .product(name: "Sham", package: "UtilityBelt"),
-                .product(name: "Sham_XCTestSupport", package: "UtilityBelt"),
+                .product(name: "Sham", package: "UtilityBelt-iOS"),
+                .product(name: "Sham_XCTestSupport", package: "UtilityBelt-iOS"),
                 .target(name: "SpotHeroAPINext"),
             ],
             resources: [.process("Resources")]
