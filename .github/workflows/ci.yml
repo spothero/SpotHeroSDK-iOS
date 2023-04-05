@@ -40,7 +40,7 @@ jobs:
       matrix:
         device_name: ["iPhone 12 Pro", "iPad Pro (11-inch) (2nd generation)"]
         os: ["16.0"]
-        xcode_version: latest-stable
+        xcode_version: [latest-stable]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -59,7 +59,7 @@ jobs:
     needs: [lint]
     strategy:
       matrix:
-        xcode_version: latest-stable
+        xcode_version: [latest-stable]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -80,7 +80,7 @@ jobs:
       matrix:
         device_name: ["Apple TV 4K"]
         os: ["16.0"]
-        xcode_version: latest-stable
+        xcode_version: [latest-stable]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -100,7 +100,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-12]
-        xcode_version: latest-stable
+        xcode_version: [latest-stable]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
