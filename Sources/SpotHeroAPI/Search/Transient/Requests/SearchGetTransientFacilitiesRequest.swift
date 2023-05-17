@@ -53,6 +53,8 @@ public extension SearchGetTransientFacilitiesRequest {
             case sessionID = "session_id"
 
             case includeWalkingDistance = "include_walking_distance"
+            
+            case inFacilityExclusionExperiment = "in_fac_excl_exp"
         }
         
         /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
@@ -104,6 +106,9 @@ public extension SearchGetTransientFacilitiesRequest {
         /// The default is nil (no limit). Must be >= 1, if provided.
         private let pageSize: Int?
         
+        /// A boolean value indicating whether or not the client is included in the facility exclusion experiment.
+        private let inFacilityExclusionExperiment: Bool?
+        
         let actionID: String?
         let fingerprint: String?
         let searchID: String?
@@ -120,6 +125,7 @@ public extension SearchGetTransientFacilitiesRequest {
                     isOversize: Bool? = nil,
                     maxDistanceMeters: Double? = nil,
                     includeWalkingDistance: Bool = true,
+                    inFacilityExclusionExperiment: Bool = false,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.latitude = latitude
@@ -133,6 +139,7 @@ public extension SearchGetTransientFacilitiesRequest {
             self.isOversize = isOversize
             self.maxDistanceMeters = maxDistanceMeters
             self.includeWalkingDistance = includeWalkingDistance
+            self.inFacilityExclusionExperiment = inFacilityExclusionExperiment
             self.pageSize = pageSize
             
             self.actionID = searchTracking?.actionID
