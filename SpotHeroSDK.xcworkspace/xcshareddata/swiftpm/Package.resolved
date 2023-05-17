@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "UtilityBelt",
-        "repositoryURL": "https://github.com/spothero/UtilityBelt-iOS",
-        "state": {
-          "branch": null,
-          "revision": "364af7d8246ee7a99d460926426e4e659bf23806",
-          "version": "0.14.0"
-        }
+  "pins" : [
+    {
+      "identity" : "utilitybelt-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/spothero/UtilityBelt-iOS",
+      "state" : {
+        "revision" : "364af7d8246ee7a99d460926426e4e659bf23806",
+        "version" : "0.14.0"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }
