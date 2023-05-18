@@ -15,7 +15,7 @@ let package = Package(
         .library(name: "SpotHeroAPINext", targets: ["SpotHeroAPINext"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/spothero/UtilityBelt-iOS", .upToNextMinor(from: "0.15.0")),
+        .package(url: "https://github.com/spothero/UtilityBelt-iOS", .upToNextMinor(from: "0.14.0")),
     ],
     targets: [
         .target(
