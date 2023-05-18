@@ -125,7 +125,7 @@ public extension SearchGetTransientFacilitiesRequest {
                     isOversize: Bool? = nil,
                     maxDistanceMeters: Double? = nil,
                     includeWalkingDistance: Bool = true,
-                    inFacilityExclusionExperiment: Bool = false,
+                    inFacilityExclusionExperiment: Bool? = false,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
             self.latitude = latitude
