@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
 import XCTest
@@ -51,6 +51,6 @@ final class SearchGetAirportFacilityRequestMockTests: MockAPITestCase, SearchGet
 }
 
 private enum TestData {
-    static let facilityID = 8969
+    static let facilityID = 3425
     static let startDate = Date() // Today
 }
