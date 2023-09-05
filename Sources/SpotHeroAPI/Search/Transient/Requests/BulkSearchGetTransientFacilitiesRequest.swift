@@ -7,7 +7,7 @@ import UtilityBeltNetworking
 ///
 /// - See [searchBulkTransientParking](https://api.spothero.com/v2/docs/#operation/searchBulkTransientParking).
 public struct BulkSearchGetTransientFacilitiesRequest: RequestDefining {
-    public typealias ResponseModel = TransientFacilitiesSearchResponse
+    public typealias ResponseModel = BulkTransientFacilitiesSearchResponse
 
     static let method: HTTPMethod = .post
     static let route = "/v2/search/bulk/transient"
