@@ -21,9 +21,27 @@ public struct BulkSearchGetTransientFacilitiesRequest: RequestDefining {
     @discardableResult
     public func callAsFunction(parameters: Parameters,
                                completion: @escaping RequestCompletion<ResponseModel>) -> Request? {
+        guard var urlComponents = URLComponents(string: Self.route) else {
+            return nil
+        }
+
+        urlComponents.queryItems = parameters.queryParameters.asParameterDictionary()?.map { key, value in
+            if let value = value as? String {
+                return .init(name: key, value: value)
+            }
+            if let value = value as? Int {
+                return .init(name: key, value: String(value))
+            }
+            if let value = value as? Double {
+                return .init(name: key, value: String(value))
+            }
+            return .init(name: key, value: String(describing: value))
+        }
+
         return self.client.request(
-            Self.self,
-            parameters: parameters,
+            route: Self.route.appending(urlComponents.query.map { "?\($0)" } ?? ""),
+            method: Self.method,
+            parameters: parameters.bodyParameters,
             completion: completion
         )
     }
@@ -33,78 +51,101 @@ public struct BulkSearchGetTransientFacilitiesRequest: RequestDefining {
 
 public extension BulkSearchGetTransientFacilitiesRequest {
     /// Represents the query parameters used for fetching transient facilities.
-    struct Parameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
-        private enum CodingKeys: String, CodingKey {
-            case isOversize = "oversize"
-            case latitude = "lat"
-            case longitude = "lon"
-            case maxDistanceMeters = "max_distance_meters"
-            case originLatitude = "origin_lat"
-            case originLongitude = "origin_lon"
-            case pageSize = "page_size"
-            case periods
-            case workLatitude = "work_lat"
-            case workLongitude = "work_lon"
+    struct Parameters: SearchTracking, ParameterDictionaryConvertible {
+        fileprivate struct QueryParameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
+            private enum CodingKeys: String, CodingKey {
+                case latitude = "lat"
+                case longitude = "lon"
+                case originLatitude = "origin_lat"
+                case originLongitude = "origin_lon"
+                case workLatitude = "work_lat"
+                case workLongitude = "work_lon"
+                case inFacilityExclusionExperiment = "in_fac_excl_exp"
+                case actionID = "action_id"
+                case fingerprint
+                case searchID = "search_id"
+                case sessionID = "session_id"
+            }
 
-            case actionID = "action_id"
-            case fingerprint
-            case searchID = "search_id"
-            case sessionID = "session_id"
+            /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
+            let latitude: Double
 
-            case includeWalkingDistance = "include_walking_distance"
+            /// Longitude in decimal degrees of origin from where the search will be performed. Longitude must be in [-180, 180].
+            let longitude: Double
 
-            case inFacilityExclusionExperiment = "in_fac_excl_exp"
+            /// Latitude in decimal degrees of origin from where each result's distance will be calculated.
+            /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
+            /// Must be specified with `originLongitude` parameter, if applicable. If `originLatitude` and `originLongitude` are not populated,
+            /// result distances are calculated from the required `latitude` and `longitude` parameters. Origin latitude must be in [-90, 90].
+            let originLatitude: Double?
+
+            /// Longitude in decimal degrees of origin from where each result's distance will be calculated.
+            /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
+            /// Must be specified with `originLatitude` parameter, if applicable. If `originLatitude` and `originLongitude` are not populated,
+            /// result distances are calculated from the required `latitude` and `longitude` parameters. Origin longitude must be in [-180, 180].
+            let originLongitude: Double?
+
+            /// The work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
+            let workLatitude: Double?
+
+            /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
+            let workLongitude: Double?
+
+            /// A boolean value indicating whether or not the client is included in the facility exclusion experiment.
+            let inFacilityExclusionExperiment: Bool?
+
+            let actionID: String?
+            let fingerprint: String?
+            let searchID: String?
+            let sessionID: String?
         }
 
-        /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
-        private let latitude: Double
+        fileprivate struct BodyParameters: Encodable, ParameterDictionaryConvertible {
+            private enum CodingKeys: String, CodingKey {
+                case isOversize = "oversize"
+                case maxDistanceMeters = "max_distance_meters"
+                case pageSize = "page_size"
+                case periods
+                case includeWalkingDistance = "include_walking_distance"
+            }
 
-        /// Longitude in decimal degrees of origin from where the search will be performed. Longitude must be in [-180, 180].
-        private let longitude: Double
+            /// The periods to search for.
+            let periods: [BulkSearchPeriod]?
 
-        /// Latitude in decimal degrees of origin from where each result's distance will be calculated.
-        /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
-        /// Must be specified with `originLongitude` parameter, if applicable. If `originLatitude` and `originLongitude` are not populated,
-        /// result distances are calculated from the required `latitude` and `longitude` parameters. Origin latitude must be in [-90, 90].
-        private let originLatitude: Double?
+            /// Boolean that denotes whether or not the pricing calculated for this vehicle
+            /// will incorporate pricing for an oversize vehicle, if applicable.
+            let isOversize: Bool?
 
-        /// Longitude in decimal degrees of origin from where each result's distance will be calculated.
-        /// Intended use case is to accurately calculate result distances from the initial search location after panning to a new area on the map.
-        /// Must be specified with `originLatitude` parameter, if applicable. If `originLatitude` and `originLongitude` are not populated,
-        /// result distances are calculated from the required `latitude` and `longitude` parameters. Origin longitude must be in [-180, 180].
-        private let originLongitude: Double?
+            /// Maximum distance in meters from the origin from which facility results will be generated.
+            /// The default is 804.672 meters (.5 miles). The value is capped at 8046.72 meters (5 miles).
+            let maxDistanceMeters: Double?
 
-        /// The work address latitude associated with the user’s commuter benefits card. Latitude must be in [-90, 90].
-        private let workLatitude: Double?
+            /// A boolean value indicating whether to include the walking distance information in the response or not.
+            let includeWalkingDistance: Bool
 
-        /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
-        private let workLongitude: Double?
+            /// The number of results to include in a single page.
+            /// The default is nil (no limit). Must be >= 1, if provided.
+            let pageSize: Int?
+        }
 
-        /// The periods to search for.
-        private let periods: [BulkSearchPeriod]?
+        fileprivate let queryParameters: QueryParameters
+        fileprivate let bodyParameters: BodyParameters
 
-        /// Boolean that denotes whether or not the pricing calculated for this vehicle
-        /// will incorporate pricing for an oversize vehicle, if applicable.
-        private let isOversize: Bool?
+        var actionID: String? {
+            queryParameters.actionID
+        }
 
-        /// Maximum distance in meters from the origin from which facility results will be generated.
-        /// The default is 804.672 meters (.5 miles). The value is capped at 8046.72 meters (5 miles).
-        private let maxDistanceMeters: Double?
+        var fingerprint: String? {
+            queryParameters.fingerprint
+        }
 
-        /// A boolean value indicating whether to include the walking distance information in the response or not.
-        private let includeWalkingDistance: Bool
+        var searchID: String? {
+            queryParameters.searchID
+        }
 
-        /// The number of results to include in a single page.
-        /// The default is nil (no limit). Must be >= 1, if provided.
-        private let pageSize: Int?
-
-        /// A boolean value indicating whether or not the client is included in the facility exclusion experiment.
-        private let inFacilityExclusionExperiment: Bool?
-
-        let actionID: String?
-        let fingerprint: String?
-        let searchID: String?
-        let sessionID: String?
+        var sessionID: String? {
+            queryParameters.sessionID
+        }
 
         public init(latitude: Double,
                     longitude: Double,
@@ -119,23 +160,26 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                     inFacilityExclusionExperiment: Bool? = nil,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
-            self.latitude = latitude
-            self.longitude = longitude
-            self.originLatitude = originLatitude
-            self.originLongitude = originLongitude
-            self.workLatitude = workLatitude
-            self.workLongitude = workLongitude
-            self.periods = periods
-            self.isOversize = isOversize
-            self.maxDistanceMeters = maxDistanceMeters
-            self.includeWalkingDistance = includeWalkingDistance
-            self.inFacilityExclusionExperiment = inFacilityExclusionExperiment
-            self.pageSize = pageSize
-
-            self.actionID = searchTracking?.actionID
-            self.fingerprint = searchTracking?.fingerprint
-            self.searchID = searchTracking?.searchID
-            self.sessionID = searchTracking?.sessionID
+            self.queryParameters = .init(
+                latitude: latitude,
+                longitude: longitude,
+                originLatitude: originLatitude,
+                originLongitude: originLongitude,
+                workLatitude: workLatitude,
+                workLongitude: workLongitude,
+                inFacilityExclusionExperiment: inFacilityExclusionExperiment,
+                actionID: searchTracking?.actionID,
+                fingerprint: searchTracking?.fingerprint,
+                searchID: searchTracking?.searchID,
+                sessionID: searchTracking?.sessionID
+            )
+            self.bodyParameters = .init(
+                periods: periods,
+                isOversize: isOversize,
+                maxDistanceMeters: maxDistanceMeters,
+                includeWalkingDistance: includeWalkingDistance,
+                pageSize: pageSize
+            )
         }
     }
 }
