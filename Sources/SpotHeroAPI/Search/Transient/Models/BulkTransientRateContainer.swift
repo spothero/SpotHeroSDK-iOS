@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 public struct BulkTransientRateContainer: Codable {
     /// Availability of a given parking facility.

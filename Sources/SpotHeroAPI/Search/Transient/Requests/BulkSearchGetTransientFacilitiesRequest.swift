@@ -53,6 +53,7 @@ public extension BulkSearchGetTransientFacilitiesRequest {
     /// Represents the query parameters used for fetching transient facilities.
     struct Parameters: SearchTracking, ParameterDictionaryConvertible {
         fileprivate struct QueryParameters: Encodable, SearchTracking, ParameterDictionaryConvertible {
+            // swiftlint:disable nesting
             private enum CodingKeys: String, CodingKey {
                 case latitude = "lat"
                 case longitude = "lon"
@@ -66,6 +67,8 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                 case searchID = "search_id"
                 case sessionID = "session_id"
             }
+
+            // swiftlint:enable nesting
 
             /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
             let latitude: Double
@@ -101,6 +104,7 @@ public extension BulkSearchGetTransientFacilitiesRequest {
         }
 
         fileprivate struct BodyParameters: Encodable, ParameterDictionaryConvertible {
+            // swiftlint:disable nesting
             private enum CodingKeys: String, CodingKey {
                 case isOversize = "oversize"
                 case maxDistanceMeters = "max_distance_meters"
@@ -108,6 +112,8 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                 case periods
                 case includeWalkingDistance = "include_walking_distance"
             }
+
+            // swiftlint:enable nesting
 
             /// The periods to search for.
             let periods: [BulkSearchPeriod]?
@@ -132,19 +138,19 @@ public extension BulkSearchGetTransientFacilitiesRequest {
         fileprivate let bodyParameters: BodyParameters
 
         var actionID: String? {
-            queryParameters.actionID
+            self.queryParameters.actionID
         }
 
         var fingerprint: String? {
-            queryParameters.fingerprint
+            self.queryParameters.fingerprint
         }
 
         var searchID: String? {
-            queryParameters.searchID
+            self.queryParameters.searchID
         }
 
         var sessionID: String? {
-            queryParameters.sessionID
+            self.queryParameters.sessionID
         }
 
         public init(latitude: Double,
