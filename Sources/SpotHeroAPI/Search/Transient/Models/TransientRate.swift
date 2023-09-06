@@ -6,6 +6,7 @@ public struct TransientRate: Codable {
         case amenities
         case earlyBird = "early_bird"
         case redemptionType = "redemption_type"
+        case ruleGroupTitle = "rule_group_title"
     }
     
     /// Transient parking amenities offered at the facility.
@@ -19,4 +20,7 @@ public struct TransientRate: Codable {
     /// See Redemption Types in the README for a list of supported types.
     /// https://github.com/spothero/SpotHeroSDK-iOS/#redemption-types
     public let redemptionType: String
+    
+    /// The title of the rule group.
+    public let ruleGroupTitle: String
 }
