@@ -9,7 +9,7 @@ import UtilityBeltNetworking
 public struct BulkSearchGetTransientFacilityRequest: RequestDefining {
     public typealias ResponseModel = BulkTransientFacilitySearchResponse
 
-    static let method: HTTPMethod = .get
+    static let method: HTTPMethod = .post
     static let route = "/v2/search/bulk/transient"
 
     let client: NetworkClient
