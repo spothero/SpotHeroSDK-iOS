@@ -18,7 +18,7 @@ public struct BulkTransientFacilityResult: Codable {
     /// Distance calculations between the facility and the search origin.
     public let distance: Distance?
 
-    /// Representation of a Facility.
+    /// The facility the was queried.
     public let facility: TransientFacility
 
     /// Contains information about misc options available to the user
