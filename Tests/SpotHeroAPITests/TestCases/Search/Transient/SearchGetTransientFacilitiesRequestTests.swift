@@ -45,12 +45,15 @@ final class SearchGetTransientFacilitiesRequestMockTests: MockAPITestCase, Searc
     func testGetTransientFacilitiesSucceeds() throws {
         throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
         
+        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
+        /*
         self.stub(SearchGetTransientFacilitiesRequest.self,
                   with: .apiMockFile("get_transient_facilities"))
         
         self.getTransientFacilities(parameters: .init(latitude: TestData.latitude,
                                                       longitude: TestData.longitude,
                                                       startDate: TestData.startDate))
+         */
     }
 }
 

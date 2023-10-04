@@ -44,12 +44,15 @@ final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchG
     func testGetMonthlyFacilitiesSucceeds() throws {
         throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
         
+        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
+        /*
         self.stub(SearchGetMonthlyFacilitiesRequest.self,
                   with: .apiMockFile("get_monthly_facilities"))
         
         self.getMonthlyFacilities(parameters: .init(latitude: TestData.latitude,
                                                     longitude: TestData.longitude,
                                                     startDate: TestData.startDate))
+         */
     }
 }
 

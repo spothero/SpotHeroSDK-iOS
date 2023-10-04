@@ -44,11 +44,14 @@ final class SearchGetAirportFacilitiesRequestMockTests: MockAPITestCase, SearchG
     func testGetAirportFacilitiesSucceeds() throws {
         throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
         
+        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
+        /*
         self.stub(SearchGetAirportFacilitiesRequest.self,
                   with: .apiMockFile("get_airport_facilities"))
         
         self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
                                                     startDate: TestData.startDate))
+         */
     }
 }
 

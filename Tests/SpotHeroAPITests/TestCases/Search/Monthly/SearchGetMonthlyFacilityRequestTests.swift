@@ -44,10 +44,12 @@ final class SearchGetMonthlyFacilityRequestMockTests: MockAPITestCase, SearchGet
         throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
         
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
+        /*
         self.stub(.get("mobile\(SearchGetMonthlyFacilitiesRequest.route)/\(TestData.facilityID)"),
                   with: .apiMockFile("get_monthly_facilities_\(TestData.facilityID)"))
         
         self.getMonthlyFacility(withID: TestData.facilityID)
+         */
     }
 }
 
