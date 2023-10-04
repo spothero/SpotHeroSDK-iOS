@@ -1,7 +1,12 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 /// Represents an available rate at a given parking facility.
 public struct TransientRateContainer: Codable {
+    private enum CodingKeys: String, CodingKey {
+        case transient
+        case extensionQuotes = "extension_quotes"
+        case quote
+    }
     /// Transient-specific metadata pertaining to a rate for the rental of a parking spot.
     public let transient: TransientRate
     
@@ -10,4 +15,8 @@ public struct TransientRateContainer: Codable {
     /// and is guaranteed to be honored for the period of validity specified within
     /// so long as no part of the originally issued quote has been modified.
     public let quote: Quote
+
+    /// JSON object that will have the extended rate quote
+    /// It will include the extend_hours and the price_difference.
+    public let extensionQuotes: [ExtensionQuote]
 }
