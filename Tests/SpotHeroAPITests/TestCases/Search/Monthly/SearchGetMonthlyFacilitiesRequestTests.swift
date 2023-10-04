@@ -46,12 +46,12 @@ final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchG
         
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         /*
-        self.stub(SearchGetMonthlyFacilitiesRequest.self,
-                  with: .apiMockFile("get_monthly_facilities"))
-        
-        self.getMonthlyFacilities(parameters: .init(latitude: TestData.latitude,
-                                                    longitude: TestData.longitude,
-                                                    startDate: TestData.startDate))
+         self.stub(SearchGetMonthlyFacilitiesRequest.self,
+         with: .apiMockFile("get_monthly_facilities"))
+         
+         self.getMonthlyFacilities(parameters: .init(latitude: TestData.latitude,
+         longitude: TestData.longitude,
+         startDate: TestData.startDate))
          */
     }
 }

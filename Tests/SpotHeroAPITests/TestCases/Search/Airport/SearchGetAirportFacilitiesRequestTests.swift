@@ -46,11 +46,11 @@ final class SearchGetAirportFacilitiesRequestMockTests: MockAPITestCase, SearchG
         
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         /*
-        self.stub(SearchGetAirportFacilitiesRequest.self,
-                  with: .apiMockFile("get_airport_facilities"))
-        
-        self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
-                                                    startDate: TestData.startDate))
+         self.stub(SearchGetAirportFacilitiesRequest.self,
+         with: .apiMockFile("get_airport_facilities"))
+         
+         self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
+         startDate: TestData.startDate))
          */
     }
 }

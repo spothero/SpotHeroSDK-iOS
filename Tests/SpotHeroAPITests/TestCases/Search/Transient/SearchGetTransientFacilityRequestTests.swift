@@ -46,10 +46,10 @@ final class SearchGetTransientFacilityRequestMockTests: MockAPITestCase, SearchG
         
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         /*
-        self.stub(.get("mobile\(SearchGetTransientFacilityRequest.route)/\(TestData.facilityID)"),
-                  with: .apiMockFile("get_transient_facilities_\(TestData.facilityID)"))
-        
-        self.getTransientFacility(withID: TestData.facilityID)
+         self.stub(.get("mobile\(SearchGetTransientFacilityRequest.route)/\(TestData.facilityID)"),
+         with: .apiMockFile("get_transient_facilities_\(TestData.facilityID)"))
+         
+         self.getTransientFacility(withID: TestData.facilityID)
          */
     }
 }

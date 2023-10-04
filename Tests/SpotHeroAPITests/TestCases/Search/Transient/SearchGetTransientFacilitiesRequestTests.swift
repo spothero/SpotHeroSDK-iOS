@@ -47,12 +47,12 @@ final class SearchGetTransientFacilitiesRequestMockTests: MockAPITestCase, Searc
         
         // FIXME: We temporarily need to stub on the /mobile path for staging requests.
         /*
-        self.stub(SearchGetTransientFacilitiesRequest.self,
-                  with: .apiMockFile("get_transient_facilities"))
-        
-        self.getTransientFacilities(parameters: .init(latitude: TestData.latitude,
-                                                      longitude: TestData.longitude,
-                                                      startDate: TestData.startDate))
+         self.stub(SearchGetTransientFacilitiesRequest.self,
+         with: .apiMockFile("get_transient_facilities"))
+         
+         self.getTransientFacilities(parameters: .init(latitude: TestData.latitude,
+         longitude: TestData.longitude,
+         startDate: TestData.startDate))
          */
     }
 }
