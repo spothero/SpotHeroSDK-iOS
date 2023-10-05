@@ -38,20 +38,6 @@ final class SearchGetAirportFacilityRequestLiveTests: LiveAPITestCase, SearchGet
     }
 }
 
-final class SearchGetAirportFacilityRequestMockTests: MockAPITestCase, SearchGetAirportFacilityRequestTests {
-    func testGetAirportFacilitiesSucceeds() throws {
-        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
-        
-        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
-        /*
-         self.stub(.get("mobile\(SearchGetAirportFacilityRequest.route)/\(TestData.facilityID)"),
-         with: .apiMockFile("get_airport_facilities_\(TestData.facilityID)"))
-         
-         self.getAirportFacility(withID: TestData.facilityID)
-         */
-    }
-}
-
 private enum TestData {
     static let facilityID = 3425
     static let startDate = Date() // Today

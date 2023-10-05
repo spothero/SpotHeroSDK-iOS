@@ -39,22 +39,6 @@ final class SearchGetAirportFacilitiesRequestLiveTests: LiveAPITestCase, SearchG
     }
 }
 
-// swiftlint:disable:next type_name
-final class SearchGetAirportFacilitiesRequestMockTests: MockAPITestCase, SearchGetAirportFacilitiesRequestTests {
-    func testGetAirportFacilitiesSucceeds() throws {
-        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
-        
-        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
-        /*
-         self.stub(SearchGetAirportFacilitiesRequest.self,
-         with: .apiMockFile("get_airport_facilities"))
-         
-         self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
-         startDate: TestData.startDate))
-         */
-    }
-}
-
 private enum TestData {
     static let iataCode = "ORD" // Chicago O'Hare
     static let startDate = Date() // Today

@@ -40,23 +40,6 @@ final class SearchGetTransientFacilitiesRequestLiveTests: LiveAPITestCase, Searc
     }
 }
 
-// swiftlint:disable:next type_name
-final class SearchGetTransientFacilitiesRequestMockTests: MockAPITestCase, SearchGetTransientFacilitiesRequestTests {
-    func testGetTransientFacilitiesSucceeds() throws {
-        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
-        
-        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
-        /*
-         self.stub(SearchGetTransientFacilitiesRequest.self,
-         with: .apiMockFile("get_transient_facilities"))
-         
-         self.getTransientFacilities(parameters: .init(latitude: TestData.latitude,
-         longitude: TestData.longitude,
-         startDate: TestData.startDate))
-         */
-    }
-}
-
 private enum TestData {
     static let latitude: Double = 41.8781 // Chicago Latitude
     static let longitude: Double = -87.6298 // Chicago Longitude
