@@ -19,5 +19,5 @@ public struct TransientRateContainer: Codable {
 
     /// JSON object that will have the extended rate quote
     /// It will include the extend_hours and the price_difference.
-    public let extensionQuotes: [ExtensionQuote]
+    public let extensionQuotes: [ExtensionQuote]?
 }
