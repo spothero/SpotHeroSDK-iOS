@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 import Sham_XCTestSupport
 @testable import SpotHeroAPINext
@@ -35,18 +35,6 @@ private extension SearchGetMonthlyFacilityRequestTests {
 
 final class SearchGetMonthlyFacilityRequestLiveTests: LiveAPITestCase, SearchGetMonthlyFacilityRequestTests {
     func testGetMonthlyFacilitySucceeds() throws {
-        self.getMonthlyFacility(withID: TestData.facilityID)
-    }
-}
-
-final class SearchGetMonthlyFacilityRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilityRequestTests {
-    func testGetMonthlyFacilitySucceeds() throws {
-        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
-        
-        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
-        self.stub(.get("mobile\(SearchGetMonthlyFacilitiesRequest.route)/\(TestData.facilityID)"),
-                  with: .apiMockFile("get_monthly_facilities_\(TestData.facilityID)"))
-        
         self.getMonthlyFacility(withID: TestData.facilityID)
     }
 }

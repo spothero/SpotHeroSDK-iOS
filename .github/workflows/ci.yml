@@ -18,8 +18,8 @@ env:
 jobs:
   lint:
     name: Lint
-    runs-on: macos-12
-    permissions: 
+    runs-on: macos-13
+    permissions:
       pull-requests: write
     env:
       DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -34,13 +34,13 @@ jobs:
         run: sh ./scripts/danger_lint.sh
   iOS:
     name: iOS ${{ matrix.os }} ${{ matrix.device_name }}
-    runs-on: macos-12
+    runs-on: macos-13
     needs: [lint]
     strategy:
       matrix:
-        device_name: ["iPhone 12 Pro", "iPad Pro (11-inch) (3rd generation)"]
-        os: ["16.2"]
-        xcode_version: ["14.2.0"]
+        device_name: ["iPhone 15 Pro", "iPad Pro (12.9-inch) (6th generation)"]
+        os: ["17.0"]
+        xcode_version: ["15.0.0"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
@@ -55,11 +55,11 @@ jobs:
           path: ${{ env.DEPLOY_DIRECTORY }}
   macOS:
     name: macOS
-    runs-on: macos-12
+    runs-on: macos-13
     needs: [lint]
     strategy:
       matrix:
-        xcode_version: ["14.2.0"]
+        xcode_version: ["15.0.0"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
@@ -70,17 +70,17 @@ jobs:
       - name: Upload Step Output
         uses: actions/upload-artifact@v1
         with:
-          name: "macOS 12 Output"
+          name: "macOS 13 Output"
           path: ${{ env.DEPLOY_DIRECTORY }}
   tvOS:
     name: tvOS ${{ matrix.os }} ${{ matrix.device_name }}
-    runs-on: macos-12
+    runs-on: macos-13
     needs: [lint]
     strategy:
       matrix:
         device_name: ["Apple TV 4K (3rd generation)"]
-        os: ["16.1"]
-        xcode_version: ["14.2.0"]
+        os: ["17.0"]
+        xcode_version: ["15.0.0"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
@@ -99,8 +99,8 @@ jobs:
     needs: [lint]
     strategy:
       matrix:
-        os: [macos-12]
-        xcode_version: ["14.2.0"]
+        os: [macos-13]
+        xcode_version: ["15.0.0"]
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0

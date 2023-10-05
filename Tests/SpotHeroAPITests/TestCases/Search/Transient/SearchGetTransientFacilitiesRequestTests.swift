@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
 import XCTest
@@ -34,20 +34,6 @@ private extension SearchGetTransientFacilitiesRequestTests {
 // swiftlint:disable:next type_name
 final class SearchGetTransientFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetTransientFacilitiesRequestTests {
     func testGetTransientFacilitiesSucceeds() throws {
-        self.getTransientFacilities(parameters: .init(latitude: TestData.latitude,
-                                                      longitude: TestData.longitude,
-                                                      startDate: TestData.startDate))
-    }
-}
-
-// swiftlint:disable:next type_name
-final class SearchGetTransientFacilitiesRequestMockTests: MockAPITestCase, SearchGetTransientFacilitiesRequestTests {
-    func testGetTransientFacilitiesSucceeds() throws {
-        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
-        
-        self.stub(SearchGetTransientFacilitiesRequest.self,
-                  with: .apiMockFile("get_transient_facilities"))
-        
         self.getTransientFacilities(parameters: .init(latitude: TestData.latitude,
                                                       longitude: TestData.longitude,
                                                       startDate: TestData.startDate))

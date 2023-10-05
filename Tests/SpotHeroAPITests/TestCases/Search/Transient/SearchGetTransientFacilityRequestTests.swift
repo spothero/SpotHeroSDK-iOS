@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
 import XCTest
@@ -35,19 +35,6 @@ private extension SearchGetTransientFacilityRequestTests {
 // swiftlint:disable:next type_name
 final class SearchGetTransientFacilityRequestLiveTests: LiveAPITestCase, SearchGetTransientFacilityRequestTests {
     func testGetTransientFacilitiesSucceeds() throws {
-        self.getTransientFacility(withID: TestData.facilityID)
-    }
-}
-
-// swiftlint:disable:next type_name
-final class SearchGetTransientFacilityRequestMockTests: MockAPITestCase, SearchGetTransientFacilityRequestTests {
-    func testGetTransientFacilitiesSucceeds() throws {
-        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
-        
-        // FIXME: We temporarily need to stub on the /mobile path for staging requests.
-        self.stub(.get("mobile\(SearchGetTransientFacilityRequest.route)/\(TestData.facilityID)"),
-                  with: .apiMockFile("get_transient_facilities_\(TestData.facilityID)"))
-        
         self.getTransientFacility(withID: TestData.facilityID)
     }
 }

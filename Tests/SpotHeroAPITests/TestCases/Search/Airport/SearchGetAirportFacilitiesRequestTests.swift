@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
 import XCTest
@@ -34,19 +34,6 @@ private extension SearchGetAirportFacilitiesRequestTests {
 // swiftlint:disable:next type_name
 final class SearchGetAirportFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetAirportFacilitiesRequestTests {
     func testGetAirportFacilitiesSucceeds() throws {
-        self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
-                                                    startDate: TestData.startDate))
-    }
-}
-
-// swiftlint:disable:next type_name
-final class SearchGetAirportFacilitiesRequestMockTests: MockAPITestCase, SearchGetAirportFacilitiesRequestTests {
-    func testGetAirportFacilitiesSucceeds() throws {
-        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
-        
-        self.stub(SearchGetAirportFacilitiesRequest.self,
-                  with: .apiMockFile("get_airport_facilities"))
-        
         self.getAirportFacilities(parameters: .init(iataCode: TestData.iataCode,
                                                     startDate: TestData.startDate))
     }
