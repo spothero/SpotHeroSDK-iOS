@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
 import XCTest
@@ -33,20 +33,6 @@ private extension SearchGetMonthlyFacilitiesRequestTests {
 // swiftlint:disable:next type_name
 final class SearchGetMonthlyFacilitiesRequestLiveTests: LiveAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
     func testGetMonthlyFacilitiesSucceeds() throws {
-        self.getMonthlyFacilities(parameters: .init(latitude: TestData.latitude,
-                                                    longitude: TestData.longitude,
-                                                    startDate: TestData.startDate))
-    }
-}
-
-// swiftlint:disable:next type_name
-final class SearchGetMonthlyFacilitiesRequestMockTests: MockAPITestCase, SearchGetMonthlyFacilitiesRequestTests {
-    func testGetMonthlyFacilitiesSucceeds() throws {
-        throw XCTSkip("Skipping mock tests until Search V2 development is complete.")
-        
-        self.stub(SearchGetMonthlyFacilitiesRequest.self,
-                  with: .apiMockFile("get_monthly_facilities"))
-        
         self.getMonthlyFacilities(parameters: .init(latitude: TestData.latitude,
                                                     longitude: TestData.longitude,
                                                     startDate: TestData.startDate))
