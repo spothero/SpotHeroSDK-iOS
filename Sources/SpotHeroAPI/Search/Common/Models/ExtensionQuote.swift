@@ -5,6 +5,7 @@ public struct ExtensionQuote: Codable {
     private enum CodingKeys: String, CodingKey {
         case extendHours = "extend_hours"
         case priceDifference = "price_difference"
+        case rateID = "rate_id"
         case quote
     }
 
@@ -19,4 +20,7 @@ public struct ExtensionQuote: Codable {
 
     /// The difference in price after adding extendHours to the reservation
     public let priceDifference: Int
+
+    /// Unique identifier of the rate for which the price applies.
+    public let rateID: String
 }
