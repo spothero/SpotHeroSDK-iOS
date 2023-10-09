@@ -3,9 +3,8 @@
 /// Represents an extension rate at a given parking facility.
 public struct ExtensionQuote: Codable {
     private enum CodingKeys: String, CodingKey {
-        case extendHours = "extend_hours"
+        case extensionHours = "extension_hours"
         case priceDifference = "price_difference"
-        case rateID = "rate_id"
         case quote
     }
 
@@ -15,12 +14,9 @@ public struct ExtensionQuote: Codable {
     /// so long as no part of the originally issued quote has been modified.
     public let quote: Quote
 
-    /// Number of hours we allow the user to extend, can be; 1,2 or 3
-    public let extendHours: Int
+    /// The extend hours value that is used to generate this quote object.
+    public let extensionHours: Int
 
     /// The difference in price after adding extendHours to the reservation
-    public let priceDifference: Int
-
-    /// Unique identifier of the rate for which the price applies.
-    public let rateID: String
+    public let priceDifference: Currency
 }
