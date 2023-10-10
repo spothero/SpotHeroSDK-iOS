@@ -7,7 +7,7 @@ import UtilityBeltNetworking
 ///
 /// https://spothero.atlassian.net/wiki/spaces/~253418099/pages/3102146728/POC+-+New+endpoint+for+extension+rates.
 public struct SearchGetTransientExtensionRates: RequestDefining {
-    public typealias ResponseModel = ExtensionQuote
+    public typealias ResponseModel = ExtensionQuoteContainer
 
     static let method: HTTPMethod = .get
     static let route = "/v2/search/extension_rates"

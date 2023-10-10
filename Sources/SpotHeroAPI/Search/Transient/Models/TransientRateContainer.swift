@@ -4,7 +4,6 @@
 public struct TransientRateContainer: Codable {
     private enum CodingKeys: String, CodingKey {
         case transient
-        case extensionQuotes = "extension_quotes"
         case quote
     }
 
@@ -16,8 +15,4 @@ public struct TransientRateContainer: Codable {
     /// and is guaranteed to be honored for the period of validity specified within
     /// so long as no part of the originally issued quote has been modified.
     public let quote: Quote
-
-    /// JSON object that will have the extended rate quote
-    /// It will include the extend_hours and the price_difference.
-    public let extensionQuotes: [ExtensionQuote]?
 }
