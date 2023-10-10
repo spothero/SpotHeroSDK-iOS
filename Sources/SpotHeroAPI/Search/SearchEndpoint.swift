@@ -8,6 +8,7 @@ public final class SearchEndpoint: Endpoint {
     public let getMonthlyFacility: SearchGetMonthlyFacilityRequest
     public let getMonthlyFacilities: SearchGetMonthlyFacilitiesRequest
     public let getTransientFacility: SearchGetTransientFacilityRequest
+    public let getTransientFacilityExtensionRates: SearchGetTransientExtensionRates
     public let getTransientFacilities: SearchGetTransientFacilitiesRequest
     public let getBulkTransientFacility: BulkSearchGetTransientFacilityRequest
     public let getBulkTransientFacilities: BulkSearchGetTransientFacilitiesRequest
@@ -18,6 +19,7 @@ public final class SearchEndpoint: Endpoint {
         self.getMonthlyFacility = SearchGetMonthlyFacilityRequest(client: client)
         self.getMonthlyFacilities = SearchGetMonthlyFacilitiesRequest(client: client)
         self.getTransientFacility = SearchGetTransientFacilityRequest(client: client)
+        self.getTransientFacilityExtensionRates = SearchGetTransientExtensionRates(client: client)
         self.getTransientFacilities = SearchGetTransientFacilitiesRequest(client: client)
         self.getBulkTransientFacility = BulkSearchGetTransientFacilityRequest(client: client)
         self.getBulkTransientFacilities = BulkSearchGetTransientFacilitiesRequest(client: client)
