@@ -1,6 +1,6 @@
 // Copyright © 2023 SpotHero, Inc. All rights reserved.
 
-/// Represents a model to decode a following endpoint:
+/// Represents a model to decode the following endpoint:
 /// "/v2/search/extension_rates/{facility_id}/"
 public struct ExtensionQuoteContainer: Codable {
     private enum CodingKeys: String, CodingKey {

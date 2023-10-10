@@ -2,11 +2,6 @@
 
 /// Represents an available rate at a given parking facility.
 public struct TransientRateContainer: Codable {
-    private enum CodingKeys: String, CodingKey {
-        case transient
-        case quote
-    }
-
     /// Transient-specific metadata pertaining to a rate for the rental of a parking spot.
     public let transient: TransientRate
 
