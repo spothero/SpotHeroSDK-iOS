@@ -12,5 +12,5 @@ public struct ExtensionQuoteContainer: Codable {
     public let rateID: String
 
     /// A list of the ExtensionQuote objects
-    public let extensionQuotes: [ExtensionQuote]
+    public let extensionQuotes: [ExtensionQuote]?
 }
