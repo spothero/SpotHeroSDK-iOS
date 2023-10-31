@@ -3,5 +3,5 @@
 /// The response returned when fetching extension rates for transient facility.
 public struct TransientRateExtensionResponse: Codable {
     /// The fetched extension rate result.
-    public let result: [ExtensionQuoteContainer]
+    public let results: [ExtensionQuoteContainer]
 }
