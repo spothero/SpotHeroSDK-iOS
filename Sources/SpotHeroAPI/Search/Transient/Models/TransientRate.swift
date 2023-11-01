@@ -7,6 +7,7 @@ public struct TransientRate: Codable {
         case earlyBird = "early_bird"
         case redemptionType = "redemption_type"
         case ruleGroupTitle = "rule_group_title"
+        case rateType = "rate_type"
     }
     
     /// Transient parking amenities offered at the facility.
@@ -23,4 +24,7 @@ public struct TransientRate: Codable {
     
     /// The title of the rule group.
     public let ruleGroupTitle: String
+
+    /// The type of the rate.
+    public let rateType: String
 }
