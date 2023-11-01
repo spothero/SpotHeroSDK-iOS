@@ -26,5 +26,5 @@ public struct TransientRate: Codable {
     public let ruleGroupTitle: String
 
     /// The type of the rate.
-    public let rateType: String
+    public let rateType: String?
 }
