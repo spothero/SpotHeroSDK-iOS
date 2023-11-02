@@ -44,8 +44,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
-      - name: Switch Xcode Version
-        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+            xcode-version: '15.0.0'
+#      - name: Switch Xcode Version
+#        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
       - name: Run Tests
         run: sh ./scripts/xcode_build.sh "name=${{ matrix.device_name }},OS=${{ matrix.os }},platform=iOS Simulator"
       - name: Upload Step Output
@@ -63,8 +66,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
-      - name: Switch Xcode Version
-        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+            xcode-version: '15.0.0'
+#      - name: Switch Xcode Version
+#        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
       - name: Run Tests
         run: sh ./scripts/xcode_build.sh "platform=macOS"
       - name: Upload Step Output
@@ -84,8 +90,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
-      - name: Switch Xcode Version
-        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+            xcode-version: '15.0.0'
+#      - name: Switch Xcode Version
+#        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
       - name: Run Tests
         run: sh ./scripts/xcode_build.sh "name=${{ matrix.device_name }},OS=${{ matrix.os }},platform=tvOS Simulator"
       - name: Upload Step Output
@@ -104,8 +113,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
-      - name: Switch Xcode Version
-        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+            xcode-version: '15.0.0'
+#      - name: Switch Xcode Version
+#        run: sudo xcode-select -switch "/Applications/Xcode_${{ matrix.xcode_version }}.app"
       - name: Run Tests
         run: sh ./scripts/swift_build.sh
       - name: Upload Step Output
