@@ -44,8 +44,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
-      - name: Switch Xcode Version
-        uses: maxim-lobanov/setup-xcode@v1
+      - name: Setup Xcode version
+        uses: maxim-lobanov/setup-xcode@v1.6.0
         with:
           xcode-version: '15.0.0'
 #      - name: Switch Xcode Version
@@ -67,8 +67,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
-      - name: Switch Xcode Version
-        uses: maxim-lobanov/setup-xcode@v1
+      - name: Setup Xcode version
+        uses: maxim-lobanov/setup-xcode@v1.6.0
         with:
           xcode-version: '15.0.0'
 #      - name: Switch Xcode Version
@@ -92,8 +92,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
-      - name: Switch Xcode Version
-        uses: maxim-lobanov/setup-xcode@v1
+      - name: Setup Xcode version
+        uses: maxim-lobanov/setup-xcode@v1.6.0
         with:
           xcode-version: '15.0.0'
 #      - name: Switch Xcode Version
@@ -116,8 +116,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.0
-      - name: Switch Xcode Version
-        uses: maxim-lobanov/setup-xcode@v1
+      - name: Setup Xcode version
+        uses: maxim-lobanov/setup-xcode@v1.6.0
         with:
           xcode-version: '15.0.0'
 #      - name: Switch Xcode Version
