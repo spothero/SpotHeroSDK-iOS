@@ -41,6 +41,7 @@ class NetworkClient {
                                        parameters: ParameterDictionaryConvertible? = nil,
                                        headers: HTTPHeaderDictionaryConvertible? = nil,
                                        encoding: ParameterEncoding? = nil,
+                                       interceptor: RequestInterceptor,
                                        decoder: JSONDecoder = .spotHeroAPI,
                                        completion: RequestCompletion<T>? = nil) -> Request? {
         return self.httpClient.request(
@@ -49,6 +50,7 @@ class NetworkClient {
             parameters: parameters,
             headers: updatedHeaders(headers: headers),
             encoding: encoding,
+            interceptor: interceptor,
             decoder: decoder
         ) { (response: DataResponse<T, Error>) in
             switch response.result {
@@ -76,6 +78,7 @@ class NetworkClient {
                                parameters: ParameterDictionaryConvertible? = nil,
                                headers: HTTPHeaderDictionaryConvertible? = nil,
                                encoding: ParameterEncoding? = nil,
+                               interceptor: RequestInterceptor,
                                decoder: JSONDecoder = .spotHeroAPI,
                                completion: RequestCompletion<T>? = nil) -> Request? {
         // Prepend the base URL to the monolith route path
@@ -90,6 +93,7 @@ class NetworkClient {
                             parameters: parameters,
                             headers: headers,
                             encoding: encoding,
+                            interceptor: interceptor,
                             decoder: decoder,
                             completion: completion)
     }
@@ -103,6 +107,7 @@ extension NetworkClient {
                                      parameters: ParameterDictionaryConvertible? = nil,
                                      headers: HTTPHeaderDictionaryConvertible? = nil,
                                      encoding: ParameterEncoding? = nil,
+                                     interceptor: RequestInterceptor,
                                      decoder: JSONDecoder = .spotHeroAPI,
                                      completion: RequestCompletion<T.ResponseModel>? = nil) -> Request? where T.Route == String {
         return self.request(route: T.route,
@@ -110,6 +115,7 @@ extension NetworkClient {
                             parameters: parameters,
                             headers: headers,
                             encoding: encoding,
+                            interceptor: interceptor,
                             decoder: decoder,
                             completion: completion)
     }
@@ -119,6 +125,7 @@ extension NetworkClient {
                                      parameters: ParameterDictionaryConvertible? = nil,
                                      headers: HTTPHeaderDictionaryConvertible? = nil,
                                      encoding: ParameterEncoding? = nil,
+                                     interceptor: RequestInterceptor,
                                      decoder: JSONDecoder = .spotHeroAPI,
                                      completion: RequestCompletion<T.ResponseModel>? = nil) -> Request? where T.Route == URLConvertible {
         return self.request(route: T.route,
@@ -126,6 +133,7 @@ extension NetworkClient {
                             parameters: parameters,
                             headers: headers,
                             encoding: encoding,
+                            interceptor: interceptor,
                             decoder: decoder,
                             completion: completion)
     }

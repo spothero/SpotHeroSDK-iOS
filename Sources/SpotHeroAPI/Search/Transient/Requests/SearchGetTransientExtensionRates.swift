@@ -13,9 +13,11 @@ public struct SearchGetTransientExtensionRates: RequestDefining {
     static let route = "/v2/search/extension_rates"
 
     let client: NetworkClient
+    let interceptor: RequestInterceptor
 
-    init(client: NetworkClient) {
+    init(client: NetworkClient, interceptor: RequestInterceptor) {
         self.client = client
+        self.interceptor = interceptor
     }
 
     @discardableResult
@@ -26,6 +28,7 @@ public struct SearchGetTransientExtensionRates: RequestDefining {
             route: "\(Self.route)/\(facilityID)",
             method: Self.method,
             parameters: parameters,
+            interceptor: interceptor,
             completion: completion
         )
     }

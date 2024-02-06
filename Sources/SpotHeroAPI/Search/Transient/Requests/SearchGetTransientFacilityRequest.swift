@@ -13,11 +13,13 @@ public struct SearchGetTransientFacilityRequest: RequestDefining {
     static let route = "/v2/search/transient"
     
     let client: NetworkClient
-    
-    init(client: NetworkClient) {
+    let interceptor: RequestInterceptor
+
+    init(client: NetworkClient, interceptor: RequestInterceptor) {
         self.client = client
+        self.interceptor = interceptor
     }
-    
+
     @discardableResult
     public func callAsFunction(withID facilityID: Int,
                                parameters: Parameters? = nil,
@@ -26,6 +28,7 @@ public struct SearchGetTransientFacilityRequest: RequestDefining {
             route: "\(Self.route)/\(facilityID)",
             method: Self.method,
             parameters: parameters,
+            interceptor: interceptor,
             completion: completion
         )
     }

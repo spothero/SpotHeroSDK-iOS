@@ -13,9 +13,11 @@ public struct BulkSearchGetTransientFacilityRequest: RequestDefining {
     static let route = "/v2/search/bulk/transient"
 
     let client: NetworkClient
+    let interceptor: RequestInterceptor
 
-    init(client: NetworkClient) {
+    init(client: NetworkClient, interceptor: RequestInterceptor) {
         self.client = client
+        self.interceptor = interceptor
     }
 
     @discardableResult
@@ -43,6 +45,7 @@ public struct BulkSearchGetTransientFacilityRequest: RequestDefining {
             route: Self.route.appending("/\(facilityID)?\(urlComponents.query ?? "")"),
             method: Self.method,
             parameters: parameters?.bodyParameters,
+            interceptor: interceptor,
             completion: completion
         )
     }

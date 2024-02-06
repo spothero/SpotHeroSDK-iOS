@@ -16,12 +16,12 @@ public final class SpotHeroAPIClient {
     /// - Parameters:
     ///   - baseURL: The base URL for all API requests.
     ///   - httpClient: An `HTTPClient` through which requests will be routed. Defaults to `.shared`.
-    public init(baseURL: String, httpClient: HTTPClient = .shared, headers: HTTPHeaderDictionaryConvertible? = nil) {
+    public init(baseURL: String, httpClient: HTTPClient = .shared, headers: HTTPHeaderDictionaryConvertible? = nil, interceptor: RequestInterceptor) {
         let networkClient = NetworkClient(baseURL: baseURL,
                                           httpClient: httpClient,
                                           headers: headers)
         
         /// V2 Endpoints
-        self.search = SearchEndpoint(client: networkClient)
+        self.search = SearchEndpoint(client: networkClient, interceptor: interceptor)
     }
 }

@@ -13,9 +13,11 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
     static let route = "/v2/search/monthly"
     
     let client: NetworkClient
-    
-    init(client: NetworkClient) {
+    let interceptor: RequestInterceptor
+
+    init(client: NetworkClient, interceptor: RequestInterceptor) {
         self.client = client
+        self.interceptor = interceptor
     }
     
     @discardableResult
@@ -24,6 +26,7 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
         return self.client.request(
             Self.self,
             parameters: parameters,
+            interceptor: interceptor,
             completion: completion
         )
     }
