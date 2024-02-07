@@ -1,4 +1,4 @@
-// Copyright © 2023 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -26,7 +26,7 @@ public struct SearchGetTransientFacilitiesRequest: RequestDefining {
         return self.client.request(
             Self.self,
             parameters: parameters,
-            interceptor: interceptor,
+            interceptor: self.interceptor,
             completion: completion
         )
     }

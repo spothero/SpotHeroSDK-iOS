@@ -1,4 +1,4 @@
-// Copyright © 2023 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -44,7 +44,7 @@ public struct BulkSearchGetTransientFacilitiesRequest: RequestDefining {
             route: Self.route.appending(urlComponents.query.map { "?\($0)" } ?? ""),
             method: Self.method,
             parameters: parameters.bodyParameters,
-            interceptor: interceptor,
+            interceptor: self.interceptor,
             completion: completion
         )
     }

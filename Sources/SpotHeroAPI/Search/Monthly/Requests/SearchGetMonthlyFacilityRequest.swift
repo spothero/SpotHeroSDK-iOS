@@ -1,4 +1,4 @@
-// Copyright © 2023 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -28,7 +28,7 @@ public struct SearchGetMonthlyFacilityRequest: RequestDefining {
             route: "\(Self.route)/\(facilityID)",
             method: Self.method,
             parameters: parameters,
-            interceptor: interceptor,
+            interceptor: self.interceptor,
             completion: completion
         )
     }
