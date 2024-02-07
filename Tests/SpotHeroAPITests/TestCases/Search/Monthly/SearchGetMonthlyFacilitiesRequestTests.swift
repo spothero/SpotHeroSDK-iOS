@@ -12,7 +12,7 @@ private extension SearchGetMonthlyFacilitiesRequestTests {
     func getMonthlyFacilities(parameters: SearchGetMonthlyFacilitiesRequest.Parameters,
                               file: StaticString = #file,
                               line: UInt = #line) {
-        let request = SearchGetMonthlyFacilitiesRequest(client: Self.newNetworkClient(for: .craig))
+        let request = SearchGetMonthlyFacilitiesRequest(client: Self.newNetworkClient(for: .craig), interceptor: MockInterceptor())
         let expectation = self.expectation(description: "Fetched monthly facilities.")
         request(parameters: parameters) { result in
             switch result {

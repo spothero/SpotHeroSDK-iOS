@@ -12,7 +12,7 @@ class APITestCase: XCTestCase {
     static var timeout: TimeInterval = 15
     
     static func newAPIClient(for service: ServiceURL) -> SpotHeroAPIClient {
-        return SpotHeroAPIClient(baseURL: service.rawValue)
+        return SpotHeroAPIClient(baseURL: service.rawValue, interceptor: MockInterceptor())
     }
     
     static func newNetworkClient(for service: ServiceURL) -> NetworkClient {

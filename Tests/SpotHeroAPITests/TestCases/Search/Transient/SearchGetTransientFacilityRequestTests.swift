@@ -13,7 +13,7 @@ private extension SearchGetTransientFacilityRequestTests {
                               parameters: SearchGetTransientFacilityRequest.Parameters? = nil,
                               file: StaticString = #file,
                               line: UInt = #line) {
-        let request = SearchGetTransientFacilityRequest(client: Self.newNetworkClient(for: .craig))
+        let request = SearchGetTransientFacilityRequest(client: Self.newNetworkClient(for: .craig), interceptor: MockInterceptor())
         let expectation = self.expectation(description: "Fetched transient facility.")
         
         request(withID: facilityID, parameters: parameters) { result in
