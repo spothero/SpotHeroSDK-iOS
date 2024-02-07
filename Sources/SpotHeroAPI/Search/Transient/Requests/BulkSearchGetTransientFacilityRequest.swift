@@ -44,8 +44,8 @@ public struct BulkSearchGetTransientFacilityRequest: RequestDefining {
         return self.client.request(
             route: Self.route.appending("/\(facilityID)?\(urlComponents.query ?? "")"),
             method: Self.method,
-            parameters: parameters?.bodyParameters,
             interceptor: self.interceptor,
+            parameters: parameters?.bodyParameters,
             completion: completion
         )
     }

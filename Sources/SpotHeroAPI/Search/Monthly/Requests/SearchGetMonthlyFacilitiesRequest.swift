@@ -25,8 +25,8 @@ public struct SearchGetMonthlyFacilitiesRequest: RequestDefining {
                                completion: @escaping RequestCompletion<ResponseModel>) -> Request? {
         return self.client.request(
             Self.self,
-            parameters: parameters,
             interceptor: self.interceptor,
+            parameters: parameters,
             completion: completion
         )
     }

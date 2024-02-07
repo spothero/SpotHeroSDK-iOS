@@ -43,8 +43,8 @@ public struct BulkSearchGetTransientFacilitiesRequest: RequestDefining {
         return self.client.request(
             route: Self.route.appending(urlComponents.query.map { "?\($0)" } ?? ""),
             method: Self.method,
-            parameters: parameters.bodyParameters,
             interceptor: self.interceptor,
+            parameters: parameters.bodyParameters,
             completion: completion
         )
     }

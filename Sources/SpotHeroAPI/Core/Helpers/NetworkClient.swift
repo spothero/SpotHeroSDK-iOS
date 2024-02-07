@@ -38,10 +38,10 @@ class NetworkClient {
     @discardableResult
     private func request<T: Decodable>(url: URLConvertible,
                                        method: HTTPMethod,
+                                       interceptor: RequestInterceptor,
                                        parameters: ParameterDictionaryConvertible? = nil,
                                        headers: HTTPHeaderDictionaryConvertible? = nil,
                                        encoding: ParameterEncoding? = nil,
-                                       interceptor: RequestInterceptor,
                                        decoder: JSONDecoder = .spotHeroAPI,
                                        completion: RequestCompletion<T>? = nil) -> Request? {
         return self.httpClient.request(
@@ -75,10 +75,10 @@ class NetworkClient {
     @discardableResult
     func request<T: Decodable>(route: URLConvertible,
                                method: HTTPMethod,
+                               interceptor: RequestInterceptor,
                                parameters: ParameterDictionaryConvertible? = nil,
                                headers: HTTPHeaderDictionaryConvertible? = nil,
                                encoding: ParameterEncoding? = nil,
-                               interceptor: RequestInterceptor,
                                decoder: JSONDecoder = .spotHeroAPI,
                                completion: RequestCompletion<T>? = nil) -> Request? {
         // Prepend the base URL to the monolith route path
@@ -90,10 +90,10 @@ class NetworkClient {
         
         return self.request(url: url,
                             method: method,
+                            interceptor: interceptor,
                             parameters: parameters,
                             headers: headers,
                             encoding: encoding,
-                            interceptor: interceptor,
                             decoder: decoder,
                             completion: completion)
     }
@@ -104,36 +104,36 @@ class NetworkClient {
 extension NetworkClient {
     @discardableResult
     func request<T: RequestDefining>(_ request: T.Type,
+                                     interceptor: RequestInterceptor,
                                      parameters: ParameterDictionaryConvertible? = nil,
                                      headers: HTTPHeaderDictionaryConvertible? = nil,
                                      encoding: ParameterEncoding? = nil,
-                                     interceptor: RequestInterceptor,
                                      decoder: JSONDecoder = .spotHeroAPI,
                                      completion: RequestCompletion<T.ResponseModel>? = nil) -> Request? where T.Route == String {
         return self.request(route: T.route,
                             method: T.method,
+                            interceptor: interceptor,
                             parameters: parameters,
                             headers: headers,
                             encoding: encoding,
-                            interceptor: interceptor,
                             decoder: decoder,
                             completion: completion)
     }
     
     @discardableResult
     func request<T: RequestDefining>(_ request: T.Type,
+                                     interceptor: RequestInterceptor,
                                      parameters: ParameterDictionaryConvertible? = nil,
                                      headers: HTTPHeaderDictionaryConvertible? = nil,
                                      encoding: ParameterEncoding? = nil,
-                                     interceptor: RequestInterceptor,
                                      decoder: JSONDecoder = .spotHeroAPI,
                                      completion: RequestCompletion<T.ResponseModel>? = nil) -> Request? where T.Route == URLConvertible {
         return self.request(route: T.route,
                             method: T.method,
+                            interceptor: interceptor,
                             parameters: parameters,
                             headers: headers,
                             encoding: encoding,
-                            interceptor: interceptor,
                             decoder: decoder,
                             completion: completion)
     }

@@ -27,8 +27,8 @@ public struct SearchGetTransientExtensionRates: RequestDefining {
         return self.client.request(
             route: "\(Self.route)/\(facilityID)",
             method: Self.method,
-            parameters: parameters,
             interceptor: self.interceptor,
+            parameters: parameters,
             completion: completion
         )
     }
