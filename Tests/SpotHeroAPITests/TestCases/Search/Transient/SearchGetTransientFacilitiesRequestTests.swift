@@ -1,4 +1,4 @@
-// Copyright © 2023 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
 import XCTest
@@ -12,7 +12,7 @@ private extension SearchGetTransientFacilitiesRequestTests {
     func getTransientFacilities(parameters: SearchGetTransientFacilitiesRequest.Parameters,
                                 file: StaticString = #file,
                                 line: UInt = #line) {
-        let request = SearchGetTransientFacilitiesRequest(client: Self.newNetworkClient(for: .craig))
+        let request = SearchGetTransientFacilitiesRequest(client: Self.newNetworkClient(for: .craig), interceptor: MockInterceptor())
         let expectation = self.expectation(description: "Fetched transient facilities.")
         
         request(parameters: parameters) { result in

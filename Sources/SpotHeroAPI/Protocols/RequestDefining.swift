@@ -1,4 +1,4 @@
-// Copyright © 2021 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -11,6 +11,7 @@ protocol RequestDefining {
     static var route: Route { get }
     
     var client: NetworkClient { get }
-    
-    init(client: NetworkClient)
+    var interceptor: RequestInterceptor { get }
+
+    init(client: NetworkClient, interceptor: RequestInterceptor)
 }

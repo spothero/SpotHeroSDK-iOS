@@ -1,4 +1,4 @@
-// Copyright © 2023 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -13,11 +13,13 @@ public struct SearchGetMonthlyFacilityRequest: RequestDefining {
     static let route = "/v2/search/monthly"
     
     let client: NetworkClient
-    
-    init(client: NetworkClient) {
+    let interceptor: RequestInterceptor
+
+    init(client: NetworkClient, interceptor: RequestInterceptor) {
         self.client = client
+        self.interceptor = interceptor
     }
-    
+
     @discardableResult
     public func callAsFunction(withID facilityID: Int,
                                parameters: Parameters? = nil,
@@ -25,6 +27,7 @@ public struct SearchGetMonthlyFacilityRequest: RequestDefining {
         return self.client.request(
             route: "\(Self.route)/\(facilityID)",
             method: Self.method,
+            interceptor: self.interceptor,
             parameters: parameters,
             completion: completion
         )
