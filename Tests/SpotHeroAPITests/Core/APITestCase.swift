@@ -1,4 +1,4 @@
-// Copyright © 2024 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 import Sham
 @testable import SpotHeroAPINext
@@ -12,7 +12,7 @@ class APITestCase: XCTestCase {
     static var timeout: TimeInterval = 15
     
     static func newAPIClient(for service: ServiceURL) -> SpotHeroAPIClient {
-        return SpotHeroAPIClient(baseURL: service.rawValue, interceptor: MockInterceptor())
+        return SpotHeroAPIClient(baseURL: service.rawValue)
     }
     
     static func newNetworkClient(for service: ServiceURL) -> NetworkClient {

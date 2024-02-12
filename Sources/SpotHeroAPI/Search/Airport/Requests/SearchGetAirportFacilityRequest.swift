@@ -1,4 +1,4 @@
-// Copyright © 2024 SpotHero, Inc. All rights reserved.
+// Copyright © 2021 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -13,13 +13,11 @@ public struct SearchGetAirportFacilityRequest: RequestDefining {
     static let route = "/v2/search/airport"
     
     let client: NetworkClient
-    let interceptor: RequestInterceptor
-
-    init(client: NetworkClient, interceptor: RequestInterceptor) {
+    
+    init(client: NetworkClient) {
         self.client = client
-        self.interceptor = interceptor
     }
-
+    
     @discardableResult
     public func callAsFunction(withID facilityID: Int,
                                parameters: Parameters? = nil,
@@ -27,7 +25,6 @@ public struct SearchGetAirportFacilityRequest: RequestDefining {
         return self.client.request(
             route: "\(Self.route)/\(facilityID)",
             method: Self.method,
-            interceptor: self.interceptor,
             parameters: parameters,
             completion: completion
         )

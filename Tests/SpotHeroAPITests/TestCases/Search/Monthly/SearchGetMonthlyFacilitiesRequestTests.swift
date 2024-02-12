@@ -1,4 +1,4 @@
-// Copyright © 2024 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
 import XCTest
@@ -12,7 +12,7 @@ private extension SearchGetMonthlyFacilitiesRequestTests {
     func getMonthlyFacilities(parameters: SearchGetMonthlyFacilitiesRequest.Parameters,
                               file: StaticString = #file,
                               line: UInt = #line) {
-        let request = SearchGetMonthlyFacilitiesRequest(client: Self.newNetworkClient(for: .craig), interceptor: MockInterceptor())
+        let request = SearchGetMonthlyFacilitiesRequest(client: Self.newNetworkClient(for: .craig))
         let expectation = self.expectation(description: "Fetched monthly facilities.")
         request(parameters: parameters) { result in
             switch result {

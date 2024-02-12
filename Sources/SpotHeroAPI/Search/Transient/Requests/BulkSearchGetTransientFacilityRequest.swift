@@ -1,4 +1,4 @@
-// Copyright © 2024 SpotHero, Inc. All rights reserved.
+// Copyright © 2023 SpotHero, Inc. All rights reserved.
 
 import Foundation
 import UtilityBeltNetworking
@@ -13,11 +13,9 @@ public struct BulkSearchGetTransientFacilityRequest: RequestDefining {
     static let route = "/v2/search/bulk/transient"
 
     let client: NetworkClient
-    let interceptor: RequestInterceptor
 
-    init(client: NetworkClient, interceptor: RequestInterceptor) {
+    init(client: NetworkClient) {
         self.client = client
-        self.interceptor = interceptor
     }
 
     @discardableResult
@@ -44,7 +42,6 @@ public struct BulkSearchGetTransientFacilityRequest: RequestDefining {
         return self.client.request(
             route: Self.route.appending("/\(facilityID)?\(urlComponents.query ?? "")"),
             method: Self.method,
-            interceptor: self.interceptor,
             parameters: parameters?.bodyParameters,
             completion: completion
         )
