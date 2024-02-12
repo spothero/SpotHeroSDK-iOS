@@ -14,7 +14,7 @@ private extension SearchGetMonthlyFacilityRequestTests {
                             parameters: SearchGetMonthlyFacilityRequest.Parameters? = nil,
                             file: StaticString = #file,
                             line: UInt = #line) {
-        let request = SearchGetMonthlyFacilityRequest(client: Self.newNetworkClient(for: .craig), interceptor: MockInterceptor())
+        let request = SearchGetMonthlyFacilityRequest(client: Self.newNetworkClient(for: .craig))
         let expectation = self.expectation(description: "Fetched monthly facility.")
         
         request(withID: facilityID, parameters: parameters) { result in

@@ -11,7 +11,6 @@ protocol RequestDefining {
     static var route: Route { get }
     
     var client: NetworkClient { get }
-    var interceptor: RequestInterceptor { get }
-
-    init(client: NetworkClient, interceptor: RequestInterceptor)
+    
+    init(client: NetworkClient)
 }

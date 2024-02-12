@@ -1,7 +1,6 @@
 // Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 @testable import SpotHeroAPINext
-import UtilityBeltNetworking
 import XCTest
 
 private protocol SearchGetAirportFacilitiesRequestTests: APITestCase {
@@ -13,7 +12,7 @@ private extension SearchGetAirportFacilitiesRequestTests {
     func getAirportFacilities(parameters: SearchGetAirportFacilitiesRequest.Parameters,
                               file: StaticString = #file,
                               line: UInt = #line) {
-        let request = SearchGetAirportFacilitiesRequest(client: Self.newNetworkClient(for: .craig), interceptor: MockInterceptor())
+        let request = SearchGetAirportFacilitiesRequest(client: Self.newNetworkClient(for: .craig))
         let expectation = self.expectation(description: "Fetched airport facilities.")
         
         request(parameters: parameters) { result in

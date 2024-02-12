@@ -13,7 +13,7 @@ private extension SearchGetAirportFacilityRequestTests {
                             parameters: SearchGetAirportFacilityRequest.Parameters? = nil,
                             file: StaticString = #file,
                             line: UInt = #line) {
-        let request = SearchGetAirportFacilityRequest(client: Self.newNetworkClient(for: .craig), interceptor: MockInterceptor())
+        let request = SearchGetAirportFacilityRequest(client: Self.newNetworkClient(for: .craig))
         let expectation = self.expectation(description: "Fetched airport facility.")
         
         request(withID: facilityID, parameters: parameters) { result in

@@ -12,7 +12,7 @@ private extension SearchGetTransientFacilitiesRequestTests {
     func getTransientFacilities(parameters: SearchGetTransientFacilitiesRequest.Parameters,
                                 file: StaticString = #file,
                                 line: UInt = #line) {
-        let request = SearchGetTransientFacilitiesRequest(client: Self.newNetworkClient(for: .craig), interceptor: MockInterceptor())
+        let request = SearchGetTransientFacilitiesRequest(client: Self.newNetworkClient(for: .craig))
         let expectation = self.expectation(description: "Fetched transient facilities.")
         
         request(parameters: parameters) { result in
