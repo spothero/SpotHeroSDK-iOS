@@ -51,8 +51,6 @@ public extension SearchGetTransientFacilityRequest {
             case sessionID = "session_id"
 
             case includeWalkingDistance = "include_walking_distance"
-            
-            case sortBy = "sort_by"
         }
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
@@ -88,9 +86,6 @@ public extension SearchGetTransientFacilityRequest {
         /// A boolean value indicating whether to include the walking distance information in the response or not.
         private let includeWalkingDistance: Bool
         
-        /// A string value to sort the items by.
-        private let sortBy: String
-        
         let actionID: String?
         let fingerprint: String?
         let searchID: String?
@@ -104,8 +99,7 @@ public extension SearchGetTransientFacilityRequest {
                     workLatitude: Double? = nil,
                     workLongitude: Double? = nil,
                     searchTracking: SearchTrackingParameters? = nil,
-                    includeWalkingDistance: Bool = true,
-                    sortBy: String = "relevance") {
+                    includeWalkingDistance: Bool = true) {
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
@@ -119,7 +113,6 @@ public extension SearchGetTransientFacilityRequest {
             self.searchID = searchTracking?.searchID
             self.sessionID = searchTracking?.sessionID
             self.includeWalkingDistance = includeWalkingDistance
-            self.sortBy = sortBy
         }
     }
 }

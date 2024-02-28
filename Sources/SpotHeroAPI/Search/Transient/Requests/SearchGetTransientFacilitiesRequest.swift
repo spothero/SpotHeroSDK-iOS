@@ -53,6 +53,7 @@ public extension SearchGetTransientFacilitiesRequest {
             case sessionID = "session_id"
 
             case includeWalkingDistance = "include_walking_distance"
+            case sortBy = "sort_by"
             
             case inFacilityExclusionExperiment = "in_fac_excl_exp"
         }
@@ -102,6 +103,9 @@ public extension SearchGetTransientFacilitiesRequest {
         /// A boolean value indicating whether to include the walking distance information in the response or not.
         private let includeWalkingDistance: Bool
         
+        /// A string value to sort the items by.
+        private let sortBy: String
+        
         /// The number of results to include in a single page.
         /// The default is nil (no limit). Must be >= 1, if provided.
         private let pageSize: Int?
@@ -125,6 +129,7 @@ public extension SearchGetTransientFacilitiesRequest {
                     isOversize: Bool? = nil,
                     maxDistanceMeters: Double? = nil,
                     includeWalkingDistance: Bool = true,
+                    sortBy: String = "relevance",
                     inFacilityExclusionExperiment: Bool? = nil,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
@@ -139,6 +144,7 @@ public extension SearchGetTransientFacilitiesRequest {
             self.isOversize = isOversize
             self.maxDistanceMeters = maxDistanceMeters
             self.includeWalkingDistance = includeWalkingDistance
+            self.sortBy = sortBy
             self.inFacilityExclusionExperiment = inFacilityExclusionExperiment
             self.pageSize = pageSize
             
