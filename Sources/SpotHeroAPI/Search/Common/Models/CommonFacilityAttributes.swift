@@ -81,5 +81,5 @@ public struct CommonFacilityAttributes: Codable {
     public let cancellation: Cancellation
     
     /// An array of visual flags
-    public let visualFlags: [VisualFlag]
+    public let visualFlags: [VisualFlag]?
 }
