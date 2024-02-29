@@ -7,6 +7,13 @@ public enum VisualFlagType: String, Codable {
     case shortestWalk = "shortest_walk"
     case bestValue = "best_value"
     case highestRated = "highest_rated"
+    case unknown
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let stringValue = try container.decode(String.self)
+        self = .init(rawValue: stringValue) ?? .unknown
+    }
 }
 
 public struct VisualFlag: Codable {
