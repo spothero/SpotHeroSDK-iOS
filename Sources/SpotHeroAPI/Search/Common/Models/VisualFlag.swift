@@ -2,6 +2,20 @@
 
 import Foundation
 
+public enum VisualFlagType: String, Codable {
+    case officialParking = "official_parking"
+    case shortestWalk = "shortest_walk"
+    case bestValue = "best_value"
+    case highestRated = "highest_rated"
+    case unknown
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let stringValue = try container.decode(String.self)
+        self = .init(rawValue: stringValue) ?? .unknown
+    }
+}
+
 public struct VisualFlag: Codable {
     private enum CodingKeys: String, CodingKey {
         case title
@@ -20,5 +34,5 @@ public struct VisualFlag: Codable {
     public let icon: String
     
     /// The type of visual flag.
-    public let type: String
+    public let type: VisualFlagType
 }
