@@ -1,4 +1,4 @@
-// Copyright © 2022 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 /// Represents common facility information applicable in all contexts.
 public struct CommonFacilityAttributes: Codable {
@@ -20,6 +20,7 @@ public struct CommonFacilityAttributes: Codable {
         case slug
         case supportedFeeTypes = "supported_fee_types"
         case title
+        case visualFlags = "visual_flags"
     }
     
     /// Unique ID of the facility.
@@ -78,4 +79,7 @@ public struct CommonFacilityAttributes: Codable {
     
     /// Contains all fields relevant to a facility’s cancellation policy.
     public let cancellation: Cancellation
+    
+    /// An array of visual flags
+    public let visualFlags: [VisualFlag]?
 }
