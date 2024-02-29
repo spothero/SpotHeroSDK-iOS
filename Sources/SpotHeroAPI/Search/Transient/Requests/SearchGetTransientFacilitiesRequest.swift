@@ -108,7 +108,7 @@ public extension SearchGetTransientFacilitiesRequest {
         private let includeWalkingDistance: Bool
         
         /// A string value to sort the items by.
-        private let sortBy: SortByType
+        private let sortBy: SortByType?
         
         /// The number of results to include in a single page.
         /// The default is nil (no limit). Must be >= 1, if provided.
@@ -133,7 +133,7 @@ public extension SearchGetTransientFacilitiesRequest {
                     isOversize: Bool? = nil,
                     maxDistanceMeters: Double? = nil,
                     includeWalkingDistance: Bool = true,
-                    sortBy: SortByType = .relevance,
+                    sortBy: SortByType? = .relevance,
                     inFacilityExclusionExperiment: Bool? = nil,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
