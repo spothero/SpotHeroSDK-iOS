@@ -27,5 +27,5 @@ public struct VisualFlag: Codable {
     public let icon: String
     
     /// The type of visual flag.
-    public let type: VisualFlagType
+    public let type: VisualFlagType?
 }
