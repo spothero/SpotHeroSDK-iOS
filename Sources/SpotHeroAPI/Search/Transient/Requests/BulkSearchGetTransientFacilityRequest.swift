@@ -94,6 +94,7 @@ public extension BulkSearchGetTransientFacilityRequest {
                 case isOversize = "oversize"
                 case periods
                 case includeWalkingDistance = "include_walking_distance"
+                case sortBy = "sort_by"
             }
 
             /// Boolean that denotes whether or not the pricing calculated for this vehicle
@@ -105,6 +106,9 @@ public extension BulkSearchGetTransientFacilityRequest {
 
             /// A boolean value indicating whether to include the walking distance information in the response or not.
             let includeWalkingDistance: Bool
+            
+            /// A string value to sort the items by.
+            let sortBy: SortByType?
         }
 
         fileprivate let queryParameters: QueryParameters
@@ -133,7 +137,8 @@ public extension BulkSearchGetTransientFacilityRequest {
                     workLatitude: Double? = nil,
                     workLongitude: Double? = nil,
                     searchTracking: SearchTrackingParameters? = nil,
-                    includeWalkingDistance: Bool = true) {
+                    includeWalkingDistance: Bool = true,
+                    sortBy: SortByType? = .relevance) {
             self.queryParameters = .init(
                 originLatitude: originLatitude,
                 originLongitude: originLongitude,
@@ -147,7 +152,8 @@ public extension BulkSearchGetTransientFacilityRequest {
             self.bodyParameters = .init(
                 isOversize: isOversize,
                 periods: periods,
-                includeWalkingDistance: includeWalkingDistance
+                includeWalkingDistance: includeWalkingDistance,
+                sortBy: sortBy
             )
         }
     }
