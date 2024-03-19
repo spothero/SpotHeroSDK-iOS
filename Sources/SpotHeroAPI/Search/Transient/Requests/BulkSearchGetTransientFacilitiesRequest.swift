@@ -111,6 +111,7 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                 case pageSize = "page_size"
                 case periods
                 case includeWalkingDistance = "include_walking_distance"
+                case sortBy = "sort_by"
             }
 
             // swiftlint:enable nesting
@@ -128,6 +129,9 @@ public extension BulkSearchGetTransientFacilitiesRequest {
 
             /// A boolean value indicating whether to include the walking distance information in the response or not.
             let includeWalkingDistance: Bool
+            
+            /// A string value to sort the items by.
+            let sortBy: SortByType?
 
             /// The number of results to include in a single page.
             /// The default is nil (no limit). Must be >= 1, if provided.
@@ -163,6 +167,7 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                     isOversize: Bool? = nil,
                     maxDistanceMeters: Double? = nil,
                     includeWalkingDistance: Bool = true,
+                    sortBy: SortByType? = .relevance,
                     inFacilityExclusionExperiment: Bool? = nil,
                     pageSize: Int? = nil,
                     searchTracking: SearchTrackingParameters? = nil) {
@@ -184,6 +189,7 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                 isOversize: isOversize,
                 maxDistanceMeters: maxDistanceMeters,
                 includeWalkingDistance: includeWalkingDistance,
+                sortBy: sortBy,
                 pageSize: pageSize
             )
         }
