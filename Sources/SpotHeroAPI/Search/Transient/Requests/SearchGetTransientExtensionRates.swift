@@ -80,10 +80,10 @@ public extension SearchGetTransientExtensionRates {
 
         public init(startDate: Date,
                     endDate: Date,
-                    isOversize: Bool? = nil,
                     rateIDs: String,
                     extensionHours: String,
                     searchTracking: SearchTrackingParameters,
+                    isOversize: Bool? = nil,
                     vehicleInfoId: Int? = nil) {
             self.startDate = startDate
             self.endDate = endDate
