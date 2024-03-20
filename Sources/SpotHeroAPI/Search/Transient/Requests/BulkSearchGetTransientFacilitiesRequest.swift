@@ -183,7 +183,7 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                 originLongitude: originLongitude,
                 workLatitude: workLatitude,
                 workLongitude: workLongitude,
-                inFacilityExclusionExperiment: inFacilityExclusionExperiment, 
+                inFacilityExclusionExperiment: inFacilityExclusionExperiment,
                 vehicleInfoId: vehicleInfoId,
                 actionID: searchTracking?.actionID,
                 fingerprint: searchTracking?.fingerprint,
