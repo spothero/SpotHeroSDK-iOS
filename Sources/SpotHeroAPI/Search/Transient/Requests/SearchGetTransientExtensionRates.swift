@@ -62,7 +62,7 @@ public extension SearchGetTransientExtensionRates {
 
         /// Boolean that denotes whether or not the pricing calculated for this vehicle
         /// will incorporate pricing for an oversize vehicle, if applicable.
-        private let isOversize: Bool
+        private let isOversize: Bool?
 
         /// The rate IDs that the search facility returns.
         private let rateIDs: String
@@ -80,10 +80,10 @@ public extension SearchGetTransientExtensionRates {
 
         public init(startDate: Date,
                     endDate: Date,
-                    isOversize: Bool,
                     rateIDs: String,
                     extensionHours: String,
                     searchTracking: SearchTrackingParameters,
+                    isOversize: Bool? = nil,
                     vehicleInfoId: Int? = nil) {
             self.startDate = startDate
             self.endDate = endDate
