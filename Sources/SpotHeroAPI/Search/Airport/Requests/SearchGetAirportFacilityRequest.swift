@@ -45,6 +45,8 @@ public extension SearchGetAirportFacilityRequest {
             case fingerprint
             case searchID = "search_id"
             case sessionID = "session_id"
+            
+            case vehicleInfoId = "vehicle_info_id"
         }
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
@@ -61,6 +63,9 @@ public extension SearchGetAirportFacilityRequest {
         /// will incorporate pricing for an oversize vehicle, if applicable.
         private let isOversize: Bool?
         
+        /// An optional vehicle info id.
+        private let vehicleInfoId: Int?
+        
         let actionID: String?
         let fingerprint: String?
         let searchID: String?
@@ -69,10 +74,12 @@ public extension SearchGetAirportFacilityRequest {
         public init(startDate: Date? = nil,
                     endDate: Date? = nil,
                     isOversize: Bool? = nil,
-                    searchTracking: SearchTrackingParameters? = nil) {
+                    searchTracking: SearchTrackingParameters? = nil,
+                    vehicleInfoId: Int? = nil) {
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
+            self.vehicleInfoId = vehicleInfoId
             
             self.actionID = searchTracking?.actionID
             self.fingerprint = searchTracking?.fingerprint

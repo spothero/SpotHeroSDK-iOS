@@ -64,6 +64,7 @@ public extension BulkSearchGetTransientFacilityRequest {
                 case fingerprint
                 case searchID = "search_id"
                 case sessionID = "session_id"
+                case vehicleInfoId = "vehicle_info_id"
             }
 
             /// Latitude in decimal degrees of origin from where each result's distance will be calculated.
@@ -81,6 +82,9 @@ public extension BulkSearchGetTransientFacilityRequest {
 
             /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
             let workLongitude: Double?
+            
+            /// An optional vehicle info id.
+            let vehicleInfoId: Int?
 
             let actionID: String?
             let fingerprint: String?
@@ -138,12 +142,14 @@ public extension BulkSearchGetTransientFacilityRequest {
                     workLongitude: Double? = nil,
                     searchTracking: SearchTrackingParameters? = nil,
                     includeWalkingDistance: Bool = true,
-                    sortBy: SortByType? = .relevance) {
+                    sortBy: SortByType? = .relevance,
+                    vehicleInfoId: Int? = nil) {
             self.queryParameters = .init(
                 originLatitude: originLatitude,
                 originLongitude: originLongitude,
                 workLatitude: workLatitude,
                 workLongitude: workLongitude,
+                vehicleInfoId: vehicleInfoId,
                 actionID: searchTracking?.actionID,
                 fingerprint: searchTracking?.fingerprint,
                 searchID: searchTracking?.searchID,

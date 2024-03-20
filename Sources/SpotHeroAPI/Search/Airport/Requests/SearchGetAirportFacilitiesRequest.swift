@@ -45,6 +45,8 @@ public extension SearchGetAirportFacilitiesRequest {
             case fingerprint
             case searchID = "search_id"
             case sessionID = "session_id"
+            
+            case vehicleInfoId = "vehicle_info_id"
         }
         
         /// IATA airport code used as the origin position.
@@ -68,6 +70,9 @@ public extension SearchGetAirportFacilitiesRequest {
         /// The default is nil (no limit). Must be >= 1, if provided.
         private let pageSize: Int?
         
+        /// An optional vehicle info id.
+        private let vehicleInfoId: Int?
+        
         let actionID: String?
         let fingerprint: String?
         let searchID: String?
@@ -78,12 +83,14 @@ public extension SearchGetAirportFacilitiesRequest {
                     endDate: Date? = nil,
                     isOversize: Bool? = nil,
                     pageSize: Int? = nil,
-                    searchTracking: SearchTrackingParameters? = nil) {
+                    searchTracking: SearchTrackingParameters? = nil,
+                    vehicleInfoId: Int? = nil) {
             self.iataCode = iataCode
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
             self.pageSize = pageSize
+            self.vehicleInfoId = vehicleInfoId
             
             self.actionID = searchTracking?.actionID
             self.fingerprint = searchTracking?.fingerprint

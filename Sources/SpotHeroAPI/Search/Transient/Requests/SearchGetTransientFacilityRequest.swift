@@ -51,6 +51,7 @@ public extension SearchGetTransientFacilityRequest {
             case sessionID = "session_id"
 
             case includeWalkingDistance = "include_walking_distance"
+            case vehicleInfoId = "vehicle_info_id"
         }
         
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
@@ -86,6 +87,9 @@ public extension SearchGetTransientFacilityRequest {
         /// A boolean value indicating whether to include the walking distance information in the response or not.
         private let includeWalkingDistance: Bool
         
+        /// An optional vehicle info id.
+        private let vehicleInfoId: Int?
+        
         let actionID: String?
         let fingerprint: String?
         let searchID: String?
@@ -99,7 +103,8 @@ public extension SearchGetTransientFacilityRequest {
                     workLatitude: Double? = nil,
                     workLongitude: Double? = nil,
                     searchTracking: SearchTrackingParameters? = nil,
-                    includeWalkingDistance: Bool = true) {
+                    includeWalkingDistance: Bool = true,
+                    vehicleInfoId: Int? = nil) {
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
@@ -107,6 +112,7 @@ public extension SearchGetTransientFacilityRequest {
             self.originLongitude = originLongitude
             self.workLatitude = workLatitude
             self.workLongitude = workLongitude
+            self.vehicleInfoId = vehicleInfoId
             
             self.actionID = searchTracking?.actionID
             self.fingerprint = searchTracking?.fingerprint

@@ -46,6 +46,8 @@ public extension SearchGetTransientExtensionRates {
             case fingerprint
             case searchID = "search_id"
             case sessionID = "session_id"
+            
+            case vehicleInfoId = "vehicle_info_id"
         }
 
         /// Start datetime from which results will be generated. Supported formats are RFC3339 and YYYY-MM-DDTHH:MM:SS.
@@ -60,13 +62,16 @@ public extension SearchGetTransientExtensionRates {
 
         /// Boolean that denotes whether or not the pricing calculated for this vehicle
         /// will incorporate pricing for an oversize vehicle, if applicable.
-        private let isOversize: Bool
+        private let isOversize: Bool?
 
         /// The rate IDs that the search facility returns.
         private let rateIDs: String
         
         /// The additional hours that will be added to the end time to generate the extension rate
         private let extensionHours: String
+        
+        /// An optional vehicle info id.
+        private let vehicleInfoId: Int?
 
         let actionID: String?
         let fingerprint: String?
@@ -75,16 +80,18 @@ public extension SearchGetTransientExtensionRates {
 
         public init(startDate: Date,
                     endDate: Date,
-                    isOversize: Bool,
                     rateIDs: String,
                     extensionHours: String,
-                    searchTracking: SearchTrackingParameters) {
+                    searchTracking: SearchTrackingParameters,
+                    isOversize: Bool? = nil,
+                    vehicleInfoId: Int? = nil) {
             self.startDate = startDate
             self.endDate = endDate
             self.isOversize = isOversize
             self.rateIDs = rateIDs
             self.extensionHours = extensionHours
-
+            self.vehicleInfoId = vehicleInfoId
+            
             self.actionID = searchTracking.actionID
             self.fingerprint = searchTracking.fingerprint
             self.searchID = searchTracking.searchID

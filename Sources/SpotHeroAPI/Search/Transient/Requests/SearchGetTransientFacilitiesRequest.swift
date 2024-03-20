@@ -60,6 +60,8 @@ public extension SearchGetTransientFacilitiesRequest {
             case sortBy = "sort_by"
             
             case inFacilityExclusionExperiment = "in_fac_excl_exp"
+            
+            case vehicleInfoId = "vehicle_info_id"
         }
         
         /// Latitude in decimal degrees of origin from where the search will be performed. Latitude must be in [-90, 90].
@@ -117,6 +119,9 @@ public extension SearchGetTransientFacilitiesRequest {
         /// A boolean value indicating whether or not the client is included in the facility exclusion experiment.
         private let inFacilityExclusionExperiment: Bool?
         
+        /// An optional vehicle info id.
+        private let vehicleInfoId: Int?
+        
         let actionID: String?
         let fingerprint: String?
         let searchID: String?
@@ -136,7 +141,8 @@ public extension SearchGetTransientFacilitiesRequest {
                     sortBy: SortByType? = .relevance,
                     inFacilityExclusionExperiment: Bool? = nil,
                     pageSize: Int? = nil,
-                    searchTracking: SearchTrackingParameters? = nil) {
+                    searchTracking: SearchTrackingParameters? = nil,
+                    vehicleInfoId: Int? = nil) {
             self.latitude = latitude
             self.longitude = longitude
             self.originLatitude = originLatitude
@@ -151,6 +157,7 @@ public extension SearchGetTransientFacilitiesRequest {
             self.sortBy = sortBy
             self.inFacilityExclusionExperiment = inFacilityExclusionExperiment
             self.pageSize = pageSize
+            self.vehicleInfoId = vehicleInfoId
             
             self.actionID = searchTracking?.actionID
             self.fingerprint = searchTracking?.fingerprint

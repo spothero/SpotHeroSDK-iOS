@@ -66,6 +66,7 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                 case fingerprint
                 case searchID = "search_id"
                 case sessionID = "session_id"
+                case vehicleInfoId = "vehicle_info_id"
             }
 
             // swiftlint:enable nesting
@@ -96,6 +97,9 @@ public extension BulkSearchGetTransientFacilitiesRequest {
 
             /// A boolean value indicating whether or not the client is included in the facility exclusion experiment.
             let inFacilityExclusionExperiment: Bool?
+            
+            /// An optional vehicle info id.
+            let vehicleInfoId: Int?
 
             let actionID: String?
             let fingerprint: String?
@@ -170,7 +174,8 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                     sortBy: SortByType? = .relevance,
                     inFacilityExclusionExperiment: Bool? = nil,
                     pageSize: Int? = nil,
-                    searchTracking: SearchTrackingParameters? = nil) {
+                    searchTracking: SearchTrackingParameters? = nil,
+                    vehicleInfoId: Int? = nil) {
             self.queryParameters = .init(
                 latitude: latitude,
                 longitude: longitude,
@@ -179,6 +184,7 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                 workLatitude: workLatitude,
                 workLongitude: workLongitude,
                 inFacilityExclusionExperiment: inFacilityExclusionExperiment,
+                vehicleInfoId: vehicleInfoId,
                 actionID: searchTracking?.actionID,
                 fingerprint: searchTracking?.fingerprint,
                 searchID: searchTracking?.searchID,
