@@ -64,6 +64,7 @@ public extension BulkSearchGetTransientFacilityRequest {
                 case fingerprint
                 case searchID = "search_id"
                 case sessionID = "session_id"
+                case vehicleInfoId = "vehicle_info_id"
             }
 
             /// Latitude in decimal degrees of origin from where each result's distance will be calculated.
@@ -81,6 +82,9 @@ public extension BulkSearchGetTransientFacilityRequest {
 
             /// The work address longitude associated with the user’s commuter benefits card. Longitude must be in [-180, 180].
             let workLongitude: Double?
+            
+            /// An optional vehicle info id.
+            let vehicleInfoId: Int?
 
             let actionID: String?
             let fingerprint: String?
@@ -95,7 +99,6 @@ public extension BulkSearchGetTransientFacilityRequest {
                 case periods
                 case includeWalkingDistance = "include_walking_distance"
                 case sortBy = "sort_by"
-                case vehicleInfoId = "vehicle_info_id"
             }
 
             /// Boolean that denotes whether or not the pricing calculated for this vehicle
@@ -110,9 +113,6 @@ public extension BulkSearchGetTransientFacilityRequest {
             
             /// A string value to sort the items by.
             let sortBy: SortByType?
-            
-            /// An optional vehicle info id.
-            let vehicleInfoId: Int?
         }
 
         fileprivate let queryParameters: QueryParameters
@@ -149,6 +149,7 @@ public extension BulkSearchGetTransientFacilityRequest {
                 originLongitude: originLongitude,
                 workLatitude: workLatitude,
                 workLongitude: workLongitude,
+                vehicleInfoId: vehicleInfoId,
                 actionID: searchTracking?.actionID,
                 fingerprint: searchTracking?.fingerprint,
                 searchID: searchTracking?.searchID,
@@ -158,8 +159,7 @@ public extension BulkSearchGetTransientFacilityRequest {
                 isOversize: isOversize,
                 periods: periods,
                 includeWalkingDistance: includeWalkingDistance,
-                sortBy: sortBy,
-                vehicleInfoId: vehicleInfoId
+                sortBy: sortBy
             )
         }
     }
