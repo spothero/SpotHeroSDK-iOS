@@ -95,6 +95,7 @@ public extension BulkSearchGetTransientFacilityRequest {
                 case periods
                 case includeWalkingDistance = "include_walking_distance"
                 case sortBy = "sort_by"
+                case vehicleInfoId = "vehicle_info_id"
             }
 
             /// Boolean that denotes whether or not the pricing calculated for this vehicle
@@ -109,6 +110,9 @@ public extension BulkSearchGetTransientFacilityRequest {
             
             /// A string value to sort the items by.
             let sortBy: SortByType?
+            
+            /// An optional vehicle info id.
+            let vehicleInfoId: Int?
         }
 
         fileprivate let queryParameters: QueryParameters
@@ -138,7 +142,8 @@ public extension BulkSearchGetTransientFacilityRequest {
                     workLongitude: Double? = nil,
                     searchTracking: SearchTrackingParameters? = nil,
                     includeWalkingDistance: Bool = true,
-                    sortBy: SortByType? = .relevance) {
+                    sortBy: SortByType? = .relevance,
+                    vehicleInfoId: Int? = nil) {
             self.queryParameters = .init(
                 originLatitude: originLatitude,
                 originLongitude: originLongitude,
@@ -153,7 +158,8 @@ public extension BulkSearchGetTransientFacilityRequest {
                 isOversize: isOversize,
                 periods: periods,
                 includeWalkingDistance: includeWalkingDistance,
-                sortBy: sortBy
+                sortBy: sortBy,
+                vehicleInfoId: vehicleInfoId
             )
         }
     }

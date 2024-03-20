@@ -112,6 +112,7 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                 case periods
                 case includeWalkingDistance = "include_walking_distance"
                 case sortBy = "sort_by"
+                case vehicleInfoId = "vehicle_info_id"
             }
 
             // swiftlint:enable nesting
@@ -136,6 +137,9 @@ public extension BulkSearchGetTransientFacilitiesRequest {
             /// The number of results to include in a single page.
             /// The default is nil (no limit). Must be >= 1, if provided.
             let pageSize: Int?
+            
+            /// An optional vehicle info id.
+            let vehicleInfoId: Int?
         }
 
         fileprivate let queryParameters: QueryParameters
@@ -170,7 +174,8 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                     sortBy: SortByType? = .relevance,
                     inFacilityExclusionExperiment: Bool? = nil,
                     pageSize: Int? = nil,
-                    searchTracking: SearchTrackingParameters? = nil) {
+                    searchTracking: SearchTrackingParameters? = nil,
+                    vehicleInfoId: Int? = nil) {
             self.queryParameters = .init(
                 latitude: latitude,
                 longitude: longitude,
@@ -190,7 +195,8 @@ public extension BulkSearchGetTransientFacilitiesRequest {
                 maxDistanceMeters: maxDistanceMeters,
                 includeWalkingDistance: includeWalkingDistance,
                 sortBy: sortBy,
-                pageSize: pageSize
+                pageSize: pageSize,
+                vehicleInfoId: vehicleInfoId
             )
         }
     }
