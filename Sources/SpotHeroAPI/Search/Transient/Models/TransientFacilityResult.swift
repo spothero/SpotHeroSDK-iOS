@@ -1,4 +1,4 @@
-// Copyright © 2023 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 /// Represents an availability search result containing transient facility and rate information.
 public struct TransientFacilityResult: Codable {
@@ -17,4 +17,7 @@ public struct TransientFacilityResult: Codable {
     
     /// Listing of available rates at a given parking facility.
     public let rates: [TransientRateContainer]
+
+    /// The information about oversize vehicle fees if any.
+    public let vehicle: OversizeVehicleFeeInformation?
 }
