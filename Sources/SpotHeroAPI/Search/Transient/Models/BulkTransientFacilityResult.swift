@@ -1,4 +1,4 @@
-// Copyright © 2023 SpotHero, Inc. All rights reserved.
+// Copyright © 2024 SpotHero, Inc. All rights reserved.
 
 public struct BulkTransientFacilityResult: Codable {
     private enum CodingKeys: String, CodingKey {
@@ -7,6 +7,7 @@ public struct BulkTransientFacilityResult: Codable {
         case distance
         case facility
         case options
+        case vehicle
     }
 
     /// The average price of the rates.
@@ -24,4 +25,7 @@ public struct BulkTransientFacilityResult: Codable {
     /// Contains information about misc options available to the user
     /// at a given parking facility based on search criteria and user information.
     public let options: FacilityOptions
+
+    /// The information about oversize vehicle fees if any.
+    public let vehicle: OversizeVehicleFeeInformation?
 }
