@@ -40,7 +40,6 @@ public extension SearchGetTransientExtensionRates {
             case startDate = "starts"
             case isOversize = "oversize"
             case rateIDs = "rate_ids"
-            case extensionHours = "extension_hours"
 
             case actionID = "action_id"
             case fingerprint
@@ -67,9 +66,6 @@ public extension SearchGetTransientExtensionRates {
         /// The rate IDs that the search facility returns.
         private let rateIDs: String
         
-        /// The additional hours that will be added to the end time to generate the extension rate
-        private let extensionHours: String
-        
         /// An optional vehicle info id.
         private let vehicleInfoId: Int?
 
@@ -81,7 +77,6 @@ public extension SearchGetTransientExtensionRates {
         public init(startDate: Date,
                     endDate: Date,
                     rateIDs: String,
-                    extensionHours: String,
                     searchTracking: SearchTrackingParameters,
                     isOversize: Bool? = nil,
                     vehicleInfoId: Int? = nil) {
@@ -89,7 +84,6 @@ public extension SearchGetTransientExtensionRates {
             self.endDate = endDate
             self.isOversize = isOversize
             self.rateIDs = rateIDs
-            self.extensionHours = extensionHours
             self.vehicleInfoId = vehicleInfoId
             
             self.actionID = searchTracking.actionID
